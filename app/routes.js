@@ -2,6 +2,15 @@ const express = require('express')
 
 const router = new express.Router()
 
+// Get Sprint and Feature for URL links
+router.use('/', (req, res, next) => {
+  req.feature = req.originalUrl.split('/')[1]
+  req.sprint = req.originalUrl.split('/')[2]
+  res.locals.feature = req.feature
+  res.locals.sprint = req.sprint
+  next()
+})
+
 router.get('/', (req, res) => {
   res.render('index')
 })
