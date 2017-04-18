@@ -1,9 +1,9 @@
-const express = require('express');
+const express = require('express')
 
-const router = new express.Router();
+const router = new express.Router()
 
 router.get('/', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/capture-a-claim`);
-});
+  res.redirect(`/${req.feature}/${req.sprint}/about-you`)
+})
 
-module.exports = router;
+module.exports = router
