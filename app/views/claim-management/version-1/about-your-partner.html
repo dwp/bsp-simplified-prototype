@@ -1,0 +1,303 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">
+        About your husband, wife or civil partner
+      </h1>
+
+      <form method="post" autocomplete="off">
+        <div class="form-group">
+          <label for="title">
+            <span class="form-label">Their title</span>
+          </label>
+          <input class="form-control" type="text" id="title" name="claimant[title]">
+        </div>
+
+        <div class="form-group">
+          <label for="surname">
+            <span class="form-label">Their surname or family name</span>
+          </label>
+          <input class="form-control" type="text" id="surname" name="surname">
+        </div>
+
+        <div class="form-group">
+          <label for="other-names">
+            <span class="form-label">Their other names in full</span>
+          </label>
+          <input class="form-control" type="text" id="other-names" name="other-names">
+        </div>
+
+        <div class="form-group">
+          <label for="other-sunames">
+            <span class="form-label">Their other surnames or family names</span>
+          </label>
+          <input class="form-control" type="text" id="other-surnames" name="other-surnames">
+        </div>
+        
+        <div class="form-group">
+          <label for="nino">
+            <span class="form-label">
+              Their National Insurance number
+            </span>
+          </label>
+          <input class="form-control" type="text" id="nino" name="nino">
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <span class="form-label-bold">
+                Their Date of birth
+              </span>
+            </legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="dateOfBirth-day">
+                  Day
+                </label>
+                <input class="form-control" id="dateOfBirth-day" type="number" name="dateOfBirth[day]" pattern="[0-9]*" min="0" max="31" aria-describedby="dateOfBirth-hint">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="dateOfBirth-month">
+                  Month
+                </label>
+                <input class="form-control" id="dateOfBirth-month" type="number" name="dateOfBirth[month]" pattern="[0-9]*" min="0" max="12">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="dateOfBirth-year">
+                  Year
+                </label>
+                <input class="form-control" type="number" id="dateOfBirth-year" min="0" name="dateOfBirth[year]" pattern="[0-9]*">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Their address</label>
+          <textarea class="form-control" rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <span class="form-label-bold">
+                What date did they die?
+              </span>
+            </legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="dateOfDeath-day">
+                  Day
+                </label>
+                <input class="form-control" id="dateOfDeath-day" type="number" name="dateOfDeath[day]" pattern="[0-9]*" min="0" max="31" aria-describedby="dateOfDeath-hint">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="dateOfDeath-month">
+                  Month
+                </label>
+                <input class="form-control" id="dateOfDeath-month" type="number" name="dateOfDeath[month]" pattern="[0-9]*" min="0" max="12">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="dateOfDeath-year">
+                  Year
+                </label>
+                <input class="form-control" type="number" id="dateOfDeath-year" min="0" name="dateOfDeath[year]" pattern="[0-9]*">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <label for="address">
+            If your husband, wife or civil partner died more than 3 months ago, 
+            tell us why you haven't been able to claim until now.
+          </label>
+          <textarea class="form-control" rows="5"></textarea>
+        </div>
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <h2 class="heading-small">
+              Did they pay National Insurance contributions before they died?
+            </h2>
+        
+            <div class="multiple-choice" data-target="employment-hidden">
+              <input id="contributions-yes" type="radio" name="contributions" value="Yes">
+              <label for="contributions-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="contributions-no" type="radio" name="contributions" value="Yes">
+              <label for="contributions-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <h2 class="heading-small">
+              Did they pay National Insurance contributions before they died?
+            </h2>
+        
+            <div class="multiple-choice" data-target="employment-hidden">
+              <input id="contributions-yes" type="radio" name="contributions" value="Yes">
+              <label for="contributions-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="contributions-no" type="radio" name="contributions" value="Yes">
+              <label for="contributions-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="panel panel-border-narrow js-hidden" id="employment-hidden">
+          <div class="form-group">
+            <fieldset>
+              <h2 class="heading-small">
+                Were they:
+              </h2>
+          
+              <div class="multiple-choice">
+                <input id="employed" type="radio" name="employment" value="Yes">
+                <label for="employed">Employed</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="self-employed" type="radio" name="employment" value="Yes">
+                <label for="self-employed">Self-employed</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <fieldset class="inline">
+            <h2 class="heading-small">
+              Do you think they died because of an accident at work, or because 
+              of a disease or illness connected with their work?
+            </h2>
+        
+            <div class="multiple-choice" data-target="industrial-injury-hidden">
+              <input id="contributions-yes" type="radio" name="contributions" value="Yes">
+              <label for="contributions-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="contributions-no" type="radio" name="contributions" value="Yes">
+              <label for="contributions-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="panel panel-border-narrow js-hidden" id="industrial-injury-hidden">
+          <div class="form-group">
+            <fieldset>
+              <h2 class="heading-small">
+                May we get medical reports from their doctor and any hospital, 
+                if we need them?
+              </h2>
+          
+              <div class="multiple-choice">
+                <input id="employed" type="radio" name="employment" value="Yes">
+                <label for="employed">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="self-employed" type="radio" name="employment" value="Yes">
+                <label for="self-employed">No</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <fieldset class="inline">
+            <h2 class="heading-small">
+              Did they ever live or work outside of the UK?
+            </h2>
+        
+            <div class="multiple-choice" data-target="country-hidden">
+              <input id="contributions-yes" type="radio" name="contributions" value="Yes">
+              <label for="contributions-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="contributions-no" type="radio" name="contributions" value="Yes">
+              <label for="contributions-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="panel panel-border-narrow js-hidden" id="country-hidden">
+          <div class="form-group">
+            <fieldset>
+              <h2 class="heading-small">
+                Country info
+              </h2>
+          
+              Add some inputs
+            </fieldset>
+          </div>
+          
+          <div class="form-group">
+            <fieldset class="inline">
+              <h2 class="heading-small">
+                Did they pay into the social security scheme of the country they 
+                lived in?
+              </h2>
+          
+              <div class="multiple-choice" data-target="social-security-hidden">
+                <input id="social-security-yes" type="radio" name="social-security" value="Yes">
+                <label for="contributions-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="social-security-no" type="radio" name="social-security" value="Yes">
+                <label for="social-security-no">No</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="social-security-no" type="radio" name="social-security" value="Yes">
+                <label for="social-security-no">Don't know</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="social-security-hidden">
+            <div class="form-group">
+              <fieldset>
+                <h2 class="heading-small">
+                  What was their social security reference number?
+                </h2>
+            
+                <label for="title">
+                  <span class="form-label">Social security reference number</span>
+                </label>
+                <input class="form-control" type="text" id="title" name="claimant[title]">
+              </fieldset>
+            </div>
+          </div>
+        </div>
+
+
+        <button type="submit" class="button">
+          Continue
+        </button>
+      </div>
+    </form>
+  </main>
+{% endblock %}
