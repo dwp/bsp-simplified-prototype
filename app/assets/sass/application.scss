@@ -1,6 +1,11 @@
 // Path to assets for use with the file-url function
 // in the govuk frontend toolkit's url-helpers partial
-$path: "/public/images/";
+$path: '/public/images/';
+
+$button-red-border: #790000;
+$grey333: #333;
+$grey666: #666;
+$grey999: #999;
 
 // Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
 // Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
@@ -10,22 +15,38 @@ $path: "/public/images/";
 @import 'patterns/check-your-answers';
 @import 'patterns/task-list';
 
-// Related items
-// (These styles will be moved to GOV.UK elements, duplicating here for now.)
-.govuk-related-items {
-  margin-top: $gutter;
-  border-top: 10px solid $govuk-blue;
-  padding-top: 5px;
-
-  .heading-medium {
-    margin-top: 0.3em;
-    margin-bottom: 0.5em;
-  }
-
-  li {
-    margin-bottom: 10px;
-    list-style-type: none;
-  }
-}
+@import 'find-a-payment-schedule';
+@import 'schedule';
+@import 'homepage-top';
+@import 'example';
+@import 'nav';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+
+.data-summary {
+  @extend %contain-floats;
+
+  border-bottom: 1px solid $border-colour;
+  margin-bottom: 2em;
+  max-width: 30em;
+}
+
+.data-summary-key,
+.data-summary-value {
+  @include box-sizing(border-box);
+
+  border-top: 1px solid $border-colour;
+  float: left;
+  padding: .63158em 1.05263em .47368em 0;
+  width: 50%;
+}
+
+.data-summary-key {
+  clear: left;
+}
+
+.payment-link {
+  float: right;
+  font-weight: 700;
+  margin: 0;
+}

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          Claims
+        </h1>
+
+        <ul>
+          <li><a href="/{{feature}}/{{sprint}}/claim-1">John Smith</a></li>
+          <li><a href="/{{feature}}/{{sprint}}/claim-2">Jane Doe</a></li>          
+          <li><a href="/{{feature}}/{{sprint}}/claim-3">Joe Bloggs</a></li>          
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}

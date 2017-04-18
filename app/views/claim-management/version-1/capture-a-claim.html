@@ -1,0 +1,251 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+  <main id="content" role="main" class="group">
+    <h1 class="heading-xlarge">
+      About you
+    </h1>
+
+
+    <form method="post" autocomplete="off">
+      <div class="form-group">
+        <label for="input-name">
+          <span class="form-label">Title</span>
+        </label>
+        <input class="form-control" type="text" id="input-name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="input-name">
+          <span class="form-label">Surname or family name</span>
+        </label>
+        <input class="form-control" type="text" id="input-name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="input-name">
+          <span class="form-label">All other names in full</span>
+        </label>
+        <input class="form-control" type="text" id="input-name" name="name">
+      </div>
+
+      <div class="form-group">
+        <label for="input-name">
+          <span class="form-label">All other surnames or family names</span>
+        </label>
+        <input class="form-control" type="text" id="input-name" name="name">
+      </div>
+      
+      <div class="form-group">
+        <label for="input-nino">
+          <span class="form-label">
+            National Insurance number
+          </span>
+        </label>
+        <input class="form-control" type="text" id="input-claimant-nino" name="claimant-nino">
+      </div>
+
+      <div class="form-group">
+        <fieldset>
+          <legend>
+            <span class="form-label-bold">
+              Date of birth
+            </span>
+          </legend>
+
+          <div class="form-date">
+            <div class="form-group form-group-day">
+              <label class="form-label" for="input-dateOfBirth-day">
+                Day
+              </label>
+              <input class="form-control" id="input-dateOfBirth-day" type="number" name="dateOfBirth[day]" pattern="[0-9]*" min="0" max="31" aria-describedby="dateOfBirth-hint">
+            </div>
+
+            <div class="form-group form-group-month">
+              <label class="form-label" for="input-dateOfBirth-month">
+                Month
+              </label>
+              <input class="form-control" id="input-dateOfBirth-month" type="number" name="dateOfBirth[month]" pattern="[0-9]*" min="0" max="12">
+            </div>
+
+            <div class="form-group form-group-year">
+              <label class="form-label" for="input-dateOfBirth-year">
+                Year
+              </label>
+              <input class="form-control" type="number" id="input-dateOfBirth-year" min="0" name="dateOfBirth[year]" pattern="[0-9]*">
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address</label>
+        <textarea class="form-control" rows="5"></textarea>
+      </div>
+
+      <h2 class="heading-small">Contact information</h2>
+        
+      <div class="form-section">
+        <div class="form-group">
+          <fieldset>
+            <div class="multiple-choice" data-target="home-phone-hidden">
+              <input id="checkbox-home-phone" name="checkbox-home-phone" type="checkbox" value=true>
+              <label for="checkbox-home-phone">Home phone</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="home-phone-hidden">
+              <label class="form-label" for="input-home-phone">Home phone number</label>
+              <input class="form-control" type="text" id="input-home-phone" name="input-home-phone">
+            </div>
+
+            <div class="multiple-choice" data-target="mobile-phone-hidden">
+              <input id="checkbox-mobile-phone" name="checkbox-mobile-phone" type="checkbox" value=true>
+              <label for="checkbox-mobile-phone">Mobile phone</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="mobile-phone-hidden">
+              <label class="form-label" for="input-mobile-phone">Mobile phone number</label>
+              <input class="form-control" type="text" id="input-mobile-phone" name="input-mobile-phone">
+            </div>
+
+            <div class="multiple-choice" data-target="email-hidden">
+              <input id="checkbox-email" name="checkbox-email" type="checkbox" value=true>
+              <label for="checkbox-email">Email</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="email-hidden">
+              <label class="form-label" for="input-email">Email address</label>
+              <input class="form-control" type="text" id="input-email" name="input-email">
+            </div>
+          </fieldset>
+        </div>
+        
+
+        <h2 class="heading-large">
+          Partner details
+        </h2>
+
+        <div class="form-group">
+          <label for="input-partner-nino">
+            <span class="form-label">
+              National Insurance number
+            </span>
+          </label>
+
+          <input class="form-control" type="text" id="input-partner-nino" name="partner-nino" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <span class="form-label-bold">
+                Date of death
+              </span>
+            </legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="input-dateOfDeath-day">
+                  Day
+                </label>
+                <input class="form-control" id="input-dateOfDeath-day" type="number" name="dateOfDeath[day]" pattern="[0-9]*" min="0" max="31" aria-describedby="dateOfDeath-hint">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="input-dateOfDeath-month">
+                  Month
+                </label>
+                <input class="form-control" id="input-dateOfDeath-month" type="number" name="dateOfDeath[month]" pattern="[0-9]*" min="0" max="12">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="input-dateOfDeath-year">
+                  Year
+                </label>
+                <input class="form-control" type="number" id="input-dateOfDeath-year" min="0" name="dateOfDeath[year]" pattern="[0-9]*">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+     
+      <h2 class="heading-large">
+        Payment details
+      </h2>
+
+      <div class="form-section">
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <span class="form-label-bold">
+                Date of claim
+              </span>
+            </legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="input-dateOfClaim-day">
+                  Day
+                </label>
+                <input class="form-control" id="input-dateOfClaim-day" type="number" name="dateOfClaim[day]" pattern="[0-9]*" min="0" max="31" aria-describedby="dateOfClaim-hint">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="input-dateOfClaim-month">
+                  Month
+                </label>
+                <input class="form-control" id="input-dateOfClaim-month" type="number" name="dateOfClaim[month]" pattern="[0-9]*" min="0" max="12">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="input-dateOfClaim-year">
+                  Year
+                </label>
+                <input class="form-control" type="number" id="input-dateOfClaim-year" min="0" name="dateOfClaim[year]" pattern="[0-9]*">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <h2 class="heading-medium">Account details</h2>
+        <div class="form-group" id="countryFields">
+          <div class="form-group">
+            <label for="input-nameOnAccount">
+              <span class="form-label">Name on account</span>
+            </label>
+            <input class="form-control" type="text" id="input-nameOnAccount" name="bankDetails[nameOnAccount]" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="input-sortCode">
+              <span class="form-label">Sort code</span>
+            </label>
+
+            <input class="form-control" type="text" id="input-sortCode" name="bankDetails[bankCode][Sort code]" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label for="input-accountNumber">
+              <span class="form-label">Account number</span>
+            </label>
+
+            <input class="form-control" type="text" id="input-accountNumber" name="bankDetails[bankNumber][Account number]" autocomplete="off">
+          </div>
+
+          <div class="form-group js-hidden" id="roll-number">
+            <label for="input-rollNumber">
+              <span class="form-label">Roll Number</span>
+            </label>
+            <input class="form-control" type="text" id="input-rollNumber" name="bankDetails[additional][Roll number]" autocomplete="off">
+          </div>
+        </div>
+
+        <button type="submit" class="button">
+          Continue
+        </button>
+      </div>
+    </form>
+  </main>
+{% endblock %}
