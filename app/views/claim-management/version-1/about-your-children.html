@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">
+        About your children
+      </h1>
+
+      <form method="post" autocomplete="off">
+        <div class="form-group">
+          <fieldset class="inline">
+            <h2 class="heading-medium">Do you have any dependent children?</h2>
+        
+            <div class="multiple-choice" data-target="dependent-children-hidden">
+              <input id="dependent-children-yes" type="radio" name="dependent-children" value="Yes">
+              <label for="dependent-children-yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice" >
+              <input id="dependent-children-no" type="radio" name="dependent-children" value="No">
+              <label for="dependent-children-no">No</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="panel panel-border-narrow js-hidden" id="dependent-children-hidden">
+          <div class="form-group">
+            <fieldset class="inline">
+              <h2 class="heading-small">Are you entitled to any child benefit?</h2>
+          
+              <div class="multiple-choice">
+                <input id="entitled-chb-yes" type="radio" name="entitled-chb" value="Yes">
+                <label for="entitled-chb-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="chb-entitled-no" type="radio" name="entitled-chb" value="No">
+                <label for="chb-entitled-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="chb-number">Child Benefit number</label>
+            <input class="form-control" id="chb-number" type="text">
+          </div>
+
+          <div class="form-group">
+            <fieldset class="inline">
+              <h2 class="heading-small">Are you waiting to hear if you can get Child Benefit?</h2>
+          
+              <div class="multiple-choice">
+                <input id="chb-awaiting-yes" type="radio" name="chb-awaiting" value="Yes">
+                <label for="chb-awaiting-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="chb-awaiting-no" type="radio" name="chb-awaiting" value="No">
+                <label for="chb-awaiting-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <fieldset class="inline">
+              <h2 class="heading-small">
+                If you're not getting Child Benefit, were you pregnant when 
+                your husband, wife or civil partner died?
+              </h2>
+          
+              <div class="multiple-choice" data-target="pregnancy-date">
+                <input id="pregnant-yes" type="radio" name="pregnant" value="Yes">
+                <label for="pregnant-yes">Yes</label>
+              </div>
+
+              <div class="multiple-choice">
+                <input id="pregnant-no" type="radio" name="pregnant" value="No">
+                <label for="pregnant-no">No</label>
+              </div>
+
+              <div class="panel panel-border-narrow js-hidden" id="pregnancy-date">
+                <div class="form-group">
+                  <fieldset>
+                    <legend>
+                      <span class="form-label-bold">
+                        What date is the baby due?
+                      </span>
+                    </legend>
+                
+                    <div class="form-date">
+                      <div class="form-group form-group-day">
+                        <label class="form-label" for="pregnancy-day">Day</label>
+                        <input class="form-control" id="pregnancy-day" name="pregnancy-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="pregnancy-hint">
+                      </div>
+                
+                      <div class="form-group form-group-month">
+                        <label class="form-label" for="pregnancy-month">Month</label>
+                        <input class="form-control" id="pregnancy-month" name="pregnancy-month" type="number" pattern="[0-9]*" min="0" max="12">
+                      </div>
+                      
+                      <div class="form-group form-group-year">
+                        <label class="form-label" for="pregnancy-year">Year</label>
+                        <input class="form-control" id="pregnancy-year" name="pregnancy-year" type="number" pattern="[0-9]*" min="0" max="2016">
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <button class="button" type="submit">Continue</button>
+
+     </form>
+    </div>
+  </main>
+{% endblock %}

@@ -1,70 +1,45 @@
-<h2 class="heading-large">
-  Payment details
-</h2>
+{% extends 'layout.html' %}
+{% block pageTitle %}
+  Page Title
+{% endblock %}
 
-<div class="form-section">
-  <div class="form-group">
-    <fieldset>
-      <legend>
-        <span class="form-label-bold">
-          Date of claim
-        </span>
-      </legend>
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h2 class="heading-large">
+          Payment details
+        </h2>
 
-      <div class="form-date">
-        <div class="form-group form-group-day">
-          <label class="form-label" for="input-dateOfClaim-day">
-            Day
-          </label>
-          <input class="form-control" id="input-dateOfClaim-day" type="number" name="dateOfClaim[day]" pattern="[0-9]*" min="0" max="31" aria-describedby="dateOfClaim-hint">
-        </div>
+          <form method="post">
+            <div class="form-group">
+              <label class="form-label" for="full-name-f1">Name of account holder</label>
+              <input class="form-control" id="full-name-f1" type="text">
+            </div>
 
-        <div class="form-group form-group-month">
-          <label class="form-label" for="input-dateOfClaim-month">
-            Month
-          </label>
-          <input class="form-control" id="input-dateOfClaim-month" type="number" name="dateOfClaim[month]" pattern="[0-9]*" min="0" max="12">
-        </div>
+            <div class="form-group">
+              <label class="form-label" for="full-name-f1">Full name of bank or building society</label>
+              <input class="form-control" id="full-name-f1" type="text">
+            </div>
 
-        <div class="form-group form-group-year">
-          <label class="form-label" for="input-dateOfClaim-year">
-            Year
-          </label>
-          <input class="form-control" type="number" id="input-dateOfClaim-year" min="0" name="dateOfClaim[year]" pattern="[0-9]*">
-        </div>
+            <div class="form-group">
+              <label class="form-label" for="full-name-f1">Sort code</label>
+              <input class="form-control" id="full-name-f1" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="full-name-f1">Account number</label>
+              <input class="form-control" id="full-name-f1" type="text">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="full-name-f1">Building society roll or reference number</label>
+              <input class="form-control" id="full-name-f1" type="text">
+            </div>
+
+            <button type="submit" class="button">Continue</button>
+          </form>
       </div>
-    </fieldset>
-  </div>
-
-  <h2 class="heading-medium">Account details</h2>
-  <div class="form-group" id="countryFields">
-    <div class="form-group">
-      <label for="input-nameOnAccount">
-        <span class="form-label">Name on account</span>
-      </label>
-      <input class="form-control" type="text" id="input-nameOnAccount" name="bankDetails[nameOnAccount]" autocomplete="off">
     </div>
-
-    <div class="form-group">
-      <label for="input-sortCode">
-        <span class="form-label">Sort code</span>
-      </label>
-
-      <input class="form-control" type="text" id="input-sortCode" name="bankDetails[bankCode][Sort code]" autocomplete="off">
-    </div>
-
-    <div class="form-group">
-      <label for="input-accountNumber">
-        <span class="form-label">Account number</span>
-      </label>
-
-      <input class="form-control" type="text" id="input-accountNumber" name="bankDetails[bankNumber][Account number]" autocomplete="off">
-    </div>
-
-    <div class="form-group js-hidden" id="roll-number">
-      <label for="input-rollNumber">
-        <span class="form-label">Roll Number</span>
-      </label>
-      <input class="form-control" type="text" id="input-rollNumber" name="bankDetails[additional][Roll number]" autocomplete="off">
-    </div>
-  </div>
+  </main>
+{% endblock %}
