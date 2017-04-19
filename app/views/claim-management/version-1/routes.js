@@ -6,6 +6,14 @@ router.get('/', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/home`)
 })
 
+router.get('/capture-a-claim', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/about-you`)
+})
+
+router.get('/process-a-claim', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/view-all-claims`)
+})
+
 router.post('/about-you', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/about-your-partner`)
 })
