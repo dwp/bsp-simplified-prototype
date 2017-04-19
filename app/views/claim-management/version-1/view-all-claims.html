@@ -9,8 +9,19 @@
     <div class="grid-row">
       <div class="column-two-thirds">
         <h1 class="heading-xlarge">
-          Claims
+          Process a claim
         </h1>
+
+        <div class="form-group search-group ">
+          <label for="search-box" class="form-label">
+            <span>Enter the claimant's National Insurance number</span>
+          </label>
+          <input type="search" name="nino" class="form-control form-control-search" id="search-box" autocomplete="off">
+
+          <button class="button-search" type="submit">
+            <span class="visually-hidden">Search</span>
+          </button>
+        </div>
 
         <ul>
           <li><a href="/{{feature}}/{{sprint}}/claim-1">John Smith</a></li>

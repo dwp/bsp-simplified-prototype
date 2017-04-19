@@ -19,6 +19,11 @@ router.post('/about-your-children', (req, res) => {
 })
 
 router.post('/payment-details', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/check-your-answers`)
+})
+
+router.post('/payment-details', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/home`)
 })
+
 module.exports = router
