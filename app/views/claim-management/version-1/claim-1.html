@@ -16,6 +16,15 @@
         AB123456A
       </h1>
 
+      <hr />
+
+      <p>
+        <span class="bold">
+          Assigned to<br />
+        </span>
+        Craig Abbott
+      </p>
+
       <ol class="task-list">
         <li>
           <h2 class="task-list-section">
@@ -27,41 +36,76 @@
               <a class="task-name" href="/{{feature}}/{{sprint}}/claim-1/verify-death">
                 Death
               </a>
+              {% if data.deathVerified == 'Yes' %}
+                <strong class="task-completed">Completed</strong>
+              {% endif %}
             </li>
 
             <li class="task-list-item">
               <a class="task-name" href="/{{feature}}/{{sprint}}/claim-1/verify-marriage">
                 Marriage
               </a>
+              {% if data.marriageVerified == 'Yes' %}
+                <strong class="task-completed">Completed</strong>
+              {% endif %}
             </li>
 
             <li class="task-list-item">
               <a class="task-name" href="/{{feature}}/{{sprint}}/claim-1/verify-child-benefit">
                 Child benefit
               </a>
+              {% if data.chbVerified == 'Yes' %}
+                <strong class="task-completed">Completed</strong>
+              {% endif %}
             </li>
 
             <li class="task-list-item">
               <a class="task-name" href="/{{feature}}/{{sprint}}/claim-1/verify-address">
                 Address
               </a>
+              {% if data.addressVerified == 'Yes' %}
+                <strong class="task-completed">Completed</strong>
+              {% endif %}
             </li>
 
             <li class="task-list-item">
               <a class="task-name" href="/{{feature}}/{{sprint}}/claim-1/verify-contributions">
                 NI contributions
               </a>
+              {% if data.contsVerified == 'Yes' %}
+                <strong class="task-completed">Completed</strong>
+              {% endif %}
             </li>
 
             <li class="task-list-item">
               <a class="task-name" href="/{{feature}}/{{sprint}}/claim-1/verify-signature">
                 Signature
               </a>
+              {% if data.signatureVerified == 'Yes' %}
+                <strong class="task-completed">Completed</strong>
+              {% endif %}
             </li>
           </ul>
         </li>
       </ol>
 
+      {% if 
+        data.deathVerified == "Yes" 
+        and 
+        data.marriageVerified == "Yes" 
+        and 
+        data.chbVerified == "Yes" 
+        and 
+        data.addressVerified == "Yes" 
+        and 
+        data.contsVerified == "Yes" 
+        and 
+        data.signatureVerified == "Yes"
+      %}
+        <div class="form-group">
+          <a class="button">Create payment schedule</a>
+        </div>
+      {% endif %}
       <a class="link-back" href="#">Finish later</a>
     </div>
   </div>
