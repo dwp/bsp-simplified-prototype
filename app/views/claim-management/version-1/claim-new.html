@@ -34,7 +34,7 @@
           
           <ul class="task-list-items">
             <li class="task-list-item">
-              <a class="task-name" href="/{{feature}}/{{sprint}}/claim-unblocked/verify-death">
+              <a class="task-name" href="/{{feature}}/{{sprint}}/claim-new/verify-death">
                 Death
               </a>
               {% if data.deathVerified == 'Yes' %}
@@ -43,7 +43,7 @@
             </li>
 
             <li class="task-list-item">
-              <a class="task-name" href="/{{feature}}/{{sprint}}/claim-unblocked/verify-marriage">
+              <a class="task-name" href="/{{feature}}/{{sprint}}/claim-new/verify-marriage">
                 Marriage
               </a>
               {% if data.marriageVerified == 'Yes' %}
@@ -52,7 +52,7 @@
             </li>
 
             <li class="task-list-item">
-              <a class="task-name" href="/{{feature}}/{{sprint}}/claim-unblocked/verify-child-benefit">
+              <a class="task-name" href="/{{feature}}/{{sprint}}/claim-new/verify-child-benefit">
                 Child Benefit
               </a>
               {% if data.chbVerified == 'Yes' %}
@@ -61,7 +61,7 @@
             </li>
 
             <li class="task-list-item">
-              <a class="task-name" href="/{{feature}}/{{sprint}}/claim-unblocked/verify-contributions">
+              <a class="task-name" href="/{{feature}}/{{sprint}}/claim-new/verify-contributions">
                 National Insurance contributions
               </a>
               {% if data.contsVerified == 'Yes' %}
@@ -116,7 +116,7 @@
         and data.chbVerified == "Yes" and data.contsVerified == "Yes" 
       %}
         <h2 class="heading-medium">Pay claim</h2>
-        <a href="/{{feature}}/{{sprint}}/claim-unblocked/schedule-created" class="button">Create payment schedule</a>
+        <a href="/{{feature}}/{{sprint}}/claim-new/schedule-created" class="button">Create payment schedule</a>
       {% endif %}
 
       {% if data.deathVerified == "No" or data.marriageVerified == "No" 
@@ -129,7 +129,7 @@
           have this claim looked at again.
         </p>
         
-        <a href="/{{feature}}/{{sprint}}/claim-unblocked/schedule-created" class="button">BF claim</a>
+        <a href="/{{feature}}/{{sprint}}/claim-new/schedule-created" class="button">BF claim</a>
       {% endif %}
     </div>
 
