@@ -11,12 +11,13 @@
     <div class="column-two-thirds column-minimum">
       <a class="link-back" href="home">Finish later</a>
 
-      <h1 class="heading-large">
+      <h1 class="heading-xlarge schedule-heading">
         <span class="heading-secondary">John Smith</span>
-        AB123456A
+          NG747132B
       </h1>
-
-      <hr />
+      <span class="claim-status claim-status-new">
+        NEW CLAIM
+      </span>
 
       <p>
         <span class="bold">
@@ -72,12 +73,63 @@
       </ol>
 
       {% if 
+        data.deathVerified == "No" or data.marriageVerified == "No" 
+        or data.chbVerified == "No" or data.contsVerified == "No" 
+      %}
+        <ol class="task-list">
+          <li>
+            <h2 class="task-list-section">
+              <span class="task-list-section-number">To do</span> 
+            </h2>
+            
+            <ul class="task-list-items">
+              {% if data.deathVerified == "No" %}
+                <li class="task-list-item">
+                  Contact claimant for death certificate
+                </li>
+              {% endif %}
+
+              {% if data.marriageVerified == "No" %}
+                <li class="task-list-item">
+                  Contact claimant for marriage certificate
+                </li>
+              {% endif %}
+
+              {% if data.chbVerified == "No" %}
+                <li class="task-list-item">
+                  Contact claimant for regarding Child Benefit
+                </li>
+              {% endif %}
+
+              {% if data.contsVerified == "No" %}
+                <li class="task-list-item">
+                  Contact HMRC regarding National Insurance contributions
+                </li>
+              {% endif %}
+            </ul>
+          </li>
+        </ol>
+      {% endif %}
+
+      {% if 
         data.deathVerified == "Yes" and data.marriageVerified == "Yes" 
         and data.chbVerified == "Yes" and data.contsVerified == "Yes" 
       %}
-        <div class="form-group">
-          <a href="/{{feature}}/{{sprint}}/claim-unblocked/schedule-created" class="button">Create payment schedule</a>
-        </div>
+        <h2 class="heading-medium">Pay claim</h2>
+        <a href="/{{feature}}/{{sprint}}/claim-unblocked/schedule-created" class="button">Create payment schedule</a>
+      {% endif %}
+
+      {% if data.deathVerified == "No" or data.marriageVerified == "No" 
+        or data.chbVerified == "No" or data.contsVerified == "No" 
+      %}
+        <h2 class="heading-medium">Bring forward</h2>
+        <p>
+          This claim cannot be processed until everything can be verified. 
+          Once you have done everything on the to do list you can set a date to 
+          have this claim looked at again.
+        </p>
+        
+        <a href="/{{feature}}/{{sprint}}/claim-unblocked/schedule-created" class="button">BF claim</a>
       {% endif %}
     </div>
 
@@ -115,12 +167,6 @@
           <p>By Craig Abbott <br />24 April 2017</p>
         </div>
       {% endif %}
-    </div>
-  </div>
-
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <a class="link-back" href="home">Finish later</a>
     </div>
   </div>
 </main>

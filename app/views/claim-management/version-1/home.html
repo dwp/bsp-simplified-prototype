@@ -6,14 +6,24 @@ GOV.UK prototype kit
 
 {% block content %}
   <main id="content" role="main" class="group">
-    <div class="column-two-thirds">
-      
-      <br />
+   <div class="grid-row">
+      <div class="column-half">
 
-      <a href="about-you">Capture a claim</a><br />
-      <a href="process-a-claim">Process a claim</a>
+        <ul class="big-links">
+          <li>
+            <a href="/{{feature}}/{{sprint}}/capture-a-claim" class="big-link">
+              Capture a claim
+            </a>
+          </li>
+
+          <li>
+            <a href="/{{feature}}/{{sprint}}/process-a-claim" class="big-link">
+              Process a claim
+            </a>
+          </li>
+        </ul>
 
       </div>
-    </form>
+    </div>
   </main>
 {% endblock %}
