@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Task list
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds column-minimum">
+      <a class="link-back" href="home">Finish later</a>
+
+      <h1 class="heading-large">
+        <span class="heading-secondary">John Smith</span>
+        AB123456A
+      </h1>
+
+      <hr />
+
+      <p>
+        <span class="bold">
+          Assigned to<br />
+        </span>
+        Craig Abbott
+      </p>
+
+      <ol class="task-list">
+        <li>
+          <h2 class="task-list-section">
+            <span class="task-list-section-number">Verification</span> 
+          </h2>
+          
+          <ul class="task-list-items">
+            <li class="task-list-item">
+              <a class="task-name" href="/{{feature}}/{{sprint}}/claim-unblocked/verify-death">
+                Death
+              </a>
+              {% if data.deathVerified == 'Yes' %}
+                <strong class="task-completed">Completed</strong>
+              {% endif %}
+            </li>
+
+            <li class="task-list-item">
+              <a class="task-name" href="/{{feature}}/{{sprint}}/claim-unblocked/verify-marriage">
+                Marriage
+              </a>
+              {% if data.marriageVerified == 'Yes' %}
+                <strong class="task-completed">Completed</strong>
+              {% endif %}
+            </li>
+
+            <li class="task-list-item">
+              <a class="task-name" href="/{{feature}}/{{sprint}}/claim-unblocked/verify-child-benefit">
+                Child Benefit
+              </a>
+              {% if data.chbVerified == 'Yes' %}
+                <strong class="task-completed">Completed</strong>
+              {% endif %}
+            </li>
+
+            <li class="task-list-item">
+              <a class="task-name" href="/{{feature}}/{{sprint}}/claim-unblocked/verify-contributions">
+                National Insurance contributions
+              </a>
+              {% if data.contsVerified == 'Yes' %}
+                <strong class="task-completed">Completed</strong>
+              {% endif %}
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      {% if 
+        data.deathVerified == "Yes" and data.marriageVerified == "Yes" 
+        and data.chbVerified == "Yes" and data.contsVerified == "Yes" 
+      %}
+        <div class="form-group">
+          <a href="/{{feature}}/{{sprint}}/claim-unblocked/schedule-created" class="button">Create payment schedule</a>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="column-one-third">
+      {% if data.deathVerified == "Yes" or data.marriageVerified == "Yes" 
+        or data.chbVerified == "Yes" or data.contsVerified == "Yes" 
+      %}
+        <h2 class="heading-medium">Log</h2>
+      {% endif %}
+
+      {% if data.deathVerified == 'Yes' %}
+        <div class="panel panel-border-narrow">
+          <h3 class="heading-small">Death verified</h3>
+          <p>By Craig Abbott <br />24 April 2017</p>
+        </div>
+      {% endif %}
+
+      {% if data.marriageVerified == 'Yes' %}
+        <div class="panel panel-border-narrow">
+          <h3 class="heading-small">Marriage verified</h3>
+          <p>By Craig Abbott <br />24 April 2017</p>
+        </div>
+      {% endif %}
+
+      {% if data.chbVerified == 'Yes' %}
+        <div class="panel panel-border-narrow">
+          <h3 class="heading-small">Child Benefit verified</h3>
+          <p>By Craig Abbott <br />24 April 2017</p>
+        </div>
+      {% endif %}
+
+      {% if data.contsVerified == 'Yes' %}
+        <div class="panel panel-border-narrow">
+          <h3 class="heading-small">National Insurance contributions verified</h3>
+          <p>By Craig Abbott <br />24 April 2017</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a class="link-back" href="home">Finish later</a>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

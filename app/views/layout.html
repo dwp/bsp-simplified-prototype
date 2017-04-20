@@ -16,12 +16,6 @@
   with-proposition
 {% endblock %}
 
-{% block body_end %}
-  {% include "includes/scripts.html" %}
-  {% block pageScripts %}{% endblock %}
-  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
-{% endblock %}
-
 {% block after_header %}
   <nav class="nav-bar">
     <ul>
@@ -34,4 +28,18 @@
       </li>
     </ul>
   </nav>
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+  {% block pageScripts %}{% endblock %}
+  <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
+
+{% block footer_support_links %}
+  {% if useAutoStoreData %}
+    <ul>
+      <li><a href="/prototype-admin/clear-data">Clear data</a></li>
+    </ul>
+  {% endif %}
 {% endblock %}

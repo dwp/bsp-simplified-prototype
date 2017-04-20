@@ -3,7 +3,7 @@ const express = require('express')
 const router = new express.Router()
 
 router.get('/', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/home`)
+  res.redirect(`/${req.feature}/${req.sprint}/settings`)
 })
 
 router.get('/capture-a-claim', (req, res) => {
@@ -11,7 +11,11 @@ router.get('/capture-a-claim', (req, res) => {
 })
 
 router.get('/process-a-claim', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/claim-1`)
+  res.redirect(`/${req.feature}/${req.sprint}/claim-${req.session.data.claimType}`)
+})
+
+router.post('/settings', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/home`)
 })
 
 router.post('/about-you', (req, res) => {
