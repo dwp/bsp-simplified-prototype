@@ -3,6 +3,7 @@ const express = require('express')
 const router = new express.Router()
 
 router.get('/', (req, res) => {
+  req.session.destroy()
   res.redirect(`/${req.feature}/${req.sprint}/settings`)
 })
 
@@ -11,7 +12,8 @@ router.get('/capture-a-claim', (req, res) => {
 })
 
 router.get('/process-a-claim', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/claim-${req.session.data.claimType}`)
+  const claimType = req.session.data.claimType || 'new'
+  res.redirect(`/${req.feature}/${req.sprint}/claim-${claimType}`)
 })
 
 router.post('/settings', (req, res) => {
@@ -40,6 +42,14 @@ router.post('/payment-details', (req, res) => {
 
 router.post('/claim-:id/verify-:something', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/claim-${req.params.id}`)
+})
+
+router.post('/claim-:id/set-reminder', (req, res) => {
+  req.session.data.deathVerified = ''
+  req.session.data.marriageVerified = ''
+  req.session.data.chbVerified = ''
+  req.session.data.contsVerified = ''
+  res.redirect(`/${req.feature}/${req.sprint}/home`)
 })
 
 module.exports = router
