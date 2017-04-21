@@ -19,7 +19,7 @@
       <div class="column-two-thirds column-minimum">
         <h1 class="heading-xlarge schedule-heading">
           <span class="heading-secondary">{{name}}</span>
-            {{nino}}
+          {{nino}}
         </h1>
         <span class="claim-status claim-status-new">
           NEW CLAIM
@@ -35,105 +35,92 @@
         <ol class="task-list">
           <li>
             <h2 class="task-list-section">
-              <span class="task-list-section-number">To do</span> 
+              <span class="task-list-section-number">Verification</span> 
             </h2>
             
             <ul class="task-list-items">
               <li class="task-list-item">
                 <a class="task-name" href="/{{feature}}/{{sprint}}/claim-new/verify-death">
-                  Verify death
+                  Death
                 </a>
                 {% if data.deathVerified == 'Yes' %}
                   <strong class="task-completed">Completed</strong>
                 {% elif data.deathVerified == 'No' %}
-                  Not verified
+                  <strong class="unable-to-verify">Verification needed</strong>
                 {% endif %}
               </li>
 
               <li class="task-list-item">
                 <a class="task-name" href="/{{feature}}/{{sprint}}/claim-new/verify-marriage">
-                  Verify marriage
+                  Marriage
                 </a>
                 {% if data.marriageVerified == 'Yes' %}
                   <strong class="task-completed">Completed</strong>
+                {% elif data.marriageVerified == 'No' %}
+                  <strong class="unable-to-verify">Verification needed</strong>
                 {% endif %}
               </li>
 
               <li class="task-list-item">
                 <a class="task-name" href="/{{feature}}/{{sprint}}/claim-new/verify-child-benefit">
-                  Verify Child Benefit
+                  Child Benefit
                 </a>
                 {% if data.chbVerified == 'Yes' %}
                   <strong class="task-completed">Completed</strong>
+                {% elif data.chbVerified == 'No' %}
+                  <strong class="unable-to-verify">Verification needed</strong>
                 {% endif %}
               </li>
 
               <li class="task-list-item">
                 <a class="task-name" href="/{{feature}}/{{sprint}}/claim-new/verify-contributions">
-                  Verify National Insurance contributions
+                  National Insurance contributions
                 </a>
                 {% if data.contsVerified == 'Yes' %}
                   <strong class="task-completed">Completed</strong>
+                {% elif data.contsVerified == 'No' %}
+                  <strong class="unable-to-verify">Verification needed</strong>
                 {% endif %}
               </li>
-
-              {% if data.deathVerified == "No" %}
-                <li class="task-list-item">
-                  Contact claimant for death certificate
-                </li>
-              {% endif %}
-
-              {% if data.marriageVerified == "No" %}
-                <li class="task-list-item">
-                  Contact claimant for marriage certificate
-                </li>
-              {% endif %}
-
-              {% if data.chbVerified == "No" %}
-                <li class="task-list-item">
-                  Contact claimant for regarding Child Benefit
-                </li>
-              {% endif %}
-
-              {% if data.contsVerified == "No" %}
-                <li class="task-list-item">
-                  Contact HMRC regarding National Insurance contributions
-                </li>
-              {% endif %}
             </ul>
           </li>
         </ol>
 
         {% if 
-          data.deathVerified == "Yes" and data.marriageVerified == "Yes" 
-          and data.chbVerified == "Yes" and data.contsVerified == "Yes" 
+          data.deathVerified and data.marriageVerified 
+          and data.chbVerified and data.contsVerified 
         %}
-          <h2 class="heading-medium">Pay claim</h2>
-          <a href="/{{feature}}/{{sprint}}/claim-new/schedule-created" class="button">Create payment schedule</a>      
-        {% endif %}
+          {% if 
+            data.deathVerified == "Yes" and data.marriageVerified == "Yes" 
+            and data.chbVerified == "Yes" and data.contsVerified == "Yes" 
+          %}
+            <h2 class="heading-medium">Pay claim</h2>
+            <p>
+              Everything has been verified. This claim can now be put into 
+              payment.
+            </p>
 
-        <div class="panel panel-border-narrow">
-          This claim cannot be processed until everything has been verified. 
-        </div>
+            <a href="/{{feature}}/{{sprint}}/claim-new/schedule-created" class="button">Create payment schedule</a>      
+          {% endif %}
 
-        {% if 
-          data.deathVerified == "No" or data.marriageVerified == "No" 
-          or data.chbVerified == "No" or data.contsVerified == "No" 
-        %}
-          <h2 class="heading-medium">Postpone claim</h2>
+          {% if 
+            data.deathVerified == "No" or data.marriageVerified == "No" 
+            or data.chbVerified == "No" or data.contsVerified == "No" 
+          %}
+            <h2 class="heading-medium">Claim can't be processed</h2>
 
-          <p>
-            Once you have done everything on the to do list, postpone this 
-            claim to be looked at again at a later date.
-          </p>
-          
-          <a href="/{{feature}}/{{sprint}}/claim-new/set-reminder" class="button">Postpone</a>
+            <p>
+              This claim will need to be paused until everything can be verified.
+            </p>
+            
+            <a href="/{{feature}}/{{sprint}}/claim-new/to-do-list" class="button">Continue</a>
+          {% endif %}
         {% endif %}
       </div>
 
       <div class="column-one-third">
-        {% if data.deathVerified == "Yes" or data.marriageVerified == "Yes" 
-          or data.chbVerified == "Yes" or data.contsVerified == "Yes" 
+        {% if data.deathVerified and data.marriageVerified 
+          and data.chbVerified and data.contsVerified 
         %}
           <h2 class="heading-medium">Log</h2>
         {% endif %}
