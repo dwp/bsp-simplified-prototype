@@ -3,8 +3,15 @@ const express = require('express')
 const router = new express.Router()
 
 router.get('/', (req, res) => {
-  req.session.destroy()
   res.redirect(`/${req.feature}/${req.sprint}/settings`)
+})
+
+router.get('/schedule-created', (req, res) => {
+  req.session.data.deathVerified = ''
+  req.session.data.marriageVerified = ''
+  req.session.data.chbVerified = ''
+  req.session.data.contsVerified = ''
+  res.render(`${req.feature}/${req.sprint}/schedule-created`)
 })
 
 router.get('/capture-a-claim', (req, res) => {
@@ -13,7 +20,7 @@ router.get('/capture-a-claim', (req, res) => {
 
 router.get('/process-a-claim', (req, res) => {
   const claimType = req.session.data.claimType || 'new'
-  res.redirect(`/${req.feature}/${req.sprint}/claim-${claimType}`)
+  res.redirect(`/${req.feature}/${req.sprint}/claim-${claimType}/claim`)
 })
 
 router.post('/settings', (req, res) => {
@@ -41,10 +48,10 @@ router.post('/payment-details', (req, res) => {
 })
 
 router.post('/claim-:id/verify-:something', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/claim-${req.params.id}`)
+  res.redirect(`/${req.feature}/${req.sprint}/claim-${req.params.id}/claim`)
 })
 
-router.post('/claim-:id/set-reminder', (req, res) => {
+router.post('/set-reminder', (req, res) => {
   req.session.data.deathVerified = ''
   req.session.data.marriageVerified = ''
   req.session.data.chbVerified = ''
