@@ -80,36 +80,26 @@
       </div>
 
       <div class="column-one-third">
-        {% if data.deathVerified and data.marriageVerified 
-          and data.chbVerified and data.contsVerified 
-        %}
-          <h2 class="heading-medium">Log</h2>
-        {% endif %}
+        <h2 class="heading-medium">Log</h2>
+        
+        <div class="panel panel-border-narrow">
+          <h3 class="heading-small">Death verified</h3>
+          <p>By Jack Jones <br />17 April 2017</p>
+        </div>
 
-        {% if data.deathVerified == 'Yes' %}
-          <div class="panel panel-border-narrow">
-            <h3 class="heading-small">Death verified</h3>
-            <p>By {{data.currentUser}} <br />24 April 2017</p>
-          </div>
-        {% endif %}
+        <div class="panel panel-border-narrow">
+          <h3 class="heading-small">Child Benefit verified</h3>
+          <p>By Jack Jones <br />17 April 2017</p>
+        </div>
+
+        <div class="panel panel-border-narrow">
+          <h3 class="heading-small">National Insurance contributions verified</h3>
+          <p>By Jack Jones <br />17 April 2017</p>
+        </div>
 
         {% if data.marriageVerified == 'Yes' %}
           <div class="panel panel-border-narrow">
             <h3 class="heading-small">Marriage verified</h3>
-            <p>By {{data.currentUser}} <br />24 April 2017</p>
-          </div>
-        {% endif %}
-
-        {% if data.chbVerified == 'Yes' %}
-          <div class="panel panel-border-narrow">
-            <h3 class="heading-small">Child Benefit verified</h3>
-            <p>By {{data.currentUser}} <br />24 April 2017</p>
-          </div>
-        {% endif %}
-
-        {% if data.contsVerified == 'Yes' %}
-          <div class="panel panel-border-narrow">
-            <h3 class="heading-small">National Insurance contributions verified</h3>
             <p>By {{data.currentUser}} <br />24 April 2017</p>
           </div>
         {% endif %}
