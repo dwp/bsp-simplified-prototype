@@ -6,57 +6,11 @@ router.get('/', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/settings`)
 })
 
-router.get('/schedule-created', (req, res) => {
-  req.session.data.deathVerified = ''
-  req.session.data.marriageVerified = ''
-  req.session.data.chbVerified = ''
-  req.session.data.contsVerified = ''
-  res.render(`${req.feature}/${req.sprint}/schedule-created`)
-})
-
-router.get('/capture-a-claim', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/about-you`)
-})
-
-router.get('/process-a-claim', (req, res) => {
-  const claimType = req.session.data.claimType || 'new'
-  res.redirect(`/${req.feature}/${req.sprint}/claim-${claimType}/claim`)
-})
-
 router.post('/settings', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/home`)
 })
 
-router.post('/about-you', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/about-your-partner`)
-})
-
-router.post('/about-your-partner', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/about-your-children`)
-})
-
-router.post('/about-your-children', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/payment-details`)
-})
-
-router.post('/payment-details', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/check-your-answers`)
-})
-
-router.post('/payment-details', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/home`)
-})
-
-router.post('/claim-:id/verify-:something', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/claim-${req.params.id}/claim`)
-})
-
-router.post('/set-reminder', (req, res) => {
-  req.session.data.deathVerified = ''
-  req.session.data.marriageVerified = ''
-  req.session.data.chbVerified = ''
-  req.session.data.contsVerified = ''
-  res.redirect(`/${req.feature}/${req.sprint}/home`)
-})
+router.use('/process-a-claim', require('./process-a-claim/routes'))
+router.use('/capture-a-claim', require('./capture-a-claim/routes'))
 
 module.exports = router

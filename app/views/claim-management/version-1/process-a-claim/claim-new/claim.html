@@ -40,7 +40,7 @@
             
             <ul class="task-list-items">
               <li class="task-list-item">
-                <a class="task-name" href="/{{feature}}/{{sprint}}/claim-new/verify-death">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/process-a-claim/verify-death">
                   Death
                 </a>
                 {% if data.deathVerified == 'Yes' %}
@@ -51,7 +51,7 @@
               </li>
 
               <li class="task-list-item">
-                <a class="task-name" href="/{{feature}}/{{sprint}}/claim-new/verify-marriage">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/process-a-claim/verify-marriage">
                   Marriage
                 </a>
                 {% if data.marriageVerified == 'Yes' %}
@@ -62,7 +62,7 @@
               </li>
 
               <li class="task-list-item">
-                <a class="task-name" href="/{{feature}}/{{sprint}}/claim-new/verify-child-benefit">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/process-a-claim/verify-child-benefit">
                   Child Benefit
                 </a>
                 {% if data.chbVerified == 'Yes' %}
@@ -73,7 +73,7 @@
               </li>
 
               <li class="task-list-item">
-                <a class="task-name" href="/{{feature}}/{{sprint}}/claim-new/verify-contributions">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/process-a-claim/verify-contributions">
                   National Insurance contributions
                 </a>
                 {% if data.contsVerified == 'Yes' %}
@@ -100,7 +100,7 @@
               payment.
             </p>
 
-            <a href="/{{feature}}/{{sprint}}/schedule-created" class="button">Create payment schedule</a>      
+            <a href="/{{feature}}/{{sprint}}/process-a-claim/schedule-created" class="button">Create payment schedule</a>      
           {% endif %}
 
           {% if 
@@ -113,7 +113,7 @@
               This claim will need to be paused until everything can be verified.
             </p>
             
-            <a href="/{{feature}}/{{sprint}}/to-do-list" class="button">Continue</a>
+            <a href="/{{feature}}/{{sprint}}/process-a-claim/to-do-list" class="button">Continue</a>
           {% endif %}
         {% endif %}
       </div>
