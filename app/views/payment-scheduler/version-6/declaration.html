@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <a href="{{backlink}}" class="link-back">Edit</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          Have all payments upto and including April 2017 been made?
+        </h1>
+
+        <p>
+          Before you can move this claim onto BSP manager, all the payments 
+          upto and including April 2017 must have been manually.
+        </p>
+
+        <form method="post">
+          <div class="form-group">
+            <button type="submit" class="button">Confirm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

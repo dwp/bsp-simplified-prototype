@@ -4,8 +4,11 @@
 GOV.UK prototype kit
 {% endblock %}
 
-{% block content %}
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
 
+{% block content %}
   <main id="content" role="main" class="group">
     <h1 class="heading-xlarge">
       Set up a payment schedule

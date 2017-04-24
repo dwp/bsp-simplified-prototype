@@ -17,17 +17,7 @@
 {% endblock %}
 
 {% block after_header %}
-  <nav class="nav-bar">
-    <ul>
-      <li>
-        <a href="/{{feature}}/{{sprint}}/capture-a-claim">Capture a claim</a>
-      </li>
-
-      <li>
-        <a href="/{{feature}}/{{sprint}}/process-a-claim" class="">Process a claim</a>
-      </li>
-    </ul>
-  </nav>
+  {% block customNav %}{% endblock %}
 {% endblock %}
 
 {% block body_end %}
