@@ -10,7 +10,7 @@
 
 {% block content %}
   <main id="content" role="main" class="group">
-    <a href="{{backlink}}" class="link-back">Edit</a>
+    <a href="/{{feature}}/{{sprint}}/set-up-a-payment-schedule" class="link-back">Edit</a>
 
     <div class="grid-row">
       <div class="column-two-thirds">
@@ -57,6 +57,14 @@
           <dd class="data-summary-value">54123041</dd>
         </dl>
 
+        <h2 class="heading-medium">Manual payments made</h2>
+
+        <p>
+          All payments upto and including April 2017 have been made.
+        </p>
+        
+        <br />
+        
         <form method="post">
           <div class="form-group">
             <button class="button" type="submit">Continue</button>
@@ -65,6 +73,6 @@
       </div>
     </div>
 
-    <a href="{{backlink}}" class="link-back">Edit</a>
+    <a href="/{{feature}}/{{sprint}}/set-up-a-payment-schedule" class="link-back">Edit</a>
   </main>
 {% endblock %}
