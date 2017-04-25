@@ -4,6 +4,10 @@
 GOV.UK prototype kit
 {% endblock %}
 
+{% block customNav %}
+  {% include '../../custom-nav.html' %}
+{% endblock %}
+
 {% if data.firstClaimFinished == "Yes" %}
   {% set name = "Jane Doe" %}
   {% set nino = "BB123456B" %}

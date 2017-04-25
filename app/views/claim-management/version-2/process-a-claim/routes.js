@@ -3,8 +3,7 @@ const express = require('express')
 const router = new express.Router()
 
 router.get('/', (req, res) => {
-  const claimType = req.session.data.claimType || 'new'
-  res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/claim-${claimType}/claim`)
+  res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/claim`)
 })
 
 router.get('/schedule-created', (req, res) => {

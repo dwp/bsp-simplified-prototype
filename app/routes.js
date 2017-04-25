@@ -25,5 +25,6 @@ router.use('/payment-scheduler/version-6', require('./views/payment-scheduler/ve
 
 // Claim Management
 router.use('/claim-management/version-1', require('./views/claim-management/version-1/routes'))
+router.use('/claim-management/version-2', require('./views/claim-management/version-2/routes'))
 
 module.exports = router

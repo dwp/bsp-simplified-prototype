@@ -11,6 +11,5 @@ router.post('/settings', (req, res) => {
 })
 
 router.use('/process-a-claim', require('./process-a-claim/routes'))
-router.use('/capture-a-claim', require('./capture-a-claim/routes'))
 
 module.exports = router
