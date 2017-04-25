@@ -1,0 +1,220 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">
+        About you
+      </h1>
+
+      <form method="post" autocomplete="off">
+        <div class="form-group">
+          <label for="title">
+            <span class="form-label">Title</span>
+          </label>
+          <input class="form-control" type="text" id="title" name="claimant[title]">
+        </div>
+
+        <div class="form-group">
+          <label for="surname">
+            <span class="form-label">Surname or family name</span>
+          </label>
+          <input class="form-control" type="text" id="surname" name="surname">
+        </div>
+
+        <div class="form-group">
+          <label for="other-names">
+            <span class="form-label">All other names in full</span>
+          </label>
+          <input class="form-control" type="text" id="other-names" name="other-names">
+        </div>
+
+        <div class="form-group">
+          <label for="other-sunames">
+            <span class="form-label">All other surnames or family names</span>
+          </label>
+          <input class="form-control" type="text" id="other-surnames" name="other-surnames">
+        </div>
+        
+        <div class="form-group">
+          <label for="nino">
+            <span class="form-label">
+              National Insurance number
+            </span>
+          </label>
+          <input class="form-control" type="text" id="nino" name="nino">
+        </div>
+
+        <div class="form-group">
+          <fieldset>
+            <legend>
+              <span class="form-label-bold">
+                Date of birth
+              </span>
+            </legend>
+
+            <div class="form-date">
+              <div class="form-group form-group-day">
+                <label class="form-label" for="dateOfBirth-day">
+                  Day
+                </label>
+                <input class="form-control" id="dateOfBirth-day" type="number" name="dateOfBirth[day]" pattern="[0-9]*" min="0" max="31" aria-describedby="dateOfBirth-hint">
+              </div>
+
+              <div class="form-group form-group-month">
+                <label class="form-label" for="dateOfBirth-month">
+                  Month
+                </label>
+                <input class="form-control" id="dateOfBirth-month" type="number" name="dateOfBirth[month]" pattern="[0-9]*" min="0" max="12">
+              </div>
+
+              <div class="form-group form-group-year">
+                <label class="form-label" for="dateOfBirth-year">
+                  Year
+                </label>
+                <input class="form-control" type="number" id="dateOfBirth-year" min="0" name="dateOfBirth[year]" pattern="[0-9]*">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea class="form-control" rows="5"></textarea>
+        </div>
+
+        <h2 class="heading-small">Contact information</h2>
+          
+        <div class="form-section">
+          <div class="form-group">
+            <fieldset>
+              <div class="multiple-choice" data-target="home-phone-hidden">
+                <input id="checkbox-home-phone" name="checkbox-home-phone" type="checkbox" value=true>
+                <label for="checkbox-home-phone">Home phone</label>
+              </div>
+              <div class="panel panel-border-narrow js-hidden" id="home-phone-hidden">
+                <label class="form-label" for="home-phone">Home phone number</label>
+                <input class="form-control" type="text" id="home-phone" name="home-phone">
+              </div>
+
+              <div class="multiple-choice" data-target="mobile-phone-hidden">
+                <input id="checkbox-mobile-phone" name="checkbox-mobile-phone" type="checkbox" value=true>
+                <label for="checkbox-mobile-phone">Mobile phone</label>
+              </div>
+              <div class="panel panel-border-narrow js-hidden" id="mobile-phone-hidden">
+                <label class="form-label" for="mobile-phone">Mobile phone number</label>
+                <input class="form-control" type="text" id="mobile-phone" name="mobile-phone">
+              </div>
+
+              <div class="multiple-choice" data-target="email-hidden">
+                <input id="checkbox-email" name="checkbox-email" type="checkbox" value=true>
+                <label for="checkbox-email">Email</label>
+              </div>
+              <div class="panel panel-border-narrow js-hidden" id="email-hidden">
+                <label class="form-label" for="email">Email address</label>
+                <input class="form-control" type="text" id="email" name="email">
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <fieldset class="inline">
+              <h2 class="heading-small">
+                Were you still married or in a civil partnership with the deceased 
+                person when they died?
+              </h2>
+
+              <div class="multiple-choice">
+                <input id="still-married-yes" type="radio" name="still-married" value="Yes">
+                <label for="still-married-yes">Yes</label>
+              </div>
+          
+              <div class="multiple-choice">
+                <input id="still-married-no" type="radio" name="still-married" value="No">
+                <label for="still-married-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <fieldset class="inline">
+              <h2 class="heading-small">
+                Are you sending us your marriage or civil partnership certificate?
+              </h2>
+
+              <div class="multiple-choice">
+                <input id="sending-marriage-cert-yes" type="radio" name="sending-marriage-cert" value="Yes">
+                <label for="sending-marriage-cert-yes">Yes</label>
+              </div>
+          
+              <div class="multiple-choice">
+                <input id="sending-marriage-cert-no" type="radio" name="sending-marriage-cert" value="No">
+                <label for="sending-marriage-cert-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <fieldset>
+              <legend>
+                <span class="form-label-bold">
+                  What was the date of your marriage or civil partnership?
+                </span>
+              </legend>
+
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="dateOfMarriage-day">
+                    Day
+                  </label>
+                  <input class="form-control" id="dateOfMarriage-day" type="number" name="dateOfMarriage[day]" pattern="[0-9]*" min="0" max="31" aria-describedby="dateOfMarriage-hint">
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="dateOfMarriage-month">
+                    Month
+                  </label>
+                  <input class="form-control" id="dateOfMarriage-month" type="number" name="dateOfMarriage[month]" pattern="[0-9]*" min="0" max="12">
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="dateOfMarriage-year">
+                    Year
+                  </label>
+                  <input class="form-control" type="number" id="dateOfMarriage-year" min="0" name="dateOfMarriage[year]" pattern="[0-9]*">
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <label for="marriage-country">
+              <span class="form-label">
+                Tell us the country where your marriage or civil partnership 
+                took place
+              </span>
+            </label>
+            <input class="form-control" type="text" id="marriage-country" name="marriage-country">
+          </div>
+
+          <div class="form-group">
+            <label for="marriage-religion">
+              <span class="form-label">
+                What religion was the ceremony conducted under?
+              </span>
+            </label>
+            <input class="form-control" type="text" id="marriage-religion" name="marriage-religion">
+          </div>
+
+          <button type="submit" class="button">
+            Continue
+          </button>
+        </div>
+      </div>
+    </form>
+  </main>
+{% endblock %}

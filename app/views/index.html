@@ -18,22 +18,24 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="example">
-        {% include 'summaries/claim-management/version-1.html' %}
+        {% include 'summaries/claim-management/version-2.html' %}
       </div>
 
       <h2 class="heading-large">Older versions</h2>
       <details>
-        <summary>Payment Scheduler</summary>
+        <summary>Claim management</summary>
+        {% include 'summaries/claim-management/version-1.html' %}<hr />
+      </details>
+
+      <details>
+        <summary>Payment scheduler</summary>
         {% include 'summaries/payment-scheduler/version-6.html' %}<hr />
         {% include 'summaries/payment-scheduler/version-5.html' %}<hr />
         {% include 'summaries/payment-scheduler/version-4.html' %}<hr />
         {% include 'summaries/payment-scheduler/version-3.html' %}<hr />
         {% include 'summaries/payment-scheduler/version-2.html' %}
         {#{% include 'summaries/version-1.html' %}#}
-      </details>
-
-      <hr />
-      
+      </details>      
     </div>
   </div>
 </main>
