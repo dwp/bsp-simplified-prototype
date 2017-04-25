@@ -3,7 +3,20 @@ const express = require('express')
 const router = new express.Router()
 
 router.get('/', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/claim`)
+  if (req.session.data.firsClaimProcessed) {
+    res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/claim/1`)
+  } else {
+    res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/claim/2`)
+  }
+})
+
+router.get('/verify-:thing/:id', (req, res) => {
+  const id = req.params.id
+  res.render(`${req.feature}/${req.sprint}/process-a-claim/verify-${req.params.thing}`, {id})
+})
+
+router.post('/verify-:thing/:id', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/claim${req.params.id}`)
 })
 
 router.get('/schedule-created', (req, res) => {
@@ -12,10 +25,6 @@ router.get('/schedule-created', (req, res) => {
   req.session.data.chbVerified = ''
   req.session.data.contsVerified = ''
   res.render(`${req.feature}/${req.sprint}/process-a-claim/schedule-created`)
-})
-
-router.post('/verify-:something', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/claim-${req.session.data.claimType}/claim`)
 })
 
 router.post('/set-reminder', (req, res) => {

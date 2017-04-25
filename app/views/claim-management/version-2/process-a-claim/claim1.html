@@ -8,22 +8,13 @@
   {% include '../../custom-nav.html' %}
 {% endblock %}
 
-{% if data.firstClaimFinished == "Yes" %}
-  {% set name = "Jane Doe" %}
-  {% set nino = "BB123456B" %}
-{% else %}
-  {% set name = "John Smith" %}
-  {% set nino = "AA123456A" %}
-{% endif %}
-
-
 {% block content %}
   <main id="content" role="main">
     <div class="grid-row">
       <div class="column-two-thirds column-minimum">
         <h1 class="heading-xlarge schedule-heading">
-          <span class="heading-secondary">{{name}}</span>
-          {{nino}}
+          <span class="heading-secondary">John Smith</span>
+          AA123456A
         </h1>
         <span class="claim-status claim-status-paused">
           PAUSED CLAIM
@@ -44,7 +35,7 @@
             
             <ul class="task-list-items">              
               <li class="task-list-item">
-                <a class="task-name" href="/{{feature}}/{{sprint}}/process-a-claim/verify-marriage">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/process-a-claim/verify-marriage/1">
                   Marriage
                 </a>
                 {% if data.marriageVerified == 'Yes' %}
