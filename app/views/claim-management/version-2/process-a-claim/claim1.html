@@ -50,28 +50,30 @@
 
         {% if data.marriageVerified %}
           {% if data.marriageVerified == "Yes" %}
-            <h2 class="heading-medium">Pay claim</h2>
-            <p>
-              Everything has been verified. This claim can now be put into 
-              payment.
-            </p>
+            <form method="post" action="/{{feature}}/{{sprint}}/process-a-claim/claim-1/verified">
+              <h2 class="heading-medium">Pay claim</h2>
+              <p>
+                Everything has been verified. This claim can now be put into 
+                payment.
+              </p>
 
-            <form method="post">
               <button type="submit" class="button">Create payment schedule</button>
-            </form>        
+            </form>
           {% endif %}
 
           {% if 
             data.deathVerified == "No" or data.marriageVerified == "No" 
             or data.chbVerified == "No" or data.contsVerified == "No" 
           %}
-            <h2 class="heading-medium">Claim can't be processed</h2>
+            <form method="post" action="/{{feature}}/{{sprint}}/process-a-claim/claim-1/not-verified">
+              <h2 class="heading-medium">Claim can't be processed</h2>
 
-            <p>
-              This claim will need to be paused until everything can be verified.
-            </p>
+              <p>
+                This claim will need to be paused until everything can be verified.
+              </p>
             
-            <a href="/{{feature}}/{{sprint}}/to-do-list" class="button">Continue</a>
+              <button type="submit" class="button">Continue</button>
+            </form>
           {% endif %}
         {% endif %}
       </div>

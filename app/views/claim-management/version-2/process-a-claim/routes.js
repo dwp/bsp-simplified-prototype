@@ -20,6 +20,15 @@ router.get('/claim/:id', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/process-a-claim/claim${req.params.id}`)
 })
 
+router.post('/claim:id/:verified', (req, res) => {
+  req.session.data.claimsToProcess--
+  if (req.params.verified === 'verified') {
+    res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/schedule-created`)
+  } else {
+    res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/to-do-list`)
+  }
+})
+
 router.get('/verify-:thing/:id', (req, res) => {
   const id = req.params.id
   res.render(`${req.feature}/${req.sprint}/process-a-claim/verify-${req.params.thing}`, {id})
@@ -27,11 +36,6 @@ router.get('/verify-:thing/:id', (req, res) => {
 
 router.post('/verify-:thing/:id', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/claim${req.params.id}`)
-})
-
-router.post('/claim:id', (req, res) => {
-  req.session.data.claimsToProcess--
-  res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/schedule-created`)
 })
 
 router.get('/schedule-created', (req, res) => {
