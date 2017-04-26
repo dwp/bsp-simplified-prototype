@@ -13,26 +13,31 @@
       <div class="column-two-thirds">
         <a class="link-back" href="/{{feature}}/{{sprint}}/claim-1">Back to claim</a>
 
-        <h1 class="heading-xlarge">Can you verify the marriage?</h1>
-
-        <p>
-          If the marriage is not verified in CIS, you will need to see the 
-          marriage certificate.
-        </p>
+        <h1 class="heading-xlarge">Do you have proof of the marriage or civil partnership?</h1>
 
         <form method="post">
           <div class="form-group">
-            <fieldset class="inline">
-              <div class="multiple-choice">
-                <input id="radio-inline-1" type="radio" name="marriageVerified" value="Yes">
-                <label for="radio-inline-1">Yes</label>
+            <fieldset>
+              <div class="multiple-choice" data-target="evidence">
+                <input id="radio-inline-1" type="radio" name="marriageVerified" value="married">
+                <label for="radio-inline-1">Yes, they are married</label>
               </div>
           
+              <div class="multiple-choice" data-target="evidence">
+                <input id="radio-inline-2" type="radio" name="marriageVerified" value="notMarried">
+                <label for="radio-inline-2">Yes, they are not married</label>
+              </div>
+
               <div class="multiple-choice">
-                <input id="radio-inline-2" type="radio" name="marriageVerified" value="No">
-                <label for="radio-inline-2">No</label>
+                <input id="radio-inline-3" type="radio" name="marriageVerified" value="noEvidence">
+                <label for="radio-inline-3">Not enough evidence yet</label>
               </div>
             </fieldset>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="evidence">
+            <label for="evidence">Evidence</label>
+            <textarea id="marriageEvidence" class="form-control"></textarea>
           </div>
 
           <button class="button" type="submit">Update</button>

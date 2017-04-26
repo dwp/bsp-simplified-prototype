@@ -38,10 +38,10 @@
                 <a class="task-name" href="/{{feature}}/{{sprint}}/process-a-claim/verify-marriage/1">
                   Marriage
                 </a>
-                {% if data.marriageVerified == 'Yes' %}
+                {% if data.marriageVerified == 'married' or data.marriageVerified == 'notMarried' %}
                   <strong class="task-completed">Completed</strong>
-                {% elif data.marriageVerified == 'No' %}
-                  <strong class="unable-to-verify">Verification needed</strong>
+                {% elif data.marriageVerified == 'noEvidence' %}
+                  <strong class="evidence-needed">Evidence needed</strong>
                 {% endif %}
               </li>
             </ul>
@@ -49,8 +49,17 @@
         </ol>
 
         {% if data.marriageVerified %}
-          {% if data.marriageVerified == "Yes" %}
-            <form method="post" action="/{{feature}}/{{sprint}}/process-a-claim/claim-1/verified">
+          {% if data.marriageVerified === 'notMarried' %}
+            <form method="post" action="/{{feature}}/{{sprint}}/process-a-claim/claim-1/reject">
+              <h2 class="heading-medium">Reject claim</h2>
+              <p>
+                The evidence provided makes the claimant ineligible for BSP.
+              </p>
+
+              <button type="submit" class="button">Reject claim</button>
+            </form>
+          {% elif data.marriageVerified == "married" %}
+            <form method="post" action="/{{feature}}/{{sprint}}/process-a-claim/claim-2/verified">
               <h2 class="heading-medium">Pay claim</h2>
               <p>
                 Everything has been verified. This claim can now be put into 
@@ -59,21 +68,16 @@
 
               <button type="submit" class="button">Create payment schedule</button>
             </form>
-          {% endif %}
-
-          {% if 
-            data.deathVerified == "No" or data.marriageVerified == "No" 
-            or data.chbVerified == "No" or data.contsVerified == "No" 
-          %}
-            <form method="post" action="/{{feature}}/{{sprint}}/process-a-claim/claim-1/not-verified">
+          {% elif data.marriageVerified === 'noEvidence' %}
+            <form method="post" action="/{{feature}}/{{sprint}}/process-a-claim/claim-2/not-verified">
               <h2 class="heading-medium">Claim can't be processed</h2>
 
               <p>
                 This claim will need to be paused until everything can be verified.
               </p>
-            
+              
               <button type="submit" class="button">Continue</button>
-            </form>
+            </form>     
           {% endif %}
         {% endif %}
       </div>
@@ -86,12 +90,7 @@
           <p>By Jack Jones <br />17 April 2017</p>
         </div>
 
-        <div class="panel panel-border-narrow">
-          <h3 class="heading-small">National Insurance contributions verified</h3>
-          <p>By Jack Jones <br />17 April 2017</p>
-        </div>
-
-        {% if data.marriageVerified == 'Yes' %}
+        {% if data.marriageVerified == 'married' or data.marriageVerified === 'notMarried' %}
           <div class="panel panel-border-narrow">
             <h3 class="heading-small">Marriage verified</h3>
             <p>By {{data.currentUser}} <br />24 April 2017</p>

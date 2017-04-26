@@ -21,27 +21,21 @@ GOV.UK prototype kit
         </p>
 
         <ul class="list list-bullet">
-          {% if data.deathVerified == "No" %}
+          {% if data.deathVerified == "noEvidence" %}
             <li>
               Contacted claimant for death certificate
             </li>
           {% endif %}
 
-          {% if data.marriageVerified == "No" %}
+          {% if data.marriageVerified == "noEvidence" %}
             <li>
               Contacted claimant for marriage certificate
             </li>
           {% endif %}
 
-          {% if data.chbVerified == "No" %}
+          {% if data.chbVerified == "noEvidence" %}
             <li>
               Contacted claimant for Child Benefit information
-            </li>
-          {% endif %}
-
-          {% if data.contsVerified == "No" %}
-            <li>
-              Contacted HMRC for National Insurance contributions
             </li>
           {% endif %}
         </ul>
