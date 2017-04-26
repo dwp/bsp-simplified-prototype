@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block customNav %}
-  {% include '../../custom-nav.html' %}
+  {% include '../custom-nav.html' %}
 {% endblock %}
 
 {% block content %}
@@ -35,12 +35,23 @@
             
             <ul class="task-list-items">              
               <li class="task-list-item">
-                <a class="task-name" href="/{{feature}}/{{sprint}}/process-a-claim/verify-marriage/1">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/process-a-claim/verify-marriage/2">
                   Marriage
                 </a>
                 {% if data.marriageVerified == 'Yes' %}
                   <strong class="task-completed">Completed</strong>
                 {% elif data.marriageVerified == 'No' %}
+                  <strong class="unable-to-verify">Verification needed</strong>
+                {% endif %}
+              </li>
+
+              <li class="task-list-item">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/process-a-claim/verify-contributions/2">
+                  National Insurance contributions
+                </a>
+                {% if data.contsVerified == 'Yes' %}
+                  <strong class="task-completed">Completed</strong>
+                {% elif data.contsVerified == 'No' %}
                   <strong class="unable-to-verify">Verification needed</strong>
                 {% endif %}
               </li>
@@ -56,7 +67,9 @@
               payment.
             </p>
 
-            <a href="/{{feature}}/{{sprint}}/process-a-claim/schedule-created" class="button">Create payment schedule</a>      
+            <form method="post">
+              <button type="submit" class="button">Create payment schedule</button>
+            </form>     
           {% endif %}
 
           {% if 
@@ -82,14 +95,16 @@
           <p>By Jack Jones <br />17 April 2017</p>
         </div>
 
-        <div class="panel panel-border-narrow">
-          <h3 class="heading-small">National Insurance contributions verified</h3>
-          <p>By Jack Jones <br />17 April 2017</p>
-        </div>
-
         {% if data.marriageVerified == 'Yes' %}
           <div class="panel panel-border-narrow">
             <h3 class="heading-small">Marriage verified</h3>
+            <p>By {{data.currentUser}} <br />24 April 2017</p>
+          </div>
+        {% endif %}
+
+        {% if data.contsVerified == 'Yes' %}
+          <div class="panel panel-border-narrow">
+            <h3 class="heading-small">National Insurance contributions verified</h3>
             <p>By {{data.currentUser}} <br />24 April 2017</p>
           </div>
         {% endif %}

@@ -11,6 +11,11 @@
   font-weight: 700;
   padding: 0.694em 0.556em;
   margin: 0.75em 0;
+  
+  span {
+    display: block;
+    font-size: 0.5em;
+  }
 
   &:link,
   &:visited {

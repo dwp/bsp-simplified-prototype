@@ -56,3 +56,8 @@ $grey999: #999;
   display: block;
   text-align: right;
 }
+
+.alert-default {
+  border-color: $light-blue;
+  background-color: mix(white, $light-blue, 90%);
+}

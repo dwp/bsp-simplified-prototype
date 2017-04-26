@@ -5,7 +5,7 @@ GOV.UK prototype kit
 {% endblock %}
 
 {% block customNav %}
-  {% include '../../custom-nav.html' %}
+  {% include '../custom-nav.html' %}
 {% endblock %}
 
 {% block content %}
@@ -29,11 +29,13 @@ GOV.UK prototype kit
         </h2>
 
         <ul>
-          <li>
-            <a href="/{{feature}}/{{sprint}}/process-a-claim">
-              Process a claim
-            </a>
-          </li>
+          {% if data.claimsToProcess > 0 %}
+            <li>
+              <a href="/{{feature}}/{{sprint}}/process-a-claim">
+                Continue a claim ({{claimsToProcess}})
+              </a>
+            </li>
+          {% endif %}
 
           <li>
             <a href="/{{feature}}/{{sprint}}/capture-a-claim">

@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block customNav %}
-  {% include '../../custom-nav.html' %}
+  {% include '../custom-nav.html' %}
 {% endblock %}
 
 {% block content %}
@@ -13,7 +13,7 @@
     <div class="grid-row">
       <div class="column-two-thirds column-minimum">
         <h1 class="heading-xlarge schedule-heading">
-          <span class="heading-secondary">John Smith</span>
+          <span class="heading-secondary">Jane Seymore</span>
           AA123456A
         </h1>
         <span class="claim-status claim-status-paused">
@@ -56,7 +56,9 @@
               payment.
             </p>
 
-            <a href="/{{feature}}/{{sprint}}/process-a-claim/schedule-created" class="button">Create payment schedule</a>      
+            <form method="post">
+              <button type="submit" class="button">Create payment schedule</button>
+            </form>        
           {% endif %}
 
           {% if 

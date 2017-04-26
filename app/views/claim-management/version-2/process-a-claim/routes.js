@@ -3,10 +3,16 @@ const express = require('express')
 const router = new express.Router()
 
 router.get('/', (req, res) => {
-  if (req.session.data.firstClaimProcessed) {
+  res.redirect(`/${req.feature}/${req.sprint}/home`)
+})
+
+router.get('/new-claim', (req, res) => {
+  if (req.session.data.claimsToProcess === 2) {
     res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/claim/2`)
-  } else {
+  } else if (req.session.data.claimsToProcess === 1) {
     res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/claim/1`)
+  } else {
+    res.redirect(`/${req.feature}/${req.sprint}/home`)
   }
 })
 
@@ -23,8 +29,12 @@ router.post('/verify-:thing/:id', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/claim${req.params.id}`)
 })
 
+router.post('/claim:id', (req, res) => {
+  req.session.data.claimsToProcess--
+  res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/schedule-created`)
+})
+
 router.get('/schedule-created', (req, res) => {
-  req.session.data.firstClaimProcessed = true
   req.session.data.deathVerified = ''
   req.session.data.marriageVerified = ''
   req.session.data.chbVerified = ''
