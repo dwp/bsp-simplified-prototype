@@ -24,6 +24,8 @@ router.post('/claim:id/:verified', (req, res) => {
   req.session.data.claimsToProcess--
   if (req.params.verified === 'verified') {
     res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/schedule-created`)
+  } if (req.params.verified === 'reject') {
+    res.redirect(`/${req.feature}/${req.sprint}/home`)
   } else {
     res.redirect(`/${req.feature}/${req.sprint}/process-a-claim/to-do-list`)
   }

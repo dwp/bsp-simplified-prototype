@@ -21,7 +21,7 @@ router.get('/home', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/home`, {claimsToProcess})
 })
 
-router.use('/capture-a-claim', require('./capture-a-claim/routes'))
+router.use('/build-a-claim', require('./build-a-claim/routes'))
 router.use('/find-a-claim', require('./find-a-claim/routes'))
 router.use('/process-a-claim', require('./process-a-claim/routes'))
 
