@@ -22,6 +22,7 @@ router.use('/payment-scheduler/version-3', require('./views/payment-scheduler/ve
 router.use('/payment-scheduler/version-4', require('./views/payment-scheduler/version-4/routes'))
 router.use('/payment-scheduler/version-5', require('./views/payment-scheduler/version-5/routes'))
 router.use('/payment-scheduler/version-6', require('./views/payment-scheduler/version-6/routes'))
+router.use('/payment-scheduler/version-7', require('./views/payment-scheduler/version-7/routes'))
 
 // Claim Management
 router.use('/claim-management/version-1', require('./views/claim-management/version-1/routes'))
