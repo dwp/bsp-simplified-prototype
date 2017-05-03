@@ -17,26 +17,21 @@
 
         <form method="post">
           <div class="form-group">
-            <fieldset>
+            <fieldset class="inline">
               <div class="multiple-choice" data-target="evidence">
                 <input id="radio-inline-1" type="radio" name="marriageVerified" value="married">
-                <label for="radio-inline-1">Yes, they are married</label>
-              </div>
-          
-              <div class="multiple-choice" data-target="evidence">
-                <input id="radio-inline-2" type="radio" name="marriageVerified" value="notMarried">
-                <label for="radio-inline-2">Yes, they are not married</label>
+                <label for="radio-inline-1">Yes</label>
               </div>
 
               <div class="multiple-choice">
                 <input id="radio-inline-3" type="radio" name="marriageVerified" value="noEvidence">
-                <label for="radio-inline-3">Not enough evidence yet</label>
+                <label for="radio-inline-3">Not yet</label>
               </div>
             </fieldset>
           </div>
 
           <div class="panel panel-border-narrow js-hidden" id="evidence">
-            <label for="evidence">Evidence</label>
+            <label for="evidence">What evidence have you seen?</label>
             <textarea id="marriageEvidence" class="form-control"></textarea>
           </div>
 
