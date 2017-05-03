@@ -11,6 +11,12 @@
     "lint": "standard",
     "test": "gulp test && npm run lint"
   },
+  "standard": {
+    "env": {
+      "browser": true,
+      "jquery": true
+    }
+  },
   "dependencies": {
     "basic-auth": "^1.0.3",
     "basic-auth-connect": "^1.0.0",
