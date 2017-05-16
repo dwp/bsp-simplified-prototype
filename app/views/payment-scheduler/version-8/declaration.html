@@ -20,19 +20,17 @@
 
         <form method="post">
           <div class="form-group">
-            <fieldset class="inline">
-              <legend class="visually-hidden">How do you want to be contacted?</legend>
-          
-              <div class="multiple-choice" data-target="contact-by-email">
-                <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
-                <label for="example-contact-by-email">Yes</label>
+            <fieldset class="inline">          
+              <div class="multiple-choice">
+                <input id="payments-all-made-yes" type="radio" name="payments-all-made" value="Yes">
+                <label for="payments-all-made-yes">Yes</label>
               </div>
           
-              <div class="multiple-choice" data-target="contact-by-text">
-                <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
-                <label for="example-contact-by-text">No</label>
+              <div class="multiple-choice" data-target="payments-all-made-hidden">
+                <input id="payments-all-made-no" type="radio" name="payments-all-made" value="No">
+                <label for="payments-all-made-no">No</label>
               </div>
-              <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+              <div class="panel panel-border-narrow js-hidden" id="payments-all-made-hidden">
                 <p>
                   You must make sure all manual payments have been scheduled 
                   before using this service.
