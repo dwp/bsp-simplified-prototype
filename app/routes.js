@@ -16,16 +16,13 @@ router.get('/', (req, res) => {
 })
 
 // Payment Scheduler
-router.use('/payment-scheduler/version-1', require('./views/payment-scheduler/version-1/routes'))
-router.use('/payment-scheduler/version-2', require('./views/payment-scheduler/version-2/routes'))
-router.use('/payment-scheduler/version-3', require('./views/payment-scheduler/version-3/routes'))
-router.use('/payment-scheduler/version-4', require('./views/payment-scheduler/version-4/routes'))
-router.use('/payment-scheduler/version-5', require('./views/payment-scheduler/version-5/routes'))
-router.use('/payment-scheduler/version-6', require('./views/payment-scheduler/version-6/routes'))
-router.use('/payment-scheduler/version-7', require('./views/payment-scheduler/version-7/routes'))
+router.use(/\/payment-scheduler\/version-([0-9]+)/, (req, res, next) => {
+  require(`./views/payment-scheduler/version-${req.params[0]}/routes`)(req, res, next);
+})
 
 // Claim Management
-router.use('/claim-management/version-1', require('./views/claim-management/version-1/routes'))
-router.use('/claim-management/version-2', require('./views/claim-management/version-2/routes'))
+router.use(/\/claim-management\/version-([0-9]+)/, (req, res, next) => {
+  require(`./views/claim-management/version-${req.params[0]}/routes`)(req, res, next);
+})
 
 module.exports = router

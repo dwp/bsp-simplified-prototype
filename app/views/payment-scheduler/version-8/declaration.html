@@ -18,13 +18,29 @@
           Have all payments up to and including today been made?
         </h1>
 
-        <p>You must make sure all manual payments have been scheduled before
-          using this service.</p>
-
         <form method="post">
           <div class="form-group">
-            <button type="submit" class="button">Yes - payments are up to date</button>
+            <fieldset class="inline">
+              <legend class="visually-hidden">How do you want to be contacted?</legend>
+          
+              <div class="multiple-choice" data-target="contact-by-email">
+                <input id="example-contact-by-email" type="radio" name="radio-contact-group" value="Yes">
+                <label for="example-contact-by-email">Yes</label>
+              </div>
+          
+              <div class="multiple-choice" data-target="contact-by-text">
+                <input id="example-contact-by-text" type="radio" name="radio-contact-group" value="No">
+                <label for="example-contact-by-text">No</label>
+              </div>
+              <div class="panel panel-border-narrow js-hidden" id="contact-by-text">
+                <p>
+                  You must make sure all manual payments have been scheduled 
+                  before using this service.
+                </p>
+              </div>
+            </fieldset>
           </div>
+          <button type="submit" class="button">Continue</button>
         </form>
       </div>
     </div>
