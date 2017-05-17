@@ -10,7 +10,7 @@
 
 {% block content %}
   <main id="content" role="main" class="group">
-    <a href="/{{feature}}/{{sprint}}/have-any-payments-been-made-manually" class="link-back">Back</a>
+    <a href="/{{feature}}/{{sprint}}/have-all-payments-been-made" class="link-back">Back</a>
 
     <div class="grid-row">
       <div class="column-two-thirds">
@@ -26,15 +26,9 @@
                 <label for="payments-all-made-yes">Yes</label>
               </div>
           
-              <div class="multiple-choice" data-target="payments-all-made-hidden">
+              <div class="multiple-choice">
                 <input id="payments-all-made-no" type="radio" name="payments-all-made" value="No">
                 <label for="payments-all-made-no">No</label>
-              </div>
-              <div class="panel panel-border-narrow js-hidden" id="payments-all-made-hidden">
-                <p>
-                  You must make sure all manual payments have been scheduled 
-                  before using this service.
-                </p>
               </div>
             </fieldset>
           </div>

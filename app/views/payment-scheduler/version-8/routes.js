@@ -7,10 +7,13 @@ router.get('/', (req, res) => {
 })
 
 router.post('/have-any-payments-been-made-manually', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/declaration`)
+  res.redirect(`/${req.feature}/${req.sprint}/have-all-payments-been-made`)
 })
 
-router.post('/declaration', (req, res) => {
+router.post('/have-all-payments-been-made', (req, res) => {
+  if (req.body['payments-all-made'] === 'No') {
+    return res.redirect(`/${req.feature}/${req.sprint}/you-must-make-all-payments`)
+  }
   res.redirect(`/${req.feature}/${req.sprint}/set-up-a-payment-schedule`)
 })
 
