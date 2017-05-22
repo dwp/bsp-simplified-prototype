@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <a href="/{{feature}}/{{sprint}}/set-up-a-payment-schedule" class="link-back">Edit</a>
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-xlarge">
+          Possible duplicate claim
+        </h1>
+
+        <p class="lede">
+          <strong class="bold">AB123456C</strong> already has an active payment 
+          schedule assigned to it.
+        </p>
+
+        <p>
+          Double check the details you entered. If the National Insurance number 
+          you entered is correct, see the guidance on how to handle multiple 
+          active claims.
+        </p>
+      </div>
+    </div>
+  </main>
+{% endblock %}
