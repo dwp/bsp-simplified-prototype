@@ -1,5 +1,4 @@
 {% extends "layout.html" %}
-{% set batchTime = '14' %}
 
 {% block page_title %}
 GOV.UK prototype kit
@@ -9,14 +8,11 @@ GOV.UK prototype kit
   {% include '../custom-nav.html' %}
 {% endblock %}
 
-{% block body_start %}
-  {% include './notification-banner/notification-banner.html' %}
-{% endblock %}
-
 {% block page_scripts %}
   <script>
     {% include './frontend-js/typeahead.bundle.js' %}
     {% include './frontend-js/bank-details.js' %}
+    {% include './frontend-js/bank-validation-test.js' %}    
   </script>
 {% endblock %}
 
@@ -26,7 +22,7 @@ GOV.UK prototype kit
       Set up a payment schedule
     </h1>
 
-    <form method="post">
+    <form method="post" data-throwError="Yes">
       <h2 class="heading-large">
         Claimant details
       </h2>
@@ -210,6 +206,8 @@ GOV.UK prototype kit
             <input class="form-control" id="input-accountCountry" type="text" name="country" autocomplete="off">
           </div>
           
+          <span id="validate"></span>
+
           {% include './bank-fields/uk.html'%}
           {% include './bank-fields/five-iban.html'%}
         </div>

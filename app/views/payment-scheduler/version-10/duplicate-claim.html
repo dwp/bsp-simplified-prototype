@@ -8,10 +8,6 @@
   {% include '../custom-nav.html' %}
 {% endblock %}
 
-{% block body_start %}
-  {% include './notification-banner/notification-banner.html' %}
-{% endblock %}
-
 {% block content %}
   <main id="content" role="main" class="group">
     <a href="/{{feature}}/{{sprint}}/set-up-a-payment-schedule" class="link-back">Edit</a>
@@ -19,18 +15,13 @@
     <div class="grid-row">
       <div class="column-two-thirds">
         <h1 class="heading-xlarge">
-          Possible duplicate claim
+          AB123456C already has an active payment schedule
         </h1>
 
-        <p class="lede">
-          <strong class="bold">AB123456C</strong> already has an active payment 
-          schedule assigned to it.
-        </p>
-
         <p>
-          Double check the details you entered. If the National Insurance number 
-          you entered is correct, see the guidance on how to handle multiple 
-          active claims.
+          Check the details you entered. If the National Insurance number is
+          correct, read the guidance to find out what to do when someone has
+          multiple active claims.
         </p>
       </div>
     </div>
