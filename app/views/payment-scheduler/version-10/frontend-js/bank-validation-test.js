@@ -17,6 +17,7 @@ $(document).on('submit', 'form', function (e) {
 
       editInputVal('#input-accountNumber')
       editInputVal('#input-ibanNumber')
+      $('input').blur();
 
       throwError = 'No'
     }, 500)
