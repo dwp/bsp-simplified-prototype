@@ -4,7 +4,7 @@ $(document).on('submit', 'form', function (e) {
   var $accountNumber = $('#input-accountNumber')
   var accountNumberLength = $accountNumber.val().length
 
-  if (accountNumberLength === 8 && throwError === 'Yes') {
+  if (accountNumberLength >= 8 && throwError === 'Yes') {
     e.preventDefault()
 
     setTimeout(function () {
@@ -17,7 +17,7 @@ $(document).on('submit', 'form', function (e) {
         return $(this).val().replace(/.$/, 7)
       })
       throwError = 'No'
-    }, 1000)
+    }, 500)
   }
 })
 
