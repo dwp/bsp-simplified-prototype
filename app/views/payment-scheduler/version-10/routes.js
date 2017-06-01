@@ -7,8 +7,12 @@ router.get('/', (req, res) => {
 })
 
 router.post('/have-any-payments-been-made-manually', (req, res) => {
+  if (req.body['radio-inline-group'] === 'No') {
+    res.redirect(`/${req.feature}/${req.sprint}/set-up-a-payment-schedule`)
+  }
   res.redirect(`/${req.feature}/${req.sprint}/have-all-payments-been-made`)
 })
+
 
 router.post('/have-all-payments-been-made', (req, res) => {
   if (req.body['payments-all-made'] === 'No') {
