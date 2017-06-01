@@ -36,7 +36,7 @@ function appendErrorBanner () {
     '  <ul class="error-summary-list">' +
     '    <li>' +
     '    <a href="#validate">' +
-    '      Check the sort code and account number - the details you have entered are not a valid combination.' +
+    '      Check the bic code and iban number - the details you have entered are not a valid combination.' +
     '    </a>' +
     '  </li>' +
     '  </ul>' +
