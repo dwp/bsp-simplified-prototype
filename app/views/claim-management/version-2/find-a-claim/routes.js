@@ -13,7 +13,7 @@ router.get('/search', (req, res) => {
 
 router.post('/search', (req, res) => {
   const findNino = req.body.findNino.toUpperCase()
-  if (findNino === 'AB123456C') {
+  if (findNino === 'AA111999A') {
     res.redirect(`/${req.feature}/${req.sprint}/find-a-claim/claim1`)
   } else if (findNino === 'BC123456E') {
     res.redirect(`/${req.feature}/${req.sprint}/find-a-claim/claim2`)

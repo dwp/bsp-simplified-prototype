@@ -7,6 +7,9 @@ router.get('/', (req, res) => {
 })
 
 router.post('/have-any-payments-been-made-manually', (req, res) => {
+  if (req.body['radio-inline-group'] === 'No') {
+    res.redirect(`/${req.feature}/${req.sprint}/set-up-a-payment-schedule`)
+  }
   res.redirect(`/${req.feature}/${req.sprint}/have-all-payments-been-made`)
 })
 
@@ -18,7 +21,7 @@ router.post('/have-all-payments-been-made', (req, res) => {
 })
 
 router.post('/set-up-a-payment-schedule', (req, res) => {
-  if (req.body.nino === 'AB123456C') {
+  if (req.body.nino === 'AA111999A') {
     return res.redirect(`/${req.feature}/${req.sprint}/duplicate-claim`)
   }
   res.redirect(`/${req.feature}/${req.sprint}/confirm-details`)
