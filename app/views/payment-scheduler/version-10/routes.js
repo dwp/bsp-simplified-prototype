@@ -25,7 +25,7 @@ router.post('/have-all-payments-been-made', (req, res) => {
 })
 
 router.post('/set-up-a-payment-schedule', (req, res) => {
-  if (req.body.nino === 'AA111999A') {
+  if (req.body.nino === 'AB123456C') {
     return res.redirect(`/${req.feature}/${req.sprint}/duplicate-claim`)
   }
   res.redirect(`/${req.feature}/${req.sprint}/confirm-details`)
