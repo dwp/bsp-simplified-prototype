@@ -1,26 +1,28 @@
 var throwError = throwError || $('form:first').attr('data-throwError')
 
 $(document).on('submit', 'form', function (e) {
-  var dataEntered = $('#input-accountNumber').val().length + $('#input-ibanNumber').val().length
+  if ($('#input-nino').val() !== 'AB123456C') {
+    var dataEntered = $('#input-accountNumber').val().length + $('#input-ibanNumber').val().length
 
-  if (dataEntered > 0 && throwError === 'Yes') {
-    e.preventDefault()
-    setTimeout(function () {
-      $(document).scrollTop('body', 0)
-      appendErrorBanner()
-      appendErrors([
-        '#input-sortCode',
-        '#input-accountNumber',
-        '#input-bankCode',
-        '#input-ibanNumber'
-      ])
+    if (dataEntered > 0 && throwError === 'Yes') {
+      e.preventDefault()
+      setTimeout(function () {
+        $(document).scrollTop('body', 0)
+        appendErrorBanner()
+        appendErrors([
+          '#input-sortCode',
+          '#input-accountNumber',
+          '#input-bankCode',
+          '#input-ibanNumber'
+        ])
 
-      editInputVal('#input-accountNumber')
-      editInputVal('#input-ibanNumber')
-      $('input').blur();
+        editInputVal('#input-accountNumber')
+        editInputVal('#input-ibanNumber')
+        $('input').blur();
 
-      throwError = 'No'
-    }, 500)
+        throwError = 'No'
+      }, 500)
+    }
   }
 })
 
