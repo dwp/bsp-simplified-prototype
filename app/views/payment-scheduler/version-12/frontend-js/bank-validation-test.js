@@ -38,12 +38,12 @@ function appendErrorBanner () {
     '  <ul class="error-summary-list">' +
     '    <li>' +
     '      <a href="#validate">' +
-    '       Check the sort code - it does not match the account number.' +
+    '       Check the account number - the one entered does not match the sort code.' +
     '     </a>' +
     '    </li>' +
     '    <li>' +
     '    <a href="#validate">' +
-    '      Check the account number - it does not match the sort code.' +
+    '      Check the sort code - the one entered does not match the account number.' +
     '    </a>' +
     '  </li>' +
     '  </ul>' +
