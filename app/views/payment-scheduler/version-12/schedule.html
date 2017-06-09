@@ -15,25 +15,23 @@ GOV.UK prototype kit
         <a href="/payment-scheduler/version-11/find-a-payment-schedule" class="link-back">Find a payment schedule</a>
 
         <h1 class="heading-xlarge schedule-heading">
-        <span class="heading-secondary">Claire Brown</span>
-          AB123456C
+        <span class="heading-secondary">Adam Gordon</span>
+          AA111999A
         </h1>
         <span class="schedule-status schedule-status-active">
           ACTIVE
         </span>
 
-        {% if data.backdateAll %}
-          <h2 class="heading-large">Log</h2>
-          <p>
-            <span class="bold">Switched to higher rate on 12 June 2017</span><br />
-            Arrears paid for initial payment and 5 monthly payments.
-          </p>
-        {% endif %}
-
+        <h2 class="heading-large">Log</h2>
+        <p>
+          <span class="bold">Switched from clerical process on 4 May 2017</span><br />
+          Initial payment and 4 monthly payments were made manually
+        </p>
+        
         <h2 class="heading-small th">
           Payment details
           <p class="payment-link">
-            <a href="/{{feature}}/{{sprint}}/change-payment-details">
+            <a href="#">
               Change
             </a>
           </p>
@@ -44,35 +42,28 @@ GOV.UK prototype kit
             Name on account
           </dt>
           <dd class="data-summary-value">
-            C Brown
+            A Gordon
           </dd>
 
           <dt class="data-summary-key">
-            Account number
+            Iban number
           </dt>
           <dd class="data-summary-value">
-            12341234
+            FR321563256699412510
           </dd>
 
           <dt class="data-summary-key">
-            Sort code
+            Bic code
           </dt>
           <dd class="data-summary-value">
-            11-22-33
+            55996321001
           </dd>
 
           <dt class="data-summary-key">
             Country
           </dt>
           <dd class="data-summary-value">
-            United Kingdom
-          </dd>
-
-          <dt class="data-summary-key">
-            Rate
-          </dt>
-          <dd class="data-summary-value">
-              {{ 'Higher' if data.backdateAll else 'Standard' }}
+            France
           </dd>
         </dl>
       </div>
@@ -84,61 +75,10 @@ GOV.UK prototype kit
         </h2>
 
         <ul class="schedule">
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
-              10 June 2017
-            </time>
-            <strong class="amount">
-              £100
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
-              10 May 2017
-            </time>
-            <strong class="amount">
-              £100
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
-              10 April 2017
-            </time>
-            <strong class="amount">
-              £100
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
-              10 March 2017
-            </time>
-            <strong class="amount">
-              £100
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
-              10 February 2017
-            </time>
-            <strong class="amount">
-              £100
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
-              16 January 2017
-            </time>
-            <strong class="amount">
-              £2500
-            </strong>
-            <span class="type">
-              Initial payment
-            </span>
+          <li>
+            <p>
+              No payments sent.
+            </p>
           </li>
         </ul>
       </div>
@@ -154,38 +94,21 @@ GOV.UK prototype kit
         </h2>
 
         <ul class="schedule">
-          {% if data.backdateAll %}
-            <li class="payment">
-              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
-                Due 13 June 2017
-              </time>
-              <strong class="amount">
-                £1000
-              </strong>
-              <span class="type">
-                Initial payment arrears
-              </span>
-            </li>
-
-            <li class="payment">
-              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
-                Due 13 June 2017
-              </time>
-              <strong class="amount">
-                £1250
-              </strong>
-              <span class="type">
-                Monthly payment arrears
-              </span>
-            </li>
-          {% endif %}
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
+              Due 10 June 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
 
           <li class="payment">
             <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE6">
               Due 10 July 2017
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
 
@@ -194,7 +117,7 @@ GOV.UK prototype kit
               Due 10 August 2017
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
 
@@ -203,7 +126,7 @@ GOV.UK prototype kit
               Due 10 September 2017
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
 
@@ -212,7 +135,7 @@ GOV.UK prototype kit
               Due 10 October 2017
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
 
@@ -221,7 +144,7 @@ GOV.UK prototype kit
               Due 10 November 2017
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
 
@@ -230,7 +153,7 @@ GOV.UK prototype kit
               Due 10 December 2017
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
 
@@ -239,7 +162,7 @@ GOV.UK prototype kit
               Due 10 January 2018
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
 
@@ -248,7 +171,7 @@ GOV.UK prototype kit
               Due 10 February 2018
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
 
@@ -257,7 +180,7 @@ GOV.UK prototype kit
               Due 10 March 2018
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
 
@@ -266,7 +189,7 @@ GOV.UK prototype kit
               Due 10 April 2018
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
 
@@ -275,7 +198,7 @@ GOV.UK prototype kit
               Due 10 May 2018
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
 
@@ -284,7 +207,7 @@ GOV.UK prototype kit
               Due 10 June 2018
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
 
@@ -293,7 +216,7 @@ GOV.UK prototype kit
               Due 10 July 2018
             </time>
             <strong class="amount">
-              {{ '£350' if data.backdateAll else '£100' }}
+              £100
             </strong>
           </li>
         </ul>
