@@ -55,7 +55,7 @@ function appendErrors (array) {
     $(array[i]).closest('.form-group').addClass('form-group-error')
     $(array[i]).closest('.form-group').find('.form-label').append(
       '<span class="error-message">' +
-      '  Check these details again' +
+      '  Check these details again.' +
       '</span>'
     )
   }
