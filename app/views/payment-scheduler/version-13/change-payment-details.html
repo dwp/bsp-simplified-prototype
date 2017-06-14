@@ -1,38 +1,44 @@
-{% extends "layout.html" %}
-
-{% block page_title %}
-GOV.UK prototype kit
+{% extends 'layout.html' %}
+{% block pageTitle %}
+  Page Title
 {% endblock %}
 
 {% block customNav %}
   {% include '../custom-nav.html' %}
 {% endblock %}
 
+{% block page_scripts %}
+  <script>
+    {% include './frontend-js/typeahead.bundle.js' %}
+    {% include './frontend-js/bank-details.js' %}
+    {% include './frontend-js/bank-validation-test.js' %}    
+  </script>
+{% endblock %}
+
 {% block content %}
-  <main id="content" role="main" class="group">
+  <main id="content" role="main">
     <div class="grid-row">
       <div class="column-two-thirds">
-        <h1 class="heading-xlarge">
-          Which payment details do you wish to change?
-        </h1>
+        <h1 class="heading-xlarge">Change payment details</h1>
 
         <form method="post">
-          <div class="form-group">
-            <fieldset>
-              <div class="multiple-choice">
-                <input id="bankDetails" type="radio" name="which-details-do-you-want-to-change" value="bank-details">
-                <label for="bankDetails">Bank account details</label>
-              </div>
-          
-              <div class="multiple-choice">
-                <input id="rate" type="radio" name="which-details-do-you-want-to-change" value="rate">
-                <label for="rate">Rate</label>
-              </div>
-            </fieldset>
-          </div>
+          <div class="form-section">
+            <div class="form-group">
+              <label class="form-label" for="input-accountCountry">Country</label>
+              <input class="form-control" id="input-accountCountry" type="text" name="country" autocomplete="off">
+            </div>
+            
+            <span id="validate"></span>
 
-          <button class="button" type="submit">Continue</button>
+            {% include './bank-fields/uk.html'%}
+            {% include './bank-fields/five-iban.html'%}
+          </div>
+          
+          <button type="submit" class="button">
+            Update
+          </button>
         </form>
+      </div>
       </div>
     </div>
   </main>
