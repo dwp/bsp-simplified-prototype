@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+<style>li .schedule-status {margin-bottom: 0;}</style>
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class=heading-xlarge>
+        Service temporarily unavailable
+      </h1>
+
+      <p>
+        The service is currently gathering up any due payments and sending them 
+        to CPS.
+      </p>
+
+      <p>
+        This usually takes 15 minutes to 1 hour. Try again later.
+      </p>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+
