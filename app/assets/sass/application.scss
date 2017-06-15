@@ -28,6 +28,14 @@ $grey999: #999;
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+.column-full-width {
+  width: 100%;
+  padding: 0 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 .data-summary {
   @extend %contain-floats;
 
