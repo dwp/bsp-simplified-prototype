@@ -144,6 +144,8 @@ GOV.UK prototype kit
       <h2 class="heading-large">
         Payment details
       </h2>
+      
+      <span id="validate"></span>
 
       <div class="form-section">
         <div class="form-group">
@@ -206,8 +208,6 @@ GOV.UK prototype kit
             <input class="form-control" id="input-accountCountry" type="text" name="country" autocomplete="off">
           </div>
           
-          <span id="validate"></span>
-
           {% include './bank-fields/uk.html'%}
           {% include './bank-fields/five-iban.html'%}
         </div>
