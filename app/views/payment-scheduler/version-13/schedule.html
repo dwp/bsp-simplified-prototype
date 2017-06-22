@@ -26,7 +26,7 @@ GOV.UK prototype kit
           <h2 class="heading-large">Log</h2>
 
           {% if data.bankDetails.bankCode %}
-            <h2 class="bold">Bank details changed on 12 June 2017</h2>
+            <h2 class="bold">Bank details changed on 23 June 2017</h2>
             <div class="panel panel-border-narrow">
               Old account: 12341234, 112233<br />
               New account: {{data.bankDetails.bankNumber}}, {{data.bankDetails.bankCode}}
@@ -34,7 +34,7 @@ GOV.UK prototype kit
           {% endif %}
 
           {% if data.backdateAll === 'Yes'  %}
-            <h2 class="bold">Switched to higher rate on 12 June 2017</h2>
+            <h2 class="bold">Switched to higher rate on 23 June 2017</h2>
             <div class="panel panel-border-narrow">
               Arrears paid for initial payment and 5 monthly payments.
             </div>
@@ -180,7 +180,7 @@ GOV.UK prototype kit
           {% if data.backdateAll === 'Yes' %}
             <li class="payment">
               <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
-                Due 13 June 2017
+                Due 24 June 2017
               </time>
               <strong class="amount">
                 £1000
@@ -192,10 +192,10 @@ GOV.UK prototype kit
 
             <li class="payment">
               <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
-                Due 13 June 2017
+                Due 24 June 2017
               </time>
               <strong class="amount">
-                £750
+                £1250
               </strong>
               <span class="type">
                 Monthly payment arrears
