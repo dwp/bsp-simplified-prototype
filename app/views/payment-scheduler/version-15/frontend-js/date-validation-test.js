@@ -1,10 +1,9 @@
 
 $(document).on('submit', 'form', function (e) {
-  var day = $('#input-dateOfClaim-day').val()
-  var month = $('#input-dateOfClaim-month').val()
-  var year = $('#input-dateOfClaim-year').val()
+  var day = $('#input-dateOfDeath-day').val()
+  var month = $('#input-dateOfDeath-month').val()
+  var year = $('#input-dateOfDeath-year').val()
   var dataEntered = day.length + month.length + year.length
-
   var throwError = validateDate(day, month, year)
 
   if (dataEntered > 0 && throwError === 'Invalid') {
@@ -13,7 +12,7 @@ $(document).on('submit', 'form', function (e) {
       $(document).scrollTop('body', 0)
       appendErrorBanner()
       appendErrors([
-        '#input-dateOfClaim-day'
+        '#input-dateOfDeath-day'
       ])
 
       $('input').blur();
@@ -53,7 +52,7 @@ function appendErrorBanner() {
 }
 function appendErrors(array) {
   for (var i = 0; i < array.length; i++) {
-    $(array[i]).closest('.form-section').find('.form-group:first').addClass('form-group-error')
+    $(array[i]).closest('fieldset').closest('.form-group').addClass('form-group-error')
     $(array[i]).closest('.form-date').find('input').addClass('form-control-error')
     $(array[i]).closest('fieldset').find('legend').append(
       '<span class="error-message">' +
