@@ -1,18 +1,27 @@
-{% extends "layout-blank.html" %}
+{% extends "layout.html" %}
 
 {% block page_title %}
   GOV.UK prototype kit
 {% endblock %}
 
-{% block customNav %}
-  {% include '../custom-nav.html' %}
-{% endblock %}
-
 {% block content %}
+
 <style>
-  html {background-color: #ffffff}
-  li .schedule-status {margin-bottom: 0;}
-  #footer {border-top: 0;}
+  #global-header .header-proposition a#proposition-name:hover {
+   text-decoration: none;
+   cursor: text;
+  }
+
+  #global-header a:focus {
+    outline: 0;
+    background: none;
+  }
+
+  #global-header #logo {
+    text-decoration: none;
+    border-bottom: 0;
+    cursor: text;
+  }
 </style>
 
 <main id="content" role="main">
@@ -29,4 +38,12 @@
   </div>
 </main>
 
+{% endblock %}
+
+{% block page_scripts %}
+  <script>
+    $(document).on('click', 'a', function (e) {
+      e.preventDefault();
+    });
+  </script>
 {% endblock %}
