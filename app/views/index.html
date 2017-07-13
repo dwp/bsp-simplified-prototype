@@ -18,26 +18,7 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="example">
-        <h2 class="heading-medium">June 23 Research</h2>
-
-        <ul class="list list-bullet">
-          <li>
-            <a href="/payment-scheduler/version-13">
-              Standard to higher
-            </a>
-            <span class="bold">(AB123456C)</span>
-          </li>
-          <li>
-            <a href="/payment-scheduler/version-14">
-              Offline, batch process
-            </a>
-          </li>
-          <li>
-            <a href="/payment-scheduler/version-15">
-              Validation errors, date of death
-            </a>
-          </li>
-        </ul>
+        {% include 'summaries/payment-scheduler/version-16.html' %}
       </div>
 
       <h2 class="heading-large">All versions</h2>
@@ -52,6 +33,7 @@
       <details>
         <summary><span class="summary">Payment scheduler</span></summary>
         <div class="panel">
+          {% include 'summaries/payment-scheduler/version-16.html' %}<hr />
           {% include 'summaries/payment-scheduler/version-15.html' %}<hr />
           {% include 'summaries/payment-scheduler/version-14.html' %}<hr />
           {% include 'summaries/payment-scheduler/version-13.html' %}<hr />
