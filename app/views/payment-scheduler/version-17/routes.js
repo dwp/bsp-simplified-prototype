@@ -11,7 +11,8 @@ router.get('/set-up-a-payment-schedule', (req, res) => {
 })
 
 router.get('/find-a-payment-schedule', (req, res) => {
-  const nino = req.query.nino
+  const query = req.query.nino || '';
+  const nino = query.toUpperCase();
   res.render(`${req.feature}/${req.sprint}/find-a-payment-schedule`, {nino})
 })
 
