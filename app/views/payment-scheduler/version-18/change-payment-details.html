@@ -17,7 +17,10 @@
 
 {% block content %}
   <main id="content" role="main">
+    <a href="/{{feature}}/{{sprint}}/schedule" class="link-back">Back to schedule</a>
+
     <div class="grid-row">
+
       <div class="column-two-thirds">
         <h1 class="heading-xlarge">Change payment details</h1>
 
@@ -25,20 +28,21 @@
           <div class="form-section">
             <div class="form-group">
               <label class="form-label" for="input-accountCountry">Country</label>
-              <input class="form-control" id="input-accountCountry" type="text" name="country" autocomplete="off">
+              <input class="form-control" id="input-accountCountry" type="text" name="temp-bankDetails[country]" autocomplete="off">
             </div>
             
             <span id="validate"></span>
-
-            {% include './bank-fields/uk.html'%}
-            {% include './bank-fields/five-iban.html'%}
+            
+            <div id="countryFields">
+              {% include './bank-fields/uk.html'%}
+              {% include './bank-fields/five-iban.html'%}
+            </div>
           </div>
           
           <button type="submit" class="button">
             Update
           </button>
         </form>
-      </div>
       </div>
     </div>
   </main>

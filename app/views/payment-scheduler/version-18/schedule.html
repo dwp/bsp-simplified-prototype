@@ -22,14 +22,14 @@ GOV.UK prototype kit
           ACTIVE
         </span>
 
-        {% if data.bankDetails.bankCode or data.backdateAll %}
+        {% if data.bankDetailsChanged or data.backdateAll %}
           <h2 class="heading-large">Log</h2>
 
-          {% if data.bankDetails.bankCode %}
+          {% if data.bankDetailsChanged %}
             <h2 class="bold">Bank details changed on 14 August 2017</h2>
             <div class="panel panel-border-narrow">
-              Old account: 12341234, 112233<br />
-              New account: {{data.bankDetails.bankNumber}}, {{data.bankDetails.bankCode}}
+              Old account: C Brown, 12341234, 112233<br />
+              New account: {{data.bankDetails.nameOnAccount}}, {{data.bankDetails.bankNumber}}, {{data.bankDetails.bankCode}}
             </div>
           {% endif %}
 
@@ -56,18 +56,18 @@ GOV.UK prototype kit
             Name on account
           </dt>
           <dd class="data-summary-value">
-            C Brown
+            {{ data.bankDetails.nameOnAccount if data.bankDetails.nameOnAccount else 'C Brown' }}
           </dd>
 
           <dt class="data-summary-key">
-            Account number
+            {{ 'Account number' if data.bankDetails.country == 'United Kingdom' else 'Iban number' }}
           </dt>
           <dd class="data-summary-value">
             {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber else '12341234' }}
           </dd>
 
           <dt class="data-summary-key">
-            Sort code
+            {{ 'Sort code' if data.bankDetails.country == 'United Kingdom' else 'Bic code' }}
           </dt>
           <dd class="data-summary-value">
             {{ data.bankDetails.bankCode if data.bankDetails.bankCode else '112233' }}
@@ -77,7 +77,7 @@ GOV.UK prototype kit
             Country
           </dt>
           <dd class="data-summary-value">
-            United Kingdom
+            {{ data.bankDetails.country if data.bankDetails.country else 'United Kingdom' }}
           </dd>
         </dl>
 
