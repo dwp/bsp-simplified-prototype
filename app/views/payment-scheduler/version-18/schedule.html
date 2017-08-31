@@ -26,7 +26,7 @@ GOV.UK prototype kit
           <h2 class="heading-large">Log</h2>
 
           {% if data.bankDetailsChanged %}
-            <h2 class="bold">Bank details changed on 14 August 2017</h2>
+            <h2 class="bold">Bank details changed on 1 September 2017</h2>
             <div class="panel panel-border-narrow">
               Old account: C Brown, 12341234, 112233<br />
               New account: {{data.bankDetails.nameOnAccount}}, {{data.bankDetails.bankNumber}}, {{data.bankDetails.bankCode}}
@@ -34,7 +34,7 @@ GOV.UK prototype kit
           {% endif %}
 
           {% if data.backdateAll === 'Yes'  %}
-            <h2 class="bold">Switched to higher rate on 14 August 2017</h2>
+            <h2 class="bold">Switched to higher rate on 1 September 2017</h2>
             <div class="panel panel-border-narrow">
               Backdated initial payment and backdated monthly payments added to
               schedule.
@@ -115,6 +115,9 @@ GOV.UK prototype kit
             <strong class="amount">
               £100
             </strong>
+            <span class="type">
+              {{ '12341234<br />'|safe if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -125,6 +128,7 @@ GOV.UK prototype kit
               £100
             </strong>
             <span class="type">
+              {{ '12341234<br />'|safe if data.bankDetails.bankNumber }}
               Backdated monthly payments
             </span>
           </li>
@@ -137,6 +141,7 @@ GOV.UK prototype kit
               £2500
             </strong>
             <span class="type">
+              {{ '12341234<br />'|safe if data.bankDetails.bankNumber }}
               Initial payment
             </span>
           </li>
@@ -157,39 +162,31 @@ GOV.UK prototype kit
           {% if data.backdateAll === 'Yes' %}
             <li class="payment">
               <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE1">
-                Due 15 August 2017
+                Due 2 September 2017
               </time>
               <strong class="amount">
                 £1000
               </strong>
               <span class="type">
+                {% if data.bankDetails.bankNumber %}
+                  {{data.bankDetails.bankNumber}}<br />
+                {% endif %}
                 Backdated initial payment
               </span>
             </li>
 
             <li class="payment">
               <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE2">
-                Due 15 August 2017
+                Due 2 September 2017
               </time>
               <strong class="amount">
                 £500
               </strong>
               <span class="type">
+                {% if data.bankDetails.bankNumber %}
+                  {{data.bankDetails.bankNumber}}<br />
+                {% endif %}
                 Backdated monthly payments
-              </span>
-            </li>
-          {% endif %}
-
-          {% if data.backdateAll === 'No' %}
-            <li class="payment">
-              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE3">
-                Due 13 June 2017
-              </time>
-              <strong class="amount">
-                £750
-              </strong>
-              <span class="type">
-                Monthly payment arrears
               </span>
             </li>
           {% endif %}
@@ -201,6 +198,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -210,6 +210,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -219,6 +222,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -228,6 +234,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -237,6 +246,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -246,6 +258,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -255,6 +270,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -264,6 +282,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -273,6 +294,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -282,6 +306,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -291,6 +318,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -300,6 +330,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -309,6 +342,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
           
           <li class="payment">
@@ -318,6 +354,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -327,6 +366,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
 
           <li class="payment">
@@ -336,6 +378,9 @@ GOV.UK prototype kit
             <strong class="amount">
               {{ '£350' if data.backdateAll else '£100' }}
             </strong>
+            <span class="type">
+              {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber }}
+            </span>
           </li>
         </ul>
       </div>
