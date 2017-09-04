@@ -60,14 +60,14 @@ GOV.UK prototype kit
           </dd>
 
           <dt class="data-summary-key">
-            {{ 'Account number' if data.bankDetails.country == 'United Kingdom' else 'Iban number' }}
+            {{ 'Iban number' if data.bankDetails.country != 'United Kingdom' else 'Account number' }}
           </dt>
           <dd class="data-summary-value">
             {{ data.bankDetails.bankNumber if data.bankDetails.bankNumber else '12341234' }}
           </dd>
 
           <dt class="data-summary-key">
-            {{ 'Sort code' if data.bankDetails.country == 'United Kingdom' else 'Bic code' }}
+            {{ 'Bic code' if data.bankDetails.country != 'United Kingdom' else 'Sort code' }}
           </dt>
           <dd class="data-summary-value">
             {{ data.bankDetails.bankCode if data.bankDetails.bankCode else '112233' }}
