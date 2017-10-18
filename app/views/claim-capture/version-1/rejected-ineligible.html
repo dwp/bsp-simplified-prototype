@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claim disallowed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <div class="govuk-box-highlight reject">
+          <h1 class="heading-xlarge">
+            Claim rejected
+          </h1>
+        </div>
+
+        <h2 class="heading-medium">Reasons</h2>
+        <ul class="list list-bullet">
+          <li>Claimant over State Pension age</li>
+        </ul>
+
+        <a href="claim-1">View claim</a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

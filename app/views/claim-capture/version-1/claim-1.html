@@ -1,0 +1,164 @@
+{% extends "layout.html" %}
+{% set testDate = '18 October 2017' %}
+
+{% block page_title %}
+  Claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">Tony Smith</span>
+          BB111999B
+        </h1>
+        <span class="claim-status claim-status-active">
+          ALLOWED
+        </span>
+
+        <section>
+          <h2 class="heading-large">Log</h2>
+          <h3 class="bold">Claim successful on {{testDate}}</h3>
+          <div class="panel panel-border-narrow">
+            Payment schedule created at higher rate.
+          </div>
+        </section>    
+
+        <h2 class="heading-small th">
+          Payment details
+        </h2>
+        <a href="schedule-1" class="button">View payment schedule</a>
+      
+        <h2 class="heading-small th">
+          Claimant details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Date of claim
+          </dt>
+          <dd class="data-summary-value">
+            1 October 2018
+          </dd>
+
+          <dt class="data-summary-key">
+            Full name
+          </dt>
+          <dd class="data-summary-value">
+            Tony Smith
+          </dd>
+
+          <dt class="data-summary-key">
+            National Insurance number
+          </dt>
+          <dd class="data-summary-value">
+            BB111999B
+          </dd>
+
+          <dt class="data-summary-key">
+            Date of birth
+          </dt>
+          <dd class="data-summary-value">
+            13 02 1977
+          </dd>
+
+          <dt class="data-summary-key">
+            Address
+          </dt>
+          <dd class="data-summary-value">
+            1 Limetree Lane
+            North Shields
+            Tyne and Wear
+            NE29 7AP
+          </dd>
+
+          <dt class="data-summary-key">
+            Home phone
+          </dt>
+          <dd class="data-summary-value">
+            0191 1234567
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Partner details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Full name
+          </dt>
+          <dd class="data-summary-value">
+            Christine Smith
+          </dd>
+
+          <dt class="data-summary-key">
+            National Insurance number
+          </dt>
+          <dd class="data-summary-value">
+            CC111999C
+          </dd>
+
+          <dt class="data-summary-key">
+            Date of death
+          </dt>
+          <dd class="data-summary-value">
+            01 10 2017
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Children details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Dependant children
+          </dt>
+          <dd class="data-summary-value">
+            Yes
+          </dd>
+
+          <dt class="data-summary-key">
+            Child Benefit number
+          </dt>
+          <dd class="data-summary-value">
+            Yes
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Verification
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Marriage
+          </dt>
+          <dd class="data-summary-value">
+            Verified on {{testDate}}
+          </dd>
+
+          <dt class="data-summary-key">
+            National Insurance contributions
+          </dt>
+          <dd class="data-summary-value">
+            Verified on {{testDate}}
+          </dd>
+
+          <dt class="data-summary-key">
+            Child Benefit
+          </dt>
+          <dd class="data-summary-value">
+            Verified on {{testDate}}
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </main>
+{% endblock %}

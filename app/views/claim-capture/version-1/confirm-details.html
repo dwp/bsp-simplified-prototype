@@ -4,85 +4,140 @@
   Confirm details
 {% endblock %}
 
-{% block content %}
-  <main id="content" role="main">
-    <div class="grid-row">
-      <div class="column-two-thirds column-minimum">
-
-        <h1 class="heading-large">
-          Service name goes here
-        </h1>
-
-        <ol class="task-list">
-          <li>
-            <h2 class="task-list-section">
-              <span class="task-list-section-number">1. </span> Check before you start
-            </h2>
-            <ul class="task-list-items">
-              <li class="task-list-item">
-                <a class="task-name" href="#" aria-describedby="eligibility-completed">
-                  Check eligibility
-                </a>
-                <strong class="task-completed" id="eligibility-completed">Completed</strong>
-              </li>
-              <li class="task-list-item">
-                <a class="task-name" href="#" aria-describedby="read-declaration-completed">
-                  Read declaration
-                </a>
-                <strong class="task-completed" id="read-declaration-completed">Completed</strong>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h2 class="task-list-section">
-              <span class="task-list-section-number">2. </span> Prepare application
-            </h2>
-            <ul class="task-list-items">
-              <li class="task-list-item">
-                <a class="task-name" href="#" aria-describedby="company-information-completed">
-                  Company information
-                </a>
-                <strong class="task-completed" id="company-information-completed">Completed</strong>
-              </li>
-              <li class="task-list-item">
-                <a class="task-name" href="#" aria-describedby="contact-details-completed">
-                  Your contact details
-                </a>
-                <strong class="task-completed" id="contact-details-completed">Completed</strong>
-              </li>
-              <li class="task-list-item">
-                <a class="task-name" href="#">
-                  List convictions
-                </a>
-              </li>
-              <li class="task-list-item">
-                <a class="task-name" href="#">
-                  Provide financial evidence
-                </a>
-              </li>
-              <li class="task-list-item">
-                <a class="task-name" href="#" aria-describedby="medical-information-completed">
-                  Give medical information
-                </a>
-                <strong class="task-completed" id="medical-information-completed">Completed</strong>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <h2 class="task-list-section">
-              <span class="task-list-section-number">3. </span> Apply
-            </h2>
-            <ul class="task-list-items">
-              <li class="task-list-item">
-                <a class="task-name" href="#">
-                  Submit and pay
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ol>
-
-      </div>
-    </div>
-  </main>
+{% block customNav %}
+  {% include '../custom-nav.html' %}
 {% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="#" class="link-back">Back</a>
+
+      <h1 class="heading-large">
+        Confirm claim details
+      </h1>
+
+      <h2 class="heading-medium">
+        Claimant details
+      </h2>
+
+      <dl class="govuk-check-your-answers cya-questions-long">
+        {% for key, value in data.claimant %}
+          {{t.labels[key]}}
+          {% if value != '' and value.day != '' %}
+            <div>
+              <dt class="cya-question">
+              </dt>
+              <dd class="cya-answer">
+                {% if value == '[object Object]' %}
+                  {{value.day}} / {{value.month}} / {{value.year}}
+                {% else %}
+                  {{value}}
+                {% endif %}
+              </dd>
+              <dd class="cya-change">
+                <a href="#">
+                  Change<span class="visually-hidden"> claimant details</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </dl>
+
+      <h2 class="heading-medium">
+        Partner details
+      </h2>
+
+      <dl class="govuk-check-your-answers cya-questions-long">
+        {% for key, value in data.partner %}
+          {% if value != '' and value.day != '' %}
+            <div>
+              <dt class="cya-question">
+                {{key}}
+              </dt>
+              <dd class="cya-answer">
+                {% if value == '[object Object]' %}
+                  {{value.day}} / {{value.month}} / {{value.year}}
+                {% else %}
+                  {{value}}
+                {% endif %}
+              </dd>
+              <dd class="cya-change">
+                <a href="#">
+                  Change<span class="visually-hidden"> claimant details</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </dl>
+      
+      <h2 class="heading-medium">
+        Payment details
+      </h2>
+
+      <dl class="govuk-check-your-answers cya-questions-long">
+        {% for key, value in data.payment %}
+          {% if value != '' and value.day != '' %}
+            <div>
+              <dt class="cya-question">
+                {{key}}
+              </dt>
+              <dd class="cya-answer">
+                {% if value == '[object Object]' %}
+                  {{value.day}} / {{value.month}} / {{value.year}}
+                {% else %}
+                  {{value}}
+                {% endif %}
+              </dd>
+              <dd class="cya-change">
+                <a href="#">
+                  Change<span class="visually-hidden"> claimant details</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </dl>
+
+      <h2 class="heading-medium">
+        Verified details
+      </h2>
+
+      <dl class="govuk-check-your-answers cya-questions-long">
+        {% for key, value in data.verification %}
+          {% if value != '' and value.day != '' %}
+            <div>
+              <dt class="cya-question">
+                {{key}}
+              </dt>
+              <dd class="cya-answer">
+                {% if value == '[object Object]' %}
+                  {{value.day}} / {{value.month}} / {{value.year}}
+                {% else %}
+                  {{value}}
+                {% endif %}
+              </dd>
+              <dd class="cya-change">
+                <a href="#">
+                  Change<span class="visually-hidden"> claimant details</span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </dl>
+
+      <br />
+
+      <div class="form-group">
+        <a href="confirmation-page" class="button">Confirm and process application</a>
+      </div>
+
+    </div>
+  </div>
+</main>
+{% endblock %}
+

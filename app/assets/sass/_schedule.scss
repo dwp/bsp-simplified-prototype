@@ -17,6 +17,9 @@
 .claim-status-paused {
   background-color: $govuk-blue;
 }
+.claim-status-rejected {
+  background-color: $mellow-red;
+}
 
 .claim-status-bf,
 .claim-status-active,

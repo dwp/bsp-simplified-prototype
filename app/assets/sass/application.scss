@@ -74,3 +74,7 @@ $grey999: #999;
   border-color: $light-blue;
   background-color: mix(white, $light-blue, 90%);
 }
+
+.reject {
+  background: $error-colour;
+}

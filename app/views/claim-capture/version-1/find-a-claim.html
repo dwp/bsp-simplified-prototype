@@ -2,7 +2,7 @@
 {% set findActive = 'active' %}
 
 {% block page_title %}
-  GOV.UK prototype kit
+  Find a claim
 {% endblock %}
 
 {% block customNav %}
@@ -15,12 +15,12 @@
       <div class="column-two-thirds">
         <h1 class="heading-xlarge">Find a claim</h1>
 
-        <form method="post">
+        <form>
           <div class="form-group search-group ">
             <label for="search-box" class="form-label">
               <span>Enter the claimant's National Insurance number</span>
             </label>
-            <input type="search" name="findNino" class="form-control form-control-search" id="search-box" autocomplete="off" value="{{findNino}}">
+            <input type="search" name="findNino" class="form-control form-control-search" id="search-box" autocomplete="off" value="{{search}}">
 
             <button class="button-search" type="submit">
               <span class="visually-hidden">Search</span>
@@ -28,10 +28,37 @@
           </div>
         </form>
 
-        {% if findNino %}
+        {% if search %}
           <h2 class="heading-medium">Results</h2>
-            
-          <p>No matching payment schedules found.</p>
+          <ul class="search-results">
+            {% if search == 'BB111999B' %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim-1" class="result-link">
+                  Active claim
+                </a>
+                <span class="result-meta">
+                  Tony Smith
+                </span>
+                <span class="result-meta">
+                  01 October 2017
+                </span>
+              </li>
+            {% elif search == 'AA111999A' %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim-2" class="result-link">
+                  Rejected claim
+                </a>
+                <span class="result-meta">
+                  Jane Seymore
+                </span>
+                <span class="result-meta">
+                  02 October 2017
+                </span>
+              </li>
+            {% else %}
+              No matching payment schedules found.
+            {% endif %}
+          </ul>
         {% endif %}
       </div>
     </div>
