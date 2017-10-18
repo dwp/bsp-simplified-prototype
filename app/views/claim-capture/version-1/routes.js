@@ -18,7 +18,8 @@ router.post('/settings', (req, res) => {
 })
 
 router.get('/find-a-claim', (req, res) => {
-  const search = req.query.findNino.toUpperCase()
+  const nino = req.query.findNino
+  const search = nino ? nino.toUpperCase() : ''
   res.render(`${req.feature}/${req.sprint}/find-a-claim`, {search})
 })
 
