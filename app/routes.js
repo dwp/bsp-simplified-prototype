@@ -25,4 +25,9 @@ router.use(/\/claim-management\/version-([0-9]+)/, (req, res, next) => {
   require(`./views/claim-management/version-${req.params[0]}/routes`)(req, res, next);
 })
 
+// Claim Capture
+router.use(/\/claim-capture\/version-([0-9]+)/, (req, res, next) => {
+  require(`./views/claim-capture/version-${req.params[0]}/routes`)(req, res, next);
+})
+
 module.exports = router
