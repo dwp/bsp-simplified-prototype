@@ -69,6 +69,10 @@ router.post('/pause-claim', (req, res) => {
 })
 
 router.post('/verify-marriage', (req, res) => {
+  if (req.body.marriageVerified === 'Yes') {
+    req.session.data.pausedClaims = 'No'
+    return res.redirect(`/${req.feature}/${req.sprint}/decision-allowed`)    
+  }
   res.redirect(`/${req.feature}/${req.sprint}/decision-paused`)
 })
 
