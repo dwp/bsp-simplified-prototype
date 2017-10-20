@@ -1,0 +1,7 @@
+{% set noOfClaims = data.pausedClaimNo or '2' %}
+{% if data.pausedClaims == 'Yes' %}
+  <div class="notification-banner panel panel-border-narrow">
+    <h2 class="heading-small">{{data.pausedClaimNo or '2'}} paused {{'claim' if noOfClaims == '1' else 'claims'}} need attention</h2>
+    <a href="claim-4">Check a paused claim</a>
+  </div>
+{% endif %}

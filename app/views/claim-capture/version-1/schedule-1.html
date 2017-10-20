@@ -12,11 +12,13 @@
   <main id="content" role="main" class="group">
     <div class="grid-row">
       <div class="column-two-thirds">
-        <a href="claim-1" class="link-back">Claim</a>
+        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
+        
+        <a href="claim-1" class="link-back">View claim</a>
 
         <h1 class="heading-xlarge schedule-heading">
         <span class="heading-secondary">Tony Smith</span>
-          BB111999B
+          AA123456A
         </h1>
         <span class="schedule-status schedule-status-active">
           ACTIVE
@@ -25,7 +27,7 @@
         <h2 class="heading-small th">
           Payment details
           <p class="payment-link">
-            <a href="/{{feature}}/{{sprint}}/change-payment-details">
+            <a href="#">
               Change
             </a>
           </p>
@@ -36,21 +38,21 @@
             Name on account
           </dt>
           <dd class="data-summary-value">
-            T Smith
+            Mr T Smith
+          </dd>
+          
+          <dt class="data-summary-key">
+            Sort code
+          </dt>
+          <dd class="data-summary-value">
+            123456
           </dd>
 
           <dt class="data-summary-key">
             Account number
           </dt>
           <dd class="data-summary-value">
-            12341234
-          </dd>
-
-          <dt class="data-summary-key">
-            Sort code
-          </dt>
-          <dd class="data-summary-value">
-            112233
+            12345678
           </dd>
 
           <dt class="data-summary-key">
@@ -64,7 +66,7 @@
         <h2 class="heading-small th">
           Rate
           <p class="payment-link">
-            <a href="/{{feature}}/{{sprint}}/change-rate">
+            <a href="#">
               Change
             </a>
           </p>

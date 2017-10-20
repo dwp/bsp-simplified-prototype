@@ -12,19 +12,20 @@
   <main id="content" role="main">
     <div class="grid-row">
       <div class="column-two-thirds">
+        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
 
-        <div class="govuk-box-highlight reject">
-          <h1 class="heading-xlarge">
-            Claim rejected
-          </h1>
-        </div>
+        <h1 class="heading-xlarge">
+          Claim disallowed
+        </h1>
 
-        <h2 class="heading-medium">Reasons</h2>
+        <h2 class="heading-medium">
+          Reasons
+        </h2>
         <ul class="list list-bullet">
           <li>Claimant over State Pension age</li>
         </ul>
 
-        <a href="claim-1">View claim</a>
+        <a href="claim-2">View claim</a>
       </div>
     </div>
   </main>

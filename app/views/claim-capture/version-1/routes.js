@@ -4,7 +4,7 @@ const router = new express.Router()
 
 router.use((req, res, next) => {
   if (req.method === 'POST') {
-    console.log(req.session.data)
+    console.log(JSON.stringify(req.session.data, null, 2))
   }
   next()
 })
@@ -32,10 +32,6 @@ router.post('/claim-date', (req, res) => {
 })
 
 router.post('/claimant-details', (req, res) => {
-  const birthYear = parseInt(req.body.claimant.dateOfBirth.year)
-  if (birthYear < 1952) {
-    return res.redirect(`/${req.feature}/${req.sprint}/rejected-ineligible`)
-  }
   res.redirect(`/${req.feature}/${req.sprint}/partner-details`)
 })
 
@@ -44,19 +40,36 @@ router.post('/partner-details', (req, res) => {
 })
 
 router.post('/children-details', (req, res) => {
-  const marriageVerified = req.session.data.verification['marriage-verified']
-  if (marriageVerified === 'Yes') {
-    return res.redirect(`/${req.feature}/${req.sprint}/payment-details`)
-  }
-  res.redirect(`/${req.feature}/${req.sprint}/pause-claim`)
+  res.redirect(`/${req.feature}/${req.sprint}/payment-details`)
 })
 
 router.post('/payment-details', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/confirm-details`)
 })
 
+router.post('/confirm-details', (req, res) => {
+  if (req.session.data.dateOfClaim) {
+    const day = String(req.session.data.dateOfClaim.day).padStart(2, '0')
+    const month = req.session.data.dateOfClaim.month
+    const year = req.session.data.dateOfClaim.year
+    const date = day + month + year
+
+    if (date === '02102017') {
+      return res.redirect(`/${req.feature}/${req.sprint}/decision-disallowed`)
+    }
+    if (date === '03102017') {
+      return res.redirect(`/${req.feature}/${req.sprint}/pause-claim`)
+    }
+  }
+  res.redirect(`/${req.feature}/${req.sprint}/decision-allowed`)
+})
+
 router.post('/pause-claim', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/paused-marriage`)
+  res.redirect(`/${req.feature}/${req.sprint}/decision-paused`)
+})
+
+router.post('/verify-marriage', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/decision-paused`)
 })
 
 module.exports = router

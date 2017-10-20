@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% set testDate = '18 October 2017' %}
+{% set pausedDate = '25 October 2017' %}
 
 {% block page_title %}
   Claim
@@ -13,21 +14,45 @@
   <main id="content" role="main">
     <div class="grid-row">
       <div class="column-two-thirds column-minimum">
+        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
+        
         <h1 class="heading-xlarge schedule-heading">
-          <span class="heading-secondary">Tony Smith</span>
-          BB111999B
+          <span class="heading-secondary">Andrew Marshall</span>
+          CC123456C
         </h1>
-        <span class="claim-status">
-          PAUSED
-        </span>
+        <div>
+          <span class="claim-status">PAUSED</span>
+          <span class="paused-until-date"> until {{pausedDate}}</span>
+        </div>
+        <div class="time-since-claim">
+          <div class="data">
+            <span class="data-item bold-xlarge">3 weeks</span>
+            <span class="data-item bold-xsmall">since date of claim</span>
+          </div>
+        </div>
+
+        <ol class="task-list">
+          <li>
+            <h2 class="task-list-section">
+              Tasks to complete
+            </h2>
+            <ul>
+              <li class="task-list-item">
+                <a class="task-name" href="verify-marriage" aria-describedby="eligibility-completed">
+                  Verify marriage
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ol> 
 
         <section>
-          <h2 class="heading-large">Log</h2>
+          <h2 class="heading-medium">Log</h2>
           <h3 class="bold">Claim paused on {{testDate}}</h3>
           <div class="panel panel-border-narrow">
             Marriage could not be verified
           </div>
-        </section>    
+        </section>
       
         <h2 class="heading-small th">
           Claimant details
@@ -38,45 +63,52 @@
             Date of claim
           </dt>
           <dd class="data-summary-value">
-            1 October 2018
+            4 October 2017
           </dd>
 
           <dt class="data-summary-key">
             Full name
           </dt>
           <dd class="data-summary-value">
-            Tony Smith
+            Andrew Marshall
           </dd>
 
           <dt class="data-summary-key">
             National Insurance number
           </dt>
           <dd class="data-summary-value">
-            BB111999B
+            CC123456C
           </dd>
 
           <dt class="data-summary-key">
             Date of birth
           </dt>
           <dd class="data-summary-value">
-            13 02 1977
+            4 April 1982
           </dd>
 
           <dt class="data-summary-key">
             Address
           </dt>
           <dd class="data-summary-value">
-            1 Limetree Lane
-            North Shields
-            Tyne and Wear
-            NE29 7AP
+            6 Charlton Road<br />
+            Irving<br />
+            Ayrshire<br />
+            KA3 7AP
           </dd>
 
           <dt class="data-summary-key">
-            Home phone
+            Mobile phone
           </dt>
           <dd class="data-summary-value">
-            0191 1234567
+            07712345678
+          </dd>
+
+          <dt class="data-summary-key">
+            Email address
+          </dt>
+          <dd class="data-summary-value">
+            amarshall1@gmail.com
           </dd>
         </dl>
 
@@ -89,21 +121,21 @@
             Full name
           </dt>
           <dd class="data-summary-value">
-            Christine Smith
+            Rachel Marshall
           </dd>
 
           <dt class="data-summary-key">
             National Insurance number
           </dt>
           <dd class="data-summary-value">
-            CC111999C
+            JJ123456J
           </dd>
 
           <dt class="data-summary-key">
             Date of death
           </dt>
           <dd class="data-summary-value">
-            01 10 2017
+            29 September 2017
           </dd>
         </dl>
 
@@ -118,6 +150,13 @@
           <dd class="data-summary-value">
             No
           </dd>
+
+          <dt class="data-summary-key">
+            Pregnant
+          </dt>
+          <dd class="data-summary-value">
+            No
+          </dd>
         </dl>
 
         <h2 class="heading-small th">
@@ -126,10 +165,17 @@
 
         <dl class="data-summary">
           <dt class="data-summary-key">
-            National Insurance contributions
+            Marriage
           </dt>
           <dd class="data-summary-value">
             Not verified
+          </dd>
+
+          <dt class="data-summary-key">
+            Death
+          </dt>
+          <dd class="data-summary-value">
+            Verified on {{testDate}}
           </dd>
 
           <dt class="data-summary-key">

@@ -12,6 +12,8 @@
   <main id="content" role="main" class="group">
     <div class="grid-row">
       <div class="column-two-thirds">
+        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
+        
         <h1 class="heading-xlarge">
           Claim can't be processed
         </h1>
@@ -21,18 +23,23 @@
           <li>Marriage could not be verified</li>
         </ul>
         
-        <h2 class="heading-medium">When do you want reminded about this claim?</h2>
+        <h2 class="heading-medium">How long do you want to pause this claim?</h2>
         <form method="post">
           <div class="form-group">
             <fieldset>
               <div class="multiple-choice">
-                <input id="radio-1" type="radio" name="firstClaimFinished" value="Yes">
-                <label for="radio-1">1 Week</label>
+                <input id="radio-1" type="radio" name="pauseFor" value="1day">
+                <label for="radio-1">1 day</label>
+              </div>
+            
+              <div class="multiple-choice">
+                <input id="radio-1" type="radio" name="pauseFor" value="1week">
+                <label for="radio-1">1 week</label>
               </div>
           
               <div class="multiple-choice">
-                <input id="radio-2" type="radio" name="firstClaimFinished" value="Yes">
-                <label for="radio-2">2 Weeks</label>
+                <input id="radio-2" type="radio" name="pauseFor" value="2weeks">
+                <label for="radio-2">2 weeks</label>
               </div>
             </fieldset>
           </div>

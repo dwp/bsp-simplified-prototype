@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% set testDate = '18 October 2017' %}
 
 {% block page_title %}
   Confirm details
@@ -12,132 +13,32 @@
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
+      {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
+      
       <a href="#" class="link-back">Back</a>
 
       <h1 class="heading-large">
         Confirm claim details
       </h1>
 
-      <h2 class="heading-medium">
-        Claimant details
-      </h2>
-
-      <dl class="govuk-check-your-answers cya-questions-long">
-        {% for key, value in data.claimant %}
-          {{t.labels[key]}}
-          {% if value != '' and value.day != '' %}
-            <div>
-              <dt class="cya-question">
-              </dt>
-              <dd class="cya-answer">
-                {% if value == '[object Object]' %}
-                  {{value.day}} / {{value.month}} / {{value.year}}
-                {% else %}
-                  {{value}}
-                {% endif %}
-              </dd>
-              <dd class="cya-change">
-                <a href="#">
-                  Change<span class="visually-hidden"> claimant details</span>
-                </a>
-              </dd>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </dl>
-
-      <h2 class="heading-medium">
-        Partner details
-      </h2>
-
-      <dl class="govuk-check-your-answers cya-questions-long">
-        {% for key, value in data.partner %}
-          {% if value != '' and value.day != '' %}
-            <div>
-              <dt class="cya-question">
-                {{key}}
-              </dt>
-              <dd class="cya-answer">
-                {% if value == '[object Object]' %}
-                  {{value.day}} / {{value.month}} / {{value.year}}
-                {% else %}
-                  {{value}}
-                {% endif %}
-              </dd>
-              <dd class="cya-change">
-                <a href="#">
-                  Change<span class="visually-hidden"> claimant details</span>
-                </a>
-              </dd>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </dl>
-      
-      <h2 class="heading-medium">
-        Payment details
-      </h2>
-
-      <dl class="govuk-check-your-answers cya-questions-long">
-        {% for key, value in data.payment %}
-          {% if value != '' and value.day != '' %}
-            <div>
-              <dt class="cya-question">
-                {{key}}
-              </dt>
-              <dd class="cya-answer">
-                {% if value == '[object Object]' %}
-                  {{value.day}} / {{value.month}} / {{value.year}}
-                {% else %}
-                  {{value}}
-                {% endif %}
-              </dd>
-              <dd class="cya-change">
-                <a href="#">
-                  Change<span class="visually-hidden"> claimant details</span>
-                </a>
-              </dd>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </dl>
-
-      <h2 class="heading-medium">
-        Verified details
-      </h2>
-
-      <dl class="govuk-check-your-answers cya-questions-long">
-        {% for key, value in data.verification %}
-          {% if value != '' and value.day != '' %}
-            <div>
-              <dt class="cya-question">
-                {{key}}
-              </dt>
-              <dd class="cya-answer">
-                {% if value == '[object Object]' %}
-                  {{value.day}} / {{value.month}} / {{value.year}}
-                {% else %}
-                  {{value}}
-                {% endif %}
-              </dd>
-              <dd class="cya-change">
-                <a href="#">
-                  Change<span class="visually-hidden"> claimant details</span>
-                </a>
-              </dd>
-            </div>
-          {% endif %}
-        {% endfor %}
-      </dl>
+      {% set dateOfClaim = data.dateOfClaim.day + data.dateOfClaim.month + data.dateOfClaim.year %}
+      {% if dateOfClaim == '02102017' or dateOfClaim == '2102017' %}
+          {% include 'claim-capture/version-1/confirm-details-2.html' %}
+      {% elif dateOfClaim == '03102017' or dateOfClaim == '3102017' %}
+          {% include 'claim-capture/version-1/confirm-details-3.html' %}
+      {% else %}
+        {% include 'claim-capture/version-1/confirm-details-1.html' %}
+      {% endif %}
 
       <br />
 
+      <form method="post">
       <div class="form-group">
-        <a href="confirmation-page" class="button">Confirm and process application</a>
+        <button type="submit" class="button">Confirm and process application</button>
       </div>
+      </form>
 
     </div>
   </div>
 </main>
 {% endblock %}
-

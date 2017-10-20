@@ -55,8 +55,31 @@
     }
   }
 
+  .paused-claim-button {
+    font-weight: bold;
+  }
+
+  .paused-claim-notification {
+    background: $mellow-red;
+    border-radius: 12px;
+    color: $white;
+    display: inline-block;
+    font-weight: bold;
+    height: 24px;
+    line-height: 1.6;
+    margin-left: 5px;
+    text-align: center;
+    width: 24px;
+  }
+
   .active {
+    .paused-claim-notification {
+      background: $white;
+      color: $govuk-blue;
+    }
+
     background: $govuk-blue;
+    border-bottom: 0;
     font-weight: 700;
 
     &:link,
@@ -71,7 +94,7 @@
 
     &:hover {
       background: $govuk-blue;
-      text-decoration: underline;
+      text-decoration: underline;      
     }
   }
 }

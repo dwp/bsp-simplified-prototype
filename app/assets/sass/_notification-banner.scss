@@ -1,20 +1,22 @@
 /* Info banner, cloned from global cookie message */
 .notification-banner {
-  width: 100%;
   background-color: #d5e8f3;
-  padding-top: 10px;
+  border-color: $govuk-blue;
+  margin-top: 30px;
   padding-bottom: 10px;
+  padding-top: 10px;
+  width: 100%;
 
   p {
-    font-family: "nta", Arial, sans-serif;
-    font-weight: 400;
-    text-transform: none;
+    font-family: 'nta', Arial, sans-serif;
     font-size: 14px;
+    font-weight: 400;
     line-height: 1.14286;
-    margin-top: 0;
-    margin-bottom: 0;
-    max-width: 960px;
     margin: auto;
+    margin-bottom: 0;
+    margin-top: 0;
+    max-width: 960px;
+    text-transform: none;
 
     @media (min-width: 641px) {
       font-size: 16px;

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Claim disallowed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
+
+        <div class="govuk-box-highlight">
+          <h1 class="heading-xlarge">
+            Claim allowed
+          </h1>
+          <p class="font-large">
+            Payment schedule created
+          </p>
+        </div>
+
+        <a href="claim-1">View this claim</a><br />
+        <a href="schedule-1">View this payment schedule</a>
+        
+      </div>
+    </div>
+  </main>
+{% endblock %}

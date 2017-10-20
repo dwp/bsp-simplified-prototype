@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% set testDate = '18 October 2017' %}
+{% set pausedActive = 'active' %}
 
 {% block page_title %}
   Claim
@@ -13,28 +14,50 @@
   <main id="content" role="main">
     <div class="grid-row">
       <div class="column-two-thirds column-minimum">
-        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
         
         <h1 class="heading-xlarge schedule-heading">
-          <span class="heading-secondary">Tony Smith</span>
-          AA123456A
+          <span class="heading-secondary">Christine Jackson</span>
+          DD123456D
         </h1>
-        <span class="claim-status claim-status-active">
-          ALLOWED
-        </span>
+        <div>
+          <span class="claim-status">PAUSED</span>
+          <span class="paused-until-date"></span>
+        </div>
+        <div class="time-since-claim">
+          <div class="data">
+            <span class="data-item bold-xlarge">4 weeks</span>
+            <span class="data-item bold-xsmall">since date of claim</span>
+          </div>
+        </div>
+
+        <ol class="task-list">
+          <li>
+            <h2 class="task-list-section">
+              Tasks to complete
+            </h2>
+            <ul>
+              <li class="task-list-item">
+                <a class="task-name" href="verify-marriage" aria-describedby="eligibility-completed">
+                  Verify marriage
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ol> 
 
         <section>
-          <h2 class="heading-large">Log</h2>
-          <h3 class="bold">Claim successful on {{testDate}}</h3>
-          <div class="panel panel-border-narrow">
-            Payment schedule created at higher rate.
-          </div>
-        </section>    
+          <h2 class="heading-medium">Log</h2>
 
-        <h2 class="heading-small th">
-          Payment details
-        </h2>
-        <a href="schedule-1" class="button">View payment schedule</a>
+          <h3 class="bold">Claim paused for 2 weeks on 12 October</h3>
+          <div class="panel panel-border-narrow">
+            Marriage could not be verified
+          </div>
+
+          <h3 class="bold">Claim paused for 2 weeks on 28 September</h3>
+          <div class="panel panel-border-narrow">
+            Marriage could not be verified
+          </div>
+        </section>
       
         <h2 class="heading-small th">
           Claimant details
@@ -45,45 +68,38 @@
             Date of claim
           </dt>
           <dd class="data-summary-value">
-            1 October 2017
+            25 September 2017
           </dd>
 
           <dt class="data-summary-key">
             Full name
           </dt>
           <dd class="data-summary-value">
-            Tony Smith
+            Christine Jackson
           </dd>
 
           <dt class="data-summary-key">
             National Insurance number
           </dt>
           <dd class="data-summary-value">
-            AA123456A
+            DD123456D
           </dd>
 
           <dt class="data-summary-key">
             Date of birth
           </dt>
           <dd class="data-summary-value">
-            24 January 1980
+            5 July 1973
           </dd>
 
           <dt class="data-summary-key">
             Address
           </dt>
           <dd class="data-summary-value">
-            4 Treetop Mews<br />
-            Wallsend<br />
-            Tyne and Wear<br />
-            NE28 9AA
-          </dd>
-
-          <dt class="data-summary-key">
-            Home phone
-          </dt>
-          <dd class="data-summary-value">
-            01911234567
+            8 Station Road<br />
+            Manchester<br />
+            Greater Manchester<br />
+            MA1 4GG
           </dd>
 
           <dt class="data-summary-key">
@@ -91,13 +107,6 @@
           </dt>
           <dd class="data-summary-value">
             07712345678
-          </dd>
-
-          <dt class="data-summary-key">
-            Email address
-          </dt>
-          <dd class="data-summary-value">
-            tony.smith@gmail.com
           </dd>
         </dl>
 
@@ -110,21 +119,21 @@
             Full name
           </dt>
           <dd class="data-summary-value">
-            Mary Smith
+            Joe Jackson
           </dd>
 
           <dt class="data-summary-key">
             National Insurance number
           </dt>
           <dd class="data-summary-value">
-            GG123456G
+            EE123456E
           </dd>
 
           <dt class="data-summary-key">
             Date of death
           </dt>
           <dd class="data-summary-value">
-            01 October 2017
+            1 August 2017
           </dd>
         </dl>
 
@@ -150,28 +159,28 @@
             Marriage
           </dt>
           <dd class="data-summary-value">
-            Verified on {{testDate}}
+            Not verified
           </dd>
 
           <dt class="data-summary-key">
             Death
           </dt>
           <dd class="data-summary-value">
-            Verified on {{testDate}}
+            Verified on 1 September 2017
           </dd>
 
           <dt class="data-summary-key">
             National Insurance contributions
           </dt>
           <dd class="data-summary-value">
-            Verified on {{testDate}}
+            Verified on 1 September 2017
           </dd>
 
           <dt class="data-summary-key">
-            Child Benefit
+            Child Benefit number
           </dt>
           <dd class="data-summary-value">
-            Verified on {{testDate}}
+            Verified on 1 September 2017
           </dd>
         </dl>
       </div>
