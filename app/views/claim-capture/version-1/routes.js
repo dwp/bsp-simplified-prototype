@@ -54,17 +54,20 @@ router.post('/confirm-details', (req, res) => {
     const year = req.session.data.dateOfClaim.year
     const date = day + month + year
     if (date === '02102017') {
-      return res.redirect(`/${req.feature}/${req.sprint}/decision-disallowed`)
+      return res.redirect(`/${req.feature}/${req.sprint}/decision-disallowed/2`)
     }
     if (date === '03102017') {
-      return res.redirect(`/${req.feature}/${req.sprint}/pause-claim`)
+      return res.redirect(`/${req.feature}/${req.sprint}/pause-claim/3`)
     }
   }
-  res.redirect(`/${req.feature}/${req.sprint}/decision-allowed`)
+  res.redirect(`/${req.feature}/${req.sprint}/decision-allowed/1`)
 })
 
+router.get('/pause-claim/:id', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/decision-paused`, {id: req.params.id})
+})
 router.post('/pause-claim', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/decision-paused`)
+  res.redirect(`/${req.feature}/${req.sprint}/decision-paused/${req.params.id}`)
 })
 
 router.get('/verify-marriage/:id', (req, res) => {
@@ -80,7 +83,7 @@ router.post('/verify-marriage/:id', (req, res) => {
     return res.redirect(`/${req.feature}/${req.sprint}/decision-allowed/${id}`)
   }
   if (req.body.marriageVerified === 'not-married') {
-    return res.redirect(`/${req.feature}/${req.sprint}/decision-disallowed-marriage/${id}`)
+    return res.redirect(`/${req.feature}/${req.sprint}/decision-disallowed/${id}`)
   }
   res.redirect(`/${req.feature}/${req.sprint}/decision-paused/${id}`)
 })

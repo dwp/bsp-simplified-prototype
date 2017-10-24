@@ -1,5 +1,9 @@
 {% extends "layout.html" %}
 {% set findActive = 'active' %}
+{% set a = 'allowed' | loadDummyData %}
+{% set b = 'disallowed' | loadDummyData %}
+{% set c = 'paused-1' | loadDummyData %}
+{% set d = 'paused-2' | loadDummyData %}
 
 {% block page_title %}
   Find a claim
@@ -33,28 +37,52 @@
         {% if search %}
           <h2 class="heading-medium">Results</h2>
           <ul class="search-results">
-            {% if search == 'BB111999B' %}
+            {% if search == a.claimant.nino %}
               <li class="result">
-                <a href="/{{feature}}/{{sprint}}/claim-1" class="result-link">
-                  Active claim
+                <a href="/{{feature}}/{{sprint}}/claim-1-allowed" class="result-link">
+                  {{a.claim.status}}
                 </a>
                 <span class="result-meta">
-                  Tony Smith
+                  {{a.claimant.fullName}}
                 </span>
                 <span class="result-meta">
-                  01 October 2017
+                  {{a.claimant.dateOfClaim}}
                 </span>
               </li>
-            {% elif search == 'AA111999A' %}
+            {% elif search == b.claimant.nino %}
               <li class="result">
-                <a href="/{{feature}}/{{sprint}}/claim-2" class="result-link">
-                  Rejected claim
+                <a href="/{{feature}}/{{sprint}}/claim-2-disallowed" class="result-link">
+                  {{b.claim.status}}
                 </a>
                 <span class="result-meta">
-                  Jane Seymore
+                  {{b.claimant.fullName}}
                 </span>
                 <span class="result-meta">
-                  02 October 2017
+                  {{b.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% elif search == c.claimant.nino %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim-3-paused" class="result-link">
+                  {{c.claim.status}}
+                </a>
+                <span class="result-meta">
+                  {{c.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{c.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% elif search == d.claimant.nino %}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim-4-paused" class="result-link">
+                  {{d.claim.status}}
+                </a>
+                <span class="result-meta">
+                  {{d.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{d.claimant.dateOfClaim}}
                 </span>
               </li>
             {% else %}
