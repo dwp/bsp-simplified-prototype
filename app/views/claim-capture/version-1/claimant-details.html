@@ -12,7 +12,7 @@
   <main id="content" role="main" class="group">
     <div class="column-two-thirds">
       {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
-      
+
       <h1 class="heading-xlarge">
         Claimant details
       </h1>
@@ -24,7 +24,7 @@
           </label>
           <input class="form-control" type="text" name="claimant[full-name]" id="full-name">
         </div>
-        
+
         <div class="form-group">
           <label for="nino">
             <span class="form-label">
@@ -75,17 +75,17 @@
             </div>
 
             <h2 class="heading-small">
-              Is this address different to where they lived when their partner died?
+              Is this address where they lived when their partner died?
             </h2>
+
+            <div class="multiple-choice">
+              <input type="radio" name="notUsed[is-their-address-different]" id="is-their-address-different-no" value="No">
+              <label for="is-their-address-different-no">Yes</label>
+            </div>
 
             <div class="multiple-choice" data-target="different-address">
               <input type="radio" name="notUsed[is-their-address-different]" id="is-their-address-different-yes" value="Yes">
-              <label for="is-their-address-different-yes">Yes</label>
-            </div>
-        
-            <div class="multiple-choice">
-              <input type="radio" name="notUsed[is-their-address-different]" id="is-their-address-different-no" value="No">
-              <label for="is-their-address-different-no">No</label>
+              <label for="is-their-address-different-yes">No</label>
             </div>
 
             <div class="panel panel-border-narrow js-hidden" id="different-address">
@@ -131,22 +131,22 @@
         <div class="form-group">
           <fieldset class="inline">
             <h2 class="heading-small">
-              Were they still married or in a civil partnership with the deceased 
-              when they died?
+              Was the claimant married to or in a civil partnership with
+              the deceased person when they died?
             </h2>
 
             <div class="multiple-choice" data-target="can-you-verify-marriage">
               <input id="still-married-yes" type="radio" name="eligibility[still-married]" value="Yes">
               <label for="still-married-yes">Yes</label>
             </div>
-        
+
             <div class="multiple-choice">
               <input id="still-married-no" type="radio" name="eligibility[still-married]" value="No">
               <label for="still-married-no">No</label>
             </div>
           </fieldset>
         </div>
-        
+
         <div class="form-group">
           <fieldset class="inline panel panel-border-narrow js-hidden" id="can-you-verify-marriage">
             <h2 class="heading-small">
@@ -157,7 +157,7 @@
               <input id="marriage-verified-yes" type="radio" name="verification[marriage-verified]" value="Yes">
               <label for="marriage-verified-yes">Yes</label>
             </div>
-        
+
             <div class="multiple-choice">
               <input id="marriage-verified-no" type="radio" name="verification[marriage-verified]" value="No">
               <label for="marriage-verified-no">No</label>
