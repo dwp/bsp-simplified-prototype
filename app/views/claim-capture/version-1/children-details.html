@@ -12,16 +12,16 @@
   <main id="content" role="main" class="group">
     <div class="column-two-thirds">
       {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
-      
+
       <h1 class="heading-xlarge">
-        Does the claimant have any dependant children?
+        Does the claimant have any dependent children?
       </h1>
 
       <form method="post" autocomplete="off">
         <div class="form-group">
           <fieldset class="inline">
-            <legend class="visually-hidden">Does the claimant have any dependant children?</legend>
-        
+            <legend class="visually-hidden">Does the claimant have any dependent children?</legend>
+
             <div class="multiple-choice" data-target="child-benefit">
               <input id="dependant-children-yes" type="radio" name="children[dependant-children]" value="Yes">
               <label for="dependant-children-yes">Yes</label>
@@ -36,8 +36,9 @@
 
         <div class="panel panel-border-narrow js-hidden" id="child-benefit">
           <fieldset class="inline">
-            <legend class="heading-small">Do they have a Child Benefit number?</legend>
-        
+            <legend class="heading-small">Does the claimant have a Child Benefit
+              number?</legend>
+
             <div class="multiple-choice">
               <input id="child-benefit-yes" type="radio" name="children[child-benefit]" value="Yes">
               <label for="child-benefit-yes">Yes</label>
@@ -52,8 +53,9 @@
 
         <div class="panel panel-border-narrow js-hidden" id="pregnant-hidden">
           <fieldset class="inline">
-            <legend class="heading-small">Is the claimant pregnant?</legend>
-        
+            <legend class="heading-small">Was the claimant pregnant when their
+              partner died?</legend>
+
             <div class="multiple-choice">
               <input id="pregnant-yes" type="radio" name="children[pregnant]" value="Yes">
               <label for="pregnant-yes">Yes</label>
@@ -65,7 +67,7 @@
             </div>
           </fieldset>
         </div>
-      
+
         <button class="button" type="submit">Continue</button>
       </form>
     </div>
