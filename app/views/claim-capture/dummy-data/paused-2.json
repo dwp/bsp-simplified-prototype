@@ -1,5 +1,5 @@
 {
-  "testDate": "18 October 2017",
+  "testDate": "26 October 2017",
   "claim": {
     "status": "Paused",
     "pausedDate": "",
@@ -48,5 +48,17 @@
     "death": "Yes",
     "conts": "Yes",
     "chb": "No"
+  },
+  "schedule": {
+    "url": "schedule-4",
+    "status": "Active",
+    "class": "claim-status-active", 
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "31 October 2017",
+      "backdated": "31 October 2017",
+      "firstMonthly": "29 November 2017"
+    }
   }
 }

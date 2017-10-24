@@ -1,0 +1,205 @@
+{% extends "layout.html" %}
+{% set d = 'paused-2' | loadDummyData %}
+
+{% block page_title %}
+  Claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">        
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">
+            {{d.claimant.fullName}}
+          </span>
+          {{d.claimant.nino}}
+        </h1>
+        <div>
+          <span class="claim-status claim-status-active">Active</span>
+        </div>
+
+        <section>
+          <h2 class="heading-medium">Log</h2>
+          <h3 class="bold">Claim successful on {{d.testDate}}</h3>
+          <div class="panel panel-border-narrow">
+            Payment schedule created at standard rate.
+          </div>
+
+          <h3 class="bold">Claim paused for 1 week on 19 October 2017</h3>
+          <div class="panel panel-border-narrow">
+            Marriage could not be verified
+          </div>
+        </section>
+
+        <h2 class="heading-small th">
+          Payment details
+        </h2>
+        <a href="schedule-4" class="button">View payment schedule</a>
+      
+        <h2 class="heading-small th">
+          Claimant details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Date of claim
+          </dt>
+          <dd class="data-summary-value">
+            4 October 2017
+          </dd>
+
+          <dt class="data-summary-key">
+            Full name
+          </dt>
+          <dd class="data-summary-value">
+            Amanda Marshall
+          </dd>
+
+          <dt class="data-summary-key">
+            National Insurance number
+          </dt>
+          <dd class="data-summary-value">
+            CC123456C
+          </dd>
+
+          <dt class="data-summary-key">
+            Date of birth
+          </dt>
+          <dd class="data-summary-value">
+            4 April 1982
+          </dd>
+
+          <dt class="data-summary-key">
+            Address
+          </dt>
+          <dd class="data-summary-value">
+            6 Charlton Road<br />
+            Irving<br />
+            Ayrshire<br />
+            KA3 7AP
+          </dd>
+
+          <dt class="data-summary-key">
+            Mobile phone
+          </dt>
+          <dd class="data-summary-value">
+            07712345678
+          </dd>
+
+          <dt class="data-summary-key">
+            Email address
+          </dt>
+          <dd class="data-summary-value">
+            amarshall1@gmail.com
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Partner details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Full name
+          </dt>
+          <dd class="data-summary-value">
+            Robert Marshall
+          </dd>
+
+          <dt class="data-summary-key">
+            National Insurance number
+          </dt>
+          <dd class="data-summary-value">
+            JJ123456J
+          </dd>
+
+          <dt class="data-summary-key">
+            Date of death
+          </dt>
+          <dd class="data-summary-value">
+            29 September 2017
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Children details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Dependant children
+          </dt>
+          <dd class="data-summary-value">
+            No
+          </dd>
+
+          <dt class="data-summary-key">
+            Pregnant
+          </dt>
+          <dd class="data-summary-value">
+            No
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Payment details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Name on account
+          </dt>
+          <dd class="data-summary-value">
+            Mrs A Marshall
+          </dd>
+
+          <dt class="data-summary-key">
+            Sort code
+          </dt>
+          <dd class="data-summary-value">
+            123456
+          </dd>
+
+          <dt class="data-summary-key">
+            Account number
+          </dt>
+          <dd class="data-summary-value">
+            12345678
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Verification
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Marriage
+          </dt>
+          <dd class="data-summary-value">
+            Verified on {{d.testDate}}
+          </dd>
+
+          <dt class="data-summary-key">
+            Death
+          </dt>
+          <dd class="data-summary-value">
+            Verified on 19 October 2017
+          </dd>
+
+          <dt class="data-summary-key">
+            National Insurance contributions
+          </dt>
+          <dd class="data-summary-value">
+            Verified on 19 October 2017
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </main>
+{% endblock %}
