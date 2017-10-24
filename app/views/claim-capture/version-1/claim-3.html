@@ -1,6 +1,5 @@
 {% extends "layout.html" %}
-{% set testDate = '18 October 2017' %}
-{% set pausedDate = '25 October 2017' %}
+{% set d = 'paused-1' | loadDummyData %}
 
 {% block page_title %}
   Claim
@@ -17,16 +16,21 @@
         {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
         
         <h1 class="heading-xlarge schedule-heading">
-          <span class="heading-secondary">Andrew Marshall</span>
-          CC123456C
+          <span class="heading-secondary">
+            {{d.claimant.fullName}}
+          </span>
+          {{d.claimant.nino}}
         </h1>
         <div>
-          <span class="claim-status">PAUSED</span>
-          <span class="paused-until-date"> until {{pausedDate}}</span>
+          <span class="claim-status">{{d.claim.status}}</span>
+          {% if d.claim.pausedDate %}
+            <span class="paused-until-date"> until {{d.claim.pausedDate}}</span>
+          {% endif %}
         </div>
+
         <div class="time-since-claim">
           <div class="data">
-            <span class="data-item bold-xlarge">3 weeks</span>
+            <span class="data-item bold-xlarge">{{d.claim.weeksSinceClaim}} weeks</span>
             <span class="data-item bold-xsmall">since date of claim</span>
           </div>
         </div>
@@ -70,7 +74,7 @@
             Full name
           </dt>
           <dd class="data-summary-value">
-            Andrew Marshall
+            Amanda Marshall
           </dd>
 
           <dt class="data-summary-key">
@@ -121,7 +125,7 @@
             Full name
           </dt>
           <dd class="data-summary-value">
-            Rachel Marshall
+            Robert Marshall
           </dd>
 
           <dt class="data-summary-key">
@@ -156,6 +160,33 @@
           </dt>
           <dd class="data-summary-value">
             No
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Payment details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Name on account
+          </dt>
+          <dd class="data-summary-value">
+            Mrs A Marshall
+          </dd>
+
+          <dt class="data-summary-key">
+            Sort code
+          </dt>
+          <dd class="data-summary-value">
+            123456
+          </dd>
+
+          <dt class="data-summary-key">
+            Account number
+          </dt>
+          <dd class="data-summary-value">
+            12345678
           </dd>
         </dl>
 

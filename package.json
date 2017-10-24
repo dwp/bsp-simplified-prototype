@@ -24,6 +24,7 @@
     "body-parser": "^1.17.2",
     "browser-sync": "^2.18.12",
     "cross-spawn": "^5.0.0",
+    "date-fns": "^1.29.0",
     "dotenv": "^4.0.0",
     "express": "4.15.2",
     "express-session": "^1.15.3",

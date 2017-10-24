@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% set d = 'allowed' | loadDummyData %}
 
 {% block page_title %}
   Payment schedule
@@ -17,11 +18,13 @@
         <a href="claim-1" class="link-back">Back</a>
 
         <h1 class="heading-xlarge schedule-heading">
-        <span class="heading-secondary">Tony Smith</span>
-          AA123456A
+        <span class="heading-secondary">
+          {{d.claimant.fullName}}
+        </span>
+          {{d.claimant.nino}}
         </h1>
         <span class="schedule-status schedule-status-active">
-          ACTIVE
+          {{d.schedule.status}}
         </span>
 
         <h2 class="heading-small th">
@@ -38,28 +41,28 @@
             Name on account
           </dt>
           <dd class="data-summary-value">
-            Mr T Smith
+            {{d.payment.nameOnAccount}}
           </dd>
           
           <dt class="data-summary-key">
             Sort code
           </dt>
           <dd class="data-summary-value">
-            123456
+            {{d.payment.sortCode}}
           </dd>
 
           <dt class="data-summary-key">
             Account number
           </dt>
           <dd class="data-summary-value">
-            12345678
+            {{d.payment.sortCode}}
           </dd>
 
           <dt class="data-summary-key">
             Country
           </dt>
           <dd class="data-summary-value">
-            United Kingdom
+            {{d.payment.country}}
           </dd>
         </dl>
 
@@ -74,7 +77,7 @@
 
         <dl class="data-summary">
           <dt class="data-summary-key">
-            Higher
+            {{d.schedule.rate}}
           </dt>
           <dd class="data-summary-value">
           </dd>
@@ -103,182 +106,46 @@
         </h2>
 
         <ul class="schedule">
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE11">
-              Due 31 October 2017
-            </time>
-            <strong class="amount">
-              £3500
-            </strong>
-            <span class="type">
-              Initial payment
-            </span>
-          </li>
+          {% if d.schedule.payments.initial %}
+            <li class="payment">
+              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE11">
+                Due {{d.schedule.payments.initial}}
+              </time>
+              <strong class="amount">
+                £{{'3,500' if d.schedule.rate == 'Higher' else '2,500'}}
+              </strong>
+              <span class="type">
+                Initial payment
+              </span>
+            </li>
+          {% endif %}
 
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
-              Due 31 October 2017
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-            <span class="type">
-              Backdated monthly payments
-            </span>
-          </li>
+          {% if d.schedule.payments.backdated %}
+            <li class="payment">
+              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+                Due {{d.schedule.payments.backdated}}
+              </time>
+              <strong class="amount">
+                £{{'350' if d.schedule.rate == 'Higher' else '150'}}
+              </strong>
+              <span class="type">
+                Backdated monthly payments
+              </span>
+            </li>
+          {% endif %}
 
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE9">
-              Due 1 November 2017
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE16">
-              Due 1 December 2017
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE4">
-              Due 1 January 2018
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE4">
-              Due 1 February 2018
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE4">
-              Due 1 March 2018
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE4">
-              Due 1 April 2018
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE4">
-              Due 1 May 2018
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE5">
-              Due 1 June 2018
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE6">
-              Due 1 July 2018
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE7">
-              Due 1 August 2018
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE12">
-              Due 1 September 2018
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE13">
-              Due 1 October 2018
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE14">
-              Due 1 November 2018
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE15">
-              Due 1 December 2018
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-          
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE16">
-              Due 1 January 2019
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE17">
-              Due 1 February 2019
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
-
-          <li class="payment">
-            <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE18">
-              Due 1 March 2019
-            </time>
-            <strong class="amount">
-              £350
-            </strong>
-          </li>
+          {% if d.schedule.payments.monthly %}
+            {% for payment in d.schedule.payments.monthly %}
+              <li class="payment">
+                <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE9">
+                  Due {{payment}}
+                </time>
+                <strong class="amount">
+                  £{{'350' if d.schedule.rate == 'Higher' else '150'}}
+                </strong>
+              </li>
+            {% endfor %}
+          {% endif %}
         </ul>
       </div>
     </div>

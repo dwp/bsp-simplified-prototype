@@ -14,19 +14,24 @@
         <a class="link-back" href="claim-4">Back to claim</a>
         {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
 
-        <h1 class="heading-xlarge">Have you seen proof of the marriage or civil partnership?</h1>
+        <h1 class="heading-xlarge">Have you been able to verify the marriage or civil partnership?</h1>
 
         <form method="post">
           <div class="form-group">
-            <fieldset class="inline">
+            <fieldset>
               <div class="multiple-choice" data-target="evidence">
                 <input id="radio-inline-1" type="radio" name="marriageVerified" value="Yes">
-                <label for="radio-inline-1">Yes</label>
+                <label for="radio-inline-1">Yes, they're married</label>
+              </div>
+
+              <div class="multiple-choice" data-target="evidence">
+                <input id="radio-inline-1" type="radio" name="marriageVerified" value="Yes">
+                <label for="radio-inline-1">Yes, they're not married</label>
               </div>
 
               <div class="multiple-choice">
                 <input id="radio-inline-3" type="radio" name="marriageVerified" value="notYet">
-                <label for="radio-inline-3">Not yet</label>
+                <label for="radio-inline-3">Still waiting for evidence</label>
               </div>
             </fieldset>
           </div>

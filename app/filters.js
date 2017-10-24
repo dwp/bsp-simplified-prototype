@@ -1,3 +1,6 @@
+const {addMonths, format} = require('date-fns')
+var parse = require('date-fns/parse')
+
 module.exports = function (env) {
   /**
    * Instantiate object used to store the methods registered as a
@@ -7,39 +10,25 @@ module.exports = function (env) {
    */
   var filters = {}
 
-  /* ------------------------------------------------------------------
-    add your methods to the filters obj below this comment block:
-    @example:
-
-    filters.sayHi = function(name) {
-        return 'Hi ' + name + '!'
+  filters.loadDummyData = (filename) => {
+    const data = require(`./views/claim-capture/dummy-data/${filename}.json`)
+    if (data.schedule) {
+      const fMonth = parse(data.schedule.payments.firstMonthly)
+      const monthly = []
+      let currentDate
+      for (let i = 1; i < data.schedule.payments.number; i++) {
+        if (i === 1) {
+          currentDate = fMonth
+          monthly.push(format(currentDate, 'D MMMM YYYY'))          
+        }
+        const newDate = addMonths(currentDate, 1)
+        monthly.push(format(newDate, 'D MMMM YYYY'))
+        currentDate = newDate
+      }
+      data.schedule.payments.monthly = monthly
     }
+    return data
+  }
 
-    Which in your templates would be used as:
-
-    {{ 'Paul' | sayHi }} => 'Hi Paul'
-
-    Notice the first argument of your filters method is whatever
-    gets 'piped' via '|' to the filter.
-
-    Filters can take additional arguments, for example:
-
-    filters.sayHi = function(name,tone) {
-      return (tone == 'formal' ? 'Greetings' : 'Hi') + ' ' + name + '!'
-    }
-
-    Which would be used like this:
-
-    {{ 'Joel' | sayHi('formal') }} => 'Greetings Joel!'
-    {{ 'Gemma' | sayHi }} => 'Hi Gemma!'
-
-    For more on filters and how to write them see the Nunjucks
-    documentation.
-
-  ------------------------------------------------------------------ */
-
-  /* ------------------------------------------------------------------
-    keep the following line to return your filters to the app
-  ------------------------------------------------------------------ */
   return filters
 }

@@ -1,6 +1,5 @@
 {% extends "layout.html" %}
-{% set testDate = '18 October 2017' %}
-{% set pausedActive = 'active' %}
+{% set d = 'paused-2' | loadDummyData %}
 
 {% block page_title %}
   Claim
@@ -14,18 +13,24 @@
   <main id="content" role="main">
     <div class="grid-row">
       <div class="column-two-thirds column-minimum">
+        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
         
         <h1 class="heading-xlarge schedule-heading">
-          <span class="heading-secondary">Christine Jackson</span>
-          DD123456D
+          <span class="heading-secondary">
+            {{d.claimant.fullName}}
+          </span>
+          {{d.claimant.nino}}
         </h1>
         <div>
-          <span class="claim-status">PAUSED</span>
-          <span class="paused-until-date"></span>
+          <span class="claim-status">{{d.claim.status}}</span>
+          {% if d.claim.pausedDate %}
+            <span class="paused-until-date"> until {{d.claim.pausedDate}}</span>
+          {% endif %}
         </div>
+
         <div class="time-since-claim">
           <div class="data">
-            <span class="data-item bold-xlarge">4 weeks</span>
+            <span class="data-item bold-xlarge">{{d.claim.weeksSinceClaim}} weeks</span>
             <span class="data-item bold-xsmall">since date of claim</span>
           </div>
         </div>
@@ -47,13 +52,7 @@
 
         <section>
           <h2 class="heading-medium">Log</h2>
-
-          <h3 class="bold">Claim paused for 2 weeks on 12 October</h3>
-          <div class="panel panel-border-narrow">
-            Marriage could not be verified
-          </div>
-
-          <h3 class="bold">Claim paused for 2 weeks on 28 September</h3>
+          <h3 class="bold">Claim paused on {{testDate}}</h3>
           <div class="panel panel-border-narrow">
             Marriage could not be verified
           </div>
@@ -68,38 +67,38 @@
             Date of claim
           </dt>
           <dd class="data-summary-value">
-            25 September 2017
+            4 October 2017
           </dd>
 
           <dt class="data-summary-key">
             Full name
           </dt>
           <dd class="data-summary-value">
-            Christine Jackson
+            Amanda Marshall
           </dd>
 
           <dt class="data-summary-key">
             National Insurance number
           </dt>
           <dd class="data-summary-value">
-            DD123456D
+            CC123456C
           </dd>
 
           <dt class="data-summary-key">
             Date of birth
           </dt>
           <dd class="data-summary-value">
-            5 July 1973
+            4 April 1982
           </dd>
 
           <dt class="data-summary-key">
             Address
           </dt>
           <dd class="data-summary-value">
-            8 Station Road<br />
-            Manchester<br />
-            Greater Manchester<br />
-            MA1 4GG
+            6 Charlton Road<br />
+            Irving<br />
+            Ayrshire<br />
+            KA3 7AP
           </dd>
 
           <dt class="data-summary-key">
@@ -107,6 +106,13 @@
           </dt>
           <dd class="data-summary-value">
             07712345678
+          </dd>
+
+          <dt class="data-summary-key">
+            Email address
+          </dt>
+          <dd class="data-summary-value">
+            amarshall1@gmail.com
           </dd>
         </dl>
 
@@ -119,21 +125,21 @@
             Full name
           </dt>
           <dd class="data-summary-value">
-            Joe Jackson
+            Robert Marshall
           </dd>
 
           <dt class="data-summary-key">
             National Insurance number
           </dt>
           <dd class="data-summary-value">
-            EE123456E
+            JJ123456J
           </dd>
 
           <dt class="data-summary-key">
             Date of death
           </dt>
           <dd class="data-summary-value">
-            1 August 2017
+            29 September 2017
           </dd>
         </dl>
 
@@ -146,7 +152,41 @@
             Dependant children
           </dt>
           <dd class="data-summary-value">
-            Yes
+            No
+          </dd>
+
+          <dt class="data-summary-key">
+            Pregnant
+          </dt>
+          <dd class="data-summary-value">
+            No
+          </dd>
+        </dl>
+
+        <h2 class="heading-small th">
+          Payment details
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            Name on account
+          </dt>
+          <dd class="data-summary-value">
+            Mrs A Marshall
+          </dd>
+
+          <dt class="data-summary-key">
+            Sort code
+          </dt>
+          <dd class="data-summary-value">
+            123456
+          </dd>
+
+          <dt class="data-summary-key">
+            Account number
+          </dt>
+          <dd class="data-summary-value">
+            12345678
           </dd>
         </dl>
 
@@ -166,21 +206,14 @@
             Death
           </dt>
           <dd class="data-summary-value">
-            Verified on 1 September 2017
+            Verified on {{testDate}}
           </dd>
 
           <dt class="data-summary-key">
             National Insurance contributions
           </dt>
           <dd class="data-summary-value">
-            Verified on 1 September 2017
-          </dd>
-
-          <dt class="data-summary-key">
-            Child Benefit number
-          </dt>
-          <dd class="data-summary-value">
-            Verified on 1 September 2017
+            Verified on {{testDate}}
           </dd>
         </dl>
       </div>
