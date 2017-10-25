@@ -48,7 +48,7 @@
     "url": "schedule-4",
     "status": "Active",
     "class": "claim-status-active", 
-    "rate": "Standard",   
+    "rate": "Higher",   
     "payments": {
       "number": 18,
       "initial": "31 October 2017",

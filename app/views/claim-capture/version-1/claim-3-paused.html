@@ -225,25 +225,9 @@
 
       <div class="column-one-third">
         <section class="log">
-          <h2 class="heading-medium">Log</h2>
-          <div>
-            <span class="line"></span>
-            <h3 class="bold">Claim paused for 2 weeks</h3>
-            <span class="paused-until-date">19 October 2017</span>
-            <p>Need to see evidence of marriage.</p>
-          </div>
+          <h2 class="heading-medium">Claim history</h2>
 
-          <div>
-            <span class="line"></span>
-            <h3 class="bold">National Insurance contributions verified</h3>
-            <span class="paused-until-date">19 October 2017</span>
-          </div>
-
-          <div>
-            <span class="line"></span>
-            <h3 class="bold">Death verified</h3>
-            <span class="paused-until-date">{{d.testDate}}</span>
-          </div>
+          {% include feature + '/' + sprint + '/claim-3_log.html' %}
         </section>
       </div>
     </div>

@@ -40,7 +40,7 @@
             {% if search == a.claimant.nino %}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/claim-1-allowed" class="result-link">
-                  {{a.claim.status}}
+                  {{a.claim.status}} claim
                 </a>
                 <span class="result-meta">
                   {{a.claimant.fullName}}
@@ -52,7 +52,7 @@
             {% elif search == b.claimant.nino %}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/claim-2-disallowed" class="result-link">
-                  {{b.claim.status}}
+                  {{b.claim.status}} claim
                 </a>
                 <span class="result-meta">
                   {{b.claimant.fullName}}
@@ -64,7 +64,7 @@
             {% elif search == c.claimant.nino %}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/claim-3-paused" class="result-link">
-                  {{c.claim.status}}
+                  {{c.claim.status}} claim
                 </a>
                 <span class="result-meta">
                   {{c.claimant.fullName}}
@@ -76,7 +76,7 @@
             {% elif search == d.claimant.nino %}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/claim-4-paused" class="result-link">
-                  {{d.claim.status}}
+                  {{d.claim.status}} claim
                 </a>
                 <span class="result-meta">
                   {{d.claimant.fullName}}
@@ -86,7 +86,7 @@
                 </span>
               </li>
             {% else %}
-              No matching payment schedules found.
+              No matching claims found.
             {% endif %}
           </ul>
         {% endif %}

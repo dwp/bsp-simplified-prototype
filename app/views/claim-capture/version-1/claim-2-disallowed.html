@@ -215,31 +215,16 @@
 
       <div class="column-one-third">
         <section class="log">
-          <h2 class="heading-medium">Log</h2>
+          <h2 class="heading-medium">Claim history</h2>
           <div>
             <span class="line"></span>
             <h3 class="bold">Claim disallowed</h3>
+            <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
             <span class="paused-until-date">{{d.testDate}}</span>
             <p>Claimant over State Pension age at time of death.</p>
           </div>
 
-          <div>
-            <span class="line"></span>
-            <h3 class="bold">National Insurance contributions verified</h3>
-            <span class="paused-until-date">{{d.testDate}}</span>
-          </div>
-
-          <div>
-            <span class="line"></span>
-            <h3 class="bold">Death verified</h3>
-            <span class="paused-until-date">{{d.testDate}}</span>
-          </div>
-
-          <div>
-          <span class="line"></span>
-            <h3 class="bold">Marriage verified</h3>
-            <span class="paused-until-date">{{d.testDate}}</span>
-          </div>
+          {% include feature + '/' + sprint + '/claim-2_log.html' %}
         </section>
       </div>
     </div>
