@@ -21,11 +21,12 @@
   }
 
   a {
-    &:visited,
-    &:hover,
-    &:active {
-      color: inherit;
-      text-decoration: none;
+    &:visited {
+      color: $link-colour;
+      
+      &:hover {
+        color: $link-hover-colour;
+      }
     }
   }
 }
