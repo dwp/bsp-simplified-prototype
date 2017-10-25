@@ -29,7 +29,8 @@
     "dateOfDeath": "29 September 2017"  
   },
   "children": {
-    "dependant": "No"
+    "dependant": "No",
+    "pregnant": "Yes"
   },
   "payment": {
     "nameOnAccount": "Mrs A Marshall",

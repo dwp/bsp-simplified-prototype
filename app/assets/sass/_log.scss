@@ -1,0 +1,16 @@
+.log {
+  .line {
+    background-color: $govuk-blue;
+    height: 5px;
+    left: 0;
+    position: absolute;
+    top: 28px;
+    width: 10px;
+  }
+
+  div {
+    border-left: 5px solid $govuk-blue;
+    padding: 20px 0px 20px 20px;
+    position: relative;
+  }
+}

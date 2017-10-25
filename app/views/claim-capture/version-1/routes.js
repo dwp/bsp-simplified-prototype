@@ -64,9 +64,9 @@ router.post('/confirm-details', (req, res) => {
 })
 
 router.get('/pause-claim/:id', (req, res) => {
-  res.render(`${req.feature}/${req.sprint}/decision-paused`, {id: req.params.id})
+  res.render(`${req.feature}/${req.sprint}/pause-claim`, {id: req.params.id})
 })
-router.post('/pause-claim', (req, res) => {
+router.post('/pause-claim/:id', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/decision-paused/${req.params.id}`)
 })
 

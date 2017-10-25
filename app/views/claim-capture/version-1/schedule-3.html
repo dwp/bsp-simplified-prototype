@@ -15,8 +15,6 @@
       <div class="column-two-thirds">
         {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
         
-        <a href="claim-3-allowed" class="link-back">Back</a>
-
         <h1 class="heading-xlarge schedule-heading">
         <span class="heading-secondary">
           {{d.claimant.fullName}}
@@ -26,6 +24,11 @@
         <span class="schedule-status schedule-status-active">
           {{d.schedule.status}}
         </span>
+
+        <ul class="tabs">
+          <li><a href="/{{feature}}/{{sprint}}/claim-3-allowed">Claim details</a></li>
+          <li class="current">Payment schedule</a></li>
+        </ul>
 
         <h2 class="heading-small th">
           Payment details

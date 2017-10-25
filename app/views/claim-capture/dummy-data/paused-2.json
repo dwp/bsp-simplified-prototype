@@ -7,29 +7,28 @@
     "class": ""
   },
   "claimant": {
-    "fullName": "Amanda Marshall",
-    "nino": "CC123456C",
-    "dateOfClaim": "4 October 2017",
-    "dateOfBirth": "4 April 1982",
+    "fullName": "Christine Jackson",
+    "nino": "DD123456D",
+    "dateOfClaim": "25 September 2017",
+    "dateOfBirth": "5 July 1973",
     "currentAddress": {
-      "number": "6",
-      "street": "Charlton Road",
-      "town": "Irving",
-      "county": "Ayrshire",
-      "postcode": "KA3 7AP"
+      "number": "8",
+      "street": "Station Road",
+      "town": "Manchester",
+      "county": "Greater Manchester",
+      "postcode": "MA1 4GG"
     },
     "contact": {
-      "mobile": "07712345678",
-      "email": "amarshall1@gmail.com"
+      "mobile": "07712345788"
     }
   },
   "partner": {
-    "fullName": "Robert Marshall",
-    "nino": "JJ123456J",
-    "dateOfDeath": "29 September 2017"  
+    "fullName": "Joe Jackson",
+    "nino": "EE123456E",
+    "dateOfDeath": "01 August 2017"  
   },
   "children": {
-    "dependant": "No"
+    "dependant": "Yes"
   },
   "payment": {
     "nameOnAccount": "Mrs A Marshall",

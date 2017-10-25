@@ -32,53 +32,66 @@
             Date of claim
           </dt>
           <dd class="data-summary-value">
-            4 October 2017
+            {{d.claimant.dateOfClaim}}
           </dd>
 
           <dt class="data-summary-key">
             Full name
           </dt>
           <dd class="data-summary-value">
-            Amanda Marshall
+            {{d.claimant.fullName}}
           </dd>
 
           <dt class="data-summary-key">
             National Insurance number
           </dt>
           <dd class="data-summary-value">
-            CC123456C
+            {{d.claimant.nino}}
           </dd>
 
           <dt class="data-summary-key">
             Date of birth
           </dt>
           <dd class="data-summary-value">
-            4 April 1982
+            {{d.claimant.dateOfBirth}}
           </dd>
 
           <dt class="data-summary-key">
             Address
           </dt>
           <dd class="data-summary-value">
-            6 Charlton Road<br />
-            Irving<br />
-            Ayrshire<br />
-            KA3 7AP
+            {{d.claimant.currentAddress.number}} {{d.claimant.currentAddress.street}}<br />
+            {{d.claimant.currentAddress.town}}<br/>
+            {{d.claimant.currentAddress.county}}<br />
+            {{d.claimant.currentAddress.postcode}}
           </dd>
 
-          <dt class="data-summary-key">
-            Mobile phone
-          </dt>
-          <dd class="data-summary-value">
-            07712345678
-          </dd>
+          {% if d.claimant.contact.home %}
+            <dt class="data-summary-key">
+              Home phone
+            </dt>
+            <dd class="data-summary-value">
+              {{d.claimant.contact.home}}
+            </dd>
+          {% endif %}
 
-          <dt class="data-summary-key">
-            Email address
-          </dt>
-          <dd class="data-summary-value">
-            amarshall1@gmail.com
-          </dd>
+          {% if d.claimant.contact.mobile %}
+            <dt class="data-summary-key">
+              Mobile phone
+            </dt>
+            <dd class="data-summary-value">
+              {{d.claimant.contact.mobile}}
+            </dd>
+          {% endif %}
+
+          {% if d.claimant.contact.email %}
+            <dt class="data-summary-key">
+              Email address
+            </dt>
+            <dd class="data-summary-value">
+              {{d.claimant.contact.email}}
+            </dd>
+          {% endif %}
         </dl>
 
         <h2 class="heading-small th">
@@ -90,21 +103,21 @@
             Full name
           </dt>
           <dd class="data-summary-value">
-            Robert Marshall
+            {{d.partner.fullName}}
           </dd>
 
           <dt class="data-summary-key">
             National Insurance number
           </dt>
           <dd class="data-summary-value">
-            JJ123456J
+            {{d.partner.nino}}
           </dd>
 
           <dt class="data-summary-key">
             Date of death
           </dt>
           <dd class="data-summary-value">
-            29 September 2017
+            {{d.partner.dateOfDeath}}
           </dd>
         </dl>
 
@@ -117,15 +130,17 @@
             Dependent children
           </dt>
           <dd class="data-summary-value">
-            No
+            {{d.children.dependant}}
           </dd>
 
-          <dt class="data-summary-key">
-            Pregnant
-          </dt>
-          <dd class="data-summary-value">
-            No
-          </dd>
+          {% if d.children.pregnant %}
+            <dt class="data-summary-key">
+              Pregnant
+            </dt>
+            <dd class="data-summary-value">
+              {{d.children.pregnant}}
+            </dd>
+          {% endif %}
         </dl>
 
         <h2 class="heading-small th">
@@ -137,21 +152,21 @@
             Name on account
           </dt>
           <dd class="data-summary-value">
-            Mrs A Marshall
+            {{d.payment.nameOnAccount}}
           </dd>
 
           <dt class="data-summary-key">
             Sort code
           </dt>
           <dd class="data-summary-value">
-            123456
+            {{d.payment.sortCode}}
           </dd>
 
           <dt class="data-summary-key">
             Account number
           </dt>
           <dd class="data-summary-value">
-            12345678
+            {{d.payment.accountNumber}}
           </dd>
         </dl>
 
@@ -164,7 +179,7 @@
             Marriage
           </dt>
           <dd class="data-summary-value">
-            Verified on {{d.testDate}}
+            Not verified
           </dd>
 
           <dt class="data-summary-key">
@@ -176,6 +191,13 @@
 
           <dt class="data-summary-key">
             National Insurance contributions
+          </dt>
+          <dd class="data-summary-value">
+            Verified on 19 October 2017
+          </dd>
+
+          <dt class="data-summary-key">
+            Child Benefit
           </dt>
           <dd class="data-summary-value">
             Verified on 19 October 2017
@@ -198,6 +220,12 @@
             <h3 class="bold">Claim paused for 1 week</h3>
             <span class="paused-until-date">19 October 2017</span>
             <p>Need to see evidence of marriage.</p>
+          </div>
+
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">Child Benefit verified</h3>
+            <span class="paused-until-date">19 October 2017</span>
           </div>
 
           <div>

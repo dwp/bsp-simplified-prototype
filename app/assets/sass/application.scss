@@ -26,15 +26,15 @@ $grey999: #999;
 @import 'nav';
 @import 'big-links';
 @import 'bank-details';
+@import 'tabs';
+@import 'log';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 .column-full-width {
-  width: 100%;
-  padding: 0 15px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
+  padding: 0 15px;
+  width: 100%;
 }
 
 .data-summary {
@@ -71,8 +71,8 @@ $grey999: #999;
 }
 
 .alert-default {
-  border-color: $light-blue;
   background-color: mix(white, $light-blue, 90%);
+  border-color: $light-blue;
 }
 
 .reject {
@@ -88,57 +88,8 @@ $grey999: #999;
   border: 1px solid $border-colour;
   margin-bottom: 15px;
   margin-top: 15px;
-  padding: 20px 20px 10px;
   overflow: hidden;
+  padding: 20px 20px 10px;
 }
 
-// Meh
 
-.log {
-  .line {
-    background-color: $govuk-blue;
-    height: 5px;
-    left: 0;
-    position: absolute;
-    top: 28px;
-    width: 10px;
-  }
-
-  div {
-    border-left: 5px solid $govuk-blue;
-    padding: 20px 0px 20px 20px;
-    position: relative;
-  }
-}
-
-.tabs {
-  padding: 0;
-  list-style: none;
-  border-bottom: 1px solid #bfc1c3;
-
-  .current {
-    border: 1px solid #bfc1c3;
-    border-bottom: hidden;
-    color: #0b0c0c;
-    background-color: #fff;
-  }
-
-  li {
-    display: inline-block;
-    margin-bottom: -1px;
-    margin-left: 10px;
-    padding: 10px 30px;
-    color: #005ea5;
-    background: none;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  a,
-  a:visited,
-  a:hover,
-  a:active {
-    color: inherit;
-    text-decoration: none;
-}
-}
