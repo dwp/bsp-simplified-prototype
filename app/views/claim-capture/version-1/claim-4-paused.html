@@ -47,14 +47,6 @@
             </ul>
           </li>
         </ol> 
-
-        <section>
-          <h2 class="heading-medium">Log</h2>
-          <h3 class="bold">Claim paused on {{testDate}}</h3>
-          <div class="panel panel-border-narrow">
-            Marriage could not be verified
-          </div>
-        </section>
       
         <h2 class="heading-small th">
           Claimant details
@@ -160,7 +152,7 @@
 
         <dl class="data-summary">
           <dt class="data-summary-key">
-            Dependant children
+            Dependent children
           </dt>
           <dd class="data-summary-value">
             {{d.children.dependant}}
@@ -229,6 +221,30 @@
             Verified on 19 October 2017
           </dd>
         </dl>
+      </div>
+
+      <div class="column-one-third">
+        <section class="log">
+          <h2 class="heading-medium">Log</h2>
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">Claim paused for 1 week</h3>
+            <span class="paused-until-date">19 October 2017</span>
+            <p>Need to see evidence of marriage.</p>
+          </div>
+
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">Death verified</h3>
+            <span class="paused-until-date">19 October 2017</span>
+          </div>
+
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">National insurance contributions verified</h3>
+            <span class="paused-until-date">19 October 2017</span>
+          </div>
+        </section>
       </div>
     </div>
   </main>

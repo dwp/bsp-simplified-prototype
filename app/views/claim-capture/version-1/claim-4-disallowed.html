@@ -22,19 +22,6 @@
         <div>
           <span class="claim-status claim-status-rejected">Disallowed</span>
         </div>
-
-        <section>
-          <h2 class="heading-medium">Log</h2>
-          <h3 class="bold">Claim disallowed on {{d.testDate}}</h3>
-          <div class="panel panel-border-narrow">
-            Claimant and partner were not married at time of death
-          </div>
-
-          <h3 class="bold">Claim paused for 1 week on 19 October 2017</h3>
-          <div class="panel panel-border-narrow">
-            Marriage could not be verified
-          </div>
-        </section>
       
         <h2 class="heading-small th">
           Claimant details
@@ -127,7 +114,7 @@
 
         <dl class="data-summary">
           <dt class="data-summary-key">
-            Dependant children
+            Dependent children
           </dt>
           <dd class="data-summary-value">
             No
@@ -194,6 +181,37 @@
             Verified on 19 October 2017
           </dd>
         </dl>
+      </div>
+
+      <div class="column-one-third">
+        <section class="log">
+          <h2 class="heading-medium">Log</h2>
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">Claim disallowed</h3>
+            <span class="paused-until-date">{{d.testDate}}</span>
+            <p>Claimant and partner were not married at time of death.</p>
+          </div>
+
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">Claim paused for 1 week</h3>
+            <span class="paused-until-date">19 October 2017</span>
+            <p>Need to see evidence of marriage.</p>
+          </div>
+
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">Death verified</h3>
+            <span class="paused-until-date">19 October 2017</span>
+          </div>
+
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">National insurance contributions verified</h3>
+            <span class="paused-until-date">19 October 2017</span>
+          </div>
+        </section>
       </div>
     </div>
   </main>

@@ -6,12 +6,6 @@
     "weeksSinceClaim": 3,
     "class": ""
   },
-  "log": [
-    {
-      "h3": "Claim paused on",
-      "p": "Marriage could not be verified."
-    }
-  ],
   "claimant": {
     "fullName": "Amanda Marshall",
     "nino": "CC123456C",

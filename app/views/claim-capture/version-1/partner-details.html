@@ -86,7 +86,7 @@
                 Did they die because of an accident, disease or illness connected with their work?
               </legend>
           
-              <div class="multiple-choice">
+              <div class="multiple-choice" data-target="verify-injury">
                 <input id="industrial-injury-yes" type="radio" name="partner[industrial-injury]" value="Yes">
                 <label for="industrial-injury-yes">Yes</label>
               </div>
@@ -96,6 +96,21 @@
                 <label for="industrial-injury-no">No</label>
               </div>
             </fieldset>
+
+            <div class="panel panel-border-narrow js-hidden" id="verify-injury">
+              <fieldset class="inline">
+                <legend class="form-label-bold">Can you verify this?</legend>
+                <div class="multiple-choice">
+                  <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                  <label for="radio-inline-1">Yes</label>
+                </div>
+            
+                <div class="multiple-choice">
+                  <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                  <label for="radio-inline-2">No</label>
+                </div>
+              </fieldset>
+            </div>
 
             <div class="form-group panel panel-border-narrow js-hidden" id="worked-outside-uk">
               <fieldset class="inline">

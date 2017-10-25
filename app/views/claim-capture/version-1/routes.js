@@ -76,7 +76,7 @@ router.get('/verify-marriage/:id', (req, res) => {
 
 router.post('/verify-marriage/:id', (req, res) => {
   const id = req.params.id
-  if (id === 4) {
+  if (id === '4') {
     req.session.data.pausedClaims = 'No'
   }
   if (req.body.marriageVerified === 'married') {

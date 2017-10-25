@@ -23,24 +23,10 @@
           {{d.claim.status}}
         </span>
 
-        {% if d.log %}
-          <section>
-            <h2 class="heading-large">Log</h2>
-            {% for message in d.log %}
-              <h3 class="bold">{{message.h3}} {{d.testDate}}</h3>
-              <div class="panel panel-border-narrow">
-                {{message.p}}
-              </div>
-            {% endfor %}
-          </section>
-        {% endif %}  
-
-        {% if d.schedule %}
-          <h2 class="heading-small th">
-            Payment details
-          </h2>
-          <a href="{{d.schedule.url}}" class="button">View payment schedule</a>
-        {% endif %}
+        <ul class="tabs">
+          <li class="current">Claim</li>
+          <li><a href="/{{feature}}/{{sprint}}/schedule-1">Payment schedule</a></li>
+        </ul>
 
         <h2 class="heading-small th">
           Claimant details
@@ -146,7 +132,7 @@
 
         <dl class="data-summary">
           <dt class="data-summary-key">
-            Dependant children
+            Dependent children
           </dt>
           <dd class="data-summary-value">
             {{d.children.dependant}}
@@ -230,6 +216,42 @@
             </dd>
           </dl>
         {% endif %}
+      </div>
+
+      <div class="column-one-third">
+        <section class="log">
+          <h2 class="heading-medium">Log</h2>
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">Claim allowed</h3>
+            <span class="paused-until-date">{{d.testDate}}</span>
+            <p>Payment schedule created at higher rate.</p>
+          </div>
+
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">Child benefit verified</h3>
+            <span class="paused-until-date">{{d.testDate}}</span>
+          </div>
+
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">National Insurance contributions verified</h3>
+            <span class="paused-until-date">{{d.testDate}}</span>
+          </div>
+
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">Death verified</h3>
+            <span class="paused-until-date">{{d.testDate}}</span>
+          </div>
+
+          <div>
+            <span class="line"></span>
+            <h3 class="bold">Marriage verified</h3>
+            <span class="paused-until-date">{{d.testDate}}</span>
+          </div>
+        </section>
       </div>
     </div>
   </main>

@@ -4,12 +4,6 @@
     "status": "Allowed",
     "class": "claim-status-active"
   },
-  "log": [
-    {
-      "h3": "Claim successful on",
-      "p": "Payment schedule created at higher rate."
-    }
-  ],
   "claimant": {
     "fullName": "Tony Smith",
     "nino": "AA123456A",

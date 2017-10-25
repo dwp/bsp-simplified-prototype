@@ -12,11 +12,7 @@
 {% block content %}
   <main id="content" role="main" class="group">
     <div class="grid-row">
-      <div class="column-two-thirds">
-        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
-        
-        <a href="claim-4-active" class="link-back">Back</a>
-
+      <div class="column-two-thirds">        
         <h1 class="heading-xlarge schedule-heading">
         <span class="heading-secondary">
           {{d.claimant.fullName}}
@@ -26,6 +22,11 @@
         <span class="schedule-status schedule-status-active">
           {{d.schedule.status}}
         </span>
+
+        <ul class="tabs">
+          <li><a href="/{{feature}}/{{sprint}}/claim-4-allowed">Claim</a></li>
+          <li class="current">Payment schedule</a></li>
+        </ul>
 
         <h2 class="heading-small th">
           Payment details
