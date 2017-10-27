@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set d = 'paused-2' | loadDummyData %}
+{% set d = '4' | loadDummyData %}
 
 {% block page_title %}
   Claim
@@ -20,7 +20,9 @@
           {{d.claimant.nino}}
         </h1>
         <div>
-          <span class="claim-status claim-status-rejected">Disallowed</span>
+          <span class="claim-status claim-status-rejected">
+            Disallowed
+          </span>
         </div>
       
         <h2 class="heading-small th">

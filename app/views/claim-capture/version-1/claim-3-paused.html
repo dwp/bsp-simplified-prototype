@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set d = 'paused-1' | loadDummyData %}
+{% set d = '3' | loadDummyData %}
 
 {% block page_title %}
   Claim
@@ -20,7 +20,7 @@
           {{d.claimant.nino}}
         </h1>
         <div>
-          <span class="claim-status">{{d.claim.status}}</span>
+          <span class="claim-status">Paused</span>
           {% if d.claim.pausedDate %}
             <span class="paused-until-date"> until {{d.claim.pausedDate}}</span>
           {% endif %}

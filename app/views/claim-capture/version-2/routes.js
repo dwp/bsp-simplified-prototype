@@ -32,10 +32,12 @@ router.get('/find-a-claim', (req, res) => {
 // -----------------------------------------------------------------------------
 // Capture a claim -------------------------------------------------------------
 // -----------------------------------------------------------------------------
+// Start new claim
 router.get('/start-new-claim', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/claim-date`)
 })
 
+// Claim date
 router.get('/claim-date', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/claim-date`)
 })
@@ -43,6 +45,7 @@ router.post('/claim-date', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/claimant-details`)
 })
 
+// Claimant details
 router.get('/claimant-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/claimant-details`)
 })
@@ -50,6 +53,7 @@ router.post('/claimant-details', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/partner-details`)
 })
 
+// Partner details
 router.get('/partner-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/partner-details`)
 })
@@ -57,6 +61,7 @@ router.post('/partner-details', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/children-details`)
 })
 
+// Children details
 router.get('/children-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/children-details`)
 })
@@ -64,32 +69,31 @@ router.post('/children-details', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/payment-details`)
 })
 
+// Payment details
 router.get('/payment-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/payment-details`)
 })
 router.post('/payment-details', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/confirm-details`)
+  const id = req.session.data.scenario || 1
+  return res.redirect(`/${req.feature}/${req.sprint}/confirm-details/${id}`)
 })
 
+// Confirm details
 router.get('/confirm-details/:id', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/confirm-details`, {id: req.params.id, changeLinks: true})
 })
-router.post('/confirm-details', (req, res) => {
-  if (req.session.data.dateOfClaim) {
-    const day = String(req.session.data.dateOfClaim.day).padStart(2, '0')
-    const month = req.session.data.dateOfClaim.month
-    const year = req.session.data.dateOfClaim.year
-    const date = day + month + year
-    if (date === '02102017') {
-      return res.redirect(`/${req.feature}/${req.sprint}/decision-disallowed/2`)
-    }
-    if (date === '03102017') {
-      return res.redirect(`/${req.feature}/${req.sprint}/pause-claim/3`)
-    }
+router.post('/confirm-details/:id', (req, res) => {
+  const id = parseInt(req.params.id, 10)
+  if (id === 3) {
+    return res.redirect(`/${req.feature}/${req.sprint}/pause-claim/${id}`)
   }
-  res.redirect(`/${req.feature}/${req.sprint}/decision-allowed/1`)
+  if (id === 2) {
+    return res.redirect(`/${req.feature}/${req.sprint}/decision-disallowed/${id}`)
+  }
+  res.redirect(`/${req.feature}/${req.sprint}/decision-allowed/${id}`)
 })
 
+// Pause claim for
 router.get('/pause-claim/:id', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/pause-claim`, {id: req.params.id})
 })
@@ -100,14 +104,18 @@ router.post('/pause-claim/:id', (req, res) => {
 // -----------------------------------------------------------------------------
 // Decisions -------------------------------------------------------------------
 // -----------------------------------------------------------------------------
+
+// Allowed
 router.get('/decision-allowed/:id', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/decisions/allowed`, {id: req.params.id})
 })
 
+// Disallowed
 router.get('/decision-disallowed/:id', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/decisions/disallowed`, {id: req.params.id})
 })
 
+// Paused
 router.get('/decision-paused/:id', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/decisions/paused`, {id: req.params.id})
 })
@@ -115,10 +123,10 @@ router.get('/decision-paused/:id', (req, res) => {
 // -----------------------------------------------------------------------------
 // Tasks -----------------------------------------------------------------------
 // -----------------------------------------------------------------------------
+// Verify marriage
 router.get('/verify-marriage/:id', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/tasks/verify-marriage`, {id: req.params.id})
 })
-
 router.post('/verify-marriage/:id', (req, res) => {
   const id = req.params.id
   if (id === '4') {

@@ -10,7 +10,7 @@
 
 {% block content %}
   <main id="content" role="main">
-    {% include feature + '/' + sprint + '/common/' + '_paused-claim-banner.html' %}
+    {% include '../common/_paused-claim-banner.html' %}
     <div class="grid-row">
       <div class="column-two-thirds">
 
@@ -23,7 +23,11 @@
           <li>Marriage could not be verified</li>
         </ul>
 
-        <a href="/{{feature}}/{{sprint}}/claim-{{id}}-paused">View claim</a>
+        <a href="/{{feature}}/{{sprint}}/claim/paused/{{id}}">View claim</a>
+        {% if data.pausedClaims == 'Yes' %}
+          <br />
+          <a href="/{{feature}}/{{sprint}}/claim/4/paused">Process a paused claim</a>
+        {% endif %}
       </div>
     </div>
   </main>
