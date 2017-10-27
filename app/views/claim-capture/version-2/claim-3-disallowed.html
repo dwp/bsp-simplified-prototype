@@ -12,7 +12,9 @@
 {% block content %}
   <main id="content" role="main">
     <div class="grid-row">
-      <div class="column-two-thirds column-minimum">        
+      <div class="column-two-thirds column-minimum">   
+        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
+             
         <h1 class="heading-xlarge schedule-heading">
           <span class="heading-secondary">
             {{d.claimant.fullName}}
