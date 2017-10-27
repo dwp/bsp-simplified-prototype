@@ -71,10 +71,6 @@
     list-style-type: none;
     padding: 15px;
 
-    &:active {
-      outline: 3px solid $focus-colour;
-    }
-
     @include media(mobile) {
       width: 100%;
     }
@@ -82,13 +78,6 @@
 
   a {
     display: block;
-    text-decoration: none;
-
-    &:focus,
-    &:active {
-      background-color: $highlight-colour;
-      outline: none;
-    }
   }
 
   .active {
