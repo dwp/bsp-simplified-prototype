@@ -1,8 +1,4 @@
 {
-  "claim": {
-    "status": "Disallowed",
-    "class": "claim-status-rejected"
-  },
   "claimant": {
     "fullName": "Sarah Wilson",
     "nino": "BB123456B",
@@ -36,7 +32,6 @@
   "verification": {
     "marriage": "Yes",
     "death": "Yes",
-    "conts": "Yes",
-    "chb": "No"
+    "conts": "Yes"
   }
 }

@@ -40,13 +40,9 @@
   "verification": {
     "marriage": "No",
     "death": "Yes",
-    "conts": "Yes",
-    "chb": "No"
+    "conts": "Yes"
   },
   "schedule": {
-    "url": "schedule-4",
-    "status": "Active",
-    "class": "claim-status-active", 
     "rate": "Higher",   
     "payments": {
       "number": 18,

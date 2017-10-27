@@ -28,80 +28,23 @@
           {% include './_status-disallowed.html' %}
         {% elif status === 'paused' %}
           {% include './_status-paused.html' %}
-          <div class="time-since-claim">
-            <div class="data">
-              <span class="data-item bold-xlarge">{{d.claim.weeksSinceClaim}} weeks</span>
-              <span class="data-item bold-xsmall">since date of claim</span>
-            </div>
-          </div>
-
-          <ol class="task-list">
-            <li>
-              <h2 class="task-list-section">
-                Tasks to complete
-              </h2>
-              <ul>
-                <li class="task-list-item">
-                  <a class="task-name" href="/{{feature}}/{{sprint}}/verify-marriage/{{id}}" aria-describedby="eligibility-completed">
-                    Verify marriage
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ol>
         {% else %}
           {% include './_status-allowed.html' %} 
           {% include './_subnav-claim.html' %}
+        {% endif %}
+
+        {% if status === 'paused' %}
+          {% include './_date-counter.html' %}
+          {% include './_tasks.html' %}
         {% endif %}
 
         {% include '../common/_details-claimant.html' %}
         {% include '../common/_details-partner.html' %}
         {% include '../common/_details-children.html' %}
         {% include '../common/_details-payment.html' %}
-
-        <h2 class="heading-small th">
-          Verification
-        </h2>
-
-        <dl class="data-summary">
-          {% if d.verification.marriage == 'Yes' %}
-            <dt class="data-summary-key">
-              Marriage
-            </dt>
-            <dd class="data-summary-value">
-              Verified on {{t.date}}
-            </dd>
-          {% endif %}
-  
-          {% if d.verification.death == 'Yes' %}
-            <dt class="data-summary-key">
-              Death
-            </dt>
-            <dd class="data-summary-value">
-              Verified on {{t.date}}
-            </dd>
-          {% endif %}
-
-          {% if d.verification.conts == 'Yes' %}
-            <dt class="data-summary-key">
-              National Insurance contributions
-            </dt>
-            <dd class="data-summary-value">
-              Verified on {{t.date}}
-            </dd>
-          {% endif %}
-
-          {% if d.verification.chb == 'Yes' %}
-            <dt class="data-summary-key">
-              Child Benefit
-            </dt>
-            <dd class="data-summary-value">
-              Verified on {{t.date}}
-            </dd>
-          </dl>
-        {% endif %}
+        {% include '../common/_details-verification.html' %}
       </div>
-
+      
       <div class="column-one-third">
         <h2 class="heading-medium">Claim history</h2>
         <ul class="log">

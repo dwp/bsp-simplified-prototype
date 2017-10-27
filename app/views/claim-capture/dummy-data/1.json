@@ -38,9 +38,6 @@
     "chb": "Yes"
   },
   "schedule": {
-    "url": "schedule-1",
-    "status": "Active",
-    "class": "claim-status-active", 
     "rate": "Higher",   
     "payments": {
       "number": 18,
