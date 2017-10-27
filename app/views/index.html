@@ -18,11 +18,18 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="example">
-        {% include 'summaries/claim-capture/version-1.html' %}
+        {% include 'summaries/claim-capture/version-2.html' %}
       </div>
 
       <h2 class="heading-large">All versions</h2>
-       <details>
+      <details>
+        <summary><span class="summary">Claim capture</span></summary>
+        <div class="panel">
+        {% include 'summaries/claim-capture/version-1.html' %}
+        </div>
+      </details>
+
+      <details>
         <summary><span class="summary">Claim management</span></summary>
         <div class="panel">
           {% include 'summaries/claim-management/version-2.html' %}<hr />
