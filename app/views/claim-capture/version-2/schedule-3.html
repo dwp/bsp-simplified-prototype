@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% set d = 'paused-1' | loadDummyData %}
+{% set id = '3' %}
 
 {% block page_title %}
   Payment schedule
@@ -11,9 +12,9 @@
 
 {% block content %}
   <main id="content" role="main" class="group">
+    {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
     <div class="grid-row">
       <div class="column-two-thirds">
-        {% include feature + '/' + sprint + '/' + '_paused-claim-banner.html' %}
         
         <h1 class="heading-xlarge schedule-heading">
         <span class="heading-secondary">
@@ -25,10 +26,7 @@
           {{d.schedule.status}}
         </span>
 
-        <ul class="tabs">
-          <li><a href="/{{feature}}/{{sprint}}/claim-3-allowed">Claim details</a></li>
-          <li class="current">Payment schedule</a></li>
-        </ul>
+        {% include './_subnav-schedule.html' %}
 
         <h2 class="heading-small th">
           Payment details
