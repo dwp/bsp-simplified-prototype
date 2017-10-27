@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/settings', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/find-a-claim`)
+  res.redirect(`/${req.feature}/${req.sprint}/start-new-claim`)
 })
 
 router.get('/find-a-claim', (req, res) => {
