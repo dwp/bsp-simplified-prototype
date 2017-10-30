@@ -26,7 +26,7 @@
         <a href="/{{feature}}/{{sprint}}/claim/{{id}}/allowed">View this claim</a><br />
         <a href="/{{feature}}/{{sprint}}/schedule/{{id}}">View this payment schedule</a>
         {% if data.pausedClaims == 'Yes' %}
-          <br />
+          <h2 class="heading-small">Other options</h2>
           <a href="/{{feature}}/{{sprint}}/claim/4/paused">Process a paused claim</a>
         {% endif %}
       </div>
