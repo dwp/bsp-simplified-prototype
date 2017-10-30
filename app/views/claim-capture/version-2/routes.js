@@ -75,9 +75,33 @@ router.get('/payment-details', (req, res) => {
 })
 router.post('/payment-details', (req, res) => {
   const id = req.session.data.scenario || 1
+  const researchScenario = getResearchScenario(req)
+  if (researchScenario) {
+    return res.redirect(`/${req.feature}/${req.sprint}/confirm-details/${researchScenario}`)    
+  }
   return res.redirect(`/${req.feature}/${req.sprint}/confirm-details/${id}`)
 })
 
+function getResearchScenario (req) {
+  if (req.session.data.scenario === '4') {
+    if (req.session.data.dateOfClaim) {
+      const day = String(req.session.data.dateOfClaim.day).padStart(2, '0')
+      const month = req.session.data.dateOfClaim.month
+      const year = req.session.data.dateOfClaim.year
+      const date = day + month + year
+      if (date === '01102017') {
+        return 1
+      }
+      if (date === '02102017') {
+        return 2
+      }
+      if (date === '03102017') {
+        return 3
+      }
+    }
+  }
+  return false
+}
 // Confirm details
 router.get('/confirm-details/:id', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/confirm-details`, {id: req.params.id, changeLinks: true})
