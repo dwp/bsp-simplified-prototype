@@ -45,8 +45,8 @@
     "rate": "Standard",   
     "payments": {
       "number": 18,
-      "initial": "31 October 2017",
-      "backdated": "31 October 2017",
+      "initial": "8 November 2017",
+      "backdated": "8 November 2017",
       "firstMonthly": "29 November 2017"
     }
   }

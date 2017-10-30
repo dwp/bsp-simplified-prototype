@@ -41,9 +41,9 @@
     "rate": "Higher",   
     "payments": {
       "number": 18,
-      "initial": "31 October 2017",
-      "backdated": "31 October 2017",
-      "firstMonthly": "1 November 2017"
+      "initial": "8 November 2017",
+      "backdated": "8 November 2017",
+      "firstMonthly": "1 December 2017"
     }
   }
 }
