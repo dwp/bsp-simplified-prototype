@@ -39,7 +39,7 @@
           <ul class="search-results">
             {% if search == a.claimant.nino %}
               <li class="result">
-                <a href="/{{feature}}/{{sprint}}/claim-1-allowed" class="result-link">
+                <a href="/{{feature}}/{{sprint}}/claim/1/disallowed" class="result-link">
                   {{a.claim.status}} claim
                 </a>
                 <span class="result-meta">
@@ -51,7 +51,7 @@
               </li>
             {% elif search == b.claimant.nino %}
               <li class="result">
-                <a href="/{{feature}}/{{sprint}}/claim-2-disallowed" class="result-link">
+                <a href="/{{feature}}/{{sprint}}/claim/2/disallowed" class="result-link">
                   {{b.claim.status}} claim
                 </a>
                 <span class="result-meta">
@@ -63,7 +63,7 @@
               </li>
             {% elif search == c.claimant.nino %}
               <li class="result">
-                <a href="/{{feature}}/{{sprint}}/claim-3-paused" class="result-link">
+                <a href="/{{feature}}/{{sprint}}/claim/3/paused" class="result-link">
                   {{c.claim.status}} claim
                 </a>
                 <span class="result-meta">
@@ -75,7 +75,7 @@
               </li>
             {% elif search == d.claimant.nino %}
               <li class="result">
-                <a href="/{{feature}}/{{sprint}}/claim-4-paused" class="result-link">
+                <a href="/{{feature}}/{{sprint}}/claim/4/paused" class="result-link">
                   {{d.claim.status}} claim
                 </a>
                 <span class="result-meta">
