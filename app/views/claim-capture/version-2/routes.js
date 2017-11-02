@@ -139,7 +139,7 @@ router.post('/verify-marriage/:id', (req, res) => {
       req.session.data.pausedClaims = 'No'
     }
     if (req.body.marriageVerified === 'married') {
-      req.session.data.verification['marriage-verified]'] = 'Yes'
+      req.session.data.verification['marriage-verified'] = 'Yes'
       return res.redirect(`/${req.feature}/${req.sprint}/decision-allowed/${id}`)
     }
     if (req.body.marriageVerified === 'not-married') {
