@@ -15,7 +15,13 @@
       <div class="column-two-thirds">
 
         <h1 class="heading-xlarge">
-          Claim paused for 2 weeks
+          {% if data.pauseFor === '1week' %}
+            Claim paused for 1 week
+          {% elif data.pauseFor === '2weeks' %}
+            Claim paused for 2 weeks
+          {% else %}
+            Claim paused for 1 day
+          {% endif %}
         </h1>
 
         <h2 class="heading-medium">Reasons</h2>
