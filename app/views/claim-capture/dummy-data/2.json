@@ -1,4 +1,7 @@
 {
+  "claim": {
+    "status": "Disallowed"
+  },
   "claimant": {
     "fullName": "Sarah Wilson",
     "nino": "BB123456B",

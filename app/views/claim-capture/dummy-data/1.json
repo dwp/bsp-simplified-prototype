@@ -1,4 +1,7 @@
 {
+  "claim": {
+    "status": "Allowed"
+  },
   "claimant": {
     "fullName": "Tony Smith",
     "nino": "AA123456A",
