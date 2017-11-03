@@ -11,7 +11,7 @@
 {% block content %}
   <main id="content" role="main" class="group">
     <div class="column-two-thirds">
-      <a href="/{{sprint}}/{{feature}}/partner-details" class="link-back">Back</a>
+      <a href="/{{feature}}/{{sprint}}/partner-details" class="link-back">Back</a>
 
       <h1 class="heading-xlarge">
         Does the claimant have any dependent children?
@@ -25,12 +25,12 @@
             </legend>
 
             <div class="multiple-choice" data-target="child-benefit">
-              <input id="dependant-children-yes" type="radio" name="children[dependant-children]" value="Yes">
+              <input id="dependant-children-yes" type="radio" name="children[dependant-children]" value="Yes" {{'checked' if data.children['dependant-children'] === 'Yes'}}>
               <label for="dependant-children-yes">Yes</label>
             </div>
 
             <div class="multiple-choice" data-target="pregnant-hidden">
-              <input id="dependant-children-no" type="radio" name="children[dependant-children]" value="No">
+              <input id="dependant-children-no" type="radio" name="children[dependant-children]" value="No" {{'checked' if data.children['dependant-children'] === 'No'}}>
               <label for="dependant-children-no">No</label>
             </div>
           </fieldset>
@@ -42,12 +42,12 @@
               number?</legend>
 
             <div class="multiple-choice">
-              <input id="child-benefit-yes" type="radio" name="children[child-benefit]" value="Yes">
+              <input id="child-benefit-yes" type="radio" name="children[child-benefit]" value="Yes" {{'checked' if data.children['child-benefit'] === 'Yes'}}>
               <label for="child-benefit-yes">Yes</label>
             </div>
 
             <div class="multiple-choice" data-target="pregnant-hidden">
-              <input id="child-benefit-no" type="radio" name="children[child-benefit]" value="No">
+              <input id="child-benefit-no" type="radio" name="children[child-benefit]" value="No" {{'checked' if data.children['child-benefit'] === 'No'}}>
               <label for="child-benefit-no">No</label>
             </div>
           </fieldset>
@@ -59,12 +59,12 @@
               partner died?</legend>
 
             <div class="multiple-choice">
-              <input id="pregnant-yes" type="radio" name="children[pregnant]" value="Yes">
+              <input id="pregnant-yes" type="radio" name="children[pregnant]" value="Yes" {{'checked' if data.children['pregnant'] === 'Yes'}}>
               <label for="pregnant-yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="pregnant-no" type="radio" name="children[pregnant]" value="No">
+              <input id="pregnant-no" type="radio" name="children[pregnant]" value="No" {{'checked' if data.children['pregnant'] === 'No'}}>
               <label for="pregnant-no">No</label>
             </div>
           </fieldset>

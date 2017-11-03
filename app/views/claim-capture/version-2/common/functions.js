@@ -27,6 +27,9 @@ function clearFormData (req) {
   req.session.data.partner = {}
   req.session.data.children = {}
   req.session.data.payment = {}
+  req.session.data.eligibility = {}
+  req.session.data.verification = {}
+  req.session.data.notUsed = {}
 }
 
 module.exports = {getResearchScenario, clearFormData}
