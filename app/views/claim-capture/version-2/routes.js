@@ -103,6 +103,9 @@ router.get('/pause-claim/:id', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/pause-claim`, {id: req.params.id})
 })
 router.post('/pause-claim/:id', (req, res) => {
+  if (req.params.id === '4') {
+    req.session.data.pausedClaims = false
+  }
   res.redirect(`/${req.feature}/${req.sprint}/decision-paused/${req.params.id}`)
 })
 
@@ -146,7 +149,7 @@ router.post('/verify-marriage/:id', (req, res) => {
       return res.redirect(`/${req.feature}/${req.sprint}/decision-disallowed/${id}`)
     }
   }
-  res.redirect(`/${req.feature}/${req.sprint}/decision-paused/${id}`)
+  res.redirect(`/${req.feature}/${req.sprint}/pause-claim/${id}`)
 })
 
 // -----------------------------------------------------------------------------
