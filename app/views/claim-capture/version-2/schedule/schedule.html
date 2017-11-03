@@ -68,11 +68,13 @@
 
         <h2 class="heading-small th">
           Rate
-          <p class="payment-link">
-            <a href="#">
-              Change
-            </a>
-          </p>
+          {% if d.schedule.rate === 'Standard' %}
+            <p class="payment-link">
+              <a href="#">
+                Change
+              </a>
+            </p>
+          {% endif %}
         </h2>
 
         <dl class="data-summary">
