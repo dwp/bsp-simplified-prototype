@@ -21,4 +21,12 @@ function getResearchScenario (req) {
   return false
 }
 
-module.exports = getResearchScenario
+function clearFormData (req) {
+  req.session.data.dateOfClaim = {}
+  req.session.data.claimant = {}
+  req.session.data.partner = {}
+  req.session.data.children = {}
+  req.session.data.payment = {}
+}
+
+module.exports = {getResearchScenario, clearFormData}

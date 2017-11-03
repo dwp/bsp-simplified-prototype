@@ -1,5 +1,5 @@
 const express = require('express')
-const getResearchScenario = require('./common/functions')
+const {getResearchScenario, clearFormData} = require('./common/functions')
 
 const router = new express.Router()
 
@@ -35,6 +35,7 @@ router.get('/find-a-claim', (req, res) => {
 // -----------------------------------------------------------------------------
 // Start new claim
 router.get('/start-new-claim', (req, res) => {
+  clearFormData(req)
   res.redirect(`/${req.feature}/${req.sprint}/claim-date`)
 })
 
