@@ -11,8 +11,10 @@
 {% block content %}
   <main id="content" role="main" class="group">
     <div class="column-two-thirds">
-      <a href="/{{feature}}/{{sprint}}/claim-date" class="link-back">Back</a>
-
+      {% if data.pausedClaims == 'Yes' %}
+        <a href="/{{feature}}/{{sprint}}/process-a-claim" class="link-back">Back</a>
+      {% endif %}
+      
       <h1 class="heading-xlarge">
         Claimant details
       </h1>

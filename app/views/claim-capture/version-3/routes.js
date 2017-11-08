@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/settings', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/start-new-claim`)
+  res.redirect(`/${req.feature}/${req.sprint}/process-a-claim`)
 })
 
 // -----------------------------------------------------------------------------
@@ -31,20 +31,26 @@ router.get('/find-a-claim', (req, res) => {
 })
 
 // -----------------------------------------------------------------------------
-// Capture a claim -------------------------------------------------------------
+// Start new claim -------------------------------------------------------------
 // -----------------------------------------------------------------------------
-// Start new claim
+
 router.get('/start-new-claim', (req, res) => {
   clearFormData(req)
-  res.redirect(`/${req.feature}/${req.sprint}/claim-date`)
+  res.redirect(`/${req.feature}/${req.sprint}/claimant-details`)
 })
 
-// Claim date
-router.get('/claim-date', (req, res) => {
-  res.render(`${req.feature}/${req.sprint}/capture/claim-date`)
+// -----------------------------------------------------------------------------
+// Process a claim -------------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.get('/process-a-claim', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/process-a-claim/process-a-claim`)
 })
-router.post('/claim-date', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/claimant-details`)
+router.post('/process-a-claim', (req, res) => {
+  if (req.body.processType === 'new') {
+    res.redirect(`/${req.feature}/${req.sprint}/start-new-claim`)
+  } else {
+    res.redirect(`/${req.feature}/${req.sprint}/claim/4/paused`)
+  }
 })
 
 // Claimant details
@@ -68,7 +74,7 @@ router.get('/children-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/children-details`)
 })
 router.post('/children-details', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/payment-details`)
+  res.redirect(`/${req.feature}/${req.sprint}/claim-date`)
 })
 
 // Payment details
@@ -82,6 +88,14 @@ router.post('/payment-details', (req, res) => {
     return res.redirect(`/${req.feature}/${req.sprint}/confirm-details/${researchScenario}`)    
   }
   return res.redirect(`/${req.feature}/${req.sprint}/confirm-details/${id}`)
+})
+
+// Claim date
+router.get('/claim-date', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/capture/claim-date`)
+})
+router.post('/claim-date', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/confirm-details`)
 })
 
 // Confirm details
