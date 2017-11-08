@@ -16,7 +16,6 @@ router.use((req, res, next) => {
 router.get('/', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/settings`)
 })
-
 router.post('/settings', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/process-a-claim`)
 })
@@ -33,7 +32,6 @@ router.get('/find-a-claim', (req, res) => {
 // -----------------------------------------------------------------------------
 // Start new claim -------------------------------------------------------------
 // -----------------------------------------------------------------------------
-
 router.get('/start-new-claim', (req, res) => {
   clearFormData(req)
   res.redirect(`/${req.feature}/${req.sprint}/claimant-details`)
@@ -74,7 +72,10 @@ router.get('/children-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/children-details`)
 })
 router.post('/children-details', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/claim-date`)
+  if (req.session.data.scenario === '2') {
+    res.redirect(`/${req.feature}/${req.sprint}/claim-date`)
+  }
+  res.redirect(`/${req.feature}/${req.sprint}/payment-details`)
 })
 
 // Payment details
@@ -82,12 +83,7 @@ router.get('/payment-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/payment-details`)
 })
 router.post('/payment-details', (req, res) => {
-  const id = req.session.data.scenario || 1
-  const researchScenario = getResearchScenario(req)
-  if (researchScenario) {
-    return res.redirect(`/${req.feature}/${req.sprint}/confirm-details/${researchScenario}`)    
-  }
-  return res.redirect(`/${req.feature}/${req.sprint}/confirm-details/${id}`)
+  res.redirect(`/${req.feature}/${req.sprint}/claim-date`)
 })
 
 // Claim date
@@ -95,7 +91,8 @@ router.get('/claim-date', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/claim-date`)
 })
 router.post('/claim-date', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/confirm-details`)
+  const id = req.session.data.scenario || 1
+  return res.redirect(`/${req.feature}/${req.sprint}/confirm-details/${id}`)
 })
 
 // Confirm details
