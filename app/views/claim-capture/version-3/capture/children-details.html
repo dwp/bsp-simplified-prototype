@@ -14,7 +14,7 @@
       <a href="/{{feature}}/{{sprint}}/partner-details" class="link-back">Back</a>
 
       <h1 class="heading-xlarge">
-        Does the claimant have any dependent children?
+        Does the claimant say they have dependent children?
       </h1>
 
       <form method="post" autocomplete="off">
@@ -37,20 +37,26 @@
         </div>
 
         <div class="panel panel-border-narrow js-hidden" id="child-benefit">
-          <fieldset class="inline">
-            <legend class="heading-small">Does the claimant have a Child Benefit
-              number?</legend>
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="heading-small">Does the claimant have a Child Benefit
+                number in CBOL?</legend>
 
-            <div class="multiple-choice">
-              <input id="child-benefit-yes" type="radio" name="children[child-benefit]" value="Yes" {{'checked' if data.children['child-benefit'] === 'Yes'}}>
-              <label for="child-benefit-yes">Yes</label>
-            </div>
+              <div class="multiple-choice" data-target="child-benefit-number">
+                <input id="child-benefit-yes" type="radio" name="children[child-benefit]" value="Yes" {{'checked' if data.children['child-benefit'] === 'Yes'}}>
+                <label for="child-benefit-yes">Yes</label>
+              </div>
 
-            <div class="multiple-choice" data-target="pregnant-hidden">
-              <input id="child-benefit-no" type="radio" name="children[child-benefit]" value="No" {{'checked' if data.children['child-benefit'] === 'No'}}>
-              <label for="child-benefit-no">No</label>
-            </div>
-          </fieldset>
+              <div class="multiple-choice" data-target="pregnant-hidden">
+                <input id="child-benefit-no" type="radio" name="children[child-benefit]" value="No" {{'checked' if data.children['child-benefit'] === 'No'}}>
+                <label for="child-benefit-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="panel panel-border-narrow js-hidden" id="child-benefit-number">
+            <label class="form-label" for="chb-number">Child Benefit Number</label>
+            <input class="form-control" id="chb-number" name="verification[chb-number]" type="text" value="{{data.verification['chb-number']}}">
+          </div>
         </div>
 
         <div class="panel panel-border-narrow js-hidden" id="pregnant-hidden">
