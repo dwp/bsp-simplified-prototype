@@ -41,7 +41,10 @@ router.get('/start-new-claim', (req, res) => {
 // Process a claim -------------------------------------------------------------
 // -----------------------------------------------------------------------------
 router.get('/process-a-claim', (req, res) => {
-  res.render(`${req.feature}/${req.sprint}/process-a-claim/process-a-claim`)
+  if (req.session.data.pausedClaims === 'Yes') {
+    return res.render(`${req.feature}/${req.sprint}/process-a-claim/process-a-claim`)
+  }
+  res.redirect(`/${req.feature}/${req.sprint}/start-new-claim`)
 })
 router.post('/process-a-claim', (req, res) => {
   if (req.body.processType === 'new') {
