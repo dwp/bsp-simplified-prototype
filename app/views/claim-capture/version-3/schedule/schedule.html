@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% set d = id | loadDummyData %}
+{% set status = 'allowed' %}
 
 {% block page_title %}
   Payment schedule
@@ -26,44 +27,7 @@
 
         {% include './_subnav-schedule.html' %}
 
-        <h2 class="heading-small th">
-          Payment details
-          <p class="payment-link">
-            <a href="#">
-              Change
-            </a>
-          </p>
-        </h2>
-
-        <dl class="data-summary">
-          <dt class="data-summary-key">
-            Name on account
-          </dt>
-          <dd class="data-summary-value">
-            {{d.payment.nameOnAccount}}
-          </dd>
-          
-          <dt class="data-summary-key">
-            Sort code
-          </dt>
-          <dd class="data-summary-value">
-            {{d.payment.sortCode}}
-          </dd>
-
-          <dt class="data-summary-key">
-            Account number
-          </dt>
-          <dd class="data-summary-value">
-            {{d.payment.accountNumber}}
-          </dd>
-
-          <dt class="data-summary-key">
-            Country
-          </dt>
-          <dd class="data-summary-value">
-            {{d.payment.country}}
-          </dd>
-        </dl>
+        {% include '../common/_details-payment.html' %}
 
         <h2 class="heading-small th">
           Rate
