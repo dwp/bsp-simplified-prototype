@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% set d = id | loadDummyData %}
+{% set t = '_test' | loadDummyData %}
 
 {% block page_title %}
   Confirm details
@@ -23,6 +24,7 @@
         {% include '../common/_details-partner.html' %}
         {% include '../common/_details-children.html' %}
         {% include '../common/_details-payment.html' %}
+        {% include '../common/_details-verification.html' %}
 
       <br />
 

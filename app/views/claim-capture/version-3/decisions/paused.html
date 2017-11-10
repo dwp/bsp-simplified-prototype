@@ -25,7 +25,11 @@
 
         <h2 class="heading-medium">Reasons</h2>
         <ul class="list list-bullet">
-          <li>Marriage could not be verified</li>
+          {% if id === '5' %}
+            <li>Payment details not provided</li>
+          {% else %}
+            <li>Marriage could not be verified</li>
+          {% endif %}
         </ul>
 
         <a href="/{{feature}}/{{sprint}}/claim/{{id}}/paused">View claim</a>

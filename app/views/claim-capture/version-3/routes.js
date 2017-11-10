@@ -104,7 +104,7 @@ router.get('/confirm-details/:id', (req, res) => {
 })
 router.post('/confirm-details/:id', (req, res) => {
   const id = parseInt(req.params.id, 10)
-  if (id === 3) {
+  if (id === 3 || id === 5) {
     return res.redirect(`/${req.feature}/${req.sprint}/pause-claim/${id}`)
   }
   if (id === 2) {
@@ -165,6 +165,14 @@ router.post('/verify-marriage/:id', (req, res) => {
     }
   }
   res.redirect(`/${req.feature}/${req.sprint}/pause-claim/${id}`)
+})
+
+router.get('/add-payment-details/:id', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/tasks/add-payment-details`, {id: req.params.id})
+})
+router.post('/add-payment-details/:id', (req, res) => {
+  const id = req.params.id
+  res.redirect(`/${req.feature}/${req.sprint}/decision-allowed/${id}`)
 })
 
 // -----------------------------------------------------------------------------

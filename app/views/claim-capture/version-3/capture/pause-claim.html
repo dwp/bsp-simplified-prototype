@@ -18,7 +18,11 @@
 
         <h2 class="heading-small">Reasons</h2>
         <ul class="list list-bullet">
-          <li>Marriage could not be verified</li>
+          {% if id === '5' %}
+            <li>Payment details not provided</li>
+          {% else %}
+            <li>Marriage could not be verified</li>
+          {% endif %}
         </ul>
         
         <h2 class="heading-medium">How long do you want to pause this claim?</h2>

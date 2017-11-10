@@ -14,20 +14,32 @@
     Name on account
   </dt>
   <dd class="data-summary-value">
-    {{d.payment.nameOnAccount}}
+    {% if id === '5' and status === 'allowed' %}
+      {{data.payment['name-on-account']}}
+    {% else %}
+      {{d.payment.nameOnAccount}}
+    {% endif %}
   </dd>
 
   <dt class="data-summary-key">
     Sort code
   </dt>
   <dd class="data-summary-value">
-    {{d.payment.sortCode}}
+    {% if id === '5' and status === 'allowed' %}
+      {{data.payment['sort-code']}}
+    {% else %}
+      {{d.payment.sortCode}}
+    {% endif %}
   </dd>
 
   <dt class="data-summary-key">
     Account number
   </dt>
   <dd class="data-summary-value">
-    {{d.payment.accountNumber}}
+    {% if id === '5' and status === 'allowed' %}
+      {{data.payment['account-number']}}
+    {% else %}
+      {{d.payment.accountNumber}}
+    {% endif %}
   </dd>
 </dl>
