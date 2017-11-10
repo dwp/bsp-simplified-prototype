@@ -69,13 +69,39 @@
           </fieldset>
         </div>
 
-        <div class="form-group">
+        <div class="form-group-compound">
           <fieldset class="inline">
-            <div class="form-group">
-              <label for="normal-address">Home address where they normally live</label>
-              <textarea class="form-control form-control-3-4" name="claimant[address]" id="normal-address" rows="5">{{data.claimant.address}}</textarea>
+            <legend class="heading-small">Address</legend>
+            
+            <div class="form-group-compound">
+              <label for="line1" class="visually-hidden">Line 1</label>
+              <input class="form-control" type="text" name="claimant[address][line1]" value="{{data.claimant.addess.line1}}">
             </div>
 
+            <div class="form-group-compound">
+              <label for="line1" class="visually-hidden">Line 2</label>
+              <input class="form-control" type="text" name="claimant[address][line2]" value="{{data.claimant.addess.line1}}">
+            </div>
+            
+            <div class="form-group-compound">
+              <label for="line1" class="visually-hidden">Line 3</label>
+              <input class="form-control" type="text" name="claimant[address][line3]" value="{{data.claimant.addess.line1}}">
+            </div>
+
+            <div class="form-group-compound">
+              <label for="line1" class="visually-hidden">Line 4</label>
+              <input class="form-control" type="text" name="claimant[address][line3]" value="{{data.claimant.addess.line1}}">
+            </div>
+
+            <div class="form-group">
+              <label for="line1" class="form-label">Postcode</label>
+              <input class="form-control" type="text" name="claimant[address][postcode]" value="{{data.claimant.addess.postcode}}">
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <fieldset>
             <h2 class="heading-small">
               Is this address where they lived when their partner died?
             </h2>
