@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+{% set t = '_test' | loadDummyData %}
+{% set d = id | loadDummyData %}
+
+{% block page_title %}
+  Claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds column-minimum">
+
+        <h1 class="heading-xlarge schedule-heading">
+          <span class="heading-secondary">{{d.claimant.fullName}}</span>
+          {{d.claimant.nino}}
+        </h1>
+        <span class="claim-status">
+          Paused
+        </span>
+
+        <div class="time-since-claim">
+          <div class="data">
+            <span class="data-item bold-xlarge">{{d.claim.weeksSinceClaim}} week{{'s' if d.claim.weeksSinceClaim > 1}}</span>
+            <span class="data-item bold-xsmall">since date of claim</span>
+          </div>
+        </div>
+
+        <h2 class="heading-large">Tasks to complete</h2>
+        <ol class="task-list">
+          <li>
+            <h2 class="task-list-section">
+              <span class="task-list-section-number">1. </span> Enter claim information
+            </h2>
+            <ul class="task-list-items">
+              <li class="task-list-item">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/capture/{{id}}/claimant-details">
+                  Claimant details
+                </a>
+                {% if data.claimant %}
+                  <strong class="task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/capture/{{id}}/partner-details">
+                  Partner details
+                </a>
+                {% if data.partner %}
+                  <strong class="task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/capture/{{id}}/children-details">
+                  Children details
+                </a>
+                {% if data.children %}
+                  <strong class="task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/capture/{{id}}/payment-details">
+                  Payment details
+                </a>
+                {% if data.payment %}
+                  <strong class="task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="task-list-section">
+              <span class="task-list-section-number">2. </span> Verify evidence
+            </h2>
+            <ul class="task-list-items">
+              <li class="task-list-item">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/verify/{{id}}/verify-marriage">
+                  Marriage
+                </a>
+                {% if data.verification.marriage %}
+                  <strong class="task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/verify/{{id}}/verify-death">
+                  Death
+                </a>
+                {% if data.verification.death %}
+                  <strong class="task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/verify/{{id}}/verify-child-benefit">
+                  Child Benefit
+                </a>
+                {% if data.verification.chb %}
+                  <strong class="task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+              <li class="task-list-item">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/verify/{{id}}/verify-conts">
+                  National Insurance contributions
+                </a>
+                {% if data.verification.conts %}
+                  <strong class="task-completed" id="eligibility-completed">Completed</strong>
+                {% endif %}
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h2 class="task-list-section">
+              <span class="task-list-section-number">3. </span> Process claim
+            </h2>
+            <ul class="task-list-items">
+              <li class="task-list-item">
+                <a class="task-name" href="/{{sprint}}/{{feature}}/process/{{id}}/check-and-submit">
+                  Check and submit
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+
+      <div class="column-one-third">
+        {% include './claim-history.html' %}
+      </div>
+    </div>
+  </main>
+{% endblock %}

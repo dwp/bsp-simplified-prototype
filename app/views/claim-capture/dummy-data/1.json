@@ -1,6 +1,9 @@
 {
   "claim": {
-    "status": "Allowed"
+    "status": "Paused",
+    "pausedDate": "2 November 2017",
+    "weeksSinceClaim": 1,
+    "class": ""
   },
   "claimant": {
     "fullName": "Tony Smith",
