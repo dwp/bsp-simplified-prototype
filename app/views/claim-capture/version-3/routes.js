@@ -76,7 +76,7 @@ router.get('/children-details', (req, res) => {
 })
 router.post('/children-details', (req, res) => {
   if (req.session.data.scenario === '2') {
-    res.redirect(`/${req.feature}/${req.sprint}/claim-date`)
+    return res.redirect(`/${req.feature}/${req.sprint}/claim-date`)
   }
   res.redirect(`/${req.feature}/${req.sprint}/payment-details`)
 })
