@@ -59,6 +59,9 @@ router.get('/claimant-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/claimant-details`)
 })
 router.post('/claimant-details', (req, res) => {
+  if (req.body.claimant.dateOfBirth.year < 1952) {
+    req.session.data.skipPaymentDetails = true
+  }
   res.redirect(`/${req.feature}/${req.sprint}/partner-details`)
 })
 
@@ -75,7 +78,7 @@ router.get('/children-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/children-details`)
 })
 router.post('/children-details', (req, res) => {
-  if (req.session.data.scenario === '2') {
+  if (req.session.data.scenario === '2' || req.session.data.skipPaymentDetails) {
     return res.redirect(`/${req.feature}/${req.sprint}/claim-date`)
   }
   res.redirect(`/${req.feature}/${req.sprint}/payment-details`)
@@ -94,7 +97,7 @@ router.get('/claim-date', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/claim-date`)
 })
 router.post('/claim-date', (req, res) => {
-  const id = req.session.data.scenario || 1
+  const id = getResearchScenario(req)
   return res.redirect(`/${req.feature}/${req.sprint}/confirm-details/${id}`)
 })
 

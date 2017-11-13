@@ -17,8 +17,9 @@ function getResearchScenario (req) {
         return 3
       }
     }
+    return 4
   }
-  return false
+  return req.session.data.scenario
 }
 
 function clearFormData (req) {
@@ -30,6 +31,7 @@ function clearFormData (req) {
   req.session.data.eligibility = {}
   req.session.data.verification = {}
   req.session.data.notUsed = {}
+  req.session.data.skipPaymentDetails = false
 }
 
 module.exports = {getResearchScenario, clearFormData}
