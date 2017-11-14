@@ -59,7 +59,8 @@ router.get('/claimant-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/claimant-details`)
 })
 router.post('/claimant-details', (req, res) => {
-  if (req.body.claimant.dateOfBirth.year < 1952) {
+  const year = req.body.claimant.dateOfBirth.year
+  if (year.length > 0 && year < 1952) {
     req.session.data.skipPaymentDetails = true
   }
   res.redirect(`/${req.feature}/${req.sprint}/partner-details`)
