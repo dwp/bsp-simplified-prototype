@@ -156,15 +156,16 @@ router.get('/verify-marriage/:id', (req, res) => {
 })
 router.post('/verify-marriage/:id', (req, res) => {
   const id = req.params.id
-  if (req.session.data.verification) {
-    req.session.data.pausedClaims = 'No'
-    if (req.body.marriageVerified === 'married') {
-      req.session.data.verification['marriage-verified'] = 'Yes'
-      return res.redirect(`/${req.feature}/${req.sprint}/decision-allowed/${id}`)
-    }
-    if (req.body.marriageVerified === 'not-married') {
-      return res.redirect(`/${req.feature}/${req.sprint}/decision-disallowed/${id}`)
-    }
+  const verification = req.session.data.verification || {}
+  if (req.body.marriageVerified === 'married') {
+    verification['marriage-verified'] = 'Yes'
+    req.session.data.verification = verification
+    return res.redirect(`/${req.feature}/${req.sprint}/decision-allowed/${id}`)
+  }
+  if (req.body.marriageVerified === 'not-married') {
+    verification['marriage-verified'] = 'No'
+    req.session.data.verification = verification
+    return res.redirect(`/${req.feature}/${req.sprint}/decision-disallowed/${id}`)
   }
   res.redirect(`/${req.feature}/${req.sprint}/pause-claim/${id}`)
 })
