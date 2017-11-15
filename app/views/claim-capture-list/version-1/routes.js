@@ -145,6 +145,9 @@ function addToLog (req, type) {
   const page = req.params.page
   if (type === 'capture') {
     const details = page.split('-')
+    if (details[0] === 'payment' && req.body['payment-details-provided'] === 'No') {
+      return
+    }
     const message = `${capitalizeFirstLetter(details[0])} ${details[1]} entered`
     log.push(message)
   }
