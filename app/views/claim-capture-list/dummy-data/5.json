@@ -9,6 +9,7 @@
     "nino": "EE123456E",
     "dateOfClaim": "1 November 2017",
     "dateOfBirth": "10 July 1977",
+    "sex": "Male",
     "currentAddress": {
       "number": "3",
       "street": "Berwick Road",

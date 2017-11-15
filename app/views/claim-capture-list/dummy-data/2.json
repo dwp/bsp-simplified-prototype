@@ -9,6 +9,7 @@
     "nino": "BB123456B",
     "dateOfClaim": "2 October 2017",
     "dateOfBirth": "11 August 1950",
+    "sex": "Female",    
     "currentAddress": {
       "number": "8",
       "street": "Limetree Grove",

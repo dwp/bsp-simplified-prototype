@@ -35,7 +35,8 @@ router.get('/start-a-new-claim', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/start-a-new-claim/start-a-new-claim`)
 })
 router.post('/start-a-new-claim', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/claim/1/paused`)
+  const scenario = req.session.data.scenario || 1
+  res.redirect(`/${req.feature}/${req.sprint}/claim/${scenario}/paused`)
 })
 
 // -----------------------------------------------------------------------------
@@ -47,7 +48,13 @@ router.get('/claim/:id/:status', (req, res) => {
   if (status === 'paused') {
     return res.render(`${req.feature}/${req.sprint}/claim/claim-paused`, {id, status})
   }
-  res.render(`${req.feature}/${req.sprint}/claim/claim-allowed`, {id, status})  
+  if (status === 'paused-tasks') {
+    return res.render(`${req.feature}/${req.sprint}/claim/claim-paused-tasks`, {id, status})
+  }
+  if (status === 'disallowed') {
+    return res.render(`${req.feature}/${req.sprint}/claim/claim-disallowed`, {id, status})
+  }
+  res.render(`${req.feature}/${req.sprint}/claim/claim-allowed`, {id, status})
 })
 
 // -----------------------------------------------------------------------------
@@ -60,6 +67,10 @@ router.get('/capture/:id/:page', (req, res) => {
 })
 router.post('/capture/:id/:page', (req, res) => {
   const id = req.params.id
+  const page = req.params.page
+  if (page === 'pause-claim') {
+    res.redirect(`/${req.feature}/${req.sprint}/decisions/${id}/paused`)    
+  }
   addToLog(req, 'capture')
   res.redirect(`/${req.feature}/${req.sprint}/claim/${id}/paused`)
 })
@@ -87,15 +98,35 @@ router.get('/process/:id/check-and-submit', (req, res) => {
 })
 router.post('/process/:id/check-and-submit', (req, res) => {
   const id = req.params.id
+  const scenario = req.session.data.scenario
+  if (scenario === '2') {
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${id}/disallowed`)
+  }
+  if (scenario === '3') {
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${id}/pause`)
+  }
   res.redirect(`/${req.feature}/${req.sprint}/decisions/${id}/allowed`)
 })
 
 // -----------------------------------------------------------------------------
 // Decisions -------------------------------------------------------------------
 // -----------------------------------------------------------------------------
-router.get('/decisions/:id/allowed', (req, res) => {
+router.get('/decisions/:id/:status', (req, res) => {
   const id = req.params.id
-  res.render(`${req.feature}/${req.sprint}/decisions/allowed`, {id})
+  const status = req.params.status
+  if (status === 'allowed') {
+    return res.render(`${req.feature}/${req.sprint}/decisions/allowed`, {id})
+  }
+  if (status === 'disallowed') {
+    return res.render(`${req.feature}/${req.sprint}/decisions/disallowed`, {id})
+  }
+  if (status === 'pause') {
+    return res.redirect(`/${req.feature}/${req.sprint}/capture/${id}/pause-claim`)
+  }
+  if (status === 'paused') {
+    return res.render(`${req.feature}/${req.sprint}/decisions/paused-payment`, {id})
+  }
+  return res.render(`${req.feature}/${req.sprint}/decisions/allowed`, {id, status})
 })
 
 // -----------------------------------------------------------------------------

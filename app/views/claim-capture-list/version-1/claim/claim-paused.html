@@ -22,15 +22,8 @@
         <span class="claim-status">
           Paused
         </span>
-        <span class="paused-until-date"> until {{t.date}}</span>
 
-        <div class="time-since-claim">
-          <div class="data">
-            <span class="data-item bold-xlarge">{{d.claim.weeksSinceClaim}} week{{'s' if d.claim.weeksSinceClaim > 1}}</span>
-            <span class="data-item bold-xsmall">since date of claim</span>
-          </div>
-          <p><span class="paused-until-date">{{d.claimant.dateOfClaim}}</span></p>
-        </div>
+        {% include './_date-counter.html' %}
 
         <h2 class="heading-large">Tasks to complete</h2>
         <ol class="task-list">

@@ -9,6 +9,7 @@
     "nino": "DD123456D",
     "dateOfClaim": "25 September 2017",
     "dateOfBirth": "5 July 1973",
+    "sex": "Female",    
     "currentAddress": {
       "number": "8",
       "street": "Station Road",
