@@ -1,6 +1,8 @@
 {
   "claim": {
-    "status": "Disallowed"
+    "status": "Disallowed",
+    "weeksSinceClaim": 3,
+    "class": ""
   },
   "claimant": {
     "fullName": "Sarah Wilson",

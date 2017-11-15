@@ -1,7 +1,6 @@
 {
   "claim": {
     "status": "Paused",
-    "pausedDate": "",
     "weeksSinceClaim": 2,
     "class": ""
   },

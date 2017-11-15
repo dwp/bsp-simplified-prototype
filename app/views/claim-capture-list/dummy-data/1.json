@@ -1,6 +1,8 @@
 {
   "claim": {
-    "status": "Allowed"
+    "status": "Allowed",
+    "weeksSinceClaim": 5,
+    "class": ""
   },
   "claimant": {
     "fullName": "Tony Smith",

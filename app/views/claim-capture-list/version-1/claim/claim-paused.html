@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
-{% set t = '_test' | loadDummyData %}
-{% set d = id | loadDummyData %}
+{% set t = '_test' | loadDummyData(feature) %}
+{% set d = id | loadDummyData(feature) %}
 
 {% block page_title %}
   Claim
@@ -22,12 +22,14 @@
         <span class="claim-status">
           Paused
         </span>
+        <span class="paused-until-date"> until {{t.date}}</span>
 
         <div class="time-since-claim">
           <div class="data">
             <span class="data-item bold-xlarge">{{d.claim.weeksSinceClaim}} week{{'s' if d.claim.weeksSinceClaim > 1}}</span>
             <span class="data-item bold-xsmall">since date of claim</span>
           </div>
+          <p><span class="paused-until-date">{{d.claimant.dateOfClaim}}</span></p>
         </div>
 
         <h2 class="heading-large">Tasks to complete</h2>
@@ -41,7 +43,7 @@
                 <a class="task-name" href="/{{feature}}/{{sprint}}/capture/{{id}}/claimant-details">
                   Claimant details
                 </a>
-                {% if data.claimant %}
+                {% if data.claimant.address %}
                   <strong class="task-completed" id="eligibility-completed">Completed</strong>
                 {% endif %}
               </li>
@@ -50,14 +52,6 @@
                   Partner details
                 </a>
                 {% if data.partner %}
-                  <strong class="task-completed" id="eligibility-completed">Completed</strong>
-                {% endif %}
-              </li>
-              <li class="task-list-item">
-                <a class="task-name" href="/{{feature}}/{{sprint}}/capture/{{id}}/children-details">
-                  Children details
-                </a>
-                {% if data.children %}
                   <strong class="task-completed" id="eligibility-completed">Completed</strong>
                 {% endif %}
               </li>
@@ -77,34 +71,34 @@
             </h2>
             <ul class="task-list-items">
               <li class="task-list-item">
-                <a class="task-name" href="/{{feature}}/{{sprint}}/verify/{{id}}/verify-marriage">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/verify/{{id}}/marriage">
                   Marriage
                 </a>
-                {% if data.verification.marriage %}
+                {% if data.marriage %}
                   <strong class="task-completed" id="eligibility-completed">Completed</strong>
                 {% endif %}
               </li>
               <li class="task-list-item">
-                <a class="task-name" href="/{{feature}}/{{sprint}}/verify/{{id}}/verify-death">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/verify/{{id}}/death">
                   Death
                 </a>
-                {% if data.verification.death %}
+                {% if data.dateOfdeath %}
                   <strong class="task-completed" id="eligibility-completed">Completed</strong>
                 {% endif %}
               </li>
               <li class="task-list-item">
-                <a class="task-name" href="/{{feature}}/{{sprint}}/verify/{{id}}/verify-child-benefit">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/verify/{{id}}/child-benefit">
                   Child Benefit
                 </a>
-                {% if data.verification.chb %}
+                {% if data.children['dependant-children'] %}
                   <strong class="task-completed" id="eligibility-completed">Completed</strong>
                 {% endif %}
               </li>
               <li class="task-list-item">
-                <a class="task-name" href="/{{feature}}/{{sprint}}/verify/{{id}}/verify-conts">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/verify/{{id}}/contributions">
                   National Insurance contributions
                 </a>
-                {% if data.verification.conts %}
+                {% if data.conts %}
                   <strong class="task-completed" id="eligibility-completed">Completed</strong>
                 {% endif %}
               </li>
@@ -116,7 +110,7 @@
             </h2>
             <ul class="task-list-items">
               <li class="task-list-item">
-                <a class="task-name" href="/{{sprint}}/{{feature}}/process/{{id}}/check-and-submit">
+                <a class="task-name" href="/{{feature}}/{{sprint}}/process/{{id}}/check-and-submit">
                   Check and submit
                 </a>
               </li>
@@ -126,7 +120,7 @@
       </div>
 
       <div class="column-one-third">
-        {% include './claim-history.html' %}
+        {% include './_history.html' %}
       </div>
     </div>
   </main>

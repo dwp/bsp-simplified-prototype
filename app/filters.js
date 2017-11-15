@@ -10,8 +10,8 @@ module.exports = function (env) {
    */
   var filters = {}
 
-  filters.loadDummyData = (filename) => {
-    const data = require(`./views/claim-capture/dummy-data/${filename}.json`)
+  filters.loadDummyData = (filename, feature = 'claim-capture') => {
+    const data = require(`./views/${feature}/dummy-data/${filename}.json`)
     if (data.schedule) {
       const fMonth = parse(data.schedule.payments.firstMonthly)
       const monthly = []
@@ -19,7 +19,7 @@ module.exports = function (env) {
       for (let i = 1; i < data.schedule.payments.number; i++) {
         if (i === 1) {
           currentDate = fMonth
-          monthly.push(format(currentDate, 'D MMMM YYYY'))          
+          monthly.push(format(currentDate, 'D MMMM YYYY'))
         }
         const newDate = addMonths(currentDate, 1)
         monthly.push(format(newDate, 'D MMMM YYYY'))
