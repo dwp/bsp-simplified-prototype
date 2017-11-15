@@ -11,7 +11,7 @@
 {% block content %}
   <main id="content" role="main" class="group">
     <div class="grid-row">
-      <div class="column-two-thirds">        
+      <div class="column-two-thirds">
         <h1 class="heading-xlarge">
           Claim can't be processed
         </h1>
@@ -24,8 +24,8 @@
             <li>Marriage could not be verified</li>
           {% endif %}
         </ul>
-        
-        <h2 class="heading-medium">How long do you want to pause this claim?</h2>
+
+        <h2 class="heading-medium">How long do you want to pause this claim for?</h2>
         <form method="post" autocomplete="off">
           <div class="form-group">
             <fieldset>
@@ -33,12 +33,12 @@
                 <input id="1day" type="radio" name="pauseFor" value="1day">
                 <label for="1day">1 day</label>
               </div>
-            
+
               <div class="multiple-choice">
                 <input id="1week" type="radio" name="pauseFor" value="1week">
                 <label for="1week">1 week</label>
               </div>
-          
+
               <div class="multiple-choice">
                 <input id="2weeks" type="radio" name="pauseFor" value="2weeks">
                 <label for="2weeks">2 weeks</label>
@@ -52,5 +52,3 @@
     </div>
   </main>
 {% endblock %}
-
-

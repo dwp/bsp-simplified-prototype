@@ -40,7 +40,7 @@
           <div class="form-group">
             <fieldset class="inline">
               <legend class="heading-small">Does the claimant have a Child Benefit
-                number in CBOL?</legend>
+                number in Child Benefit online (CBOL)?</legend>
 
               <div class="multiple-choice" data-target="child-benefit-number">
                 <input id="child-benefit-yes" type="radio" name="children[child-benefit]" value="Yes" {{'checked' if data.children['child-benefit'] === 'Yes'}}>
@@ -54,7 +54,7 @@
             </fieldset>
           </div>
           <div class="panel panel-border-narrow js-hidden" id="child-benefit-number">
-            <label class="form-label" for="chb-number">Child Benefit Number</label>
+            <label class="form-label" for="chb-number">Child Benefit number</label>
             <input class="form-control" id="chb-number" name="verification[chb-number]" type="text" value="{{data.verification['chb-number']}}">
           </div>
         </div>
