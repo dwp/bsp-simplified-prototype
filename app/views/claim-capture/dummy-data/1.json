@@ -10,6 +10,7 @@
     "nino": "AA123456A",
     "dateOfClaim": "1 October 2017",
     "dateOfBirth": "24 January 1980",
+    "sex": "Male",
     "currentAddress": {
       "number": "4",
       "street": "Treetop Mews",

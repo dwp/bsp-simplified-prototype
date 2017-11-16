@@ -10,6 +10,7 @@
     "nino": "CC123456C",
     "dateOfClaim": "4 October 2017",
     "dateOfBirth": "4 April 1982",
+    "sex": "Female",
     "currentAddress": {
       "number": "6",
       "street": "Charlton Road",
