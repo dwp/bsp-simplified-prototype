@@ -76,6 +76,20 @@ router.post('/capture/:id/:page', (req, res) => {
 })
 
 // -----------------------------------------------------------------------------
+// Capture ---------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.get('/add/:id/:page', (req, res) => {
+  const id = req.params.id
+  const page = req.params.page
+  res.render(`${req.feature}/${req.sprint}/capture/${page}`, {id})
+})
+router.post('/add/:id/:page', (req, res) => {
+  const id = req.params.id
+  addToLog(req, 'capture')
+  res.redirect(`/${req.feature}/${req.sprint}/claim/${id}/paused-tasks`)
+})
+
+// -----------------------------------------------------------------------------
 // Verify ----------------------------------------------------------------------
 // -----------------------------------------------------------------------------
 router.get('/verify/:id/:page', (req, res) => {

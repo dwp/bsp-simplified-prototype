@@ -25,10 +25,19 @@
 
         {% include './_date-counter.html' %}
 
-        {% include './_tasks.html' %}
+        <ul id="tabs" class="tabs">
+          <li id="tasks" class="current">Tasks to complete</li>
+          <li id="details" >Claim details</li>
+        </ul>
 
-        {% include '../common/_details-claimant.html' %}
-        {% include '../common/_details-partner.html' %}
+        <div id="tasks-hidden" class="js-hidden">
+          {% include './_tasks.html' %}
+        </div>
+
+        <div id="details-hidden" class="js-hidden">
+          {% include '../common/_details-claimant.html' %}
+          {% include '../common/_details-partner.html' %}
+        </div>
       </div>
 
       <div class="column-one-third">
@@ -36,4 +45,20 @@
       </div>
     </div>
   </main>
+{% endblock %}
+
+{% block page_scripts %}
+  <script>
+    $(document).on('click', '#tabs li', function () {
+      var id = $(this).attr('id')
+      $('#tabs li').each(function () {
+        $(this).removeClass('current')
+      })
+      $('.hidden').each(function () {
+        $(this).css({'display': 'none', 'visibility': 'hidden'})
+      })
+      $('#' + id).addClass('current')
+      $('#' + id + '-hidden').css({'display': 'block', 'visibility': 'visible'})
+    })
+  </script>
 {% endblock %}

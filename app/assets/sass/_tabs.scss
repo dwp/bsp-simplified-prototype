@@ -1,6 +1,7 @@
 .tabs {
   border-bottom: 1px solid $border-colour;
   list-style: none;
+  margin-top: 50px;
   max-width: 30em;
 
   .current {
@@ -13,6 +14,7 @@
   li {
     background: none;
     color: $govuk-blue;
+    cursor: pointer;
     display: inline-block;
     font-weight: bold;
     margin-bottom: -1px;
