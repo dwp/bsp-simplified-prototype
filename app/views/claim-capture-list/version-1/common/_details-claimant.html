@@ -1,15 +1,13 @@
 <h2 class="heading-small th">
   Claimant details
+  <p class="payment-link">
+    <a href="/{{feature}}/{{sprint}}/capture/claimant-details">
+      Change
+    </a>
+  </p>
 </h2>
 
 <dl class="data-summary">
-  <dt class="data-summary-key">
-    Date of claim
-  </dt>
-  <dd class="data-summary-value">
-    {{d.claimant.dateOfClaim}}
-  </dd>
-
   <dt class="data-summary-key">
     Full name
   </dt>
@@ -35,20 +33,22 @@
     Sex
   </dt>
   <dd class="data-summary-value">
-    {{d.claimant.sex}}
+    {{d.claimant.sex if data.claimant.sex}}
   </dd>
 
   <dt class="data-summary-key">
     Address
   </dt>
   <dd class="data-summary-value">
-    {{d.claimant.currentAddress.number}} {{d.claimant.currentAddress.street}}<br />
-    {{d.claimant.currentAddress.town}}<br/>
-    {{d.claimant.currentAddress.county}}<br />
-    {{d.claimant.currentAddress.postcode}}
+    {% if data.claimant.address %}
+      {{d.claimant.currentAddress.number}} {{d.claimant.currentAddress.street}}<br />
+      {{d.claimant.currentAddress.town}}<br/>
+      {{d.claimant.currentAddress.county}}<br />
+      {{d.claimant.currentAddress.postcode}}
+    {% endif %}
   </dd>
   
-  {% if d.claimant.contact.home %}
+  {% if d.claimant.contact.home and data.claimant.contact.home %}
     <dt class="data-summary-key">
       Home phone
     </dt>
@@ -57,7 +57,7 @@
     </dd>
   {% endif %}
 
-  {% if d.claimant.contact.mobile %}
+  {% if d.claimant.contact.mobile and data.claimant.contact.mobile %}
     <dt class="data-summary-key">
       Mobile phone
     </dt>
@@ -66,7 +66,7 @@
     </dd>
   {% endif %}
 
-  {% if d.claimant.contact.email %}
+  {% if d.claimant.contact.email and data.claimant.contact.email %}
     <dt class="data-summary-key">
       Email address
     </dt>
