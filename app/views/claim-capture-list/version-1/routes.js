@@ -50,10 +50,20 @@ router.get('/task-list/:scenario', (req, res) => {
 // -----------------------------------------------------------------------------
 // Capture ---------------------------------------------------------------------
 // -----------------------------------------------------------------------------
+router.get('/capture/:page', (req, res) => {
+  const scenario = req.session.data.scenario || '1'
+  const page = req.params.page
+  res.render(`${req.feature}/${req.sprint}/capture/${page}`, {scenario})
+})
 router.post('/capture/:page', (req, res) => {
   const scenario = req.session.data.scenario || '1'
   addToLog(req, 'capture')
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
+})
+router.get('/verify/:page', (req, res) => {
+  const scenario = req.session.data.scenario || '1'
+  const page = req.params.page
+  res.render(`${req.feature}/${req.sprint}/verify/${page}`, {scenario})
 })
 router.post('/verify/:page', (req, res) => {
   const scenario = req.session.data.scenario || '1'
