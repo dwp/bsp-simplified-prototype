@@ -104,7 +104,7 @@ router.get('/decisions/:scenario/:decision', (req, res) => {
 router.get('/claim/:scenario/:decision', (req, res) => {
   const scenario = req.params.scenario
   const decision = req.params.decision
-  res.render(`${req.feature}/${req.sprint}/completed-claim/${decision}`, {scenario})
+  res.render(`${req.feature}/${req.sprint}/completed-claim/${decision}`, {scenario, decision})
 })
 
 // -----------------------------------------------------------------------------

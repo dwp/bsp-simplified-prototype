@@ -1,9 +1,11 @@
 <h2 class="heading-small th">
   Payment details
   <p class="payment-link">
-    <a href="/{{feature}}/{{sprint}}/capture/payment-details">
-      Change
-    </a>
+    {% if not decision %}
+      <a href="/{{feature}}/{{sprint}}/capture/payment-details">
+        Change
+      </a>
+    {% endif %}
   </p>
 </h2>
 
@@ -12,20 +14,20 @@
     Name on account
   </dt>
   <dd class="data-summary-value">
-    {{d.payment.nameOnAccount if data.payment}}
+    {{d.payment.nameOnAccount if data.payment or showDetails}}
   </dd>
 
   <dt class="data-summary-key">
     Sort code
   </dt>
   <dd class="data-summary-value">
-    {{d.payment.sortCode if data.payment}}
+    {{d.payment.sortCode if data.payment or showDetails}}
   </dd>
 
   <dt class="data-summary-key">
     Account number
   </dt>
   <dd class="data-summary-value">
-    {{d.payment.accountNumber if data.payment}}
+    {{d.payment.accountNumber if data.payment or showDetails}}
   </dd>
 </dl>
