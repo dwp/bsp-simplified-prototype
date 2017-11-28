@@ -60,4 +60,14 @@
       $('#' + showId + '-content').removeClass('hidden')
     })
   </script>
+  <style>
+    .secret-link {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 50px;
+    }
+  </style>
+  <a class="secret-link" href="/{{feature}}/{{sprint}}/confirm-details/{{scenario}}"></a>
 {% endblock %}

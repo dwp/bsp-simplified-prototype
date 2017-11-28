@@ -70,17 +70,21 @@
         </li>
       </ul>
     </li>
-    <li>
-      <h2 class="task-list-section">
-        <span class="task-list-section-number">3. </span> Submit claim
-      </h2>
-      <ul class="task-list-items">
-        <li class="task-list-item">
-          <a class="task-name" href="/{{feature}}/{{sprint}}/confirm-details/{{scenario}}">
-            Check and confirm
-          </a>
-        </li>
-      </ul>
-    </li>
+    {% if data.conts and data.children and data.dateOfdeath and data.marriage and 
+          data.payment and data.partner and data.claimant
+    %}
+      <li>
+        <h2 class="task-list-section">
+          <span class="task-list-section-number">3. </span> Submit claim
+        </h2>
+        <ul class="task-list-items">
+          <li class="task-list-item">
+            <a class="task-name" href="/{{feature}}/{{sprint}}/confirm-details/{{scenario}}">
+              Check and confirm
+            </a>
+          </li>
+        </ul>
+      </li>
+    {% endif %}
   </ol>
 </div>
