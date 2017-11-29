@@ -25,7 +25,7 @@
           <a class="task-name" href="/{{feature}}/{{sprint}}/capture/payment-details">
             Payment details
           </a>
-          {% if data.payment %}
+          {% if data['payment-details-provided'] === 'Yes' %}
             <strong class="task-completed" id="eligibility-completed">Completed</strong>
           {% endif %}
         </li>
@@ -71,7 +71,7 @@
       </ul>
     </li>
     {% if data.conts and data.children and data.dateOfdeath and data.marriage and 
-          data.payment and data.partner and data.claimant
+          data['payment-details-provided'] === 'Yes' and data.partner and data.claimant
     %}
       <li>
         <h2 class="task-list-section">
