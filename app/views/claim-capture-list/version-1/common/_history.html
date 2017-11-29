@@ -1,12 +1,11 @@
 <h2 class="heading-medium">Claim history</h2>
 <ul class="log">
-  {% if status === 'allowed' %}
+  {% if decision === 'disallowed' %}
     <li>
       <span class="line"></span>
-      <h3 class="bold">Claim allowed</h3>
-      <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+      <h3 class="bold">Claim disallowed</h3>
       <span class="paused-until-date">{{t.date}}</span>
-      <p>Payment schedule created at higher rate.</p>
+      <p>Claimant over state pension age.</p>
     </li>
   {% endif %}
   {% for entry in data.log | reverse %}
