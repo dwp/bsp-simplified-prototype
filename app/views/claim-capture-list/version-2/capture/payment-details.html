@@ -34,6 +34,22 @@
 
           <div class="panel panel-border-narrow js-hidden" id="payment-details">
             <div class="form-group">
+              <fieldset>
+                <legend class="form-label-bold">Type of account</legend>
+                
+                <div class="multiple-choice">
+                  <input id="bank-type-bank" type="radio" name="bank-type" value="bank">
+                  <label for="bank-type-bank">Bank account</label>
+                </div>
+            
+                <div class="multiple-choice" data-target="roll-number-hidden">
+                  <input id="bank-type-building-society" type="radio" name="bank-type" value="building-society">
+                  <label for="bank-type-building-society">Building society account</label>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="form-group">
               <label class="form-label" for="name-on-account">Name on account</label>
               <input class="form-control" id="name-on-account" name="payment[name-on-account]" type="text" value="{{data.payment['name-on-account']}}">
             </div>
@@ -46,6 +62,11 @@
             <div class="form-group">
               <label class="form-label" for="account-number">Account number</label>
               <input class="form-control" id="account-number" name="payment[account-number]" type="text" value="{{data.payment['account-number']}}">
+            </div>
+
+            <div class="form-group js-hidden" id="roll-number-hidden">
+              <label class="form-label" for="roll-number">Building society roll number</label>
+              <input class="form-control" id="roll-number" name="payment[roll-number]" type="text" value="{{data.payment['roll-number']}}">
             </div>
           </div>
 
