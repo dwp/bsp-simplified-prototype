@@ -1,10 +1,11 @@
 {
   "claim": {
     "status": "Disallowed",
-    "weeksSinceClaim": 6,
+    "weeksSinceClaim": 3,
     "class": ""
   },
   "claimant": {
+    "title": "Mrs",    
     "fullName": "Sarah Wilson",
     "nino": "BB123456B",
     "dateOfClaim": "2 October 2017",

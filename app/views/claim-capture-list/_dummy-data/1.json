@@ -1,10 +1,11 @@
 {
   "claim": {
     "status": "Allowed",
-    "weeksSinceClaim": 8,
+    "weeksSinceClaim": 5,
     "class": ""
   },
   "claimant": {
+    "title": "Mr",
     "fullName": "Tony Smith",
     "nino": "AA123456A",
     "dateOfClaim": "1 October 2017",

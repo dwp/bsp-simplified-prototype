@@ -20,6 +20,13 @@
         <form method="post" autocomplete="off">
           <div class="form-group">
             <label for="full-name">
+              <span class="form-label">Title</span>
+            </label>
+            <input class="form-control short-input" type="text" name="claimant[title]" id="title" value="{{data.claimant['title']}}">
+          </div>
+
+          <div class="form-group">
+            <label for="full-name">
               <span class="form-label">Full name</span>
             </label>
             <input class="form-control" type="text" name="claimant[full-name]" id="full-name" value="{{data.claimant['full-name']}}">
