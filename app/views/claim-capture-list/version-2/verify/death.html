@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Children details
+  Verify death
 {% endblock %}
 
 {% block customNav %}
@@ -12,10 +12,17 @@
   <main id="content" role="main" class="group">
     <div class="column-two-thirds">
       <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
+      
+      <h1 class="heading-large">Where did you verify the death?</h1>
 
       <form method="post" autocomplete="off">
+        <div class="form-group">
+          <label class="form-label" for="verify-death">Where did you verify the death?</label>
+          <input class="form-control" id="verify-death" name="dateOfDeath[where]" type="text">  
+        </div>
+        
         <fieldset>
-          <legend><h1 class="heading-large">What date did they die?</h1></legend>
+          <legend class="heading-small">What date did they die?</legend>
 
           <div class="form-group">
             <div class="form-date">
