@@ -30,7 +30,8 @@
     "dateOfDeath": "01 October 2017"  
   },
   "children": {
-    "dependant": "Yes"
+    "dependant": "Yes",
+    "chb-number": "CHB123456A"
   },
   "payment": {
     "nameOnAccount": "Mr T Smith",
