@@ -14,26 +14,29 @@
     Name on account
   </dt>
   <dd class="data-summary-value">
-    {% if scenario !== '3' %}
-      {{d.payment.nameOnAccount if data.payment or showDetails}}
-    {% endif %}
+    {{d.payment.nameOnAccount}}
   </dd>
 
   <dt class="data-summary-key">
     Sort code
   </dt>
   <dd class="data-summary-value">
-    {% if scenario !== '3' %}
-      {{d.payment.sortCode if data.payment or showDetails}}
-    {% endif %}
+    {{d.payment.sortCode}}
   </dd>
 
   <dt class="data-summary-key">
     Account number
   </dt>
   <dd class="data-summary-value">
-    {% if scenario !== '3' %}
-      {{d.payment.accountNumber if data.payment or showDetails}}
-    {% endif %}
+    {{d.payment.accountNumber}}
   </dd>
+
+  {% if d.payment.rollNumber %}
+    <dt class="data-summary-key">
+      Roll number
+    </dt>
+    <dd class="data-summary-value">
+      {{d.payment.rollNumber}}
+    </dd>
+  {% endif %}
 </dl>

@@ -37,7 +37,8 @@
     "nameOnAccount": "Mr T Smith",
     "sortCode": "123456",
     "accountNumber": "12345678",
-    "country": "United Kingdom"
+    "country": "United Kingdom",
+    "rollNumber": "D/7219443"
   },
   "verification": {
     "marriage": "Yes",
