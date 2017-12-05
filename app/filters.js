@@ -10,7 +10,7 @@ module.exports = function (env) {
    */
   var filters = {}
 
-  filters.loadDummyData = (filename, feature = 'claim-capture', version = '1') => {
+  filters.loadDummyData = (filename, feature = 'claim-capture') => {
     const data = require(`./views/${feature}/_dummy-data/${filename}.json`)
     if (data.schedule) {
       const fMonth = parse(data.schedule.payments.firstMonthly)
