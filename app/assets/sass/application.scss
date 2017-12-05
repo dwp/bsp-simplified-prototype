@@ -96,3 +96,11 @@ $grey999: #999;
 .short-input {
   max-width: 150px;
 }
+
+.task-incomplete {
+  @include phase-tag;
+  background-color: $grey-1;
+  float: right;
+  margin-right: 0;
+  padding-top: 3px;
+}
