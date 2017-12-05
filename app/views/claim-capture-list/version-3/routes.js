@@ -124,10 +124,10 @@ function addToLog (req, type) {
   if (type === 'capture') {
     const details = page.split('-')
     if (details[0] === 'payment' && req.body['payment-details-provided'] === 'No') {
-      return
+      log.push(`${capitalizeFirstLetter(details[0])} ${details[1]} missing`)
+    } else {
+      log.push(`${capitalizeFirstLetter(details[0])} ${details[1]} entered`)
     }
-    const message = `${capitalizeFirstLetter(details[0])} ${details[1]} entered`
-    log.push(message)
   }
   if (type === 'verify') {
     const details = page.split('-')
