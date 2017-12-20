@@ -54,8 +54,10 @@
           <a class="task-name" href="/{{feature}}/{{sprint}}/verify/marriage">
             Marriage
           </a>
-          {% if data.marriage %}
+          {% if data.marriage.verified === 'Yes' %}
             <strong class="task-completed" id="eligibility-completed">Completed</strong>
+          {% elif data.marriage.verified === 'No' %}
+            <strong class="task-incomplete" id="eligibility-completed">Not complete</strong>
           {% endif %}
         </li>
         <li class="task-list-item">
