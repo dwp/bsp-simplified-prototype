@@ -9,6 +9,12 @@
           <a class="task-name" href="/{{feature}}/{{sprint}}/capture/claimant-details">
             Claimant details
           </a>
+          <strong class="task-completed" id="eligibility-completed">Completed</strong>
+        </li>
+        <li class="task-list-item">
+          <a class="task-name" href="/{{feature}}/{{sprint}}/capture/contact-details">
+            Contact details
+          </a>
           {% if data.claimant.address %}
             <strong class="task-completed" id="eligibility-completed">Completed</strong>
           {% endif %}
@@ -30,6 +36,12 @@
           {% elif data['payment-details-provided'] === 'No' %}
             <strong class="task-incomplete" id="eligibility-completed">Not complete</strong>
           {% endif %}
+        </li>
+        <li class="task-list-item">
+          <a class="task-name" href="/{{feature}}/{{sprint}}/capture/date-of-claim">
+            Date of claim
+          </a>
+          <strong class="task-completed" id="eligibility-completed">Completed</strong>
         </li>
       </ul>
     </li>
