@@ -123,6 +123,9 @@ function addToLog (req, type) {
   const page = req.params.page
   if (type === 'capture') {
     const details = page.split('-')
+    if (details[0] === 'date') {
+      return
+    }
     if (details[0] === 'payment' && req.body['payment-details-provided'] === 'No') {
       log.push(`${capitalizeFirstLetter(details[0])} ${details[1]} missing`)
     } else {
