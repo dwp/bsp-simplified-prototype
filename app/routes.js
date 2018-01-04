@@ -33,4 +33,9 @@ router.use(/\/claim-capture-list\/version-([0-9]+)/, (req, res, next) => {
   require(`./views/claim-capture-list/version-${req.params[0]}/routes`)(req, res, next);
 })
 
+// Citizen Facing
+router.use(/\/citizen-facing\/version-([0-9]+)/, (req, res, next) => {
+  require(`./views/citizen-facing/version-${req.params[0]}/routes`)(req, res, next);
+})
+
 module.exports = router
