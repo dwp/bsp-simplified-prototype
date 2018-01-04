@@ -4,6 +4,21 @@
 
 {% block head %}
   {% include "includes/head.html" %}
+  <style>
+    #global-header #logo {
+      background: none;
+      line-height: .8;
+      padding-top: 5px;
+    }
+
+    #global-header #logo img {
+      display: none;
+    }
+
+    #global-header-bar {
+      display: none;
+    }
+  </style>
 {% endblock %}
 
 {% block cookie_message %}
