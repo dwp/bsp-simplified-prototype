@@ -52,7 +52,14 @@ router.get('/children-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/children-details`)
 })
 router.post('/children-details', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/contact-details`)
+  res.redirect(`/${req.feature}/${req.sprint}/payment-details`)
+})
+// -- Payment details
+router.get('/payment-details', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/capture/payment-details`)
+})
+router.post('/payment-details', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/payment-details`)
 })
 
 module.exports = router
