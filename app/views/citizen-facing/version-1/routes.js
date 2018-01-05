@@ -59,6 +59,14 @@ router.get('/payment-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/payment-details`)
 })
 router.post('/payment-details', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/declaration`)
+})
+
+// Declaration
+router.get('/declaration', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/declaration/declaration`)
+})
+router.post('/payment-details', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/payment-details`)
 })
 
