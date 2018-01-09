@@ -7,7 +7,10 @@
 
 {% block content %}
   <main id="content" role="main" class="group">
-    <div class="column-two-thirds">
+    {% include 'includes/phase_banner_alpha.html' %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
         <h1 class="heading-xlarge">Declaration</h1>
 
         <form method="post">
@@ -17,12 +20,13 @@
           </p>
 
           <div class="declaration">
-						If you knowingly give false information you could be prosecuted.
-					</div>
+            If you knowingly give false information you could be prosecuted.
+          </div>
 
           <br>
           <input type="submit" class="button" value="I agree - send application">
         </form>
       </div>
+    </div>
   </main>
 {% endblock %}

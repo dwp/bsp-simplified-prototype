@@ -7,55 +7,59 @@
 
 {% block content %}
   <main id="content" role="main" class="group">
-    <div class="column-two-thirds">
-      <h1 class="heading-large">
-        Do you have any dependent children?
-      </h1>
+    {% include 'includes/phase_banner_alpha.html' %}
+    
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h1 class="heading-large">
+          Do you have any dependent children?
+        </h1>
 
-      <p>
-        If you are responsible for a child under 16, or under 20 if they stay in 
-        approved education or training, you could get a higher rate of 
-        Bereavement Support Payment.
-      </p>
-      <form method="post" autocomplete="off">
-        
-        <div class="form-group">
-          <fieldset class="inline">
-            <legend class="visually-hidden">Do you have any dependent children?</legend>
-        
-            <div class="multiple-choice">
-              <input id="children-yes" type="radio" name="children[yesNo]" value="Yes">
-              <label for="children-yes">Yes</label>
-            </div>
-        
-            <div class="multiple-choice" data-target="pregnant-hidden">
-              <input id="children-no" type="radio" name="children[yesNo]" value="No">
-              <label for="children-no">No</label>
-            </div>
-          </fieldset>
-        </div>
-        
-        <div class="panel panel-border-narrow js-hidden" id="pregnant-hidden">
+        <p>
+          If you are responsible for a child under 16, or under 20 if they stay in 
+          approved education or training, you could get a higher rate of 
+          Bereavement Support Payment.
+        </p>
+
+        <form method="post" autocomplete="off">  
           <div class="form-group">
-          <fieldset class="inline">
-            <legend class="heading-small">Are you pregnant?</legend>
-        
-            <div class="multiple-choice">
-              <input id="pregnant-yes" type="radio" name="children[pregnant]" value="Yes">
-              <label for="pregnant-yes">Yes</label>
-            </div>
-        
-            <div class="multiple-choice">
-              <input id="pregnant-no" type="radio" name="children[pregnant]" value="No">
-              <label for="pregnant-no">No</label>
-            </div>
-          </fieldset>
-        </div>
-        </div>
-        
-        <button type="submit" class="button">
-          Continue
-        </button>
+            <fieldset class="inline">
+              <legend class="visually-hidden">Do you have any dependent children?</legend>
+          
+              <div class="multiple-choice">
+                <input id="children-yes" type="radio" name="children[yesNo]" value="Yes">
+                <label for="children-yes">Yes</label>
+              </div>
+          
+              <div class="multiple-choice" data-target="pregnant-hidden">
+                <input id="children-no" type="radio" name="children[yesNo]" value="No">
+                <label for="children-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+          
+          <div class="panel panel-border-narrow js-hidden" id="pregnant-hidden">
+            <div class="form-group">
+            <fieldset class="inline">
+              <legend class="heading-small">Are you pregnant?</legend>
+          
+              <div class="multiple-choice">
+                <input id="pregnant-yes" type="radio" name="children[pregnant]" value="Yes">
+                <label for="pregnant-yes">Yes</label>
+              </div>
+          
+              <div class="multiple-choice">
+                <input id="pregnant-no" type="radio" name="children[pregnant]" value="No">
+                <label for="pregnant-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+          </div>
+          
+          <button type="submit" class="button">
+            Continue
+          </button>
+        </form>
       </div>
     </div>
   </main>
