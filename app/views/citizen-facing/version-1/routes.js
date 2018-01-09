@@ -66,8 +66,14 @@ router.post('/payment-details', (req, res) => {
 router.get('/declaration', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/declaration/declaration`)
 })
-router.post('/payment-details', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/payment-details`)
+router.post('/declaration', (req, res) => {
+  req.session.data.citizenComplete = true
+  res.redirect(`/${req.feature}/${req.sprint}/confirmation`)
+})
+
+// Confirmation
+router.get('/confirmation', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/confirmation/confirmation`)
 })
 
 module.exports = router

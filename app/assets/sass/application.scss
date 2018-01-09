@@ -6,6 +6,7 @@ $button-red-border: #790000;
 $grey333: #333;
 $grey666: #666;
 $grey999: #999;
+$pale-blue: #EDF4F7;
 
 // Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
 // Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
@@ -104,4 +105,26 @@ $grey999: #999;
   float: right;
   margin-right: 0;
   padding-top: 3px;
+}
+
+.indent-info-blue {
+  background-color: $pale-blue;
+  background-image: url($path + 'icon-information.png');
+  background-position: 10px center;
+  background-repeat: no-repeat;
+  border-color: $govuk-blue;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  padding-left: 50px;
+
+  @media  (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    background-image: url($path + 'icon-information-2x.png');
+    background-size: 27px 27px;
+  }
+}
+
+.print-save-icons {
+  float: left;
+  margin-top: -4px;
+  padding-right: 0.6em;
 }
