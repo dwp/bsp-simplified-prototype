@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% set t = '_test' | loadDummyData(feature) %}
+{% set d = scenario | loadDummyData(feature) %}
+
+{% block page_title %}
+  Create a new claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-large">
+          Check claimant details
+        </h1>
+
+        <p>
+          You've said that <strong class="bold">{{d.claimant.fullName}}</strong> 
+          was born on <strong class="bold">{{d.claimant.dateOfBirth}}</strong>. 
+        </p> 
+        <p>
+          This means she is over State Pension age and ineligible for 
+          Bereavement Support Payment.
+        </p>
+
+        <form method="post">
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend class="heading-small">Is this correct?</legend>
+          
+              <div class="multiple-choice" data-target="contact-by-email">
+                <input id="over-spa-yes" type="radio" name="overSPA" value="Yes">
+                <label for="over-spa-yes">Yes</label>
+              </div>
+          
+              <div class="multiple-choice" data-target="contact-by-phone">
+                <input id="over-spa-no" type="radio" name="overSPA" value="No">
+                <label for="over-spa-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" class="button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

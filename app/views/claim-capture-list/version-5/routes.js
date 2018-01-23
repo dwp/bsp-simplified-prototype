@@ -40,6 +40,10 @@ router.get('/claimant-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/start-a-new-claim/claimant-details`)
 })
 router.post('/claimant-details', (req, res) => {
+  const scenario = req.session.data.scenario || '1'
+  if (scenario === '2') {
+    return res.redirect(`/${req.feature}/${req.sprint}/over-spa/${scenario}`)
+  }
   res.redirect(`/${req.feature}/${req.sprint}/partner-details`)
 })
 // ---- Partner details -------------------------------------------------------
@@ -132,6 +136,23 @@ router.get('/claim/:scenario/:decision', (req, res) => {
 router.get('/schedule/:scenario', (req, res) => {
   const scenario = req.params.scenario
   res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {scenario})
+})
+
+// -----------------------------------------------------------------------------
+// Knockouts -------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.get('/over-spa/:scenario', (req, res) => {
+  const scenario = req.params.scenario
+  res.render(`${req.feature}/${req.sprint}/capture/over-spa`, {scenario})
+})
+router.post('/over-spa/:scenario', (req, res) => {
+  const scenario = req.session.data.scenario || '1'
+  const overSPA = req.body['overSPA']
+  if (overSPA === 'Yes') {
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
+  }
+  console.log('moo')
+  res.redirect(`/${req.feature}/${req.sprint}/capture/claimant-details`)
 })
 
 module.exports = router
