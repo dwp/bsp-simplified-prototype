@@ -1,6 +1,7 @@
 const express = require('express')
 const {logOnPost} = require('../../../../lib/utils')
 const router = new express.Router()
+const {addToLog} = require('./functions')
 
 // Log session to console on POST requests
 router.use(logOnPost)
@@ -132,40 +133,5 @@ router.get('/schedule/:scenario', (req, res) => {
   const scenario = req.params.scenario
   res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {scenario})
 })
-
-// -----------------------------------------------------------------------------
-// Functions -------------------------------------------------------------------
-// -----------------------------------------------------------------------------
-function addToLog (req, type) {
-  const log = req.session.data.log || []
-  const page = req.params.page
-  if (type === 'capture') {
-    const details = page.split('-')
-    if (details[0] === 'date') {
-      return
-    }
-    if (details[0] === 'payment' && req.body['payment-details-provided'] === 'No') {
-      log.push(`${capitalizeFirstLetter(details[0])} ${details[1]} missing`)
-    } else {
-      log.push(`${capitalizeFirstLetter(details[0])} ${details[1]} entered`)
-    }
-  }
-  if (type === 'verify') {
-    const details = page.split('-')
-    if (page === 'child-benefit') {
-      const message = `${capitalizeFirstLetter(details[0])} ${details[1]} verified`
-      log.push(message)
-    } else {
-      const message = `${capitalizeFirstLetter(details[0])} verified`
-      log.push(message)
-    }
-  }
-  const set = Array.from(new Set(log))
-  req.session.data.log = set
-}
-
-function capitalizeFirstLetter (string) {
-  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-}
 
 module.exports = router
