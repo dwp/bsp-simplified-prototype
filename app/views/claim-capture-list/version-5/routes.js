@@ -32,9 +32,27 @@ router.get('/find-a-claim', (req, res) => {
 // Start a new claim -----------------------------------------------------------
 // -----------------------------------------------------------------------------
 router.get('/start-a-new-claim', (req, res) => {
-  res.render(`${req.feature}/${req.sprint}/start-a-new-claim/start-a-new-claim`)
+  res.redirect(`/${req.feature}/${req.sprint}/claimant-details`)
 })
-router.post('/start-a-new-claim', (req, res) => {
+// ---- Claimant details -------------------------------------------------------
+router.get('/claimant-details', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/start-a-new-claim/claimant-details`)
+})
+router.post('/claimant-details', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/partner-details`)
+})
+// ---- Partner details -------------------------------------------------------
+router.get('/partner-details', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/start-a-new-claim/partner-details`)
+})
+router.post('/partner-details', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/date-of-claim`)
+})
+// ---- Date of claim ----------------------------------------------------------
+router.get('/date-of-claim', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/start-a-new-claim/date-of-claim`)
+})
+router.post('/date-of-claim', (req, res) => {
   const scenario = req.session.data.scenario || '1'
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
