@@ -14,33 +14,42 @@
   <main id="content" role="main" class="group">
     <div class="grid-row">
       <div class="column-two-thirds">
-
+        
         <h1 class="heading-large">
-          Check claimant details
+          <strong class="bold">{{d.claimant.fullName}}</strong> can't get Bereavement Support Payment
         </h1>
-
-        <p>
-          You've said that <strong class="bold">{{d.claimant.fullName}}</strong> 
-          was born on <strong class="bold">{{d.claimant.dateOfBirth}}</strong>. 
-        </p> 
-        <p>
-          This means she is over State Pension age and ineligible for 
-          Bereavement Support Payment.
-        </p>
 
         <form method="post">
           <div class="form-group">
             <fieldset class="inline">
-              <legend class="heading-small">Is this correct?</legend>
+              <legend>
+                Is {{d.claimant.fullName}}'s date of birth <strong class="bold">{{d.claimant.dateOfBirth}}</strong>? 
+              </legend>
           
               <div class="multiple-choice" data-target="contact-by-email">
-                <input id="over-spa-yes" type="radio" name="overSPA" value="Yes">
-                <label for="over-spa-yes">Yes</label>
+                <input id="dobCorrect-yes" type="radio" name="dobCorrect" value="Yes">
+                <label for="dobCorrect-yes">Yes</label>
               </div>
           
               <div class="multiple-choice" data-target="contact-by-phone">
-                <input id="over-spa-no" type="radio" name="overSPA" value="No">
-                <label for="over-spa-no">No</label>
+                <input id="dobCorrect-no" type="radio" name="dobCorrect" value="No">
+                <label for="dobCorrect-no">No</label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <fieldset class="inline">
+              <legend>Did {{d.partner.fullName}} die on <strong class="bold">{{d.partner.dateOfDeath}}</strong>?</legend>
+          
+              <div class="multiple-choice" data-target="contact-by-email">
+                <input id="dobCorrect-yes" type="radio" name="dodCorrect" value="Yes">
+                <label for="dobCorrect-yes">Yes</label>
+              </div>
+          
+              <div class="multiple-choice" data-target="contact-by-phone">
+                <input id="dobCorrect-no" type="radio" name="dodCorrect" value="No">
+                <label for="dobCorrect-no">No</label>
               </div>
             </fieldset>
           </div>

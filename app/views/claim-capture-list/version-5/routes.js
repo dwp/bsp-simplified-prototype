@@ -40,10 +40,6 @@ router.get('/claimant-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/start-a-new-claim/claimant-details`)
 })
 router.post('/claimant-details', (req, res) => {
-  const scenario = req.session.data.scenario || '1'
-  if (scenario === '2') {
-    return res.redirect(`/${req.feature}/${req.sprint}/over-spa/${scenario}`)
-  }
   res.redirect(`/${req.feature}/${req.sprint}/partner-details`)
 })
 // ---- Partner details -------------------------------------------------------
@@ -59,6 +55,9 @@ router.get('/date-of-claim', (req, res) => {
 })
 router.post('/date-of-claim', (req, res) => {
   const scenario = req.session.data.scenario || '1'
+  if (scenario === '2') {
+    return res.redirect(`/${req.feature}/${req.sprint}/over-spa/${scenario}`)
+  }
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
 
@@ -147,12 +146,14 @@ router.get('/over-spa/:scenario', (req, res) => {
 })
 router.post('/over-spa/:scenario', (req, res) => {
   const scenario = req.session.data.scenario || '1'
-  const overSPA = req.body['overSPA']
-  if (overSPA === 'Yes') {
-    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
+  const dobIncorrect = req.body.dobCorrect === 'No'
+  const dodIncorrect = req.body.dodCorrect === 'No'
+  if (dobIncorrect) {
+    return res.redirect(`/${req.feature}/${req.sprint}/claimant-details`)
+  } else if (dodIncorrect) {
+    return res.redirect(`/${req.feature}/${req.sprint}/partner-details`)
   }
-  console.log('moo')
-  res.redirect(`/${req.feature}/${req.sprint}/capture/claimant-details`)
+  res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
 })
 
 module.exports = router

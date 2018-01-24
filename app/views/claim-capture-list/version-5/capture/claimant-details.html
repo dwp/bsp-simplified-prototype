@@ -51,21 +51,21 @@
                   <label class="form-label" for="dateOfBirth-day">
                     Day
                   </label>
-                  <input class="form-control" id="dateOfBirth-day" type="number" name="claimant[dateOfBirth][day]"/>
+                  <input class="form-control" id="dateOfBirth-day" type="number" name="claimant[dateOfBirth][day]" value="{{data.claimant.dateOfBirth.day}}"/>
                 </div>
 
                 <div class="form-group form-group-month">
                   <label class="form-label" for="dateOfBirth-month">
                     Month
                   </label>
-                  <input class="form-control" id="dateOfBirth-month" type="number" name="claimant[dateOfBirth][month]"/>
+                  <input class="form-control" id="dateOfBirth-month" type="number" name="claimant[dateOfBirth][month]" value="{{data.claimant.dateOfBirth.month}}"/>
                 </div>
 
                 <div class="form-group form-group-year">
                   <label class="form-label" for="dateOfBirth-year">
                     Year
                   </label>
-                  <input class="form-control" type="number" id="dateOfBirth-year" min="0" name="claimant[dateOfBirth][year]"/>
+                  <input class="form-control" type="number" id="dateOfBirth-year" min="0" name="claimant[dateOfBirth][year]" value="{{data.claimant.dateOfBirth.year}}"/>
                 </div>
               </div>
             </fieldset>
@@ -84,12 +84,12 @@
               </legend>
 
               <div class="multiple-choice">
-                <input id="radio-sex-0" name="claimant[sex]" value="Female" type="radio">
+                <input id="radio-sex-0" name="claimant[sex]" value="Female" type="radio" {{'checked' if data.claimant.sex === 'Female'}}>
                 <label for="radio-sex-0">Female</label>
               </div>
 
               <div class="multiple-choice">
-                <input id="radio-sex-1" name="claimant[sex]" value="Male" type="radio">
+                <input id="radio-sex-1" name="claimant[sex]" value="Male" type="radio" {{'checked' if data.claimant.sex === 'Male'}}>
                 <label for="radio-sex-1">Male</label>
               </div>
             </fieldset>
