@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% set d = scenario | loadDummyData('claim-capture-list') %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Create a new claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <h1 class="heading-large">
+          Evidence needed
+        </h1>
+        
+        <p>
+          This claim can't be processed until the claimant has sent in evidence 
+          of their marriage or civil partnership.
+        </p>
+
+        <form method="post" autocomplete="off">
+          Do you want to contact the claimant?<br />
+          - Yes<br />
+          - No<br />
+            How do you want to contact the claimant?<br />
+            - letter<br />
+            - phone call<br />
+            - email<br />
+
+          <p>
+            Once you have contacted the claimant, 
+          </p>
+          <button type="submit" class="button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

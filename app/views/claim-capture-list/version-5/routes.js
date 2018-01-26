@@ -82,6 +82,24 @@ router.post('/capture/:page', (req, res) => {
   addToLog(req, 'capture')
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
+// ---- Contact claimant -------------------------------------------------------
+router.get('/contact-claimant', (req, res) => {
+  const scenario = req.session.data.scenario || '1'
+  res.render(`${req.feature}/${req.sprint}/capture/contact-claimant`, {scenario})
+})
+router.post('/contact-claimant', (req, res) => {
+  res.redirect(`/${req.feature}/${req.sprint}/date-of-claim`)
+})
+
+// -----------------------------------------------------------------------------
+// Verification ----------------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.post('/verify/relationship', (req, res, next) => {
+  if (req.body.marriage.verified === 'No') {
+    return res.redirect(`/${req.feature}/${req.sprint}/contact-claimant`)
+  }
+  next()
+})
 router.get('/verify/:page', (req, res) => {
   const scenario = req.session.data.scenario || '1'
   const page = req.params.page
