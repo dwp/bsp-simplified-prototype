@@ -22,7 +22,11 @@
     {% endif %}
   </dd>
   
-  {% if d.claimant.contact.home and data.claimant.contact.home %}
+  {% if
+    (d.claimant.contact.home and data.claimant.contact.home)
+    or
+    (d.claimant.contact.home and showDetails)
+  %}
     <dt class="data-summary-key">
       Home phone
     </dt>
@@ -31,7 +35,11 @@
     </dd>
   {% endif %}
 
-  {% if d.claimant.contact.mobile and data.claimant.contact.mobile %}
+  {% if
+    (d.claimant.contact.mobile and data.claimant.contact.mobile)
+    or
+    (d.claimant.contact.mobile and showDetails)
+  %}
     <dt class="data-summary-key">
       Mobile phone
     </dt>
@@ -40,7 +48,11 @@
     </dd>
   {% endif %}
 
-  {% if d.claimant.contact.email and data.claimant.contact.email %}
+  {% if
+    (d.claimant.contact.email and data.claimant.contact.email)
+    or
+    (d.claimant.contact.email and showDetails)
+  %}
     <dt class="data-summary-key">
       Email address
     </dt>
