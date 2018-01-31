@@ -14,12 +14,11 @@
   <main id="content" role="main" class="group">
     <div class="grid-row">
       <div class="column-two-thirds">
-        <h1 class="heading-large">Evidence needed</h1>
+        <h1 class="heading-large">Evidence of marriage or civil partnership needed</h1>
 
         <p class="text">
-          You won't be able to process this claim until {{d.claimant.fullName}} 
-          has sent in evidence of {{'his' if d.claimant.sex === 'Male' else 'her'}} 
-          marriage or civil partnership.
+          You can't process this claim until {{d.claimant.fullName}} 
+          has sent in evidence of their marriage or civil partnership.
         </p>
         
         <form method="post" autocomplete="off">
@@ -56,9 +55,8 @@
 
           <div class="panel panel-border-narrow js-hidden" id="hidden">
             <p class="text">
-              You may need to contact {{d.claimant.fullName}} to remind 
-              {{'him' if d.claimant.sex === 'Male' else 'her'}} to send in 
-              {{'his' if d.claimant.sex === 'Male' else 'her'}} evidence.
+              You may need to contact {{d.claimant.fullName}} to remind them to 
+              send in their evidence.
             </p>
           </div>
 
