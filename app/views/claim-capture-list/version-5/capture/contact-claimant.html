@@ -14,28 +14,54 @@
   <main id="content" role="main" class="group">
     <div class="grid-row">
       <div class="column-two-thirds">
+        <h1 class="heading-large">Evidence needed</h1>
 
-        <h1 class="heading-large">
-          Evidence needed
-        </h1>
-        
-        <p>
-          This claim can't be processed until the claimant has sent in evidence 
-          of their marriage or civil partnership.
+        <p class="text">
+          You won't be able to process this claim until {{d.claimant.fullName}} 
+          has sent in evidence of {{'his' if d.claimant.sex === 'Male' else 'her'}} 
+          marriage or civil partnership.
         </p>
-
+        
         <form method="post" autocomplete="off">
-          Do you want to contact the claimant?<br />
-          - Yes<br />
-          - No<br />
-            How do you want to contact the claimant?<br />
-            - letter<br />
-            - phone call<br />
-            - email<br />
+          <div class="form-group">
+            <fieldset>
+              <legend class="heading-small">
+                Do you want to allow more time?
+              </legend>
+              <div class="multiple-choice" data-target="hidden">
+                <input
+                  id="radio-inline-1"
+                  type="radio"
+                  name="radio-inline-group"
+                  value="Yes"
+                />
+                <label for="radio-inline-1">
+                  Yes, wait a bit longer
+                </label>
+              </div>
 
-          <p>
-            Once you have contacted the claimant, 
-          </p>
+              <div class="multiple-choice">
+                <input
+                  id="radio-inline-2"
+                  type="radio"
+                  name="radio-inline-group"
+                  value="No"
+                />
+                <label for="radio-inline-2">
+                  No, disallow the claim
+                </label>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="hidden">
+            <p class="text">
+              You may need to contact {{d.claimant.fullName}} to remind 
+              {{'him' if d.claimant.sex === 'Male' else 'her'}} to send in 
+              {{'his' if d.claimant.sex === 'Male' else 'her'}} evidence.
+            </p>
+          </div>
+
           <button type="submit" class="button">
             Continue
           </button>
