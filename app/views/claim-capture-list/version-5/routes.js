@@ -82,13 +82,15 @@ router.post('/capture/:page', (req, res) => {
   addToLog(req, 'capture')
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
-// ---- Contact claimant -------------------------------------------------------
-router.get('/contact-claimant', (req, res) => {
+// ---- Evidence needed --------------------------------------------------------
+router.get('/evidence-needed', (req, res) => {
   const scenario = req.session.data.scenario || '1'
-  res.render(`${req.feature}/${req.sprint}/capture/contact-claimant`, {scenario})
+  res.render(`${req.feature}/${req.sprint}/capture/evidence-needed`, {scenario})
 })
-router.post('/contact-claimant', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/date-of-claim`)
+router.post('/evidence-needed', (req, res) => {
+  const scenario = req.session.data.scenario || '1'
+  addToLog(req, 'evidence')
+  res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
 
 // -----------------------------------------------------------------------------
@@ -96,7 +98,7 @@ router.post('/contact-claimant', (req, res) => {
 // -----------------------------------------------------------------------------
 router.post('/verify/relationship', (req, res, next) => {
   if (req.body.marriage.verified === 'No') {
-    return res.redirect(`/${req.feature}/${req.sprint}/contact-claimant`)
+    return res.redirect(`/${req.feature}/${req.sprint}/evidence-needed`)
   }
   next()
 })

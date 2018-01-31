@@ -7,27 +7,32 @@ function addToLog (req, type) {
       return
     }
     if (details[0] === 'payment' && req.body['payment-details-provided'] === 'No') {
-      log.push(`${capitalizeFirstLetter(details[0])} ${details[1]} missing`)
+      const title = `${capitalizeFirstLetter(details[0])} ${details[1]} missing`
+      log.push({title})
     } else {
-      log.push(`${capitalizeFirstLetter(details[0])} ${details[1]} entered`)
+      const title = `${capitalizeFirstLetter(details[0])} ${details[1]} entered`
+      log.push({title})
     }
   }
   if (type === 'verify') {
     const details = page.split('-')
     if (page === 'child-benefit') {
-      const message = `${capitalizeFirstLetter(details[0])} ${details[1]} verified`
-      log.push(message)
+      const title = `${capitalizeFirstLetter(details[0])} ${details[1]} verified`
+      log.push({title})
     } else {
-      const message = `${capitalizeFirstLetter(details[0])} verified`
-      log.push(message)
+      const title = `${capitalizeFirstLetter(details[0])} verified`
+      log.push({title})
     }
+  }
+  if (type === 'evidence') {
+    log.push({title: 'Relationship status checked', caption: 'Proof of marriage or civil partnership needed'})
   }
   const set = Array.from(new Set(log))
   req.session.data.log = set
 }
 
 function capitalizeFirstLetter (string) {
-  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
 }
 
 module.exports = {addToLog}
