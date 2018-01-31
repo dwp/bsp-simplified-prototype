@@ -27,7 +27,8 @@
   {% for entry in data.log | reverse %}
     <li>
       <span class="line"></span>
-      <h3 class="bold">{{entry}}</h3>
+      <h3 class="bold">{{entry.title}}</h3>
+      {% if entry.caption %}<p>{{entry.caption}}</p>{% endif %}
       <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
       <span class="paused-until-date">{{t.date}}</span>
     </li>
