@@ -36,11 +36,12 @@
     "accountNumber": "12345678",
     "country": "United Kingdom"
   },
-  "verification": {
-    "marriage": "No",
-    "death": "Yes",
-    "conts": "Yes",
-    "chb": "No"
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "21 October 1978"
+  },
+  "conts": {
+    "year": "1975"
   },
   "schedule": {
     "rate": "Standard",   

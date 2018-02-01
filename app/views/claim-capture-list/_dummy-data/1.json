@@ -40,11 +40,12 @@
     "country": "United Kingdom",
     "rollNumber": "D/7219443"
   },
-  "verification": {
-    "marriage": "Yes",
-    "death": "Yes",
-    "conts": "Yes",
-    "chb": "Yes"
+  "marriage": {
+    "where": "Marriage certificate",
+    "dateOfMarriage": "21 October 1978"
+  },
+  "conts": {
+    "year": "1975"
   },
   "schedule": {
     "rate": "Higher",   
