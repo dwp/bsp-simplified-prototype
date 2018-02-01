@@ -1,10 +1,12 @@
 <h2 class="heading-small th">
   Children details
-  <p class="payment-link">
-    <a href="/{{feature}}/{{sprint}}/children-details">
-      Change
-    </a>
-  </p>
+  {% if not decision %}
+    <p class="payment-link">
+      <a href="/{{feature}}/{{sprint}}/children-details">
+        Change
+      </a>
+    </p>
+  {% endif %}
 </h2>
 
 <dl class="data-summary">

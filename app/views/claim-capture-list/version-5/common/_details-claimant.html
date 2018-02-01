@@ -1,12 +1,12 @@
 <h2 class="heading-small th">
   Claimant details
-  <p class="payment-link">
-    {% if not decision %}
+  {% if not decision %}
+    <p class="payment-link">
       <a href="/{{feature}}/{{sprint}}/capture/claimant-details">
         Change
       </a>
-    {% endif %}
-  </p>
+    </p>
+  {% endif %}
 </h2>
 
 <dl class="data-summary">

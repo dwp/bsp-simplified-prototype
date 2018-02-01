@@ -18,11 +18,13 @@
           Proof of marriage or civil partnership needed
         </dd>
       {% endif%}
-      <dd class="cya-change">
-        <a class="bold" href="#">
-          Change<span class="visually-hidden"> marriage verification</span>
-        </a>
-      </dd>
+      {% if not decision %}
+        <dd class="cya-change">
+          <a class="bold" href="#">
+            Change<span class="visually-hidden"> marriage verification</span>
+          </a>
+        </dd>
+      {% endif %}
     </div>
   {% endif %}
 
@@ -32,14 +34,16 @@
         Death
       </dt>
       <dd class="cya-answer">
-        CIS<br />
+        Customer Information System<br />
         {{d.partner.dateOfDeath}}
       </dd>
-      <dd class="cya-change">
-        <a class="bold" href="#">
-          Change<span class="visually-hidden"> death verification</span>
-        </a>
-      </dd>
+      {% if not decision %}
+        <dd class="cya-change">
+          <a class="bold" href="#">
+            Change<span class="visually-hidden"> death verification</span>
+          </a>
+        </dd>
+      {% endif %}
     </div>
   {% endif %}
 
@@ -51,11 +55,13 @@
       <dd class="cya-answer">
         {{d.conts.year}}
       </dd>
-      <dd class="cya-change">
-        <a class="bold" href="#">
-          Change<span class="visually-hidden"> National Insurance verification</span>
-        </a>
-      </dd>
+      {% if not decision %}
+        <dd class="cya-change">
+          <a class="bold" href="#">
+            Change<span class="visually-hidden"> National Insurance verification</span>
+          </a>
+        </dd>
+      {% endif %}
     </div>
   {% endif %}
 
@@ -67,11 +73,13 @@
       <dd class="cya-answer">
         {{d.children['chb-number']}}
       </dd>
-      <dd class="cya-change">
-        <a class="bold" href="#">
-          Change<span class="visually-hidden"> children verification</span>
-        </a>
-      </dd>
+      {% if not decision %}
+        <dd class="cya-change">
+          <a class="bold" href="#">
+            Change<span class="visually-hidden"> children verification</span>
+          </a>
+        </dd>
+      {% endif %}
     </div>
   {% endif %}
 </dl>
