@@ -8,7 +8,11 @@
 {% set f = '6' | loadDummyData('claim-capture-list') %}
 
 {% block page_title %}
-  Find a claim
+  {% if search %}
+    Search results or find a claim
+  {% else %}
+    Find a claim
+  {% endif%}
 {% endblock %}
 
 {% block customNav %}
