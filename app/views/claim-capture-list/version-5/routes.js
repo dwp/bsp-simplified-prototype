@@ -55,9 +55,9 @@ router.get('/date-of-claim', (req, res) => {
 })
 router.post('/date-of-claim', (req, res) => {
   const scenario = req.session.data.scenario || '1'
-  if (scenario === '2') {
-    return res.redirect(`/${req.feature}/${req.sprint}/over-spa/${scenario}`)
-  }
+  // if (scenario === '2') {
+  //   return res.redirect(`/${req.feature}/${req.sprint}/over-spa/${scenario}`)
+  // }
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
 
@@ -90,6 +90,9 @@ router.get('/evidence-needed', (req, res) => {
 router.post('/evidence-needed', (req, res) => {
   const scenario = req.session.data.scenario || '1'
   addToLog(req, 'evidence')
+  if (req.body.wait === 'No') {
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
+  }
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
 
@@ -97,7 +100,11 @@ router.post('/evidence-needed', (req, res) => {
 // Verification ----------------------------------------------------------------
 // -----------------------------------------------------------------------------
 router.post('/verify/relationship', (req, res, next) => {
-  if (req.body.marriage.verified === 'No') {
+  const scenario = req.session.data.scenario || '1'
+  if (scenario === '2' || req.body.marriage.form === 'No') {
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
+  }
+  if (scenario === '3' || scenario === '4' || scenario === '5' || req.body.marriage.verified === 'No') {
     return res.redirect(`/${req.feature}/${req.sprint}/evidence-needed`)
   }
   next()
