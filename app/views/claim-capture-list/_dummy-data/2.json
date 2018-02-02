@@ -6,41 +6,50 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Sarah Wilson",
-    "nino": "BB123456B",
-    "dateOfClaim": "2 October 2017",
-    "dateOfBirth": "11 August 1950",
+    "fullName": "Helen Wilson",
+    "nino": "BB123456X",
+    "dateOfClaim": "10 January 2018",
+    "dateOfBirth": "2 November 1965",
     "sex": "Female",    
     "currentAddress": {
-      "number": "8",
-      "street": "Limetree Grove",
-      "town": "Selby",
-      "county": "Leeds",
-      "postcode": "L1 4PP"
+      "number": "29",
+      "street": "The Grove",
+      "town": "Bolton",
+      "county": "Manchester",
+      "postcode": "BL3 2RW"
     },
     "contact": {
-      "home": "11311234567"
+      "home": "0208827631"
     }
   },
   "partner": {
-    "fullName": "Patrick Wilson",
-    "nino": "HH123456H",
-    "dateOfDeath": "10 October 2017"  
+    "fullName": "Terry Wilson",
+    "nino": "BA123456X",
+    "dateOfDeath": "3 January 2018"  
   },
   "children": {
     "dependant": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs S Wilson",
-    "sortCode": "121234",
-    "accountNumber": "12341234",
+    "nameOnAccount": "Mrs H Wilson",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Marriage certificate",
-    "dateOfMarriage": "21 October 1978"
+    "dateOfMarriage": "20 December 1993"
   },
   "conts": {
-    "year": "1975"
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
+    }
   }
 }

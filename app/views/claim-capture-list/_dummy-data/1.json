@@ -6,54 +6,51 @@
   },
   "claimant": {
     "title": "Mr",
-    "fullName": "Tony Smith",
-    "nino": "AA123456A",
-    "dateOfClaim": "1 October 2017",
-    "dateOfBirth": "24 January 1980",
+    "fullName": "David Jones",
+    "nino": "AA123456X",
+    "dateOfClaim": "30 January 2018",
+    "dateOfBirth": "19 August 1968",
     "sex": "Male",    
     "currentAddress": {
-      "number": "4",
-      "street": "Treetop Mews",
-      "town": "Wallsend",
-      "county": "Tyne and Wear",
-      "postcode": "NE28 9AA"
+      "number": "34",
+      "street": "Farm View",
+      "town": "Shipley",
+      "county": "Leeds",
+      "postcode": "LS2 7QB"
     },
     "contact": {
-      "home": "01911234567",
-      "mobile": "07712345678",
-      "email": "tony.smith@gmail.com"
+      "mobile": "07123477777",
+      "email": "djones@sky.com"
     }
   },
   "partner": {
-    "fullName": "Mary Smith",
-    "nino": "GG123456G",
-    "dateOfDeath": "01 October 2017"  
+    "fullName": "Claire Jones",
+    "nino": "AB123456X",
+    "dateOfDeath": "29 January 2018"  
   },
   "children": {
-    "dependant": "Yes",
-    "chb-number": "CHB123456A"
+    "dependant": "No"
   },
   "payment": {
-    "nameOnAccount": "Mr T Smith",
-    "sortCode": "123456",
+    "nameOnAccount": "Mr David Jones",
+    "sortCode": "112233",
     "accountNumber": "12345678",
-    "country": "United Kingdom",
-    "rollNumber": "D/7219443"
+    "country": "United Kingdom"
   },
   "marriage": {
     "where": "Marriage certificate",
-    "dateOfMarriage": "21 October 1978"
+    "dateOfMarriage": "4 July 1995"
   },
   "conts": {
-    "year": "1975"
+    "year": "2015"
   },
   "schedule": {
-    "rate": "Higher",   
+    "rate": "Standard",   
     "payments": {
       "number": 18,
-      "initial": "8 November 2017",
-      "backdated": "8 November 2017",
-      "firstMonthly": "1 December 2017"
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
     }
   }
 }

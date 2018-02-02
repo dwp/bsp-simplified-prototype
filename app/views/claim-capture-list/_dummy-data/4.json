@@ -5,51 +5,51 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mrs",    
-    "fullName": "Christine Jackson",
-    "nino": "DD123456D",
-    "dateOfClaim": "25 September 2017",
-    "dateOfBirth": "5 July 1973",
-    "sex": "Female",    
+    "title": "Mr",    
+    "fullName": "Clive Reynolds",
+    "nino": "DA123456X",
+    "dateOfClaim": "29 December 2017",
+    "dateOfBirth": "12 April 1967",
+    "sex": "Male",    
     "currentAddress": {
-      "number": "8",
-      "street": "Station Road",
-      "town": "Manchester",
-      "county": "Greater Manchester",
-      "postcode": "MA1 4GG"
+      "number": "52",
+      "street": "Hedge Row",
+      "town": "Stockton",
+      "county": "Middlesborough",
+      "postcode": "TS9 4QY"
     },
     "contact": {
-      "mobile": "07712345788"
+      "home": "01915218371"
     }
   },
   "partner": {
-    "fullName": "Joe Jackson",
+    "fullName": "Moira Reynolds",
     "nino": "EE123456E",
-    "dateOfDeath": "01 August 2017"  
+    "dateOfDeath": "1 January 2018"  
   },
   "children": {
-    "dependant": "Yes"
+    "dependant": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs C Jackson",
-    "sortCode": "123456",
+    "nameOnAccount": "Mr C Reynolds",
+    "sortCode": "112233",
     "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Marriage certificate",
-    "dateOfMarriage": "21 October 1978"
+    "dateOfMarriage": "17 September 1996"
   },
   "conts": {
-    "year": "1975"
+    "year": "2015"
   },
   "schedule": {
     "rate": "Standard",   
     "payments": {
       "number": 18,
-      "initial": "8 November 2017",
-      "backdated": "8 November 2017",
-      "firstMonthly": "29 November 2017"
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
     }
   }
 }

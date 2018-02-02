@@ -6,52 +6,50 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Amanda Marshall",
-    "nino": "CC123456C",
-    "dateOfClaim": "4 October 2017",
-    "dateOfBirth": "4 April 1982",
+    "fullName": "Kathryn Williams",
+    "nino": "CA123456X",
+    "dateOfClaim": "7 Januaury 2018",
+    "dateOfBirth": "5 August 1974",
     "sex": "Female",    
     "currentAddress": {
-      "number": "6",
-      "street": "Charlton Road",
-      "town": "Irving",
-      "county": "Ayrshire",
-      "postcode": "KA3 7AP"
+      "number": "37",
+      "street": "Golding Street",
+      "town": "Byker",
+      "county": "Newcastle",
+      "postcode": "NE4 9BV"
     },
     "contact": {
-      "mobile": "07712345678",
-      "email": "amarshall1@gmail.com"
+      "home": "01915667174"
     }
   },
   "partner": {
-    "fullName": "Robert Marshall",
-    "nino": "JJ123456J",
-    "dateOfDeath": "29 September 2017"  
+    "fullName": "Peter Williams",
+    "nino": "CB123456X",
+    "dateOfDeath": "5 January 2018"  
   },
   "children": {
-    "dependant": "No",
-    "pregnant": "Yes"
+    "dependant": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs A Marshall",
-    "sortCode": "123456",
-    "accountNumber": "12345678",
+    "nameOnAccount": "Mrs K Williams",
+    "sortCode": "121212",
+    "accountNumber": "12341234",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Marriage certificate",
-    "dateOfMarriage": "21 October 1978"
+    "dateOfMarriage": "29 April 2013"
   },
   "conts": {
     "year": "1975"
   },
   "schedule": {
-    "rate": "Higher",   
+    "rate": "Standard",   
     "payments": {
       "number": 18,
-      "initial": "8 November 2017",
-      "backdated": "8 November 2017",
-      "firstMonthly": "29 November 2017"
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
     }
   }
 }

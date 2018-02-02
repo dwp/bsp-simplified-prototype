@@ -5,51 +5,51 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mr",    
-    "fullName": "Peter Blacklock",
-    "nino": "FF123456F",
-    "dateOfClaim": "1 November 2017",
-    "dateOfBirth": "10 July 1977",
-    "sex": "Male",
+    "title": "Mrs",    
+    "fullName": "Julie Campbell",
+    "nino": "FF123456X",
+    "dateOfClaim": "17 January 2018",
+    "dateOfBirth": "19 April 1968",
+    "sex": "Female",
     "currentAddress": {
-      "number": "3",
-      "street": "Berwick Road",
-      "town": "Morpeth",
-      "county": "Northumberland",
-      "postcode": "NE61 3BH"
+      "number": "64",
+      "street": "Zooland",
+      "town": "Leith",
+      "county": "Edinburgh",
+      "postcode": "EH1 9XM"
     },
     "contact": {
-      "mobile": "07712345788"
+      "home": "01206627481"
     }
   },
   "partner": {
-    "fullName": "Kelly Blacklock",
-    "nino": "FF123456F",
-    "dateOfDeath": "15 August 2017"  
+    "fullName": "Raymond Campbell",
+    "nino": "GG123456X",
+    "dateOfDeath": "2 January 2018"  
   },
   "children": {
     "dependant": "No"
   },
   "payment": {
-    "nameOnAccount": "Not provided",
-    "sortCode": "Not provided",
-    "accountNumber": "Not provided",
-    "country": "Not provided"
+    "nameOnAccount": "Mrs J Campbell",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
+    "country": "United Kingdom"
   },
   "marriage": {
     "where": "Marriage certificate",
-    "dateOfMarriage": "21 October 1978"
+    "dateOfMarriage": "29 August 2001"
   },
   "conts": {
-    "year": "1975"
+    "year": "2015"
   },
   "schedule": {
     "rate": "Standard",   
     "payments": {
       "number": 18,
-      "initial": "20 November 2017",
-      "backdated": "20 November 2017",
-      "firstMonthly": "15 December 2017"
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
     }
   }
 }
