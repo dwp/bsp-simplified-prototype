@@ -28,8 +28,11 @@
           <h2 class="heading-small">This claim was disallowed because:</h2>
           <ul class="list list-bullet">
             <li>
-              the claimant didn't send in proof of their marriage or civil 
-              partnership
+              {% if scenario === '5' %}
+                The claimant was not married to the deceased at the time of death.
+              {% else %}
+                The claimant didn't send proof of their marriage or civil partnership.
+              {% endif %}
             </li>
           </ul>
         </div>
