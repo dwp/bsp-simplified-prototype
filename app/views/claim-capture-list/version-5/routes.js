@@ -101,10 +101,10 @@ router.post('/evidence-needed', (req, res) => {
 // -----------------------------------------------------------------------------
 router.post('/verify/relationship', (req, res, next) => {
   const scenario = req.session.data.scenario || '1'
-  if (scenario === '2' || req.body.marriage.form === 'No') {
+  if (scenario === '5' || req.body.marriage.form === 'No') {
     return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
   }
-  if (scenario === '3' || scenario === '4' || scenario === '5' || req.body.marriage.verified === 'No') {
+  if (scenario === '2' || scenario === '3' || scenario === '4' || req.body.marriage.verified === 'No') {
     return res.redirect(`/${req.feature}/${req.sprint}/evidence-needed`)
   }
   next()
@@ -132,7 +132,7 @@ router.post('/confirm-details/:scenario', (req, res) => {
   if (scenario === '1') {
     return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/allowed`)
   }
-  if (scenario === '2') {
+  if (scenario === '5') {
     return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
   }
   res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/set-reminder`)
