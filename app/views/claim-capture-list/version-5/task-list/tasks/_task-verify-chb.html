@@ -2,7 +2,7 @@
   <a class="task-name" href="/{{feature}}/{{sprint}}/verify/child-benefit">
     Dependent children
   </a>
-  {% if data.children %}
+  {% if data.children or bf %}
     <strong class="task-completed" id="eligibility-completed">Completed</strong>
   {% endif %}
 </li>

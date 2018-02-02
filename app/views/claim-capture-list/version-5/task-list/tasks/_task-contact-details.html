@@ -2,7 +2,7 @@
   <a class="task-name" href="/{{feature}}/{{sprint}}/capture/contact-details">
     Contact details
   </a>
-  {% if data.claimant.address %}
+  {% if data.claimant.address or bf %}
     <strong class="task-completed" id="eligibility-completed">Completed</strong>
   {% endif %}
 </li>
