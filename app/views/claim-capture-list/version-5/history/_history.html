@@ -1,3 +1,10 @@
+{% 
+  set bfAgent = {
+    'fullName': 'Jackie Moore',
+    'date': '1 January 2017'
+  }
+%}
+
 <h2 class="heading-medium">Claim history</h2>
 <ul class="log">
   {% if decision === 'disallowed' %}
@@ -33,20 +40,19 @@
       <span class="paused-until-date">{{t.date}}</span>
     </li>
   {% endfor %}
-  {% if decision !== 'disallowed' %}
-    <li>
-      <span class="line"></span>
-      <h3 class="bold">Date of claim entered</h3>
-      <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
-      <span class="paused-until-date">{{t.date}}</span>
-    </li>
-    <li>
-      <span class="line"></span>
-      <h3 class="bold">Partner details entered</h3>
-      <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
-      <span class="paused-until-date">{{t.date}}</span>
-    </li>
-  {% endif %}
+  {% include './_bf-history.html' %}
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Date of claim entered</h3>
+    <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+    <span class="paused-until-date">{{t.date}}</span>
+  </li>
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Partner details entered</h3>
+    <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+    <span class="paused-until-date">{{t.date}}</span>
+  </li>
   <li>
     <span class="line"></span>
     <h3 class="bold">Claimant details entered</h3>

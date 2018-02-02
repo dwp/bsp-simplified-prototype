@@ -2,6 +2,7 @@
 {% set t = '_test' | loadDummyData(feature) %}
 {% set d = scenario | loadDummyData(feature) %}
 {% set bf = (scenario === '3' or scenario === '4' or scenario === '6') %}
+
 {% block page_title %}
   Unfinished claim for {{d.claimant.fullName}}
 {% endblock %}
@@ -44,7 +45,7 @@
       </div>
 
       <div class="column-one-third">
-        {% include './../common/_history.html' %}
+        {% include './../history/_history.html' %}
       </div>
     </div>
   </main>
