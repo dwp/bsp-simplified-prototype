@@ -1,9 +1,9 @@
-{% 
-  set bfAgent = {
-    'fullName': 'Jackie Moore',
-    'date': '1 January 2017'
-  }
-%}
+{% set bfAgentName = 'Jackie Moore' %}
+{% if scenario === '6' %}
+  {% set bfDate = '25 January 2017' %}
+{% else %}
+  {% set bfDate = '22 January 2017' %}
+{% endif %}
 
 <h2 class="heading-medium">Claim history</h2>
 <ul class="log">
