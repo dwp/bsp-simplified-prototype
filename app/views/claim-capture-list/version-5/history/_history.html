@@ -12,7 +12,11 @@
       <span class="line"></span>
       <h3 class="bold">Claim disallowed</h3>
       <span class="paused-until-date">{{t.date}}</span>
-      <p>Claimant didn't send proof of their marriage or civil partnership.</p>
+      {% if scenario === '5' %}
+        <p>The claimant was not married to the deceased at the time of death.</p>
+      {% else %}
+        <p>Claimant didn't send proof of their marriage or civil partnership.</p>
+      {% endif %}
     </li>
   {% endif %}
   {% if decision === 'allowed' %}
