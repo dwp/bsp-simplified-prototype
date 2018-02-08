@@ -129,13 +129,10 @@ router.get('/confirm-details/:scenario', (req, res) => {
 })
 router.post('/confirm-details/:scenario', (req, res) => {
   const scenario = req.session.data.scenario || '1'
-  if (scenario === '1') {
-    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/allowed`)
-  }
   if (scenario === '5') {
     return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
   }
-  res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/set-reminder`)
+  res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/allowed`)
 })
 
 // -----------------------------------------------------------------------------
