@@ -91,9 +91,13 @@ router.post('/evidence-needed', (req, res) => {
   const scenario = req.session.data.scenario || '1'
   addToLog(req, 'evidence')
   if (req.body.wait === 'No') {
-    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/are-you-sure`)
   }
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
+})
+router.post('/decisions/:scenario/are-you-sure', (req, res) => {
+  const scenario = req.session.data.scenario || '1'
+  res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
 })
 
 // -----------------------------------------------------------------------------
