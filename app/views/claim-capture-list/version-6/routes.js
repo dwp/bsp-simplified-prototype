@@ -106,7 +106,7 @@ router.post('/decisions/:scenario/are-you-sure', (req, res) => {
 router.post('/verify/relationship', (req, res, next) => {
   const scenario = req.session.data.scenario || '1'
   if (scenario === '5' || req.body.marriage.form === 'No') {
-    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/are-you-sure`)
   }
   if (scenario === '2' || scenario === '3' || scenario === '4' || req.body.marriage.verified === 'No') {
     return res.redirect(`/${req.feature}/${req.sprint}/evidence-needed`)

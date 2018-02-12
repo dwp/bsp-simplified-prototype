@@ -18,10 +18,18 @@
           Are you sure you want to disallow this claim?
         </h1>
 
-        <p>
-          This claim is about to be disallowed because {{d.claimant.fullName}} 
-          has not sent in evidence of their marriage or civil partnership. 
-        </p>
+        {% if scenario === '5' %}
+          <p>
+            This claim is about to be disallowed because {{d.claimant.fullName}} 
+            was not married to {{d.partner.fullName}} at the time of death.
+         </p>
+        {% else %}
+          <p>
+            This claim is about to be disallowed because {{d.claimant.fullName}} 
+            has not sent in evidence of their marriage or civil partnership. 
+          </p>
+        {% endif %}
+        
 
         <p>
           This action cannot be undone.
