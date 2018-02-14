@@ -30,6 +30,8 @@
             <li>
               {% if scenario === '5' %}
                 The claimant was not married to the deceased at the time of death.
+              {% elif scenario === '7' %}
+                The claimant was over State Pension age at the time of death.
               {% else %}
                 The claimant didn't send proof of their marriage or civil partnership.
               {% endif %}

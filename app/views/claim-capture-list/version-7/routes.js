@@ -41,9 +41,9 @@ router.get('/claim-details', (req, res) => {
 })
 router.post('/claim-details', (req, res) => {
   const scenario = req.session.data.scenario || '1'
-  // if (scenario === '2') {
-  //   return res.redirect(`/${req.feature}/${req.sprint}/over-spa/${scenario}`)
-  // }
+  if (scenario === '7') {
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/are-you-sure`)
+  }
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
 
