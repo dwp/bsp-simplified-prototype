@@ -13,7 +13,13 @@
   <main id="content" role="main">
     <div class="grid-row">
       <div class="column-two-thirds">
-        <a class="link-back" href="/{{feature}}/{{sprint}}/evidence-needed">Back</a>
+        {% if scenario === '5' %}
+          <a class="link-back" href="/{{feature}}/{{sprint}}/verify/relationship">Back</a>
+        {% elif scenario === '7' %}
+          <a class="link-back" href="/{{feature}}/{{sprint}}/start-a-new-claim">Back</a>
+        {% else %}
+          <a class="link-back" href="/{{feature}}/{{sprint}}/evidence-needed">Back</a>
+        {% endif %}
 
         <h1 class="heading-large">
           Are you sure you want to disallow this claim?
@@ -46,8 +52,14 @@
             <button class="button button-red">Yes - disallow claim</button>
           </div>
         </form>
-
-        <a href="/{{feature}}/{{sprint}}/evidence-needed">Cancel</a>
+        
+        {% if scenario === '5' %}
+          <a href="/{{feature}}/{{sprint}}/verify/relationship">Cancel</a>
+        {% elif scenario === '7' %}
+          <a href="/{{feature}}/{{sprint}}/start-a-new-claim">Cancel</a>
+        {% else %}
+          <a href="/{{feature}}/{{sprint}}/evidence-needed">Cancel</a>
+        {% endif %}
       </div>
     </div>
   </main>
