@@ -33,9 +33,13 @@ router.get('/find-a-claim', (req, res) => {
 // Start a new claim -----------------------------------------------------------
 // -----------------------------------------------------------------------------
 router.get('/start-a-new-claim', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/capture/start-a-new-claim`)
+  res.redirect(`/${req.feature}/${req.sprint}/claim-details`)
 })
-router.post('/start-a-new-claim', (req, res) => {
+
+router.get('/claim-details', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/capture/claim-details`)
+})
+router.post('/claim-details', (req, res) => {
   const scenario = req.session.data.scenario || '1'
   // if (scenario === '2') {
   //   return res.redirect(`/${req.feature}/${req.sprint}/over-spa/${scenario}`)
