@@ -132,9 +132,17 @@ $pale-blue: #EDF4F7;
 }
 
 .secret-link {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100px;
+  color: $black;
+
+  &:active,
+  &:hover,
+  &:visited {
+    color: $black;
+  }
+
   height: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100px;
 }
