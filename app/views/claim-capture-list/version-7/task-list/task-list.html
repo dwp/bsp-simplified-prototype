@@ -57,6 +57,9 @@
                 </h2>
 
                 {% include '../common/_details-claim.html' %}
+                {% if data.claimant.address %}
+                  {% include '../common/_details-contact.html' %}
+                {% endif %}
                 {% if data.children %}
                   {% include '../common/_details-children.html' %}
                 {% endif %}

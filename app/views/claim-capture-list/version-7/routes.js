@@ -31,7 +31,7 @@ router.post('/settings', (req, res) => {
 // -----------------------------------------------------------------------------
 router.get('/find-a-claim/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
-  const d = require(`../_dummy-data/${scenario}.json`)
+  const d = require(`./_dummy-data/${scenario}.json`)
   const nino = req.query.findNino
   const search = nino ? nino.toUpperCase() : ''
   res.render(`${req.feature}/${req.sprint}/find-a-claim/find-a-claim`, {search, d})
@@ -60,8 +60,9 @@ router.post('/claim-details', (req, res) => {
 // -----------------------------------------------------------------------------
 router.get('/task-list/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
-  const d = require(`../_dummy-data/${scenario}.json`)
-  res.render(`${req.feature}/${req.sprint}/task-list/task-list`, {d})
+  const d = require(`./_dummy-data/${scenario}.json`)
+  const t = require(`./_dummy-data/_test.json`)
+  res.render(`${req.feature}/${req.sprint}/task-list/task-list`, {d, t})
 })
 
 // -----------------------------------------------------------------------------
@@ -80,7 +81,7 @@ router.post('/capture/:page', (req, res) => {
 // ---- Evidence needed --------------------------------------------------------
 router.get('/evidence-needed', (req, res) => {
   const scenario = req.session.data.scenario || '1'
-  const d = require(`../_dummy-data/${scenario}.json`)
+  const d = require(`./_dummy-data/${scenario}.json`)
   res.render(`${req.feature}/${req.sprint}/capture/evidence-needed`, {d})
 })
 router.post('/evidence-needed', (req, res) => {
@@ -93,7 +94,7 @@ router.post('/evidence-needed', (req, res) => {
 })
 router.get('/decisions/:scenario/are-you-sure', (req, res) => {
   const scenario = req.session.data.scenario || '1'
-  const d = require(`../_dummy-data/${scenario}.json`)
+  const d = require(`./_dummy-data/${scenario}.json`)
   res.render(`${req.feature}/${req.sprint}/decisions/are-you-sure`, {d})
 })
 router.post('/decisions/:scenario/are-you-sure', (req, res) => {
@@ -130,7 +131,7 @@ router.post('/verify/:page', (req, res) => {
 // -----------------------------------------------------------------------------
 router.get('/confirm-details/:scenario', (req, res) => {
   const scenario = req.session.data.scenario || '1'
-  const d = require(`../_dummy-data/${scenario}.json`)
+  const d = require(`./_dummy-data/${scenario}.json`)
   res.render(`${req.feature}/${req.sprint}/confirm-details/confirm-details`, {scenario, d})
 })
 router.post('/confirm-details/:scenario', (req, res) => {
@@ -156,8 +157,8 @@ router.get('/decisions/:scenario/:decision', (req, res) => {
 router.get('/claim/:scenario/:decision', (req, res) => {
   const decision = req.params.decision
   const scenario = req.session.data.scenario || '1'
-  const d = require(`../_dummy-data/${scenario}.json`)
-  const t = require(`../_dummy-data/_test.json`)
+  const d = require(`./_dummy-data/${scenario}.json`)
+  const t = require(`./_dummy-data/_test.json`)
   res.render(`${req.feature}/${req.sprint}/completed-claim/${decision}`, {decision, d, t})
 })
 
@@ -166,8 +167,9 @@ router.get('/claim/:scenario/:decision', (req, res) => {
 // -----------------------------------------------------------------------------
 router.get('/schedule/:scenario', (req, res) => {
   const scenario = req.params.scenario
-  const d = require(`../_dummy-data/${scenario}.json`)
-  res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {d})
+  const d = require(`./_dummy-data/${scenario}.json`)
+  const schedule = require(`./_dummy-data/_schedule.json`)
+  res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {d, schedule})
 })
 
 // -----------------------------------------------------------------------------
@@ -175,8 +177,8 @@ router.get('/schedule/:scenario', (req, res) => {
 // -----------------------------------------------------------------------------
 router.get('/over-spa/:scenario', (req, res) => {
   const scenario = req.params.scenario
-  const d = require(`../_dummy-data/${scenario}.json`)
-  const t = require(`../_dummy-data/_test.json`)
+  const d = require(`./_dummy-data/${scenario}.json`)
+  const t = require(`./_dummy-data/_test.json`)
   res.render(`${req.feature}/${req.sprint}/capture/over-spa`, {d, t})
 })
 router.post('/over-spa/:scenario', (req, res) => {

@@ -30,7 +30,7 @@
 
         <h2 class="heading-small th">
           Rate
-          {% if d.schedule.rate === 'Standard' %}
+          {% if schedule.rate === 'Standard' %}
             <p class="payment-link">
               <a href="#">
                 Change
@@ -41,7 +41,7 @@
 
         <dl class="data-summary">
           <dt class="data-summary-key">
-            {{d.schedule.rate}}
+            {{schedule.rate}}
           </dt>
           <dd class="data-summary-value">
           </dd>
@@ -70,13 +70,13 @@
         </h2>
 
         <ul class="schedule">
-          {% if d.schedule.payments.initial %}
+          {% if schedule.payments.initial %}
             <li class="payment">
               <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE11">
-                Due {{d.schedule.payments.initial}}
+                Due {{schedule.payments.initial}}
               </time>
               <strong class="amount">
-                £{{'3,500' if d.schedule.rate == 'Higher' else '2,500'}}
+                £{{'3,500' if schedule.rate == 'Higher' else '2,500'}}
               </strong>
               <span class="type">
                 Initial payment
@@ -84,13 +84,13 @@
             </li>
           {% endif %}
 
-          {% if d.schedule.payments.backdated %}
+          {% if schedule.payments.backdated %}
             <li class="payment">
               <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
-                Due {{d.schedule.payments.backdated}}
+                Due {{schedule.payments.backdated}}
               </time>
               <strong class="amount">
-                £{{'350' if d.schedule.rate == 'Higher' else '150'}}
+                £{{'350' if schedule.rate == 'Higher' else '150'}}
               </strong>
               <span class="type">
                 Backdated monthly payments
@@ -98,18 +98,16 @@
             </li>
           {% endif %}
 
-          {% if d.schedule.payments.monthly %}
-            {% for payment in d.schedule.payments.monthly %}
-              <li class="payment">
-                <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE9">
-                  Due {{payment}}
-                </time>
-                <strong class="amount">
-                  £{{'350' if d.schedule.rate == 'Higher' else '150'}}
-                </strong>
-              </li>
-            {% endfor %}
-          {% endif %}
+          {% for payment in schedule.payments.monthly %}
+            <li class="payment">
+              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+                Due {{payment}}
+              </time>
+              <strong class="amount">
+                £{{'350' if schedule.rate == 'Higher' else '150'}}
+              </strong>
+            </li>
+          {% endfor %}
         </ul>
       </div>
     </div>
