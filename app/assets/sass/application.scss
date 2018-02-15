@@ -28,7 +28,8 @@ $pale-blue: #EDF4F7;
 @import 'nav2';
 @import 'big-links';
 @import 'bank-details';
-@import 'tabs';
+@import 'prototype-tabs';
+@import 'a11y-tabs';
 @import 'log';
 @import 'declaration';
 @import 'interruption-card';
@@ -128,4 +129,12 @@ $pale-blue: #EDF4F7;
   float: left;
   margin-top: -4px;
   padding-right: 0.6em;
+}
+
+.secret-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 50px;
 }

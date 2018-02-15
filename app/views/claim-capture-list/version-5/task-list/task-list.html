@@ -26,7 +26,7 @@
 
         {% include './../common/_date-counter.html' %}
 
-        <ul id="tabs" class="tabs">
+        <ul id="tabs" class="p-tabs">
           <li id="tasks" class="current" data-target='tasks-hidden'>Tasks to complete</li>
           <li id="details" >Claim details</li>
         </ul>
@@ -52,18 +52,6 @@
 {% endblock %}
 
 {% block page_scripts %}
-  <script>
-    $(document).on('click', '.tabs li', function () {
-      var showId = $(this).attr('id')
-      $('.tabs li').each(function () {
-        var hideId = $(this).attr('id')
-        $(this).removeClass('current')
-        $('#' + hideId + '-content').addClass('hidden')
-      })
-      $('#' + showId).addClass('current')
-      $('#' + showId + '-content').removeClass('hidden')
-    })
-  </script>
   <style>
     .secret-link {
       position: absolute;
