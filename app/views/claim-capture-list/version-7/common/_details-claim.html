@@ -62,21 +62,21 @@
     Full name
   </dt>
   <dd class="data-summary-value">
-    {{d.partner.fullName if data.partner or showDetails}}
+    {{d.partner.fullName or showDetails}}
   </dd>
 
   <dt class="data-summary-key">
     National Insurance number
   </dt>
   <dd class="data-summary-value">
-    {{d.partner.nino if data.partner or showDetails}}
+    {{d.partner.nino or showDetails}}
   </dd>
 
   <dt class="data-summary-key">
     Date of death
   </dt>
   <dd class="data-summary-value">
-    {{d.partner.dateOfDeath if data.dateOfdeath or showDetails}}
+    {{d.partner.dateOfDeath or showDetails}}
   </dd>
 </dl>
 

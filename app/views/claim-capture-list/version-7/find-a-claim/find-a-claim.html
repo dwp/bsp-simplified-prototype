@@ -1,11 +1,5 @@
 {% extends "layout.html" %}
 {% set findActive = 'active' %}
-{% set a = '1' | loadDummyData('claim-capture-list') %}
-{% set b = '2' | loadDummyData('claim-capture-list') %}
-{% set c = '3' | loadDummyData('claim-capture-list') %}
-{% set d = '4' | loadDummyData('claim-capture-list') %}
-{% set e = '5' | loadDummyData('claim-capture-list') %}
-{% set f = '6' | loadDummyData('claim-capture-list') %}
 
 {% block page_title %}
   {% if search %}
@@ -41,40 +35,40 @@
         {% if search %}
           <h2 class="heading-medium">Results</h2>
           <ul class="search-results">
-            {% if search === a.claimant.nino or search === '1' %}
+            {% if search === d.claimant.nino or search === '1' %}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/claim/1/allowed" class="result-link">
                   Allowed claim
                 </a>
                 <span class="result-meta">
-                  {{a.claimant.fullName}}
+                  {{d.claimant.fullName}}
                 </span>
                 <span class="result-meta">
-                  {{a.claimant.dateOfClaim}}
+                  {{d.claimant.dateOfClaim}}
                 </span>
               </li>
-            {% elif search === b.claimant.nino or search === '2'%}
+            {% elif search === d.claimant.nino or search === '2'%}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/task-list/2" class="result-link">
                   Unfinished claim
                 </a>
                 <span class="result-meta">
-                  {{b.claimant.fullName}}
+                  {{d.claimant.fullName}}
                 </span>
                 <span class="result-meta">
-                  {{b.claimant.dateOfClaim}}
+                  {{d.claimant.dateOfClaim}}
                 </span>
               </li>
-            {% elif search === c.claimant.nino or search === '3'%}
+            {% elif search === d.claimant.nino or search === '3'%}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/task-list/3" class="result-link">
                   Unfinished claim
                 </a>
                 <span class="result-meta">
-                  {{c.claimant.fullName}}
+                  {{d.claimant.fullName}}
                 </span>
                 <span class="result-meta">
-                  {{c.claimant.dateOfClaim}}
+                  {{d.claimant.dateOfClaim}}
                 </span>
               </li>
             {% elif search === d.claimant.nino or search === '4' %}
@@ -89,28 +83,28 @@
                   {{d.claimant.dateOfClaim}}
                 </span>
               </li>
-            {% elif search === e.claimant.nino or search === '5' %}
+            {% elif search === d.claimant.nino or search === '5' %}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/claim/5/disallowed" class="result-link">
                   Disallowed claim
                 </a>
                 <span class="result-meta">
-                  {{e.claimant.fullName}}
+                  {{d.claimant.fullName}}
                 </span>
                 <span class="result-meta">
-                  {{e.claimant.dateOfClaim}}
+                  {{d.claimant.dateOfClaim}}
                 </span>
               </li>
-            {% elif search === f.claimant.nino or search === '6'%}
+            {% elif search === d.claimant.nino or search === '6'%}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/task-list/6" class="result-link">
                   Unfinished claim
                 </a>
                 <span class="result-meta">
-                  {{f.claimant.fullName}}
+                  {{d.claimant.fullName}}
                 </span>
                 <span class="result-meta">
-                  {{f.claimant.dateOfClaim}}
+                  {{d.claimant.dateOfClaim}}
                 </span>
               </li>
             {% else %}
