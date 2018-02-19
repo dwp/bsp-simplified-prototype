@@ -107,6 +107,18 @@
                   {{d.claimant.dateOfClaim}}
                 </span>
               </li>
+            {% elif search === d.claimant.nino or search === '7'%}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/task-list/6" class="result-link">
+                  Disallowed claim
+                </a>
+                <span class="result-meta">
+                  {{d.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{d.claimant.dateOfClaim}}
+                </span>
+              </li>
             {% else %}
               No matching claims found.
             {% endif %}
