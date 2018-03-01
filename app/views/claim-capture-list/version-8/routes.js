@@ -49,9 +49,6 @@ router.get('/claim-details', (req, res) => {
 })
 router.post('/claim-details', (req, res) => {
   const scenario = req.session.data.scenario || '1'
-  if (scenario === '7') {
-    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/are-you-sure`)
-  }
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
 
@@ -107,10 +104,10 @@ router.post('/decisions/:scenario/are-you-sure', (req, res) => {
 // -----------------------------------------------------------------------------
 router.post('/verify/relationship', (req, res, next) => {
   const scenario = req.session.data.scenario || '1'
-  if (scenario === '5' || req.body.marriage.form === 'No') {
+  if (req.body.marriage.form === 'No') {
     return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/are-you-sure`)
   }
-  if (scenario === '2' || scenario === '3' || scenario === '4' || req.body.marriage.verified === 'No') {
+  if (req.body.marriage.verified === 'No') {
     return res.redirect(`/${req.feature}/${req.sprint}/evidence-needed`)
   }
   next()
@@ -136,9 +133,6 @@ router.get('/confirm-details/:scenario', (req, res) => {
 })
 router.post('/confirm-details/:scenario', (req, res) => {
   const scenario = req.session.data.scenario || '1'
-  if (scenario === '5') {
-    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
-  }
   res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/allowed`)
 })
 
@@ -170,27 +164,6 @@ router.get('/schedule/:scenario', (req, res) => {
   const d = require(`./_dummy-data/${scenario}.json`)
   const schedule = require(`./_dummy-data/_schedule.json`)
   res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {d, schedule})
-})
-
-// -----------------------------------------------------------------------------
-// Knockouts -------------------------------------------------------------------
-// -----------------------------------------------------------------------------
-router.get('/over-spa/:scenario', (req, res) => {
-  const scenario = req.params.scenario
-  const d = require(`./_dummy-data/${scenario}.json`)
-  const t = require(`./_dummy-data/_test.json`)
-  res.render(`${req.feature}/${req.sprint}/capture/over-spa`, {d, t})
-})
-router.post('/over-spa/:scenario', (req, res) => {
-  const scenario = req.session.data.scenario || '1'
-  const dobIncorrect = req.body.dobCorrect === 'No'
-  const dodIncorrect = req.body.dodCorrect === 'No'
-  if (dobIncorrect) {
-    return res.redirect(`/${req.feature}/${req.sprint}/claimant-details`)
-  } else if (dodIncorrect) {
-    return res.redirect(`/${req.feature}/${req.sprint}/partner-details`)
-  }
-  res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
 })
 
 module.exports = router
