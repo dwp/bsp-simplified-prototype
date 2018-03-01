@@ -1,0 +1,10 @@
+<li class="task-list-item">
+  <a class="task-name" href="/{{feature}}/{{sprint}}/verify/relationship">
+    Marriage or civil partnership
+  </a>
+  {% if data.marriage.verified === 'Yes' %}
+    <strong class="task-completed" id="eligibility-completed">Completed</strong>
+  {% elif data.marriage.verified === 'No' or bf %}
+    <strong class="task-incomplete" id="eligibility-completed">Not complete</strong>
+  {% endif %}
+</li>
