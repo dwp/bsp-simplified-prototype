@@ -14,24 +14,13 @@
     Dependent children
   </dt>
   <dd class="data-summary-value">
-    {{d.children.dependant}}
+    {{data.children['dependant-children'] or d.children['dependant-children']}}
   </dd>
 
-  {% if d.children.dependant === 'Yes' %}
-    <dt class="data-summary-key">
-      Child Benefit number
-    </dt>
-    <dd class="data-summary-value">
-      {{d.children['chb-number']}}
-    </dd>
-  {% endif %}
-
-  {% if d.children.pregnant %}
-    <dt class="data-summary-key">
-      Pregnant
-    </dt>
-    <dd class="data-summary-value">
-      {{d.children.pregnant}}
-    </dd>
-  {% endif %}
+  <dt class="data-summary-key">
+    Pregnant
+  </dt>
+  <dd class="data-summary-value">
+    {{data.children.pregnant or d.children.pregnant}}
+  </dd>
 </dl>
