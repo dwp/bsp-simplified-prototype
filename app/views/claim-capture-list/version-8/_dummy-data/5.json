@@ -28,7 +28,11 @@
     "dateOfDeath": "15 January 2018"  
   },
   "children": {
-    "dependant": "No"
+    "dependant-children": "Yes",
+    "pregnant": "Yes"
+  },
+  "chb": {
+    "answer": "No"
   },
   "payment": {
     "nameOnAccount": "Mr K Davies",

@@ -29,7 +29,11 @@
     "dateOfDeath": "29 January 2018"  
   },
   "children": {
-    "dependant": "No"
+    "dependant-children": "No",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
   },
   "payment": {
     "nameOnAccount": "Mr David Jones",

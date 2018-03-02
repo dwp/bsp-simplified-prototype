@@ -28,7 +28,12 @@
     "dateOfDeath": "5 January 2018"  
   },
   "children": {
-    "dependant": "No"
+    "dependant-children": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "Yes",
+    "number": "CHB12345678A"
   },
   "payment": {
     "nameOnAccount": "Mrs K Williams",

@@ -28,7 +28,11 @@
     "dateOfDeath": "1 January 2018"  
   },
   "children": {
-    "dependant": "No"
+    "dependant-children": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
   },
   "payment": {
     "nameOnAccount": "Mr C Reynolds",
