@@ -3,10 +3,16 @@ function addToLog (req, type) {
   const page = req.params.page
   if (type === 'capture') {
     const details = page.split('-')
-    if (details[0] === 'date' || details[0] === 'claimant' || details[0] === 'partner') {
-      return
-    }
-    if (details[0] === 'payment' && req.body['payment-details-provided'] === 'No') {
+    if (details[0] === 'children') {
+      const entry = {title: 'Children details entered', caption: ''}
+      if (req.body.children['dependant-children'] === 'Yes') {
+        entry.caption += 'Has dependent children.<br />'
+      }
+      if (req.body.children.pregnant === 'Yes') {
+        entry.caption += 'Is pregnant.'
+      }
+      log.push(entry)
+    } else if (details[0] === 'payment' && req.body['payment-details-provided'] === 'No') {
       const title = `${capitalizeFirstLetter(details[0])} ${details[1]} missing`
       log.push({title})
     } else {
