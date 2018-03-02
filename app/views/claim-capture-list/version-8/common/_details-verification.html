@@ -65,13 +65,13 @@
     </div>
   {% endif %}
 
-  {% if data.children['dependant-children'] === 'Yes' %}
+  {% if data.chb %}
     <div>
       <dt>
         Child benefit number
       </dt>
       <dd class="cya-answer">
-        {{d.children['chb-number']}}
+        {{data.chb['number'] or d.chb['number'] or '<span class="red">Missing</span>'|safe}}
       </dd>
       {% if not decision %}
         <dd class="cya-change">
