@@ -6,26 +6,27 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Helen Wilson",
+    "fullName": "Susanne Evans",
     "nino": "BB123456X",
-    "dateOfClaim": "10 January 2018",
-    "dateOfBirth": "2 November 1965",
-    "sex": "Female",    
+    "dateOfClaim": "15 February 2018",
+    "dateOfBirth": "13 November 1990",
+    "sex": "Female",
     "currentAddress": {
-      "number": "29",
-      "street": "The Grove",
-      "town": "Bolton",
-      "county": "Manchester",
-      "postcode": "BL3 2RW"
+      "number": "16",
+      "street": "Trevaren Drive",
+      "town": "Ryhope",
+      "county": "Sunderland",
+      "postcode": "SR3 2PQ"
     },
     "contact": {
-      "home": "0208827631"
+      "home": "01915655819"
     }
   },
   "partner": {
-    "fullName": "Terry Wilson",
+    "title": "Mr",
+    "fullName": "Jonathan Evans",
     "nino": "BA123456X",
-    "dateOfDeath": "3 January 2018"  
+    "dateOfDeath": "01 February 2018"  
   },
   "children": {
     "dependant-children": "No",
@@ -35,14 +36,14 @@
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs H Wilson",
-    "sortCode": "123456",
-    "accountNumber": "12345678",
+    "nameOnAccount": "Mrs S Evans",
+    "sortCode": "112233",
+    "accountNumber": "12341234",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Marriage certificate",
-    "dateOfMarriage": "20 December 1993"
+    "dateOfMarriage": "16 August 2015"
   },
   "conts": {
     "year": "2015"

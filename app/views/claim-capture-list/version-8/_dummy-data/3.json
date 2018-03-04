@@ -6,26 +6,27 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Kathryn Williams",
-    "nino": "CA123456X",
-    "dateOfClaim": "7 Januaury 2018",
-    "dateOfBirth": "5 August 1974",
+    "fullName": "Michelle Barker",
+    "nino": "CC123456X",
+    "dateOfClaim": "15 February 2018",
+    "dateOfBirth": "29 June 1980",
     "sex": "Female",    
     "currentAddress": {
-      "number": "37",
-      "street": "Golding Street",
-      "town": "Byker",
-      "county": "Newcastle",
-      "postcode": "NE4 9BV"
+      "number": "118",
+      "street": "Barber Close",
+      "town": "Eastwood",
+      "county": "Nottingham",
+      "postcode": "NT5 2RT"
     },
     "contact": {
-      "home": "01915667174"
+      "home": "0131481367"
     }
   },
   "partner": {
-    "fullName": "Peter Williams",
+    "title": "Mr",
+    "fullName": " Joseph Barker",
     "nino": "CB123456X",
-    "dateOfDeath": "5 January 2018"  
+    "dateOfDeath": "5 February 2018"  
   },
   "children": {
     "dependant-children": "Yes",
@@ -33,17 +34,17 @@
   },
   "chb": {
     "answer": "Yes",
-    "number": "CHB12345678A"
+    "number": "CHB123456AB"
   },
   "payment": {
-    "nameOnAccount": "Mrs K Williams",
-    "sortCode": "121212",
-    "accountNumber": "12341234",
+    "nameOnAccount": "Mrs M Barker",
+    "sortCode": "123456",
+    "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Marriage certificate",
-    "dateOfMarriage": "29 April 2013"
+    "dateOfMarriage": "16 July 2008"
   },
   "conts": {
     "year": "1975"

@@ -5,27 +5,28 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mr",    
-    "fullName": "Kevin Davis",
-    "nino": "DB123456X",
-    "dateOfClaim": "20 January 2018",
-    "dateOfBirth": "16 November 1969",
-    "sex": "Male",
+    "title": "Mrs",    
+    "fullName": "Amelia McAndrews",
+    "nino": "EE123456X",
+    "dateOfClaim": "6 February 2018",
+    "dateOfBirth": "11 December 1987",
+    "sex": "Female",
     "currentAddress": {
-      "number": "24",
-      "street": "Rake Grove",
-      "town": "Seaburn",
-      "county": "Sunderland",
-      "postcode": "SR3 1PU"
+      "number": "18",
+      "street": "Ministry Close",
+      "town": "Longbenton",
+      "county": "Newcastle",
+      "postcode": "NE98 1YX"
     },
     "contact": {
-      "home": "01915556666"
+      "home": "01915655819"
     }
   },
   "partner": {
-    "fullName": "Wendy Davis",
-    "nino": "EE123456X",
-    "dateOfDeath": "15 January 2018"  
+    "title": "Mrs",
+    "fullName": "Siobhan McAndrews",
+    "nino": "ED123456X",
+    "dateOfDeath": "29 January 2018"  
   },
   "children": {
     "dependant-children": "Yes",
@@ -35,16 +36,17 @@
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mr K Davies",
+    "nameOnAccount": "Mrs A McAndrews",
     "sortCode": "112233",
     "accountNumber": "12341234",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Marriage certificate",
-    "dateOfMarriage": "21 October 1978"
+    "dateOfMarriage": "14 October 2011"
   },
   "conts": {
     "year": "2015"
   }
 }
+

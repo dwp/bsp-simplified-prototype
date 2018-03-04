@@ -6,26 +6,27 @@
   },
   "claimant": {
     "title": "Mr",    
-    "fullName": "Clive Reynolds",
-    "nino": "DA123456X",
-    "dateOfClaim": "29 December 2017",
-    "dateOfBirth": "12 April 1967",
+    "fullName": "Daniel Chambers",
+    "nino": "DD123456X",
+    "dateOfClaim": "17 February 2018",
+    "dateOfBirth": "6 September 1978",
     "sex": "Male",    
     "currentAddress": {
-      "number": "52",
-      "street": "Hedge Row",
-      "town": "Stockton",
-      "county": "Middlesborough",
-      "postcode": "TS9 4QY"
+      "number": "23",
+      "street": "Chancery Drive",
+      "town": "Selby",
+      "county": "Leeds",
+      "postcode": "LS11 2SA"
     },
     "contact": {
-      "home": "01915218371"
+      "mobile": "07733674132"
     }
   },
   "partner": {
-    "fullName": "Moira Reynolds",
-    "nino": "EE123456E",
-    "dateOfDeath": "1 January 2018"  
+    "title": "Mrs",
+    "fullName": "Emma Chambers",
+    "nino": "DC123456X",
+    "dateOfDeath": "3 February 2018"  
   },
   "children": {
     "dependant-children": "Yes",
@@ -35,14 +36,14 @@
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mr C Reynolds",
-    "sortCode": "112233",
+    "nameOnAccount": "Mrs D Chambers",
+    "sortCode": "123456",
     "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Marriage certificate",
-    "dateOfMarriage": "17 September 1996"
+    "dateOfMarriage": "15 July 2000"
   },
   "conts": {
     "year": "2015"
