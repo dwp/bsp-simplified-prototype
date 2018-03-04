@@ -22,7 +22,7 @@
     {% endif %}
   </dd>
   
-  {% if d.claimant.contact.home or showDetails %}
+  {% if d.claimant.contact.home %}
     <dt class="data-summary-key">
       Home phone
     </dt>
@@ -31,7 +31,7 @@
     </dd>
   {% endif %}
 
-  {% if d.claimant.contact.mobile or showDetails %}
+  {% if d.claimant.contact.mobile %}
     <dt class="data-summary-key">
       Mobile phone
     </dt>
@@ -40,7 +40,7 @@
     </dd>
   {% endif %}
 
-  {% if d.claimant.contact.email or showDetails %}
+  {% if d.claimant.contact.email %}
     <dt class="data-summary-key">
       Email address
     </dt>
