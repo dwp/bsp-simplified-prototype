@@ -30,7 +30,7 @@
 
         <h2 class="heading-small th">
           Rate
-          {% if schedule.rate === 'Standard' %}
+          {% if d.schedule.rate === 'Standard' %}
             <p class="payment-link">
               <a href="#">
                 Change
@@ -41,7 +41,7 @@
 
         <dl class="data-summary">
           <dt class="data-summary-key">
-            {{schedule.rate}}
+            {{d.schedule.rate}}
           </dt>
           <dd class="data-summary-value">
           </dd>
@@ -76,7 +76,7 @@
                 Due {{schedule.payments.initial}}
               </time>
               <strong class="amount">
-                £{{'3,500' if schedule.rate == 'Higher' else '2,500'}}
+                £{{'3,500' if d.schedule.rate == 'Higher' else '2,500'}}
               </strong>
               <span class="type">
                 Initial payment
@@ -90,7 +90,7 @@
                 Due {{schedule.payments.backdated}}
               </time>
               <strong class="amount">
-                £{{'350' if schedule.rate == 'Higher' else '150'}}
+                £{{'350' if d.schedule.rate == 'Higher' else '150'}}
               </strong>
               <span class="type">
                 Backdated monthly payments
@@ -104,7 +104,7 @@
                 Due {{payment}}
               </time>
               <strong class="amount">
-                £{{'350' if schedule.rate == 'Higher' else '150'}}
+                £{{'350' if d.schedule.rate == 'Higher' else '150'}}
               </strong>
             </li>
           {% endfor %}

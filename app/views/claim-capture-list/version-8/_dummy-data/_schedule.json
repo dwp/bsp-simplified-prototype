@@ -1,7 +1,5 @@
 {
-  "rate": "Standard",   
   "payments": {
-    "number": 18,
     "initial": "6 February 2018",
     "backdated": "6 February 2018",
     "firstMonthly": "29 February 2018",

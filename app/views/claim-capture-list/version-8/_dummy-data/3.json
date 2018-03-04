@@ -48,5 +48,9 @@
   },
   "conts": {
     "year": "1975"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
   }
 }

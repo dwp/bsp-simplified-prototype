@@ -47,5 +47,9 @@
   },
   "conts": {
     "year": "2015"
+  },
+  "schedule": {
+    "rate": "Standard",
+    "number": 18
   }
 }
