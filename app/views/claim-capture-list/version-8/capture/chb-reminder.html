@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Evidence needed
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/verify/child-benefit" class="link-back">Back</a>
+
+        <h1 class="heading-large">
+          This claim cannot be paid at higher rate
+        </h1>
+
+        <p class="text">
+          The claimant said they have dependent children, but they are not in 
+          receipt of Child Benefit.
+        </p>
+        <p> 
+          You may need contact {{d.claimant.fullName}} to make sure they can 
+          claim any money they may be entitled to.
+        </p>
+
+        <a class="button" href="/{{feature}}/{{sprint}}/task-list/{{scenario}}">Continue</a>
+      </div>
+    </div>
+  </main>
+{% endblock %}

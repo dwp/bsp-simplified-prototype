@@ -98,6 +98,12 @@ router.post('/decisions/:scenario/are-you-sure', (req, res) => {
   const scenario = req.session.data.scenario || '1'
   res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
 })
+// ---- chb-reminder -----------------------------------------------------------
+router.get('/chb-reminder', (req, res) => {
+  const scenario = req.session.data.scenario || '1'
+  const d = require(`./_dummy-data/${scenario}.json`)
+  res.render(`${req.feature}/${req.sprint}/capture/chb-reminder`, {d, scenario})
+})
 
 // -----------------------------------------------------------------------------
 // Verification ----------------------------------------------------------------
@@ -109,6 +115,19 @@ router.post('/verify/relationship', (req, res, next) => {
   }
   if (req.body.marriage.verified === 'No') {
     return res.redirect(`/${req.feature}/${req.sprint}/evidence-needed`)
+  }
+  next()
+})
+router.post('/verify/:page', (req, res, next) => {
+  if (req.params.page === 'child-benefit') {
+    const scenario = req.session.data.scenario || '1'
+    const children = req.session.data.children['dependant-children']
+    const pregnant = req.session.data.children.pregnant
+    const chb = req.body.chb.answer
+    if (scenario === '4' || (pregnant === 'No' && (children === 'Yes' && chb === 'No'))) {
+      addToLog(req, 'verify')
+      return res.redirect(`/${req.feature}/${req.sprint}/chb-reminder`)
+    }
   }
   next()
 })
