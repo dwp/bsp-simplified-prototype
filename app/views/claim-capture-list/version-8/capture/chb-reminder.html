@@ -16,16 +16,17 @@
         <a href="/{{feature}}/{{sprint}}/verify/child-benefit" class="link-back">Back</a>
 
         <h1 class="heading-large">
-          This claim cannot be paid at higher rate
+          {{d.claimant.fullName}} will get the standard rate
         </h1>
 
         <p class="text">
-          The claimant said they have dependent children, but they are not in 
-          receipt of Child Benefit.
+          They've said they have dependent children but there’s no Child Benefit 
+          number. This means they can’t get the higher rate yet.
         </p>
         <p> 
-          You may need contact {{d.claimant.fullName}} to make sure they can 
-          claim any money they may be entitled to.
+          You should contact {{d.claimant.fullName}} to see if they need to 
+          apply for Child Benefit. When they've done this, and if they are 
+          entitled to Child Benefit, their claim can be changed to the higher rate.
         </p>
 
         <a class="button" href="/{{feature}}/{{sprint}}/task-list/{{scenario}}">Continue</a>
