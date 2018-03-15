@@ -1,6 +1,7 @@
 const express = require('express')
-const {logOnPost} = require('../../../../lib/utils')
+const path = require('path')
 const router = new express.Router()
+const {logOnPost} = require('../../../../lib/utils')
 const {addToLog} = require('./functions')
 
 // Log session to console on POST requests
@@ -11,6 +12,8 @@ router.use((req, res, next) => {
   res.locals.scenario = req.session.data.scenario || '1'
   next()
 })
+router.use('/load-pdf/', express.static(path.join(__dirname, './_pdf')))
+
 
 router.get('/', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/settings`)
