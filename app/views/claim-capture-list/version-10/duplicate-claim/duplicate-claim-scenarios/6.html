@@ -1,0 +1,25 @@
+<a href="/{{feature}}/{{sprint}}/claim-details" class="link-back">Back</a>
+
+<h1 class="heading-large">
+  {{d.claimant.fullName}} is already claiming Bereavement Support Payment for 
+  {{d.partner.fullName}}
+</h1>
+
+<p>
+  Because this claim has already been allowed, you can't start it again.
+</p>
+
+<h2 class="heading-medium">Previous claims</h2>
+<ul class="panel panel-border-narrow search-results">
+  <li class="result">
+    <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/allowed" class="result-link">
+      Allowed claim
+    </a>
+    <span class="result-meta">
+      {{d.claimant.fullName}}
+    </span>
+    <span class="result-meta">
+      {{d.claimant.dateOfClaim}}
+    </span>
+  </li>
+</ul>
