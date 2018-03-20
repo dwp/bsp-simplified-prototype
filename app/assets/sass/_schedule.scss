@@ -100,11 +100,14 @@
 }
 
 .button-red {
+  $button-warning-border: #630811;
+  $button-warning-hover: #960c1a;
+
   background-color: $error-colour;
-  box-shadow: 0 2px 0 $button-red-border;
+  box-shadow: 0 2px 0 $button-warning-border;
 
   &:hover {
-    background-color: $button-red-border;
+    background-color: $button-warning-hover;
   }
 
   &:visited {
