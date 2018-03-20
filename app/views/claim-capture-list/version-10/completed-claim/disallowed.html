@@ -29,13 +29,7 @@
           <h2 class="heading-small">This claim was disallowed because:</h2>
           <ul class="list list-bullet">
             <li>
-              {% if scenario === '5' %}
-                The claimant was not married to the deceased at the time of death.
-              {% elif scenario === '7' %}
-                The claimant was over State Pension age at the time of death.
-              {% else %}
-                The claimant didn't send proof of their marriage or civil partnership.
-              {% endif %}
+              The claimant didn't send proof of their marriage or civil partnership.
             </li>
           </ul>
         </div>
@@ -47,7 +41,7 @@
       </div>
 
       <div class="column-one-third">
-        {% include './../history/_history.html' %}
+        {% include './../history/scenarios/1.html' %}
       </div>
     </div>
   </main>
