@@ -6,21 +6,19 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Michelle Barker",
-    "nino": "CC123456X",
-    "dateOfClaim": "15 February 2018",
-    "dateOfBirth": "29 June 1980",
+    "fullName": "Sophie Barker",
+    "nino": "QP123456X",
+    "dateOfClaim": "10 February 2018",
+    "dateOfBirth": "13 June 1980",
     "sex": "Female",    
     "currentAddress": {
-      "number": "118",
-      "street": "Barber Close",
-      "town": "Eastwood",
+      "number": "29",
+      "street": "Range Farm",
+      "town": "Nottingham",
       "county": "Nottingham",
-      "postcode": "NT5 2RT"
+      "postcode": "NG4 2LM"
     },
-    "contact": {
-      "home": "0131481367"
-    }
+    "contact": {}
   },
   "partner": {
     "title": "Mr",
@@ -29,22 +27,21 @@
     "dateOfDeath": "5 February 2018"  
   },
   "children": {
-    "dependant-children": "Yes",
+    "dependant-children": "No",
     "pregnant": "No"
   },
   "chb": {
-    "answer": "Yes",
-    "number": "CHB123456AB"
+    "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs M Barker",
+    "nameOnAccount": "Mrs S Barker",
     "sortCode": "123456",
     "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "16 July 2008"
+    "dateOfMarriage": "12 August 2001"
   },
   "conts": {
     "year": "1975"

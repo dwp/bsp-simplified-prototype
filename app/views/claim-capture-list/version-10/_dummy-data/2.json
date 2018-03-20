@@ -6,21 +6,19 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Susanne Evans",
-    "nino": "BB123456X",
-    "dateOfClaim": "15 February 2018",
-    "dateOfBirth": "13 November 1990",
+    "fullName": "Katie Dent",
+    "nino": "RQ123456X",
+    "dateOfClaim": "4 February 2018",
+    "dateOfBirth": "11 August 1990",
     "sex": "Female",
     "currentAddress": {
-      "number": "16",
-      "street": "Trevaren Drive",
-      "town": "Ryhope",
-      "county": "Sunderland",
-      "postcode": "SR3 2PQ"
+      "number": "12",
+      "street": "Yew Lane",
+      "town": "Derby",
+      "county": "Derby",
+      "postcode": "NTS 7PS"
     },
-    "contact": {
-      "home": "01915655819"
-    }
+    "contact": {}
   },
   "partner": {
     "title": "Mr",
@@ -33,17 +31,17 @@
     "pregnant": "Yes"
   },
   "chb": {
-    "answer": "No"
+    "answer": "AB123456C"
   },
   "payment": {
-    "nameOnAccount": "Mrs S Evans",
+    "nameOnAccount": "Miss K Dent",
     "sortCode": "112233",
-    "accountNumber": "12341234",
+    "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "16 August 2015"
+    "dateOfMarriage": "17 September 2017"
   },
   "conts": {
     "year": "2015"
