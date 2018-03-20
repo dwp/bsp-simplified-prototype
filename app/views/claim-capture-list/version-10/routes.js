@@ -52,7 +52,33 @@ router.get('/claim-details', (req, res) => {
 })
 router.post('/claim-details', (req, res) => {
   const scenario = req.session.data.scenario || '1'
-  res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
+  if (scenario === '1' || scenario === '2' || scenario === '3') {
+    return res.redirect(`/${req.feature}/${req.sprint}/check-nino/${scenario}`)
+  }
+  res.redirect(`/${req.feature}/${req.sprint}/duplicate-claim/${scenario}`)
+})
+
+// -----------------------------------------------------------------------------
+// Duplicate claim -------------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.get('/check-nino/:scenario', (req, res) => {
+  const scenario = req.params.scenario || '1'
+  const d = require(`./_dummy-data/${scenario}.json`)
+  res.render(`${req.feature}/${req.sprint}/duplicate-claim/check-nino`, {scenario, d})
+})
+router.post('/check-nino/:scenario', (req, res) => {
+  const scenario = req.params.scenario || '1'
+  const ninoCorrect = req.body.duplicate.ninoCorrect === 'Yes'
+  if (ninoCorrect) {
+    return res.redirect(`/${req.feature}/${req.sprint}/duplicate-claim/${scenario}`)
+  }
+  res.redirect(`/${req.feature}/${req.sprint}/claim-details`)
+})
+
+router.get('/duplicate-claim/:scenario', (req, res) => {
+  const scenario = req.params.scenario || '1'
+  const d = require(`./_dummy-data/${scenario}.json`)
+  res.render(`${req.feature}/${req.sprint}/duplicate-claim/duplicate-claim`, {scenario, d})
 })
 
 // -----------------------------------------------------------------------------
@@ -172,7 +198,7 @@ router.get('/decisions/:scenario/:decision', (req, res) => {
 // -----------------------------------------------------------------------------
 router.get('/claim/:scenario/:decision', (req, res) => {
   const decision = req.params.decision
-  const scenario = req.session.data.scenario || '1'
+  const scenario = req.params.scenario || '1'
   const d = require(`./_dummy-data/${scenario}.json`)
   const t = require(`./_dummy-data/_test.json`)
   res.render(`${req.feature}/${req.sprint}/completed-claim/${decision}`, {decision, d, t})

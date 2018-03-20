@@ -13,7 +13,10 @@
   <main id="content" role="main">
     <div class="grid-row">
       <div class="column-two-thirds column-minimum">
-
+        {% if scenario === '1' %}
+          <a href="/{{feature}}/{{sprint}}/duplicate-claim/1" class="link-back">Back</a>
+        {% endif %}
+        
         <h1 class="heading-xlarge schedule-heading">
           <span class="heading-secondary">{{d.claimant.fullName}}</span>
           {{d.claimant.nino}}
