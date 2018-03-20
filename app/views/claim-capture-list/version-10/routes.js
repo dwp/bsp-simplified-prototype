@@ -6,11 +6,10 @@ const {addToLog} = require('./functions')
 
 // Log session to console on POST requests
 router.use(logOnPost)
-router.use('/load-pdf/', express.static(path.join(__dirname, './_pdf')))
-
+router.use('/load-pdf/', express.static(path.join(__dirname, '../version-9/_pdf')))
 
 router.get('/', (req, res) => {
-  return res.redirect(`/${req.feature}/${req.sprint}/settings`)
+  res.redirect(`/${req.feature}/${req.sprint}/settings`)
 })
 
 // -----------------------------------------------------------------------------
@@ -21,7 +20,7 @@ router.get('/settings', (req, res) => {
 })
 router.post('/settings', (req, res) => {
   const scenario = req.body.scenario || '1'
-  return res.redirect(`/${req.feature}/${req.sprint}/start-a-new-claim/${scenario}`)
+  res.redirect(`/${req.feature}/${req.sprint}/start-a-new-claim/${scenario}`)
 })
 
 // -----------------------------------------------------------------------------
@@ -38,9 +37,13 @@ router.get('/find-a-claim/:scenario', (req, res) => {
 // -----------------------------------------------------------------------------
 // Start a new claim -----------------------------------------------------------
 // -----------------------------------------------------------------------------
+router.get('/start-a-new-claim/', (req, res) => {
+  const scenario = req.session.data.scenario || '1'
+  res.redirect(`/${req.feature}/${req.sprint}/start-a-new-claim/${scenario}`)
+})
 router.get('/start-a-new-claim/:scenario', (req, res) => {
   const scenario = req.params.scenario
-  return res.redirect(`/${req.feature}/${req.sprint}/claim-details/${scenario}`)
+  res.redirect(`/${req.feature}/${req.sprint}/claim-details/${scenario}`)
 })
 
 router.get('/claim-details/:scenario', (req, res) => {
@@ -52,7 +55,7 @@ router.post('/claim-details/:scenario', (req, res) => {
   if (scenario === '1' || scenario === '2' || scenario === '3') {
     return res.redirect(`/${req.feature}/${req.sprint}/check-nino/${scenario}`)
   }
-  return res.redirect(`/${req.feature}/${req.sprint}/duplicate-claim/${scenario}`)
+  res.redirect(`/${req.feature}/${req.sprint}/duplicate-claim/${scenario}`)
 })
 
 // -----------------------------------------------------------------------------
@@ -61,20 +64,22 @@ router.post('/claim-details/:scenario', (req, res) => {
 router.get('/check-nino/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
   const d = require(`./_dummy-data/${scenario}.json`)
-  res.render(`${req.feature}/${req.sprint}/duplicate-claim/check-nino`, {scenario, d})
+  const d2 = require(`./_dummy-data/scenarios.json`)
+  res.render(`${req.feature}/${req.sprint}/duplicate-claim/check-nino`, {scenario, d, d2})
 })
 router.post('/check-nino/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
   if (req.body.duplicate && req.body.duplicate.ninoCorrect === 'No') {
     return res.redirect(`/${req.feature}/${req.sprint}/claim-details/${scenario}`)
   }
-  return res.redirect(`/${req.feature}/${req.sprint}/duplicate-claim/${scenario}`)
+  res.redirect(`/${req.feature}/${req.sprint}/duplicate-claim/${scenario}`)
 })
 
 router.get('/duplicate-claim/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
   const d = require(`./_dummy-data/${scenario}.json`)
-  return res.render(`${req.feature}/${req.sprint}/duplicate-claim/duplicate-claim`, {scenario, d})
+  const d2 = require(`./_dummy-data/scenarios.json`)
+  res.render(`${req.feature}/${req.sprint}/duplicate-claim/duplicate-claim`, {scenario, d, d2})
 })
 
 // -----------------------------------------------------------------------------
@@ -83,8 +88,9 @@ router.get('/duplicate-claim/:scenario', (req, res) => {
 router.get('/task-list/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
   const d = require(`./_dummy-data/${scenario}.json`)
+  const d2 = require(`./_dummy-data/scenarios.json`)
   const t = require(`./_dummy-data/_test.json`)
-  return res.render(`${req.feature}/${req.sprint}/task-list/task-list`, {d, t})
+  res.render(`${req.feature}/${req.sprint}/task-list/task-list`, {scenario, d, t, d2})
 })
 
 // -----------------------------------------------------------------------------
@@ -95,7 +101,7 @@ router.get('/claim/:scenario/:decision', (req, res) => {
   const scenario = req.params.scenario
   const d = require(`./_dummy-data/${scenario}.json`)
   const t = require(`./_dummy-data/_test.json`)
-  return res.render(`${req.feature}/${req.sprint}/completed-claim/${decision}`, {scenario, decision, d, t})
+  res.render(`${req.feature}/${req.sprint}/completed-claim/${decision}`, {scenario, decision, d, t})
 })
 
 // -----------------------------------------------------------------------------
@@ -105,7 +111,7 @@ router.get('/schedule/:scenario', (req, res) => {
   const scenario = req.params.scenario
   const d = require(`./_dummy-data/${scenario}.json`)
   const schedule = require(`./_dummy-data/_schedule.json`)
-  return res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {d, schedule})
+  res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {d, schedule})
 })
 
 module.exports = router
