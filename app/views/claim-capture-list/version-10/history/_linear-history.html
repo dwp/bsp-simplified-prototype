@@ -1,6 +1,10 @@
-<li>
-  <span class="line"></span>
-  <h3 class="bold">Claim details entered</h3>
-  <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
-  <span class="paused-until-date">{{t.date}}</span>
-</li>
+{% if scenario === '4' %}
+  {% include './scenarios/4.html' %}
+{% else %}
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Claim details entered</h3>
+    <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
+    <span class="paused-until-date">{{t.date}}</span>
+  </li>
+{% endif %}
