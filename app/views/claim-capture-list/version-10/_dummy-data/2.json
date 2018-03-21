@@ -5,7 +5,7 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mrs",    
+    "title": "Miss",    
     "fullName": "Katie Dent",
     "nino": "RQ123456X",
     "dateOfClaim": "4 February 2018",
@@ -28,11 +28,9 @@
   },
   "children": {
     "dependant-children": "No",
-    "pregnant": "Yes"
+    "pregnant": "No"
   },
-  "chb": {
-    "answer": "AB123456C"
-  },
+  "chb": {},
   "payment": {
     "nameOnAccount": "Miss K Dent",
     "sortCode": "112233",
