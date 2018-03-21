@@ -58,18 +58,12 @@
                 </h2>
 
                 {% include '../common/_details-claim.html' %}
-                {% if data.claimant.address %}
-                  {% include '../common/_details-contact.html' %}
-                {% endif %}
-                {% if data.children %}
+                {% include '../common/_details-contact.html' %}
+                {% if d.children %}
                   {% include '../common/_details-children.html' %}
                 {% endif %}
-                {% if data['payment-details-provided'] === 'Yes' %}
-                  {% include '../common/_details-payment.html' %}
-                {% endif %}
-                {% if data.marriage or data.death or data.chb or data.conts %}
-                  {% include '../common/_details-verification.html' %}
-                {% endif %}
+                {% include '../common/_details-payment.html' %}
+                {% include '../common/_details-verification.html' %}
               </div>
             </div>
           </div>
