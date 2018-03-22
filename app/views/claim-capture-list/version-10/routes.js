@@ -2,7 +2,6 @@ const express = require('express')
 const path = require('path')
 const router = new express.Router()
 const {logOnPost} = require('../../../../lib/utils')
-const {addToLog} = require('./functions')
 
 // Log session to console on POST requests
 router.use(logOnPost)
