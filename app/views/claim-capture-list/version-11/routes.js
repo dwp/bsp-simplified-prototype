@@ -79,12 +79,25 @@ router.post('/capture/:page', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
 // ---- Evidence needed --------------------------------------------------------
-router.get('/evidence-needed', (req, res) => {
+router.get('/evidence-needed/death', (req, res) => {
   const scenario = req.session.data.scenario || '1'
   const d = require(`./_dummy-data/${scenario}.json`)
-  res.render(`${req.feature}/${req.sprint}/capture/evidence-needed`, {d})
+  res.render(`${req.feature}/${req.sprint}/evidence-needed/death`, {d})
 })
-router.post('/evidence-needed', (req, res) => {
+router.post('/evidence-needed/death', (req, res) => {
+  const scenario = req.session.data.scenario || '1'
+  addToLog(req, 'evidence')
+  if (req.body.wait === 'No') {
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/are-you-sure`)
+  }
+  res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
+})
+router.get('/evidence-needed/marriage', (req, res) => {
+  const scenario = req.session.data.scenario || '1'
+  const d = require(`./_dummy-data/${scenario}.json`)
+  res.render(`${req.feature}/${req.sprint}/evidence-needed/marriage`, {d})
+})
+router.post('/evidence-needed/marriage', (req, res) => {
   const scenario = req.session.data.scenario || '1'
   addToLog(req, 'evidence')
   if (req.body.wait === 'No') {
@@ -117,8 +130,16 @@ router.post('/verify/relationship', (req, res, next) => {
     return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/are-you-sure`)
   }
   if (req.body.marriage.verified === 'No') {
-    return res.redirect(`/${req.feature}/${req.sprint}/evidence-needed`)
+    return res.redirect(`/${req.feature}/${req.sprint}/evidence-needed/marriage`)
   }
+  next()
+})
+router.post('/verify/death', (req, res, next) => {
+  const scenario = req.session.data.scenario || '1'
+  if (req.body.death.form === 'No') {
+    return res.redirect(`/${req.feature}/${req.sprint}/evidence-needed/death`)
+  }
+  return res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
   next()
 })
 router.post('/verify/:page', (req, res, next) => {
@@ -129,7 +150,7 @@ router.post('/verify/:page', (req, res, next) => {
     const chb = req.body.chb.answer
     if (scenario === '4' || (pregnant === 'No' && (children === 'Yes' && chb === 'No'))) {
       addToLog(req, 'verify')
-      return res.redirect(`/${req.feature}/${req.sprint}/chb-reminder`)
+      return res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
     }
   }
   next()
