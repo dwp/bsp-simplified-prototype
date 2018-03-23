@@ -34,7 +34,8 @@
         Death
       </dt>
       <dd class="cya-answer">
-        Customer Information System<br />
+        {{data.death['what-evidence'] or 'Customer Information System'}}
+        <br />
         {{d.partner.dateOfDeath}}
       </dd>
       {% if not decision %}
