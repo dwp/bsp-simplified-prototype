@@ -139,6 +139,9 @@ router.post('/verify/death', (req, res, next) => {
   if (req.body.death.form === 'No') {
     return res.redirect(`/${req.feature}/${req.sprint}/evidence-needed/death`)
   }
+  if (scenario === '5') {
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/dod-doesnt-match`)
+  }
   return res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
   next()
 })
