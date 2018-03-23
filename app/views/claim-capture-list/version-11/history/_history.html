@@ -5,13 +5,7 @@
       <span class="line"></span>
       <h3 class="bold">Claim disallowed</h3>
       <span class="paused-until-date">{{t.date}}</span>
-      {% if scenario === '5' %}
-        <p>The claimant was not married to the deceased at the time of death.</p>
-      {% elif scenario === '7' %}
-        <p>The claimant was over State Pension age at the time of death.</p>
-      {% else %}
-        <p>Claimant didn't send proof of their marriage or civil partnership.</p>
-      {% endif %}
+      <p>The claimant didn't send evidence of the death.</p>
     </li>
   {% endif %}
   {% if decision === 'allowed' %}

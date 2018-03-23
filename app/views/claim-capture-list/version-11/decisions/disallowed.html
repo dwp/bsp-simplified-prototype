@@ -20,19 +20,10 @@
         <h2 class="heading-medium">
           Reason
         </h2>
-        {% if scenario === '5' %}
-          <p>
-            The claimant was not married to the deceased at the time of death.
-         </p>
-        {% elif scenario === '7' %}
-          <p>
-            The claimant was over State Pension age at the time of death.
-         </p>
-        {% else %}
-         <p>
-            The claimant didn't send proof of their marriage or civil partnership.
-         </p>
-        {% endif %}
+        <p>
+          The claimant didn't send evidence of the death.
+        </p>
+        
         <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/disallowed">View claim</a>
       </div>
     </div>

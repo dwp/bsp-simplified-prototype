@@ -87,7 +87,7 @@ router.get('/evidence-needed/death', (req, res) => {
 router.post('/evidence-needed/death', (req, res) => {
   const scenario = req.session.data.scenario || '1'
   addToLog(req, 'evidence')
-  if (req.body.wait === 'No') {
+  if (req.body.wait.death === 'No') {
     return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/are-you-sure`)
   }
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
