@@ -16,22 +16,26 @@
         <a href="/{{feature}}/{{sprint}}/claim-details/{{scenario}}" class="link-back">Back</a>
 
         <h1 class="heading-large">
-          Check {{d2[scenario].partner.fullName}}'s National Insurance number
+          Check the partner's National Insurance number
         </h1>
 
         <p>
-          You entered {{d2[scenario].partner.nino}}.
+          You entered:
+        </p>
+
+        <p>
+          {{d2[scenario].partner.nino}}
         </p>
 
         <form method="post">
           <div class="form-group">
             <fieldset class="inline">
-              <legend class="heading-small">Is this correct?</legend>
+              <legend class="heading-small">Is this number correct?</legend>
               <div class="multiple-choice">
                 <input id="nino-correct-yes" type="radio" name="duplicate[ninoCorrect]" value="Yes">
                 <label for="nino-correct-yes">Yes</label>
               </div>
-          
+
               <div class="multiple-choice">
                 <input id="nino-correct-no" type="radio" name="duplicate[ninoCorrect]" value="No">
                 <label for="nino-correct-no">No</label>
