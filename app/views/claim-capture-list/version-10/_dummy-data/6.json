@@ -5,51 +5,51 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mrs",    
-    "fullName": "Amelia McAndrews",
-    "nino": "EE123456X",
-    "dateOfClaim": "6 February 2018",
-    "dateOfBirth": "11 December 1987",
-    "sex": "Female",
+    "title": "Mr",    
+    "fullName": "Brian Peters",
+    "nino": "AA123456X",
+    "dateOfClaim": "25 January 2018",
+    "dateOfBirth": "19 April 1965",
+    "sex": "Male",
     "currentAddress": {
-      "number": "18",
-      "street": "Ministry Close",
-      "town": "Longbenton",
-      "county": "Newcastle",
-      "postcode": "NE98 1YX"
+      "number": "94",
+      "street": "Sea Grange",
+      "town": "Otterburn",
+      "county": "Northumberland",
+      "postcode": "NE3 5PR"
     },
     "contact": {
-      "home": "01915655819"
+      "mobile": "07711122234"
     }
   },
   "partner": {
     "title": "Mrs",
-    "fullName": "Siobhan McAndrews",
-    "nino": "ED123456X",
+    "fullName": "Helen Peters",
+    "nino": "AB123456X",
     "dateOfDeath": "29 January 2018"  
   },
   "children": {
-    "dependant-children": "Yes",
-    "pregnant": "Yes"
+    "dependant-children": "No",
+    "pregnant": "No"
   },
   "chb": {
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs A McAndrews",
+    "nameOnAccount": "Mr B Peters",
     "sortCode": "112233",
-    "accountNumber": "12341234",
+    "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "14 October 2011"
+    "dateOfMarriage": "24 March 1991"
   },
   "conts": {
     "year": "2015"
   },
   "schedule": {
-    "rate": "Higher",
+    "rate": "Standard",
     "number": 18
   }
 }
