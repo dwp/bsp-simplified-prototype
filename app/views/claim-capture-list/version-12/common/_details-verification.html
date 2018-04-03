@@ -54,7 +54,11 @@
         National Insurance contributions
       </dt>
       <dd class="cya-answer">
-        {{data.conts.year or '2015'}}
+        {% if data.conts.industrialInjury === 'Yes' %}
+          Industrial injury
+        {% else %}
+          {{data.conts.year or '2015'}}
+        {% endif %}
       </dd>
       {% if not decision %}
         <dd class="cya-change">

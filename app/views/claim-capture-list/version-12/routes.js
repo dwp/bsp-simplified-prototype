@@ -87,6 +87,13 @@ router.get('/chb-reminder', (req, res) => {
 // -----------------------------------------------------------------------------
 // Verification ----------------------------------------------------------------
 // -----------------------------------------------------------------------------
+router.post('/verify/contributions/:scenario', (req, res, next) => {
+  const scenario = req.params.scenario
+  if (req.body.conts.industrialInjury === 'No') {
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/are-you-sure`)
+  }
+  next()
+})
 router.get('/verify/:page/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
   const page = req.params.page
@@ -114,6 +121,10 @@ router.post('/confirm-details/:scenario', (req, res) => {
 // -----------------------------------------------------------------------------
 // Decisions -------------------------------------------------------------------
 // -----------------------------------------------------------------------------
+router.post('/decisions/:scenario/are-you-sure', (req, res) => {
+  const scenario = req.params.scenario
+  res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/disallowed`)
+})
 router.get('/decisions/:scenario/:decision', (req, res) => {
   const scenario = req.params.scenario
   const decision = req.params.decision
