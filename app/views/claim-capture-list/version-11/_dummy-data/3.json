@@ -6,51 +6,48 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Michelle Barker",
-    "nino": "CC123456X",
-    "dateOfClaim": "15 February 2018",
-    "dateOfBirth": "29 June 1980",
+    "fullName": "Jane Collins",
+    "nino": "QZ123456X",
+    "dateOfClaim": "21 March 2018",
+    "dateOfBirth": "13 November 1974",
     "sex": "Female",    
     "currentAddress": {
-      "number": "118",
-      "street": "Barber Close",
-      "town": "Eastwood",
-      "county": "Nottingham",
-      "postcode": "NT5 2RT"
+      "number": "91",
+      "street": "Thawn Place",
+      "town": "Blackpool",
+      "county": "Blackpool",
+      "postcode": "BT9 7RR"
     },
-    "contact": {
-      "home": "0131481367"
-    }
+    "contact": {}
   },
   "partner": {
     "title": "Mr",
-    "fullName": " Joseph Barker",
-    "nino": "CB123456X",
-    "dateOfDeath": "5 February 2018"  
+    "fullName": "Michael Collins",
+    "nino": "QA123456X",
+    "dateOfDeath": "17 March 2018"  
   },
   "children": {
-    "dependant-children": "Yes",
+    "dependant-children": "No",
     "pregnant": "No"
   },
   "chb": {
-    "answer": "Yes",
-    "number": "CHB123456AB"
+    "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs M Barker",
-    "sortCode": "123456",
-    "accountNumber": "12345678",
+    "nameOnAccount": "Mrs J Collins",
+    "sortCode": "112231",
+    "accountNumber": "12341234",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "16 July 2008"
+    "dateOfMarriage": "24 June 2001"
   },
   "conts": {
     "year": "1975"
   },
   "schedule": {
-    "rate": "Higher",
+    "rate": "Standard",
     "number": 18
   }
 }

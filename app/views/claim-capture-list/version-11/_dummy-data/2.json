@@ -5,51 +5,51 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mrs",    
-    "fullName": "Susanne Evans",
-    "nino": "BB123456X",
-    "dateOfClaim": "15 February 2018",
-    "dateOfBirth": "13 November 1990",
-    "sex": "Female",
+    "title": "Mr",    
+    "fullName": "Kevin Powell",
+    "nino": "QR123456X",
+    "dateOfClaim": "15 March 2018",
+    "dateOfBirth": "21 August 1980",
+    "sex": "Male",
     "currentAddress": {
-      "number": "16",
-      "street": "Trevaren Drive",
-      "town": "Ryhope",
-      "county": "Sunderland",
-      "postcode": "SR3 2PQ"
+      "number": "21",
+      "street": "Fenwick Close",
+      "town": "Derby",
+      "county": "Derby",
+      "postcode": "D13 4PQ"
     },
     "contact": {
-      "home": "01915655819"
+      "mobile": "07748633147"
     }
   },
   "partner": {
-    "title": "Mr",
-    "fullName": "Jonathan Evans",
-    "nino": "BA123456X",
-    "dateOfDeath": "01 February 2018"  
+    "title": "Mrs",
+    "fullName": "Sarah Powell",
+    "nino": "QP123456X",
+    "dateOfDeath": "10 March 2018"  
   },
   "children": {
     "dependant-children": "No",
-    "pregnant": "Yes"
+    "pregnant": "No"
   },
   "chb": {
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs S Evans",
+    "nameOnAccount": "Mr K Powell",
     "sortCode": "112233",
-    "accountNumber": "12341234",
+    "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "16 August 2015"
+    "dateOfMarriage": "3 July 2017"
   },
   "conts": {
     "year": "2015"
   },
   "schedule": {
-    "rate": "Higher",
+    "rate": "Standard",
     "number": 18
   }
 }
