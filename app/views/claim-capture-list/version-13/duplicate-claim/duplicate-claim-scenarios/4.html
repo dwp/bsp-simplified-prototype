@@ -1,24 +1,27 @@
-<a href="/{{feature}}/{{sprint}}/claim-details" class="link-back">Back</a>
+<div class="column-two-thirds">
+  <h1 class="heading-large">
+    There's an unfinished claim using the same details
+  </h1>
 
-<h1 class="heading-large">
-  There's an unfinished claim using the same details
-</h1>
+  <p class="lede">
+    You can continue with the existing claim, but you can't start a new one.
+  </p>
 
-<p>
-  You can continue with the existing claim, but you can't start a new one.
-</p>
+  <form method="post">
+    <div class="form-group">
+      <fieldset class="inline">
+        <legend class="heading-small">Do you want to continue with the existing claim?</legend>
+        <div class="multiple-choice">
+          <input id="nino-correct-yes" type="radio" name="duplicate[ninoCorrect]" value="Yes">
+          <label for="nino-correct-yes">Yes</label>
+        </div>
 
-<h2 class="heading-medium">Previous claims</h2>
-<ul class="panel panel-border-narrow search-results">
-  <li class="result">
-    <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="result-link">
-      Unfinished claim
-    </a>
-    <span class="result-meta">
-      {{d.claimant.fullName}}
-    </span>
-    <span class="result-meta">
-      {{d.claimant.dateOfClaim}}
-    </span>
-  </li>
-</ul>
+        <div class="multiple-choice">
+          <input id="nino-correct-no" type="radio" name="duplicate[ninoCorrect]" value="No">
+          <label for="nino-correct-no">No</label>
+        </div>
+      </fieldset>
+    </div>
+    <button class="button" type="submit">Continue</button>
+  </form>
+</div>

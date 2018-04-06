@@ -12,10 +12,12 @@
 {% block content %}
   <main id="content" role="main" class="group">
     <div class="grid-row">
-      <div class="column-two-thirds">
-      
-        {% include './duplicate-claim-scenarios/' + scenario + '.html' %}
-      
+      <div class="column-two-thirds">    
+        <a href="/{{feature}}/{{sprint}}/verify/check-nino" class="link-back">Back</a>
+      </div>
+
+      {% include './duplicate-claim-scenarios/' + scenario + '.html' %}
+
       </div>
     </div>
   </main>
