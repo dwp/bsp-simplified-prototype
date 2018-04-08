@@ -28,9 +28,11 @@
             <li>
               not enough National Insurance paid
             </li>
-            <li>
-              no proof of industrial injury or illness
-            </li>
+            {% if data.wait === 'No' %}
+              <li>
+                no proof of industrial injury or illness
+              </li>
+            {% endif %}
           </ul>
         </div>
 

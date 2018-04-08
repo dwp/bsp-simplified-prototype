@@ -67,6 +67,15 @@ router.get('/task-list/:scenario', (req, res) => {
 // -----------------------------------------------------------------------------
 // Capture ---------------------------------------------------------------------
 // -----------------------------------------------------------------------------
+// ---- Evidence needed --------------------------------------------------------
+router.post('/capture/evidence-needed/:scenario', (req, res) => {
+  const scenario = req.params.scenario || '1'
+  console.log('moo', req.body.wait === 'No')
+  if (req.body.wait === 'No') {
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/are-you-sure`)
+  }
+  res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
+})
 router.get('/capture/:page/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
   const page = req.params.page
@@ -77,12 +86,6 @@ router.post('/capture/:page/:scenario', (req, res) => {
   addToLog(req, 'capture')
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
-// ---- chb-reminder -----------------------------------------------------------
-router.get('/chb-reminder', (req, res) => {
-  const scenario = req.session.data.scenario || '1'
-  const d = require(`./_dummy-data/${scenario}.json`)
-  res.render(`${req.feature}/${req.sprint}/capture/chb-reminder`, {d, scenario})
-})
 
 // -----------------------------------------------------------------------------
 // Verification ----------------------------------------------------------------
@@ -91,6 +94,9 @@ router.post('/verify/contributions/:scenario', (req, res, next) => {
   const scenario = req.params.scenario
   if (req.body.conts.industrialInjury === 'No') {
     return res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/are-you-sure`)
+  }
+  if (req.body.conts.verified === 'No') {
+    return res.redirect(`/${req.feature}/${req.sprint}/capture/evidence-needed/${scenario}`)
   }
   next()
 })

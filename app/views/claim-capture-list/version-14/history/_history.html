@@ -5,7 +5,10 @@
       <span class="line"></span>
       <h3 class="bold">Claim disallowed</h3>
       <span class="paused-until-date">{{t.date}}</span>
-      <p>Not enough National Insurance paid. No proof of industrial injury or illness.</p>
+      <p>
+        Not enough National Insurance paid.
+        {% if data.wait === 'No' %} No proof of industrial injury or illness.{% endif %}
+      </p>
     </li>
   {% endif %}
   {% if decision === 'allowed' %}

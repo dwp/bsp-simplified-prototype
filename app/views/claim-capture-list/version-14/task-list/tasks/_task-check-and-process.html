@@ -1,10 +1,10 @@
 
-{% if
-    ((data.children['dependant-children'] === 'Yes' and data.chb) or data.children['dependant-children'] === 'No')
-    and
-    (data.conts and data.children and (data.death.form === 'Yes') and data.marriage.verified === 'Yes' and data['payment-details-provided'] === 'Yes')
-    or
-    (scenario === '6' and data.marriage.verified === 'Yes')
+{% if 
+  data.children 
+  and (data.conts.enough === 'Yes' or data.conts.verified === 'Yes') 
+  and data.death.form === 'Yes' 
+  and data.marriage.verified === 'Yes' 
+  and data['payment-details-provided'] === 'Yes'
 %}
   <li>
     <h2 class="task-list-section">

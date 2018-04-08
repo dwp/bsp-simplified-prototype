@@ -36,7 +36,7 @@
         </div>
 
         <div class="panel panel-border-narrow js-hidden" id="conts-year">
-          <label class="form-label" for="conts-year" data-target="industrial-injury">Which year did you use as verification?</label>
+          <label class="form-label" for="conts-year">Which year did you use as verification?</label>
           <input class="form-control" id="conts-year" name="conts[year]" type="number" value="{{data.eligibility.contsYear}}">
         </div>
 
@@ -67,14 +67,14 @@
                   Has the Industrial Injuries Disablement Benefit team verified this?
                 </legend>
 
-                <div class="multiple-choice" data-target="conts-year">
-                  <input id="enough-conts-yes" type="radio" name="conts[enough]" id="enough-conts-yes" value="Yes" {{'checked' if data.eligibility['enoughConts'] === 'Yes'}}>
-                  <label for="enough-conts-yes">Yes</label>
+                <div class="multiple-choice">
+                  <input id="verified-conts-yes" type="radio" name="conts[verified]" id="verified-conts-yes" value="Yes">
+                  <label for="verified-conts-yes">Yes</label>
                 </div>
 
-                <div class="multiple-choice" data-target="industrial-injury">
-                  <input id="enough-conts-no" type="radio" name="conts[enough]" id="enough-conts-no" value="No" {{'checked' if data.eligibility['enoughConts'] === 'No'}}>
-                  <label for="enough-conts-no">No</label>
+                <div class="multiple-choice">
+                  <input id="verified-conts-no" type="radio" name="conts[verified]" id="verified-conts-no" value="No">
+                  <label for="verified-conts-no">No</label>
                 </div>
               </fieldset>
             </div>
