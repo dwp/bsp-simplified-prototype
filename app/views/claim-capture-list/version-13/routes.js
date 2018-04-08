@@ -51,29 +51,20 @@ router.get('/claim-details/:scenario', (req, res) => {
 })
 router.post('/claim-details/:scenario', (req, res) => {
   const scenario = req.params.scenario
-  if (scenario === '1' || scenario === '2' || scenario === '3') {
-    return res.redirect(`/${req.feature}/${req.sprint}/check-nino/${scenario}`)
-  }
   res.redirect(`/${req.feature}/${req.sprint}/duplicate-claim/${scenario}`)
+})
+// Duplicate claim -------------------------------------------------------------
+router.post('/duplicate-claim/:scenario', (req, res) => {
+  const scenario = req.params.scenario
+  if (req.body.duplicate.ninoCorrect === 'Yes') {
+    return res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
+  }
+  res.redirect(`/${req.feature}/${req.sprint}/claim-details/${scenario}`)
 })
 
 // -----------------------------------------------------------------------------
 // Duplicate claim -------------------------------------------------------------
 // -----------------------------------------------------------------------------
-router.get('/check-nino/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  const d = require(`./_dummy-data/${scenario}.json`)
-  const d2 = require(`./_dummy-data/scenarios.json`)
-  res.render(`${req.feature}/${req.sprint}/duplicate-claim/check-nino`, {scenario, d, d2})
-})
-router.post('/check-nino/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  if (req.body.duplicate && req.body.duplicate.ninoCorrect === 'No') {
-    return res.redirect(`/${req.feature}/${req.sprint}/claim-details/${scenario}`)
-  }
-  res.redirect(`/${req.feature}/${req.sprint}/duplicate-claim/${scenario}`)
-})
-
 router.get('/duplicate-claim/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
   const d = require(`./_dummy-data/${scenario}.json`)
