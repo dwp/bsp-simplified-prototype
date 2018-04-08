@@ -48,7 +48,7 @@
                 or illness connected with their work?
               </legend>
 
-              <div class="multiple-choice">
+              <div class="multiple-choice" data-target="iidb">
                 <input id="industrial-injury-yes" type="radio" name="conts[industrialInjury]" value="Yes" {{'checked' if data.eligibility['enoughConts'] === 'Yes'}}>
                 <label for="industrial-injury-yes">Yes</label>
               </div>
@@ -59,7 +59,29 @@
               </div>
             </fieldset>
           </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="iidb">
+            <div class="form-group">
+              <fieldset class="inline">
+                <legend class="heading-small">
+                  Has the Industrial Injuries Disablement Benefit team verified this?
+                </legend>
+
+                <div class="multiple-choice" data-target="conts-year">
+                  <input id="enough-conts-yes" type="radio" name="conts[enough]" id="enough-conts-yes" value="Yes" {{'checked' if data.eligibility['enoughConts'] === 'Yes'}}>
+                  <label for="enough-conts-yes">Yes</label>
+                </div>
+
+                <div class="multiple-choice" data-target="industrial-injury">
+                  <input id="enough-conts-no" type="radio" name="conts[enough]" id="enough-conts-no" value="No" {{'checked' if data.eligibility['enoughConts'] === 'No'}}>
+                  <label for="enough-conts-no">No</label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
         </div>
+
+        
 
         <button class="button" type="submit">Continue</button>
       </form>
