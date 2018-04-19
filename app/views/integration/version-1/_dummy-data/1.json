@@ -1,9 +1,4 @@
 {
-  "claim": {
-    "status": "Allowed",
-    "weeksSinceClaim": 6,
-    "class": ""
-  },
   "claimant": {
     "title": "Mrs",
     "fullName": "Helen Carter",
