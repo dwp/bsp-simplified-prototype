@@ -15,7 +15,7 @@
         </dd>
       {% else %}
         <dd class="cya-answer">
-          Proof of marriage or civil partnership needed
+          Evidence of marriage or civil partnership needed
         </dd>
       {% endif%}
       {% if not decision %}
@@ -34,6 +34,9 @@
         Death
       </dt>
       <dd class="cya-answer">
+        {% for ev in data.death['what-evidence'] %}
+          {{ev}} MOO
+        {% endif %}
         {{data.death['what-evidence'] or 'Customer Information System'}}
         <br />
         {{d.partner.dateOfDeath}}
@@ -73,7 +76,7 @@
   {% if data.chb %}
     <div>
       <dt>
-        Child benefit number
+        Child Benefit number
       </dt>
       <dd class="cya-answer">
         {{data.chb['number'] or d.chb['number'] or '<span class="red">Missing</span>'|safe}}
@@ -81,7 +84,7 @@
       {% if not decision %}
         <dd class="cya-change">
           <a class="bold" href="#">
-            Change<span class="visually-hidden"> children verification</span>
+            Change<span class="visually-hidden"> Child Benefit verification</span>
           </a>
         </dd>
       {% endif %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Unfinished claim for {{d.claimant.fullName}}
+  Unfinished claim
 {% endblock %}
 
 {% block customNav %}
@@ -25,7 +25,7 @@
             <ul class="tabs-list">
               <li>
                 <a href="#tasks-to-complete">
-                  Task to complete
+                  Tasks to complete
                 </a>
               </li>
               <li>
@@ -40,7 +40,7 @@
             <div class="tabs-panel" id="tasks-to-complete">
               <div class="tabs-panel-inner">
                 <h2 class="js-hidden heading-medium">
-                  Task to complete
+                  Tasks to complete
                 </h2>
 
                 {% include './_tasks-to-complete.html' %}
