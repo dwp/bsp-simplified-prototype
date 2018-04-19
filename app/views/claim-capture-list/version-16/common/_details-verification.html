@@ -10,7 +10,9 @@
       </dt>
       {% if data.marriage.verified === 'Yes' %}
         <dd class="cya-answer">
-          {{d.marriage.where}}<br />
+          {% for ev in data.marriage['what-evidence'] %}
+            {{ev}}<br />
+          {% endfor %}
           {{d.marriage.dateOfMarriage}}
         </dd>
       {% else %}
@@ -35,10 +37,8 @@
       </dt>
       <dd class="cya-answer">
         {% for ev in data.death['what-evidence'] %}
-          {{ev}} MOO
-        {% endif %}
-        {{data.death['what-evidence'] or 'Customer Information System'}}
-        <br />
+          {{ev}}<br />
+        {% endfor %}
         {{d.partner.dateOfDeath}}
       </dd>
       {% if not decision %}
