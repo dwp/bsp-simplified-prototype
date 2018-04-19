@@ -18,10 +18,17 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <div class="example">
-        {% include 'summaries/claim-capture-list/version-16.html' %}
+        {% include 'summaries/integration/version-1.html' %}
       </div>
 
       <h2 class="heading-large">All versions</h2>
+      <details>
+        <summary><span class="summary">Integration</span></summary>
+        <div class="panel">
+          {% include 'summaries/integration/version-1.html' %}
+        </div>
+      </details>
+
       <details>
         <summary><span class="summary">Citizen facing journey</span></summary>
         <div class="panel">
@@ -32,7 +39,6 @@
       <details>
         <summary><span class="summary">Claim capture (task list)</span></summary>
         <div class="panel">
-          {% include 'summaries/claim-capture-list/version-16.html' %}<hr />
           {# {% include 'summaries/claim-capture-list/version-15.html' %}<hr /> #}
           {% include 'summaries/claim-capture-list/version-14.html' %}<hr />
           {% include 'summaries/claim-capture-list/version-13.html' %}<hr />
