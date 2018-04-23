@@ -47,14 +47,6 @@ router.post('/start-a-new-claim/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
-router.get('/claim-details/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  res.render(`${req.feature}/${req.sprint}/capture/claim-details`, {scenario})
-})
-router.post('/claim-details/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
-})
 
 // -----------------------------------------------------------------------------
 // Task list -------------------------------------------------------------------
