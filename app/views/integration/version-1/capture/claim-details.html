@@ -2,7 +2,11 @@
 {% set startActive = 'active' %}
 
 {% block page_title %}
-  Claimant details
+  {% if start %}
+    Start a new claim
+  {% else %}
+    Claim details
+  {% endif %}
 {% endblock %}
 
 {% block customNav %}
@@ -15,7 +19,11 @@
       <div class="column-two-thirds">
 
         <h1 class="heading-large">
-          Start a new claim
+          {% if start %}
+            Start a new claim
+          {% else %}
+            Claim details
+          {% endif %}
         </h1>
 
         <form method="post" autocomplete="off">

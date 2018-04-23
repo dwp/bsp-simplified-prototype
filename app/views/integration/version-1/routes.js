@@ -7,7 +7,7 @@ const {addToLog} = require('./functions')
 // Log session to console on POST requests
 router.use(logOnPost)
 
-// Set scenario as global
+// Set path for PDF's
 router.use('/load-pdf/', express.static(path.join(__dirname, './_pdf')))
 
 router.get('/', (req, res) => {
@@ -41,7 +41,11 @@ router.get('/find-a-claim/:scenario', (req, res) => {
 // -----------------------------------------------------------------------------
 router.get('/start-a-new-claim/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
-  res.redirect(`/${req.feature}/${req.sprint}/claim-details/${scenario}`)
+  res.render(`${req.feature}/${req.sprint}/capture/claim-details`, {scenario, start: true})
+})
+router.post('/start-a-new-claim/:scenario', (req, res) => {
+  const scenario = req.params.scenario || '1'
+  res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
 router.get('/claim-details/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
