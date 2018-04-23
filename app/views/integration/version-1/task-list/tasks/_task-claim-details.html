@@ -2,5 +2,9 @@
   <a class="task-name" href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
     Claim details
   </a>
-  <strong class="task-completed" id="eligibility-completed">Completed</strong>
+  {% if scenario === '1' or scenario === '2' %}
+    <strong class="task-completed" id="eligibility-completed">Completed</strong>
+  {% else %}
+    <strong class="task-incomplete" id="eligibility-completed">Not complete</strong>
+  {% endif %}
 </li>

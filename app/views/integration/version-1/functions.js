@@ -1,3 +1,5 @@
+const format = require('date-fns/format')
+
 function addToLog (req, type) {
   const log = req.session.data.log || []
   const page = req.params.page
@@ -30,9 +32,6 @@ function addToLog (req, type) {
       log.push({title})
     }
   }
-  if (type === 'evidence') {
-    log.push({title: 'Relationship status checked', caption: 'Proof of marriage or civil partnership needed'})
-  }
   const set = Array.from(new Set(log))
   req.session.data.log = set
 }
@@ -41,4 +40,8 @@ function capitalizeFirstLetter (string) {
   return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase()
 }
 
-module.exports = {addToLog}
+function getTestDate () {
+  return format(new Date(), 'D MMMM YYYY')
+}
+
+module.exports = {addToLog, getTestDate}

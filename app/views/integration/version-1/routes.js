@@ -2,13 +2,18 @@ const express = require('express')
 const path = require('path')
 const router = new express.Router()
 const {logOnPost} = require('../../../../lib/utils')
-const {addToLog} = require('./functions')
+const {addToLog, getTestDate} = require('./functions')
 
 // Log session to console on POST requests
 router.use(logOnPost)
 
 // Set path for PDF's
 router.use('/load-pdf/', express.static(path.join(__dirname, './_pdf')))
+
+router.use((req, res, next) => {
+  res.locals.todayDate = getTestDate()
+  next()
+})
 
 router.get('/', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/settings`)
