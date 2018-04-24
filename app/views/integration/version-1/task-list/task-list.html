@@ -33,6 +33,11 @@
                   Claim details
                 </a>
               </li>
+              <li>
+                <a href="#evidence">
+                  Evidence
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -63,9 +68,16 @@
                 {% if data['payment-details-provided'] === 'Yes' %}
                   {% include '../common/_details-payment.html' %}
                 {% endif %}
-                {% if data.marriage or data.death or data.chb or data.conts %}
-                  {% include '../common/_details-verification.html' %}
-                {% endif %}
+              </div>
+            </div>
+
+            <div class="tabs-panel" id="evidence">
+              <div class="tabs-panel-inner">
+                <h2 class="js-hidden heading-medium">
+                  Evidence
+                </h2>
+
+                {% include '../common/_details-verification.html' %}
               </div>
             </div>
           </div>

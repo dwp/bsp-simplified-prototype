@@ -1,114 +1,120 @@
-<h2 class="heading-small th">
-  Claimant details
-  {% if scenario === '1' or scenario === '2' %}
-    <p class="payment-link verified">
-      Verified
-    </p>
-  {% elif not decision %}
-    <p class="payment-link">
-      <a href="/{{feature}}/{{sprint}}/capture/claimant-details">
-        Change
-      </a>
-    </p>
-  {% endif %}
-</h2>
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Claimant details
+    {% if scenario === '1' or scenario === '2' %}
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    {% elif not decision %}
+      <p class="verified-badge">
+        <a href="/{{feature}}/{{sprint}}/capture/claimant-details">
+          Change
+        </a>
+      </p>
+    {% endif %}
+  </h2>
 
-<dl class="data-summary">
-  <dt class="data-summary-key">
-    Title
-  </dt>
-  <dd class="data-summary-value">
-    {{d.claimant.title}}
-  </dd>
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Title
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.title}}
+    </dd>
 
-  <dt class="data-summary-key">
-    Full name
-  </dt>
-  <dd class="data-summary-value">
-    {{d.claimant.fullName}}
-  </dd>
+    <dt class="data-summary-key">
+      Full name
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.fullName}}
+    </dd>
 
-  <dt class="data-summary-key">
-    National Insurance number
-  </dt>
-  <dd class="data-summary-value">
-    {{d.claimant.nino}}
-  </dd>
+    <dt class="data-summary-key">
+      National Insurance number
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.nino}}
+    </dd>
 
-  <dt class="data-summary-key">
-    Date of birth
-  </dt>
-  <dd class="data-summary-value">
-    {{d.claimant.dateOfBirth}}
-  </dd>
+    <dt class="data-summary-key">
+      Date of birth
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.dateOfBirth}}
+    </dd>
 
-  <dt class="data-summary-key">
-    Sex
-  </dt>
-  <dd class="data-summary-value">
-    {{d.claimant.sex}}
-  </dd>
-</dl>
+    <dt class="data-summary-key">
+      Sex
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.sex}}
+    </dd>
+  </dl>
+</div>
 
-<h2 class="heading-small th">
-  Deceased details
-  {% if scenario === '1' or scenario === '2' %}
-    <p class="payment-link verified">
-      Verified
-    </p>
-  {% elif not decision %}
-    <p class="payment-link">
-      <a href="/{{feature}}/{{sprint}}/capture/partner-details">
-        Change
-      </a>
-    </p>
-  {% endif %}
-</h2>
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
+    Deceased details
+    {% if scenario === '1' or scenario === '2' %}
+      <p class="verified-badge verified">
+        Verified
+      </p>
+    {% elif not decision %}
+      <p class="verified-badge">
+        <a href="/{{feature}}/{{sprint}}/capture/partner-details">
+          Change
+        </a>
+      </p>
+    {% endif %}
+  </h2>
 
-<dl class="data-summary">
-  <dt class="data-summary-key">
-    Title
-  </dt>
-  <dd class="data-summary-value">
-    {{d.partner.title or showDetails}}
-  </dd>
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Title
+    </dt>
+    <dd class="data-summary-value">
+      {{d.partner.title or showDetails}}
+    </dd>
 
-  <dt class="data-summary-key">
-    Full name
-  </dt>
-  <dd class="data-summary-value">
-    {{d.partner.fullName or showDetails}}
-  </dd>
+    <dt class="data-summary-key">
+      Full name
+    </dt>
+    <dd class="data-summary-value">
+      {{d.partner.fullName or showDetails}}
+    </dd>
 
-  <dt class="data-summary-key">
-    National Insurance number
-  </dt>
-  <dd class="data-summary-value">
-    {{d.partner.nino or showDetails}}
-  </dd>
+    <dt class="data-summary-key">
+      National Insurance number
+    </dt>
+    <dd class="data-summary-value">
+      {{d.partner.nino or showDetails}}
+    </dd>
 
-  <dt class="data-summary-key">
-    Date of death
-  </dt>
-  <dd class="data-summary-value">
-    {{d.partner.dateOfDeath or showDetails}}
-  </dd>
-</dl>
+    <dt class="data-summary-key">
+      Date of death
+    </dt>
+    <dd class="data-summary-value">
+      {{d.partner.dateOfDeath or showDetails}}
+    </dd>
+  </dl>
+</div>
 
-<h2 class="heading-small th">
-  Date of claim
-</h2>
-
-<dl class="data-summary">
-  <dt class="data-summary-key">
+<div class="details-wrapper">
+  <h2 class="heading-medium th">
     Date of claim
-  </dt>
-  <dd class="data-summary-value">
-    {{d.claimant.dateOfClaim}}
-    <span class="change-link">
-      <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
-        Change <span class="visually-hidden"> date of claim</span>
-      </a>
-    </span>
-  </dd>
-</dl>
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Date of claim
+    </dt>
+    <dd class="data-summary-value">
+      {{d.claimant.dateOfClaim}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+          Change <span class="visually-hidden"> date of claim</span>
+        </a>
+      </span>
+    </dd>
+  </dl>
+</div>
