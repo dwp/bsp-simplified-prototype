@@ -1,93 +1,159 @@
-<h2 class="heading-small th">
-  Verification
-</h2>
+{% if data.marriage.verified %}
+  <h2 class="heading-small th">
+    Marriage or civil partnership
+    {% if data.marriage.verified === 'Yes' %}
+      <p class="payment-link verified">
+        Verified
+      </p>
+    {% endif %}
+  </h2>
 
-<dl class="data-summary govuk-check-your-answers cya-questions-short">
-  {% if data.marriage.verified %}
-    <div>
-      <dt>
-        Marriage or civil partnership
-      </dt>
-      {% if data.marriage.verified === 'Yes' %}
-        <dd class="cya-answer">
-          {% for ev in data.marriage['what-evidence'] %}
-            {{ev}}<br />
-          {% endfor %}
-          {{d.marriage.dateOfMarriage}}
-        </dd>
-      {% else %}
-        <dd class="cya-answer">
-          Evidence of marriage or civil partnership needed
-        </dd>
-      {% endif%}
-      {% if not decision %}
-        <dd class="cya-change">
-          <a class="bold" href="#">
-            Change<span class="visually-hidden"> marriage verification</span>
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Evidence
+    </dt>
+    {% if data.marriage.verified === 'Yes' %}
+      <dd class="data-summary-value">
+        {% for ev in data.marriage['what-evidence'] %}
+          {{ev}}<br />
+        {% endfor %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/marriage/{{scenario}}">
+            Change <span class="visually-hidden"> evidence of marriage or civil partnership</span>
           </a>
-        </dd>
-      {% endif %}
-    </div>
-  {% endif %}
+        </span>
+      </dd>
+      <dd class="data-summary-key">
+        Date
+      </dd>
+      <dd class="data-summary-value">
+        {{d.marriage.dateOfMarriage}}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/marriage/{{scenario}}">
+            Change <span class="visually-hidden"> date of marriage or civil partnership</span>
+          </a>
+        </span>
+      </dd>
+    {% else %}
+      <dd class="data-summary-key">
+        Evidence
+      </dd>
+      <dd class="data-summary-value">
+        Evidence of marriage or civil partnership needed
+      </dd>
+    {% endif%}
+  </dl>
+{% endif %}
 
-  {% if data.dateOfdeath %}
-    <div>
-      <dt>
-        Death
-      </dt>
-      <dd class="cya-answer">
+{% if data.dateOfdeath %}
+  <h2 class="heading-small th">
+    Death
+    {% if data.dateOfdeath %}
+      <p class="payment-link verified">
+        Verified
+      </p>
+    {% endif %}
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Evidence
+    </dt>
+    {% if data.dateOfdeath %}
+      <dd class="data-summary-value">
         {% for ev in data.death['what-evidence'] %}
           {{ev}}<br />
         {% endfor %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/death/{{scenario}}">
+            Change <span class="visually-hidden"> evidence of death</span>
+          </a>
+        </span>
+      </dd>
+      <dd class="data-summary-key">
+        Date
+      </dd>
+      <dd class="data-summary-value">
         {{d.partner.dateOfDeath}}
-      </dd>
-      {% if not decision %}
-        <dd class="cya-change">
-          <a class="bold" href="#">
-            Change<span class="visually-hidden"> death verification</span>
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/death/{{scenario}}">
+            Change <span class="visually-hidden"> verified date of death</span>
           </a>
-        </dd>
-      {% endif %}
-    </div>
-  {% endif %}
+        </span>
+      </dd>
+    {% else %}
+      <dd class="data-summary-key">
+        Evidence
+      </dd>
+      <dd class="data-summary-value">
+        Evidence of death needed
+      </dd>
+    {% endif%}
+  </dl>
+{% endif %}
 
-  {% if data.conts %}
-    <div>
-      <dt>
-        National Insurance contributions
-      </dt>
-      <dd class="cya-answer">
-        {% if data.conts.industrialInjury === 'Yes' %}
-          Industrial injury
-        {% else %}
-          {{data.conts.year or '2015'}}
-        {% endif %}
-      </dd>
-      {% if not decision %}
-        <dd class="cya-change">
-          <a class="bold" href="#">
-            Change<span class="visually-hidden"> National Insurance verification</span>
-          </a>
-        </dd>
-      {% endif %}
-    </div>
-  {% endif %}
+{% if data.conts %}
+  <h2 class="heading-small th">
+    National Insurance contributions
+    {% if data.conts %}
+      <p class="payment-link verified">
+        Verified
+      </p>
+    {% endif %}
+  </h2>
 
-  {% if data.chb %}
-    <div>
-      <dt>
-        Child Benefit number
-      </dt>
-      <dd class="cya-answer">
-        {{data.chb['number'] or d.chb['number'] or '<span class="red">Missing</span>'|safe}}
-      </dd>
-      {% if not decision %}
-        <dd class="cya-change">
-          <a class="bold" href="#">
-            Change<span class="visually-hidden"> Child Benefit verification</span>
-          </a>
-        </dd>
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Year
+    </dt>
+    <dd class="data-summary-value">
+      {{data.conts.year or '2015'}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">
+          Change <span class="visually-hidden"> year used for National Insurance contributions</span>
+        </a>
+      </span>
+    </dd>
+
+    <dt class="data-summary-key">
+      Industrial injury or illness
+    </dt>
+    <dd class="data-summary-value">
+      {% if data.conts.industrialInjury === 'Yes' %}
+        Yes
+      {% else %}
+        No
       {% endif %}
-    </div>
-  {% endif %}
-</dl>
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">
+          Change <span class="visually-hidden"> answer for industrial injury or illness</span>
+        </a>
+      </span>
+    </dd>
+  </dl>
+{% endif %}
+
+{% if data.chb %}
+  <h2 class="heading-small th">
+    Child Benefit
+    {% if data.conts %}
+      <p class="payment-link verified">
+        Verified
+      </p>
+    {% endif %}
+  </h2>
+
+  <dl class="data-summary">
+    <dt class="data-summary-key">
+      Child Benefit number
+    </dt>
+    <dd class="data-summary-value">
+      {{data.chb['number'] or d.chb['number'] or 'Missing'}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/verify/child-benefit/{{scenario}}">
+          Change <span class="visually-hidden"> Child Benefit number</span>
+        </a>
+      </span>
+    </dd>
+  </dl>
+{% endif %}

@@ -1,6 +1,10 @@
 <h2 class="heading-small th">
   Claimant details
-  {% if not decision %}
+  {% if scenario === '1' or scenario === '2' %}
+    <p class="payment-link verified">
+      Verified
+    </p>
+  {% elif not decision %}
     <p class="payment-link">
       <a href="/{{feature}}/{{sprint}}/capture/claimant-details">
         Change
@@ -48,7 +52,11 @@
 
 <h2 class="heading-small th">
   Deceased details
-  {% if not decision %}
+  {% if scenario === '1' or scenario === '2' %}
+    <p class="payment-link verified">
+      Verified
+    </p>
+  {% elif not decision %}
     <p class="payment-link">
       <a href="/{{feature}}/{{sprint}}/capture/partner-details">
         Change
@@ -89,13 +97,6 @@
 
 <h2 class="heading-small th">
   Date of claim
-  {% if not decision %}
-    <p class="payment-link">
-      <a href="/{{feature}}/{{sprint}}/capture/date-of-claim">
-        Change
-      </a>
-    </p>
-  {% endif %}
 </h2>
 
 <dl class="data-summary">
@@ -104,5 +105,10 @@
   </dt>
   <dd class="data-summary-value">
     {{d.claimant.dateOfClaim}}
+    <span class="change-link">
+      <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+        Change <span class="visually-hidden"> date of claim</span>
+      </a>
+    </span>
   </dd>
 </dl>

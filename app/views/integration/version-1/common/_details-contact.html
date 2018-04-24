@@ -1,12 +1,5 @@
 <h2 class="heading-small th">
   Contact details
-  {% if not decision %}
-    <p class="payment-link">
-      <a href="/{{feature}}/{{sprint}}/capture/contact-details">
-        Change
-      </a>
-    </p>
-  {% endif %}
 </h2>
 
 <dl class="data-summary">
@@ -20,6 +13,11 @@
       {{d.claimant.currentAddress.county}}<br />
       {{d.claimant.currentAddress.postcode}}
     {% endif %}
+    <span class="change-link">
+      <a href="/{{feature}}/{{sprint}}/capture/contact-details/{{scenario}}">
+        Change <span class="visually-hidden"> address</span>
+      </a>
+    </span>
   </dd>
   
   {% if d.claimant.contact.home %}
@@ -28,6 +26,11 @@
     </dt>
     <dd class="data-summary-value">
       {{d.claimant.contact.home}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/contact-details/{{scenario}}">
+          Change <span class="visually-hidden"> home phone number</span>
+        </a>
+      </span>
     </dd>
   {% endif %}
 
@@ -37,6 +40,11 @@
     </dt>
     <dd class="data-summary-value">
       {{d.claimant.contact.mobile}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/contact-details/{{scenario}}">
+          Change <span class="visually-hidden"> mobile phone number</span>
+        </a>
+      </span>
     </dd>
   {% endif %}
 
@@ -46,6 +54,11 @@
     </dt>
     <dd class="data-summary-value">
       {{d.claimant.contact.email}}
+      <span class="change-link">
+        <a href="/{{feature}}/{{sprint}}/capture/contact-details/{{scenario}}">
+          Change <span class="visually-hidden"> email address</span>
+        </a>
+      </span>
     </dd>
   {% endif %}
 </dl>

@@ -57,7 +57,14 @@ $pale-blue: #EDF4F7;
   border-top: 1px solid $border-colour;
   float: left;
   padding: .63158em 1.05263em .47368em 0;
+  position: relative;
   width: 50%;
+
+  .change-link {
+    position: absolute;
+    right: 0;
+    top: .7em;
+  }
 }
 
 .data-summary-key {
@@ -148,5 +155,21 @@ $pale-blue: #EDF4F7;
 }
 
 .red {
-  color: $mellow-red
+  color: $mellow-red;
+}
+
+.verified {
+  color: $secondary-text-colour;
+  font-weight: normal;
+  position: relative;
+
+  &::before {
+    background-image: url('/public/images/verified.svg');
+    content: '';
+    height: 1em;
+    left: -1.3em;
+    position: absolute;
+    top: 0;
+    width: 1em;
+  }
 }

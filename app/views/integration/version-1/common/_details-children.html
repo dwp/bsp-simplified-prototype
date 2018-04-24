@@ -1,12 +1,5 @@
 <h2 class="heading-small th">
   Children details
-  {% if not decision %}
-    <p class="payment-link">
-      <a href="/{{feature}}/{{sprint}}/children-details">
-        Change
-      </a>
-    </p>
-  {% endif %}
 </h2>
 
 <dl class="data-summary">
@@ -15,6 +8,11 @@
   </dt>
   <dd class="data-summary-value">
     {{data.children['dependant-children'] or d.children['dependant-children']}}
+    <span class="change-link">
+      <a href="/{{feature}}/{{sprint}}/capture/children-details/{{scenario}}">
+        Change <span class="visually-hidden"> dependent children details</span>
+      </a>
+    </span>
   </dd>
 
   <dt class="data-summary-key">
@@ -22,5 +20,10 @@
   </dt>
   <dd class="data-summary-value">
     {{data.children.pregnant or d.children.pregnant}}
+    <span class="change-link">
+      <a href="/{{feature}}/{{sprint}}/capture/children-details/{{scenario}}">
+        Change <span class="visually-hidden"> whether the claimant was pregnant</span>
+      </a>
+    </span>
   </dd>
 </dl>
