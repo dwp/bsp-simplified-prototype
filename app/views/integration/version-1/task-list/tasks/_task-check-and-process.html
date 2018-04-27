@@ -2,7 +2,7 @@
 {% if 
   data.children 
   and (data.conts.enough === 'Yes' or data.conts.verified === 'Yes') 
-  and data.death.form === 'Yes' 
+  and (data.death.form === 'Yes' or scenario === '1') 
   and data.marriage.verified === 'Yes' 
   and data['payment-details-provided'] === 'Yes'
 %}

@@ -2,7 +2,9 @@
   <a class="task-name" href="/{{feature}}/{{sprint}}/verify/death/{{scenario}}">
     Death
   </a>
-  {% if data.death.form or bf %}
+  {% if scenario === '1' %}
+        <strong class="task-completed" id="eligibility-completed">Completed</strong>
+  {% elif data.death.form or bf %}
     {% if data.wait.death === 'Yes' %}
       <strong class="task-incomplete" id="eligibility-completed">Not complete</strong>
     {% else %}

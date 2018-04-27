@@ -26,6 +26,15 @@
     </li>
   {% endfor %}
 
+  {% if scenario === '1' %}
+    <li>
+      <span class="line"></span>
+      <h3 class="bold">Death verified</h3>
+      <span class="paused-until-date">by CIS</span><br />
+      <span class="paused-until-date">{{todayDate}}</span>
+    </li>
+  {% endif %}
+
   <li>
     <span class="line"></span>
     <h3 class="bold">Deceased details verified</h3>

@@ -54,7 +54,7 @@
 <div class="details-wrapper">
   <h2 class="heading-medium th">
     Death
-    {% if data.dateOfdeath %}
+    {% if scenario === '1' or data.dateOfdeath%}
       <p class="verified-badge verified">
         Verified
       </p>
@@ -69,7 +69,17 @@
     <dt class="data-summary-key">
       Evidence
     </dt>
-    {% if data.dateOfdeath %}
+    {% if scenario === '1' %}
+      <dd class="data-summary-value">
+        CIS<br />
+      </dd>
+      <dt class="data-summary-key">
+        Date
+      </dt>
+      <dd class="data-summary-value">
+        {{d.partner.dateOfDeath}}
+      </dd>
+    {% elif data.dateOfdeath %}
       <dd class="data-summary-value">
         {% for ev in data.death['what-evidence'] %}
           {{ev}}<br />
