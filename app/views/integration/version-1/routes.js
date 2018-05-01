@@ -50,7 +50,20 @@ router.get('/start-a-new-claim/:scenario', (req, res) => {
 })
 router.post('/start-a-new-claim/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
-  res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
+  if (scenario === '1' || scenario === '2') {
+    return res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
+  }
+  res.redirect(`/${req.feature}/${req.sprint}/cis/cis-warning/${scenario}`)    
+})
+
+
+// -----------------------------------------------------------------------------
+// CIS -------------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.get('/cis/:page/:scenario', (req, res) => {
+  const scenario = req.params.scenario || '1'
+  const d = require(`./_dummy-data/${scenario}.json`)
+  res.render(`${req.feature}/${req.sprint}/cis/cis-warning`, {scenario, start: true, d})
 })
 
 // -----------------------------------------------------------------------------

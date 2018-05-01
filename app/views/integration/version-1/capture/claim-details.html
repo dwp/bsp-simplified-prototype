@@ -15,6 +15,12 @@
 
 {% block content %}
   <main id="content" role="main" class="group">
+    {% if not start %}
+      {% if scenario !== '1' and scenario !== '2' %}
+        {% include '../common/_notification-banner.html' %}
+      {% endif %}
+    {% endif %}
+    
     <div class="grid-row">
       <div class="column-two-thirds">
 

@@ -7,9 +7,7 @@
       </p>
     {% elif not decision %}
       <p class="verified-badge">
-        <a href="/{{feature}}/{{sprint}}/capture/claimant-details">
-          Change
-        </a>
+        Not verified
       </p>
     {% endif %}
   </h2>
@@ -20,6 +18,13 @@
     </dt>
     <dd class="data-summary-value">
       {{d.claimant.title}}
+      {% if scenario !== '1' or scenarion !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> claimant's title</span>
+          </a>
+        </span>
+      {% endif %}
     </dd>
 
     <dt class="data-summary-key">
@@ -27,6 +32,13 @@
     </dt>
     <dd class="data-summary-value">
       {{d.claimant.fullName}}
+      {% if scenario !== '1' or scenarion !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> claimant's full name</span>
+          </a>
+        </span>
+      {% endif %}
     </dd>
 
     <dt class="data-summary-key">
@@ -34,6 +46,13 @@
     </dt>
     <dd class="data-summary-value">
       {{d.claimant.nino}}
+      {% if scenario !== '1' or scenarion !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> claimant's National Insurance number</span>
+          </a>
+        </span>
+      {% endif %}
     </dd>
 
     <dt class="data-summary-key">
@@ -41,6 +60,13 @@
     </dt>
     <dd class="data-summary-value">
       {{d.claimant.dateOfBirth}}
+      {% if scenario !== '1' or scenarion !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> claimant's date of birth</span>
+          </a>
+        </span>
+      {% endif %}
     </dd>
 
     <dt class="data-summary-key">
@@ -48,6 +74,13 @@
     </dt>
     <dd class="data-summary-value">
       {{d.claimant.sex}}
+      {% if scenario !== '1' or scenarion !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> claimant's sex</span>
+          </a>
+        </span>
+      {% endif %}
     </dd>
   </dl>
 </div>
@@ -61,9 +94,7 @@
       </p>
     {% elif not decision %}
       <p class="verified-badge">
-        <a href="/{{feature}}/{{sprint}}/capture/partner-details">
-          Change
-        </a>
+        Not verified
       </p>
     {% endif %}
   </h2>
@@ -74,6 +105,13 @@
     </dt>
     <dd class="data-summary-value">
       {{d.partner.title or showDetails}}
+      {% if scenario !== '1' or scenarion !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> deceased's title</span>
+          </a>
+        </span>
+      {% endif %}
     </dd>
 
     <dt class="data-summary-key">
@@ -81,6 +119,13 @@
     </dt>
     <dd class="data-summary-value">
       {{d.partner.fullName or showDetails}}
+      {% if scenario !== '1' or scenarion !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> deceased's full name</span>
+          </a>
+        </span>
+      {% endif %}
     </dd>
 
     <dt class="data-summary-key">
@@ -88,6 +133,13 @@
     </dt>
     <dd class="data-summary-value">
       {{d.partner.nino or showDetails}}
+      {% if scenario !== '1' or scenarion !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> deceased's National Insurance number</span>
+          </a>
+        </span>
+      {% endif %}
     </dd>
 
     <dt class="data-summary-key">
@@ -95,6 +147,13 @@
     </dt>
     <dd class="data-summary-value">
       {{d.partner.dateOfDeath or showDetails}}
+      {% if scenario !== '1' or scenarion !== '2' %}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
+            Change <span class="visually-hidden"> deceased's date of death</span>
+          </a>
+        </span>
+      {% endif %}
     </dd>
   </dl>
 </div>

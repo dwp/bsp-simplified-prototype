@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  Records do not match
+  Could not get data
 {% endblock %}
 
 {% block customNav %}
@@ -12,7 +12,9 @@
   <main id="content" role="main">
     <div class="grid-row">
       <div class="column-two-thirds">
-       
+        
+        {% include './scenarios/' + scenario + '.html' %}
+        
       </div>
     </div>
   </main>
