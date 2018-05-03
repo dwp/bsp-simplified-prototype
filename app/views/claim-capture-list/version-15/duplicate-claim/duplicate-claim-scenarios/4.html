@@ -1,6 +1,6 @@
 <div class="column-two-thirds">
   <h1 class="heading-large">
-    There's an unfinished claim using the same details
+    This claimant already has an unfinished claim for {{d.partner.fullName}}
   </h1>
 
   <p class="lede">
@@ -24,4 +24,26 @@
     </div>
     <button class="button" type="submit">Continue</button>
   </form>
+</div>
+
+<div class="column-one-third">
+  <h2 class="heading-medium">Previous claims</h2>
+  <ul class="search-results">
+    <li class="result">
+      <h3 class="heading-small">Unfinished claim</h3>
+      <div class="panel panel-border-narrow">
+        <h3 class="heading-small">Claimant</h3>
+        <p>
+          {{d.claimant.fullName}}<br/>
+          {{d.claimant.nino}}
+        </p>
+
+        <h3 class="heading-small">Deceased</h3>
+        <p>
+          {{d.partner.fullName}}<br />
+          {{d.partner.nino}}
+        </p>
+      </div>
+    </li>
+  </ul>
 </div>
