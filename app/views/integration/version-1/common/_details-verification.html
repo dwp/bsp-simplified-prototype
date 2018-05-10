@@ -175,31 +175,33 @@
   </dl>
 </div>
 
-<div class="details-wrapper">
-  <h2 class="heading-medium th">
-    Child Benefit
-    {% if data.conts %}
-      <p class="verified-badge verified">
-        Verified
-      </p>
-    {% else %}
-      <p class="verified-badge">
-        Not verified
-      </p>
-    {% endif %}
-  </h2>
+{% if data.children['dependant-children'] === 'Yes' %}
+  <div class="details-wrapper">
+    <h2 class="heading-medium th">
+      Child Benefit
+      {% if data.chb.number %}
+        <p class="verified-badge verified">
+          Verified
+        </p>
+      {% else %}
+        <p class="verified-badge">
+          Not verified
+        </p>
+      {% endif %}
+    </h2>
 
-  <dl class="data-summary">
-    <dt class="data-summary-key">
-      Child Benefit number
-    </dt>
-    <dd class="data-summary-value">
-      {{data.chb['number'] or d.chb['number'] or 'No Child Benefit number'}}
-      <span class="change-link">
-        <a href="/{{feature}}/{{sprint}}/verify/child-benefit/{{scenario}}">
-          Change <span class="visually-hidden"> Child Benefit number</span>
-        </a>
-      </span>
-    </dd>
-  </dl>
-</div>
+    <dl class="data-summary">
+      <dt class="data-summary-key">
+        Child Benefit number
+      </dt>
+      <dd class="data-summary-value">
+        {{data.chb['number'] or d.chb['number'] or 'No Child Benefit number'}}
+        <span class="change-link">
+          <a href="/{{feature}}/{{sprint}}/verify/child-benefit/{{scenario}}">
+            Change <span class="visually-hidden"> Child Benefit number</span>
+          </a>
+        </span>
+      </dd>
+    </dl>
+  </div>
+{% endif %}
