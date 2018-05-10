@@ -30,13 +30,6 @@
 
         <h2 class="heading-small th">
           Rate
-          {% if d.schedule.rate === 'Standard' %}
-            <p class="payment-link">
-              <a href="#">
-                Change
-              </a>
-            </p>
-          {% endif %}
         </h2>
 
         <dl class="data-summary">
@@ -44,6 +37,13 @@
             {{d.schedule.rate}}
           </dt>
           <dd class="data-summary-value">
+            {% if d.schedule.rate === 'Standard' %}
+              <span class="change-link">
+                <a href="#">
+                  Change <span class="visually-hidden"> rate</span>
+                </a>
+              </span>
+            {% endif %}
           </dd>
         </dl>
       </div>
