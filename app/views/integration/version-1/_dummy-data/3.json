@@ -1,50 +1,56 @@
 {
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
   "claimant": {
-    "title": "Mrs",
-    "fullName": "Helen Carter",
-    "nino": "TQ123456X",
-    "dateOfClaim": "15 March 2018",
-    "dateOfBirth": "19 March 1969",
+    "title": "Mrs",    
+    "fullName": "Michelle Barker",
+    "nino": "CC123456X",
+    "dateOfClaim": "15 February 2018",
+    "dateOfBirth": "29 June 1980",
     "sex": "Female",    
     "currentAddress": {
-      "number": "29",
-      "street": "Church Crescent",
-      "town": "Seaburn",
-      "county": "Sunderland",
-      "postcode": "SR6 7BR"
+      "number": "118",
+      "street": "Barber Close",
+      "town": "Eastwood",
+      "county": "Nottingham",
+      "postcode": "NT5 2RT"
     },
     "contact": {
-      "home": "01915655555"
+      "home": "0131481367"
     }
   },
   "partner": {
     "title": "Mr",
-    "fullName": "Mark Carter",
-    "nino": "QQ123456X",
-    "dateOfDeath": "02 March 2018"  
+    "fullName": " Joseph Barker",
+    "nino": "CB123456X",
+    "dateOfDeath": "5 February 2018"  
   },
   "children": {
-    "dependant-children": "No",
+    "dependant-children": "Yes",
     "pregnant": "No"
   },
   "chb": {
-    "answer": "No"
+    "answer": "Yes",
+    "number": "CHB123456AB"
   },
   "payment": {
-    "nameOnAccount": "Mrs H Carter",
-    "sortCode": "112345",
+    "nameOnAccount": "Mrs M Barker",
+    "sortCode": "123456",
     "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "24 August 2000"
+    "dateOfMarriage": "16 July 2008"
   },
   "conts": {
-    "year": "2015"
+    "year": "1975"
   },
   "schedule": {
-    "rate": "Standard",
+    "rate": "Higher",
     "number": 18
   }
 }

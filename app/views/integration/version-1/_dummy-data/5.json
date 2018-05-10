@@ -1,50 +1,56 @@
 {
+  "claim": {
+    "status": "Paused",
+    "weeksSinceClaim": 5,
+    "class": ""
+  },
   "claimant": {
-    "title": "Mrs",
-    "fullName": "Helen Carter",
-    "nino": "TQ123456X",
-    "dateOfClaim": "15 March 2018",
-    "dateOfBirth": "19 March 1969",
-    "sex": "Female",    
+    "title": "Mrs",    
+    "fullName": "Amelia McAndrews",
+    "nino": "EE123456X",
+    "dateOfClaim": "6 February 2018",
+    "dateOfBirth": "11 December 1987",
+    "sex": "Female",
     "currentAddress": {
-      "number": "29",
-      "street": "Church Crescent",
-      "town": "Seaburn",
-      "county": "Sunderland",
-      "postcode": "SR6 7BR"
+      "number": "18",
+      "street": "Ministry Close",
+      "town": "Longbenton",
+      "county": "Newcastle",
+      "postcode": "NE98 1YX"
     },
     "contact": {
-      "home": "01915655555"
+      "home": "01915655819"
     }
   },
   "partner": {
-    "title": "Mr",
-    "fullName": "Mark Carter",
-    "nino": "QQ123456X",
-    "dateOfDeath": "02 March 2018"  
+    "title": "Mrs",
+    "fullName": "Siobhan McAndrews",
+    "nino": "ED123456X",
+    "dateOfDeath": "29 January 2018"  
   },
   "children": {
-    "dependant-children": "No",
-    "pregnant": "No"
+    "dependant-children": "Yes",
+    "pregnant": "Yes"
   },
   "chb": {
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs H Carter",
-    "sortCode": "112345",
-    "accountNumber": "12345678",
+    "nameOnAccount": "Mrs A McAndrews",
+    "sortCode": "112233",
+    "accountNumber": "12341234",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "24 August 2000"
+    "dateOfMarriage": "14 October 2011"
   },
   "conts": {
     "year": "2015"
   },
   "schedule": {
-    "rate": "Standard",
+    "rate": "Higher",
     "number": 18
   }
 }
+

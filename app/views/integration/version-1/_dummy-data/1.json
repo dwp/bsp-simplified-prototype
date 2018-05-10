@@ -1,50 +1,57 @@
 {
+  "claim": {
+    "status": "Allowed",
+    "weeksSinceClaim": 1,
+    "class": ""
+  },
   "claimant": {
-    "title": "Mrs",
-    "fullName": "Helen Carter",
-    "nino": "TQ123456X",
-    "dateOfClaim": "15 March 2018",
-    "dateOfBirth": "19 March 1969",
-    "sex": "Female",    
+    "title": "Mr",
+    "fullName": "David Jones",
+    "nino": "AA123456X",
+    "dateOfClaim": "30 April 2018",
+    "dateOfBirth": "19 August 1968",
+    "sex": "Male",    
     "currentAddress": {
-      "number": "29",
-      "street": "Church Crescent",
-      "town": "Seaburn",
-      "county": "Sunderland",
-      "postcode": "SR6 7BR"
+      "number": "34",
+      "street": "Farm View",
+      "town": "Shipley",
+      "county": "Leeds",
+      "postcode": "LS2 7QB"
     },
     "contact": {
-      "home": "01915655555"
+      "mobile": "07123477777",
+      "email": "djones@sky.com"
     }
   },
   "partner": {
-    "title": "Mr",
-    "fullName": "Mark Carter",
-    "nino": "QQ123456X",
-    "dateOfDeath": "02 March 2018"  
+    "title": "Mrs",
+    "fullName": "Claire Jones",
+    "nino": "AB123456X",
+    "dateOfDeath": "29 April 2018"  
   },
   "children": {
-    "dependant-children": "No",
-    "pregnant": "No"
-  },
-  "chb": {
-    "answer": "No"
+    "dependant": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs H Carter",
-    "sortCode": "112345",
+    "nameOnAccount": "Mr David Jones",
+    "sortCode": "112233",
     "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
-    "where": "Certificate",
-    "dateOfMarriage": "24 August 2000"
+    "where": "Marriage certificate",
+    "dateOfMarriage": "4 July 1995"
   },
   "conts": {
     "year": "2015"
   },
   "schedule": {
-    "rate": "Standard",
-    "number": 18
+    "rate": "Standard",   
+    "payments": {
+      "number": 18,
+      "initial": "6 February 2018",
+      "backdated": "6 February 2018",
+      "firstMonthly": "29 February 2018"
+    }
   }
 }
