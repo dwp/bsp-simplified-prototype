@@ -5,7 +5,7 @@ const {logOnPost} = require('../../../../lib/utils')
 
 // Log session to console on POST requests
 router.use(logOnPost)
-router.use('/load-pdf/', express.static(path.join(__dirname, '../version-9/_pdf')))
+router.use('/load-pdf/', express.static(path.join(__dirname, '../version-15/_pdf')))
 
 router.get('/', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/settings`)
