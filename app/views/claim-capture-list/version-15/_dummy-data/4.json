@@ -5,28 +5,26 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mr",    
-    "fullName": "Daniel Chambers",
-    "nino": "DD123456X",
-    "dateOfClaim": "17 February 2018",
-    "dateOfBirth": "6 September 1978",
-    "sex": "Male",    
+    "title": "MrS",    
+    "fullName": "Natasha Andrews",
+    "nino": "JQ123456Q",
+    "dateOfClaim": "20 May 2018",
+    "dateOfBirth": "16 June 1981",
+    "sex": "Female",    
     "currentAddress": {
-      "number": "23",
-      "street": "Chancery Drive",
-      "town": "Selby",
-      "county": "Leeds",
-      "postcode": "LS11 2SA"
+      "number": "41",
+      "street": "Blackberry Drive",
+      "town": "Doncaster",
+      "county": "Yorkshire",
+      "postcode": "DB3 4NT"
     },
-    "contact": {
-      "mobile": "07733674132"
-    }
+    "contact": {}
   },
   "partner": {
-    "title": "Mrs",
-    "fullName": "Emma Chambers",
-    "nino": "DC123456X",
-    "dateOfDeath": "3 February 2018"  
+    "title": "Mr",
+    "fullName": "Fred Andrews",
+    "nino": "WQ123456Q",
+    "dateOfDeath": "11 May 2018"  
   },
   "children": {
     "dependant-children": "No",
@@ -36,14 +34,14 @@
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs D Chambers",
-    "sortCode": "123456",
+    "nameOnAccount": "Mrs N Andrews",
+    "sortCode": "112233",
     "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "15 July 2000"
+    "dateOfMarriage": "13 December 2006"
   },
   "conts": {
     "year": "2015"

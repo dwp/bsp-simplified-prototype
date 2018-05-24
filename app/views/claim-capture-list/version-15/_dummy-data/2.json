@@ -5,26 +5,26 @@
     "class": ""
   },
   "claimant": {
-    "title": "Miss",    
-    "fullName": "Katie Dent",
-    "nino": "RQ123456X",
-    "dateOfClaim": "4 February 2018",
-    "dateOfBirth": "11 August 1990",
-    "sex": "Female",
+    "title": "Mr",    
+    "fullName": "Paul Grimes",
+    "nino": "KX123456X",
+    "dateOfClaim": "19 May 2018",
+    "dateOfBirth": "5 November 1979",
+    "sex": "Male",
     "currentAddress": {
-      "number": "12",
-      "street": "Yew Lane",
-      "town": "Derby",
-      "county": "Derby",
-      "postcode": "NTS 7PS"
+      "number": "33",
+      "street": "Blossom Drive",
+      "town": "Recar",
+      "county": "Middlesborough",
+      "postcode": "MT3 7ML"
     },
     "contact": {}
   },
   "partner": {
-    "title": "Mr",
-    "fullName": "Jonathan Evans",
-    "nino": "BA123456X",
-    "dateOfDeath": "01 February 2018"  
+    "title": "Mrs",
+    "fullName": "Sophie Grimes",
+    "nino": "TX123456X",
+    "dateOfDeath": "13 May 2018"  
   },
   "children": {
     "dependant-children": "No",
@@ -32,14 +32,14 @@
   },
   "chb": {},
   "payment": {
-    "nameOnAccount": "Miss K Dent",
+    "nameOnAccount": "Mr P Grimes",
     "sortCode": "112233",
     "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "17 September 2017"
+    "dateOfMarriage": "22 September 2006"
   },
   "conts": {
     "year": "2015"

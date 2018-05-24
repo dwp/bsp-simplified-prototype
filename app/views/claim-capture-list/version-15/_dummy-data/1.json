@@ -5,43 +5,44 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mr",
-    "fullName": "Jack Peters",
-    "nino": "JQ123456X",
-    "dateOfClaim": "30 January 2018",
-    "dateOfBirth": "29 April 1960",
-    "sex": "Male",    
+    "title": "Mrs",
+    "fullName": "Louise Hawthorne",
+    "nino": "IX123456X",
+    "dateOfClaim": "20 May 2018",
+    "dateOfBirth": "4 October 1980",
+    "sex": "Female",    
     "currentAddress": {
-      "number": "94",
-      "street": "Coral Drive",
-      "town": "Oldham",
-      "county": "Manchester",
-      "postcode": "M TB9"
+      "number": "12",
+      "street": "Beacon Terrace",
+      "town": "Penrith",
+      "county": "Yorkshire",
+      "postcode": "CT9 8PK"
     },
     "contact": {}
   },
   "partner": {
-    "title": "Mrs",
-    "fullName": "Claire Peters",
-    "nino": "AB123456X",
-    "dateOfDeath": "29 January 2018"  
+    "title": "Mr",
+    "fullName": "Kevin Hawthorne",
+    "nino": "SQ123456X",
+    "dateOfDeath": "8 May 2018"  
   },
   "children": {
-    "dependant-children": "No",
+    "dependant-children": "Yes",
     "pregnant": "No"
   },
   "chb": {
-    "answer": "No"
+    "answer": "Yes",
+    "chb-number": ""
   },
   "payment": {
-    "nameOnAccount": "Mr J Peters",
-    "sortCode": "112233",
-    "accountNumber": "12345678",
+    "nameOnAccount": "Mrs L Hawthorne",
+    "sortCode": "123456",
+    "accountNumber": "12341234",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "11 March 1992"
+    "dateOfMarriage": "11 June 1999"
   },
   "conts": {
     "year": "2015"

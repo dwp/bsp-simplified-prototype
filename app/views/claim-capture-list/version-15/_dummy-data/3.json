@@ -6,25 +6,25 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Sophie Barker",
-    "nino": "QP123456X",
-    "dateOfClaim": "10 February 2018",
-    "dateOfBirth": "13 June 1980",
+    "fullName": "Elaine Sparks",
+    "nino": "XA123456Q",
+    "dateOfClaim": "15 May 2018",
+    "dateOfBirth": "9 March 1972",
     "sex": "Female",    
     "currentAddress": {
-      "number": "29",
-      "street": "Range Farm",
-      "town": "Nottingham",
-      "county": "Nottingham",
-      "postcode": "NG4 2LM"
+      "number": "17",
+      "street": "Seaworth Grove",
+      "town": "Blackpool",
+      "county": "Lancashire",
+      "postcode": "BT9 7PM"
     },
     "contact": {}
   },
   "partner": {
     "title": "Mr",
-    "fullName": " Joseph Barker",
-    "nino": "CB123456X",
-    "dateOfDeath": "5 February 2018"  
+    "fullName": "William Sparks",
+    "nino": "XT123456X",
+    "dateOfDeath": "9 May 2018"  
   },
   "children": {
     "dependant-children": "No",
@@ -34,14 +34,14 @@
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs S Barker",
-    "sortCode": "123456",
-    "accountNumber": "12345678",
+    "nameOnAccount": "Mrs E Sparks",
+    "sortCode": "112233",
+    "accountNumber": "12341234",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "12 August 2001"
+    "dateOfMarriage": "27 September 1997"
   },
   "conts": {
     "year": "1975"
