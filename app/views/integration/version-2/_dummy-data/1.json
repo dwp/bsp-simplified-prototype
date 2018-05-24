@@ -6,41 +6,39 @@
   },
   "claimant": {
     "title": "Mr",
-    "fullName": "David Jones",
-    "nino": "AA123456X",
-    "dateOfClaim": "30 April 2018",
-    "dateOfBirth": "19 August 1968",
+    "fullName": "Nathan Adams",
+    "nino": "BQ123456Q",
+    "dateOfClaim": "18 May 2018",
+    "dateOfBirth": "11 December 1979",
     "sex": "Male",    
     "currentAddress": {
-      "number": "34",
-      "street": "Farm View",
-      "town": "Shipley",
-      "county": "Leeds",
-      "postcode": "LS2 7QB"
+      "number": "203",
+      "street": "Strawberry Hill",
+      "town": "Kent",
+      "county": "London",
+      "postcode": "CT1 3PD"
     },
     "contact": {
-      "mobile": "07123477777",
-      "email": "djones@sky.com"
     }
   },
   "partner": {
     "title": "Mrs",
-    "fullName": "Claire Jones",
-    "nino": "AB123456X",
-    "dateOfDeath": "29 April 2018"  
+    "fullName": "Catherine Adams",
+    "nino": "SQ123456Q",
+    "dateOfDeath": "12 May 2018"  
   },
   "children": {
     "dependant": "No"
   },
   "payment": {
-    "nameOnAccount": "Mr David Jones",
+    "nameOnAccount": "Mr N Adams",
     "sortCode": "112233",
     "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Marriage certificate",
-    "dateOfMarriage": "4 July 1995"
+    "dateOfMarriage": "3 September 1999"
   },
   "conts": {
     "year": "2015"

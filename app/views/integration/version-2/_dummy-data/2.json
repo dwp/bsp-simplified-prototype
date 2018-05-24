@@ -6,44 +6,45 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Susanne Evans",
-    "nino": "BB123456X",
-    "dateOfClaim": "15 February 2018",
-    "dateOfBirth": "13 November 1990",
+    "fullName": "Veronica Hastings",
+    "nino": "QB123456Q",
+    "dateOfClaim": "20 May 2018",
+    "dateOfBirth": "1 February 1987",
     "sex": "Female",
     "currentAddress": {
-      "number": "16",
-      "street": "Trevaren Drive",
-      "town": "Ryhope",
-      "county": "Sunderland",
-      "postcode": "SR3 2PQ"
+      "number": "74",
+      "street": "Bay Grove",
+      "town": "Worthing",
+      "county": "West Sussex",
+      "postcode": "WH9 2PR"
     },
     "contact": {
-      "home": "01915655819"
+      "home": "09217233126"
     }
   },
   "partner": {
     "title": "Mr",
-    "fullName": "Jonathan Evans",
-    "nino": "BA123456X",
-    "dateOfDeath": "01 February 2018"  
+    "fullName": "Mark Hastings",
+    "nino": "KQ123456Q",
+    "dateOfDeath": "14 May 2018"  
   },
   "children": {
-    "dependant-children": "No",
-    "pregnant": "Yes"
+    "dependant-children": "Yes",
+    "pregnant": "No"
   },
   "chb": {
-    "answer": "No"
+    "answer": "Yes",
+    "chb-number": ""
   },
   "payment": {
-    "nameOnAccount": "Mrs S Evans",
+    "nameOnAccount": "Mrs V Hastings",
     "sortCode": "112233",
     "accountNumber": "12341234",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "16 August 2015"
+    "dateOfMarriage": "14 August 2014"
   },
   "conts": {
     "year": "2015"
