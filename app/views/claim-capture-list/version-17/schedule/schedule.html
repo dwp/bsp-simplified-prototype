@@ -1,0 +1,260 @@
+{% extends "layout.html" %}
+{% set showDetails = true %}
+
+{% block page_title %}
+  Payment schedule
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        
+        <h1 class="heading-xlarge schedule-heading">
+        <span class="heading-secondary">
+          {{d.claimant.fullName}}
+        </span>
+          {{d.claimant.nino}}
+        </h1>
+        <span class="schedule-status schedule-status-active">
+          Active
+        </span>
+
+        <div class="alert-default panel panel-border-narrow">
+          There is no claim attached to this payment schedule. To view the claim 
+          details you will need to look up the claim form in the Document Repository 
+          System (DRS).
+        </div>
+
+        {% include '../common/_details-payment.html' %}
+
+        <h2 class="heading-small th">
+          Rate
+          {% if d.schedule.rate === 'Standard' %}
+            <p class="payment-link">
+              <a href="#">
+                Change
+              </a>
+            </p>
+          {% endif %}
+        </h2>
+
+        <dl class="data-summary">
+          <dt class="data-summary-key">
+            {{d.schedule.rate}}
+          </dt>
+          <dd class="data-summary-value">
+          </dd>
+        </dl>
+      </div>
+    </div>
+    <div class="grid-row">
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Payments
+        </h2>
+
+        <ul class="schedule">
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              20 May 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              20 April 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              20 March 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              20 February 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              20 January 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              20 December 2017
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time>
+              20 November 2017
+            </time>
+            <strong class="amount">
+              £2,500
+            </strong>
+            <span class="type">
+              Initial payment
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="column-one-half">
+        <h2 class="heading-small th">
+          Planned payments
+          <p class="payment-link">
+            <a href="#">
+              Prevent payments
+            </a>
+          </p>
+        </h2>
+
+        <ul class="schedule">
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 June 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 July 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 August 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 September 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 October 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 November 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 December 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 January 2019
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 February 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 March 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 April 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 May 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 June 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 July 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time datetime="2017-12-03T00:00:00.000Z">
+              Due 20 August 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+{% endblock %}
