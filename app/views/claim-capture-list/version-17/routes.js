@@ -35,7 +35,7 @@ router.get('/start-a-new-claim/', (req, res) => {
 router.get('/schedule/:scenario', (req, res) => {
   const scenario = req.params.scenario
   const d = require(`./_dummy-data/${scenario}.json`)
-  res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {d})
+  res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {d, scenario})
 })
 
 module.exports = router

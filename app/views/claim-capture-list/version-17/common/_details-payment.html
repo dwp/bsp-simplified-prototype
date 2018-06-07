@@ -2,9 +2,11 @@
   Payment details
   <p class="payment-link">
     {% if not decision %}
-      <a href="/{{feature}}/{{sprint}}/capture/payment-details">
-        Change
-      </a>
+      {% if scenario === '1' %}
+        <a href="/{{feature}}/{{sprint}}/capture/payment-details">
+          Change
+        </a>
+      {% endif %}
     {% endif %}
   </p>
 </h2>
