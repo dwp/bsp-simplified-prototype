@@ -1,48 +1,47 @@
 {
   "claim": {
-    "status": "Allowed",
-    "weeksSinceClaim": 6,
+    "status": "Paused",
+    "weeksSinceClaim": 4,
     "class": ""
   },
   "claimant": {
-    "title": "Mrs",
-    "fullName": "Louise Hawthorne",
-    "nino": "IX123456X",
+    "title": "MrS",    
+    "fullName": "Natasha Andrews",
+    "nino": "JQ123456Q",
     "dateOfClaim": "20 May 2018",
-    "dateOfBirth": "4 October 1980",
+    "dateOfBirth": "16 June 1981",
     "sex": "Female",    
     "currentAddress": {
-      "number": "12",
-      "street": "Beacon Terrace",
-      "town": "Penrith",
+      "number": "41",
+      "street": "Blackberry Drive",
+      "town": "Doncaster",
       "county": "Yorkshire",
-      "postcode": "CT9 8PK"
+      "postcode": "DB3 4NT"
     },
     "contact": {}
   },
   "partner": {
     "title": "Mr",
-    "fullName": "Kevin Hawthorne",
-    "nino": "SQ123456X",
-    "dateOfDeath": "8 May 2018"  
+    "fullName": "Fred Andrews",
+    "nino": "WQ123456Q",
+    "dateOfDeath": "11 May 2018"  
   },
   "children": {
-    "dependant-children": "Yes",
+    "dependant-children": "No",
     "pregnant": "No"
   },
   "chb": {
-    "answer": "Yes",
-    "chb-number": ""
+    "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs L Hawthorne",
-    "sortCode": "123456",
-    "accountNumber": "12341234",
+    "nameOnAccount": "Mrs N Andrews",
+    "sortCode": "112233",
+    "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "11 June 1999"
+    "dateOfMarriage": "13 December 2006"
   },
   "conts": {
     "year": "2015"
