@@ -19,7 +19,13 @@
         </h1>
 
           <p>
-            <a href="#">View existing claim</a>
+            {% if scenario === '1' %}
+              <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}">View existing claim</a>
+            {% elif scenario === '3' %}
+              <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}">View existing claim</a>
+            {% else %}
+              <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/allowed">View existing claim</a>
+            {% endif %}
           </p>
 
       </div>

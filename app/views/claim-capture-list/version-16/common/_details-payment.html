@@ -14,29 +14,29 @@
     Name on account
   </dt>
   <dd class="data-summary-value">
-    {{d.payment.nameOnAccount}}
+    {{d2[scenario].payment.nameOnAccount}}
   </dd>
 
   <dt class="data-summary-key">
     Sort code
   </dt>
   <dd class="data-summary-value">
-    {{d.payment.sortCode}}
+    {{d2[scenario].payment.sortCode}}
   </dd>
 
   <dt class="data-summary-key">
     Account number
   </dt>
   <dd class="data-summary-value">
-    {{d.payment.accountNumber}}
+    {{d2[scenario].payment.accountNumber}}
   </dd>
 
-  {% if d.payment.rollNumber %}
+  {% if d2[scenario].payment.rollNumber %}
     <dt class="data-summary-key">
       Roll number
     </dt>
     <dd class="data-summary-value">
-      {{d.payment.rollNumber}}
+      {{d2[scenario].payment.rollNumber}}
     </dd>
   {% endif %}
 </dl>

@@ -14,9 +14,17 @@
       <div class="column-two-thirds column-minimum">
         <h1 class="heading-xlarge schedule-heading">
           <span class="heading-secondary">
-            {{d2[scenario].claimant.fullName or d.claimant.fullName}}
+            {% if scenario === '3' %}
+              {{d2[scenario].claimant.fullName}}
+            {% else %}
+              {{d.claimant.fullName}}
+            {% endif %}
           </span>
-          {{d2[scenario].claimant.nino or d.claimant.nino}}
+          {% if scenario === '3' %}
+              {{d2[scenario].claimant.nino}}
+          {% else %}
+              {{d.claimant.nino}}
+          {% endif %}
         </h1>
         <span class="claim-status">
           Unfinished

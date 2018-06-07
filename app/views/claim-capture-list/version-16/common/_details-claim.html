@@ -14,35 +14,35 @@
     Title
   </dt>
   <dd class="data-summary-value">
-    {{d.claimant.title}}
+    {{d2[scenario].claimant.title}}
   </dd>
 
   <dt class="data-summary-key">
     Full name
   </dt>
   <dd class="data-summary-value">
-    {{d.claimant.fullName}}
+    {{d2[scenario].claimant.fullName}}
   </dd>
 
   <dt class="data-summary-key">
     National Insurance number
   </dt>
   <dd class="data-summary-value">
-    {{d.claimant.nino}}
+    {{d2[scenario].claimant.nino}}
   </dd>
 
   <dt class="data-summary-key">
     Date of birth
   </dt>
   <dd class="data-summary-value">
-    {{d.claimant.dateOfBirth}}
+    {{d2[scenario].claimant.dateOfBirth}}
   </dd>
 
   <dt class="data-summary-key">
     Sex
   </dt>
   <dd class="data-summary-value">
-    {{d.claimant.sex}}
+    {{d2[scenario].claimant.sex}}
   </dd>
 </dl>
 
@@ -62,28 +62,28 @@
     Title
   </dt>
   <dd class="data-summary-value">
-    {{d.partner.title or showDetails}}
+    {{d2[scenario].partner.title or showDetails}}
   </dd>
 
   <dt class="data-summary-key">
     Full name
   </dt>
   <dd class="data-summary-value">
-    {{d.partner.fullName or showDetails}}
+    {{d2[scenario].partner.fullName or showDetails}}
   </dd>
 
   <dt class="data-summary-key">
     National Insurance number
   </dt>
   <dd class="data-summary-value">
-    {{d.partner.nino or showDetails}}
+    {{d2[scenario].partner.nino or showDetails}}
   </dd>
 
   <dt class="data-summary-key">
     Date of death
   </dt>
   <dd class="data-summary-value">
-    {{d.partner.dateOfDeath or showDetails}}
+    {{d2[scenario].partner.dateOfDeath or showDetails}}
   </dd>
 </dl>
 
@@ -103,6 +103,6 @@
     Date of claim
   </dt>
   <dd class="data-summary-value">
-    {{d.claimant.dateOfClaim}}
+    {{d2[scenario].claimant.dateOfClaim}}
   </dd>
 </dl>

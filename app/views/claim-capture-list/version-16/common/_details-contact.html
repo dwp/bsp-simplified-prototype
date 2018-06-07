@@ -15,37 +15,37 @@
   </dt>
   <dd class="data-summary-value">
     {% if data.claimant.address or showDetails %}
-      {{d.claimant.currentAddress.number}} {{d.claimant.currentAddress.street}}<br />
-      {{d.claimant.currentAddress.town}}<br/>
-      {{d.claimant.currentAddress.county}}<br />
-      {{d.claimant.currentAddress.postcode}}
+      {{d2[scenario].claimant.currentAddress.number}} {{d2[scenario].claimant.currentAddress.street}}<br />
+      {{d2[scenario].claimant.currentAddress.town}}<br/>
+      {{d2[scenario].claimant.currentAddress.county}}<br />
+      {{d2[scenario].claimant.currentAddress.postcode}}
     {% endif %}
   </dd>
   
-  {% if d.claimant.contact.home %}
+  {% if d2[scenario].claimant.contact.home %}
     <dt class="data-summary-key">
       Home phone
     </dt>
     <dd class="data-summary-value">
-      {{d.claimant.contact.home}}
+      {{d2[scenario].claimant.contact.home}}
     </dd>
   {% endif %}
 
-  {% if d.claimant.contact.mobile %}
+  {% if d2[scenario].claimant.contact.mobile %}
     <dt class="data-summary-key">
       Mobile phone
     </dt>
     <dd class="data-summary-value">
-      {{d.claimant.contact.mobile}}
+      {{d2[scenario].claimant.contact.mobile}}
     </dd>
   {% endif %}
 
-  {% if d.claimant.contact.email %}
+  {% if d2[scenario].claimant.contact.email %}
     <dt class="data-summary-key">
       Email address
     </dt>
     <dd class="data-summary-value">
-      {{d.claimant.contact.email}}
+      {{d2[scenario].claimant.contact.email}}
     </dd>
   {% endif %}
 </dl>

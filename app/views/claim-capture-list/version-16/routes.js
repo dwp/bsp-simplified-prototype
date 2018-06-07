@@ -74,7 +74,10 @@ router.get('/duplicate-claim/:scenario', (req, res) => {
   const d2 = require(`./_dummy-data/scenarios.json`)
   res.render(`${req.feature}/${req.sprint}/duplicate-claim/duplicate-claim`, {scenario, d, d2})
 })
-
+router.post('/duplicate-claim/:scenario', (req, res) => {
+  const scenario = req.params.scenario
+  res.redirect(`${req.feature}/${req.sprint}/duplicate-error/${scenario}`)
+})
 router.get('/duplicate-error/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
   res.render(`${req.feature}/${req.sprint}/duplicate-claim/duplicate-error`, {scenario})
@@ -98,8 +101,9 @@ router.get('/claim/:scenario/:decision', (req, res) => {
   const decision = req.params.decision
   const scenario = req.params.scenario
   const d = require(`./_dummy-data/${scenario}.json`)
+  const d2 = require(`./_dummy-data/scenarios.json`)
   const t = require(`./_dummy-data/_test.json`)
-  res.render(`${req.feature}/${req.sprint}/completed-claim/${decision}`, {scenario, decision, d, t})
+  res.render(`${req.feature}/${req.sprint}/completed-claim/${decision}`, {scenario, decision, d, d2, t})
 })
 
 // -----------------------------------------------------------------------------
