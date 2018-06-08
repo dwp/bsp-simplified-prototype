@@ -35,22 +35,22 @@
         {% if search %}
           <h2 class="heading-medium">Results</h2>
           <ul class="search-results">
-            {% if search === d.claimant.nino or search === '1' %}
+            {% if search === "JQ123456Q" or search === '1' %}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/schedule/1" class="result-link">
                   Active payment schedule
                 </a>
                 <span class="result-meta">
-                  {{d.claimant.fullName}}
+                  Natasha Andrews
                 </span>
               </li>
-            {% elif search === d.claimant.nino or search === '2'%}
+            {% elif search === "MQ123456Q" or search === '2'%}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/schedule/2" class="result-link">
                   Finished payment schedule
                 </a>
                 <span class="result-meta">
-                  {{d.claimant.fullName}}
+                  Daniel James Owen
                 </span>
               </li>
             {% elif search === d.claimant.nino or search === '3'%}
