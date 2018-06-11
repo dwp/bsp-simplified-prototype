@@ -6,10 +6,10 @@
   },
   "claimant": {
     "title": "Mr",
-    "fullName": "David Jones",
-    "nino": "AA123456X",
+    "fullName": "William Graves",
+    "nino": "ZQ123123X",
     "dateOfClaim": "30 April 2018",
-    "dateOfBirth": "19 August 1968",
+    "dateOfBirth": "14 December 1967",
     "sex": "Male",    
     "currentAddress": {
       "number": "34",
@@ -20,27 +20,27 @@
     },
     "contact": {
       "mobile": "07123477777",
-      "email": "djones@sky.com"
+      "email": "wgraves@sky.com"
     }
   },
   "partner": {
     "title": "Mrs",
-    "fullName": "Claire Jones",
-    "nino": "AB123456X",
-    "dateOfDeath": "29 April 2018"  
+    "fullName": "Abigail Graves",
+    "nino": "DQ123456X",
+    "dateOfDeath": "15 February 2018"  
   },
   "children": {
     "dependant": "No"
   },
   "payment": {
-    "nameOnAccount": "Mr David Jones",
-    "sortCode": "112233",
-    "accountNumber": "12345678",
+    "nameOnAccount": "Mr W Graves",
+    "sortCode": "123123",
+    "accountNumber": "12341234",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Marriage certificate",
-    "dateOfMarriage": "4 July 1995"
+    "dateOfMarriage": "17 March 1998"
   },
   "conts": {
     "year": "2015"

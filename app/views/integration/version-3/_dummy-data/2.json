@@ -6,10 +6,10 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Susanne Evans",
-    "nino": "BB123456X",
+    "fullName": "Rebecca Walters",
+    "nino": "AQ123123X",
     "dateOfClaim": "15 February 2018",
-    "dateOfBirth": "13 November 1990",
+    "dateOfBirth": "16 October 1970",
     "sex": "Female",
     "currentAddress": {
       "number": "16",
@@ -24,26 +24,26 @@
   },
   "partner": {
     "title": "Mr",
-    "fullName": "Jonathan Evans",
-    "nino": "BA123456X",
-    "dateOfDeath": "01 February 2018"  
+    "fullName": "Paul Walters",
+    "nino": "KQ123456X",
+    "dateOfDeath": "5 January 2018"  
   },
   "children": {
     "dependant-children": "No",
-    "pregnant": "Yes"
+    "pregnant": "No"
   },
   "chb": {
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs S Evans",
-    "sortCode": "112233",
-    "accountNumber": "12341234",
+    "nameOnAccount": "Mrs R Walters",
+    "sortCode": "123456",
+    "accountNumber": "12123434",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "16 August 2015"
+    "dateOfMarriage": "12 July 2001"
   },
   "conts": {
     "year": "2015"

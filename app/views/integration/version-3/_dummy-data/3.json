@@ -5,12 +5,12 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mrs",    
-    "fullName": "Michelle Barker",
-    "nino": "CC123456X",
+    "title": "Mr",    
+    "fullName": "Timothy Bowman",
+    "nino": "JQ123123X",
     "dateOfClaim": "15 February 2018",
-    "dateOfBirth": "29 June 1980",
-    "sex": "Female",    
+    "dateOfBirth": "18 July 1972",
+    "sex": "Male",    
     "currentAddress": {
       "number": "118",
       "street": "Barber Close",
@@ -23,13 +23,13 @@
     }
   },
   "partner": {
-    "title": "Mr",
-    "fullName": " Joseph Barker",
-    "nino": "CB123456X",
-    "dateOfDeath": "5 February 2018"  
+    "title": "Mrs",
+    "fullName": " Suzanne Bowman",
+    "nino": "YQ123456X",
+    "dateOfDeath": "9 December 2017"  
   },
   "children": {
-    "dependant-children": "Yes",
+    "dependant-children": "No",
     "pregnant": "No"
   },
   "chb": {
@@ -37,14 +37,14 @@
     "number": "CHB123456AB"
   },
   "payment": {
-    "nameOnAccount": "Mrs M Barker",
-    "sortCode": "123456",
-    "accountNumber": "12345678",
+    "nameOnAccount": "Mr T Bowman",
+    "sortCode": "665544",
+    "accountNumber": "11223344",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "16 July 2008"
+    "dateOfMarriage": "5 October 2009"
   },
   "conts": {
     "year": "1975"
