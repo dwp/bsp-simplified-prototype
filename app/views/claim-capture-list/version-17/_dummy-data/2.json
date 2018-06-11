@@ -6,10 +6,10 @@
   },
   "claimant": {
     "title": "Mr",    
-    "fullName": "Daniel James Owen",
-    "nino": "MQ123456Q",
+    "fullName": "Kenneth Brown",
+    "nino": "TQ123123X",
     "dateOfClaim": "9 May 2018",
-    "dateOfBirth": "23 September 1978",
+    "dateOfBirth": "17 February 1965",
     "sex": "Male",
     "currentAddress": {
       "number": "12",
@@ -24,9 +24,9 @@
   },
   "partner": {
     "title": "Mrs",
-    "fullName": "Kelly Owen",
-    "nino": "QA123456Q",
-    "dateOfDeath": "17 May 2018"  
+    "fullName": "Jessica Brown",
+    "nino": "PX654321X",
+    "dateOfDeath": "9 May 2018"  
   },
   "children": {
     "dependant-children": "No",
@@ -36,9 +36,9 @@
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mr D Owen",
-    "sortCode": "112233",
-    "accountNumber": "12341234",
+    "nameOnAccount": "Mr Kenneth Brown",
+    "sortCode": "456321",
+    "accountNumber": "87654321",
     "country": "United Kingdom"
   },
   "marriage": {

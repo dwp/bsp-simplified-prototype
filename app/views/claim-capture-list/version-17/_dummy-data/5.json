@@ -5,12 +5,12 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mrs",    
-    "fullName": "Amelia McAndrews",
-    "nino": "EE123456X",
+    "title": "Mr",    
+    "fullName": "Ben Cavanagh",
+    "nino": "UQ654321X",
     "dateOfClaim": "6 February 2018",
-    "dateOfBirth": "11 December 1987",
-    "sex": "Female",
+    "dateOfBirth": "30 August 1976",
+    "sex": "Male",
     "currentAddress": {
       "number": "18",
       "street": "Ministry Close",
@@ -24,21 +24,21 @@
   },
   "partner": {
     "title": "Mrs",
-    "fullName": "Siobhan McAndrews",
-    "nino": "ED123456X",
-    "dateOfDeath": "29 January 2018"  
+    "fullName": "Janice Cavanagh",
+    "nino": "LQ123456X",
+    "dateOfDeath": "16 December 2017"  
   },
   "children": {
-    "dependant-children": "Yes",
-    "pregnant": "Yes"
+    "dependant-children": "No",
+    "pregnant": "No"
   },
   "chb": {
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs A McAndrews",
-    "sortCode": "112233",
-    "accountNumber": "12341234",
+    "nameOnAccount": "Mr B Cavanagh",
+    "sortCode": "123456",
+    "accountNumber": "87654321",
     "country": "United Kingdom"
   },
   "marriage": {

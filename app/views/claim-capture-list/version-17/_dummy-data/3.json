@@ -6,10 +6,10 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Elaine Sparks",
-    "nino": "XA123456Q",
+    "fullName": "Katherine Stapleton",
+    "nino": "GQ456321X",
     "dateOfClaim": "15 May 2018",
-    "dateOfBirth": "9 March 1972",
+    "dateOfBirth": "11 December 1982",
     "sex": "Female",    
     "currentAddress": {
       "number": "17",
@@ -22,8 +22,8 @@
   },
   "partner": {
     "title": "Mr",
-    "fullName": "William Sparks",
-    "nino": "XT123456X",
+    "fullName": "Andrew Stapleton",
+    "nino": "YQ123456X",
     "dateOfDeath": "9 May 2018"  
   },
   "children": {
@@ -34,14 +34,14 @@
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs E Sparks",
-    "sortCode": "112233",
+    "nameOnAccount": "Mrs K Stapleton",
+    "sortCode": "654321",
     "accountNumber": "12341234",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "27 September 1997"
+    "dateOfMarriage": "6 December 2006"
   },
   "conts": {
     "year": "1975"
