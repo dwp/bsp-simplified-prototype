@@ -8,7 +8,7 @@
       Name on account
     </dt>
     <dd class="data-summary-value">
-      {{d.payment.nameOnAccount}}
+      {{data.payment['name-on-account'] or d.payment.nameOnAccount}}
       <span class="change-link">
         <a href="/{{feature}}/{{sprint}}/capture/payment-details/{{scenario}}">
           Change <span class="visually-hidden"> name on account</span>
@@ -20,7 +20,7 @@
       Sort code
     </dt>
     <dd class="data-summary-value">
-      {{d.payment.sortCode}}
+      {{data.payment['sort-code'] or d.payment.sortCode}}
       <span class="change-link">
         <a href="/{{feature}}/{{sprint}}/capture/payment-details/{{scenario}}">
           Change <span class="visually-hidden"> sort code</span>
@@ -32,7 +32,7 @@
       Account number
     </dt>
     <dd class="data-summary-value">
-      {{d.payment.accountNumber}}
+      {{data.payment['account-number'] or d.payment.accountNumber}}
       <span class="change-link">
         <a href="/{{feature}}/{{sprint}}/capture/payment-details/{{scenario}}">
           Change <span class="visually-hidden"> account number</span>
@@ -45,7 +45,7 @@
         Roll number
       </dt>
       <dd class="data-summary-value">
-        {{d.payment.rollNumber}}
+        {{data.payment['roll-number'] or d.payment.rollNumber}}
         <span class="change-link">
         <a href="/{{feature}}/{{sprint}}/capture/payment-details/{{scenario}}">
           Change <span class="visually-hidden"> roll number</span>

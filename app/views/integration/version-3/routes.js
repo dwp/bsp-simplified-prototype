@@ -87,4 +87,18 @@ router.get('/schedule/:scenario', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {scenario, d, schedule})
 })
 
+// -----------------------------------------------------------------------------
+// Payment details -------------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.get('/capture/:page/:scenario', (req, res) => {
+  const scenario = req.params.scenario
+  const d = require(`./_dummy-data/${scenario}.json`)
+  res.render(`${req.feature}/${req.sprint}/capture/payment-details`, {scenario, d})
+})
+router.post('/capture/:page/:scenario', (req, res) => {
+  const scenario = req.params.scenario
+  addToLog(req, 'capture')
+  res.redirect(`/${req.feature}/${req.sprint}/claim/${scenario}/allowed`)
+})
+
 module.exports = router
