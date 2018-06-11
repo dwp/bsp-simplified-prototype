@@ -13,7 +13,7 @@
   <main id="content" role="main" class="group">
     <div class="grid-row">
       <div class="column-two-thirds">
-        
+
         <h1 class="heading-xlarge schedule-heading">
         <span class="heading-secondary">
           {{d.claimant.fullName}}
@@ -25,9 +25,8 @@
         </span>
 
         <div class="alert-default panel panel-border-narrow">
-          There is no claim attached to this payment schedule. To view the claim 
-          details you will need to look up the claim form in the Document Repository 
-          System (DRS).
+          To see this claim, you'll need to look it up in the Document
+          Repository System (DRS).
         </div>
 
         {% include '../common/_details-payment.html' %}
@@ -56,7 +55,7 @@
     </div>
 
     {% include './scenarios/' + scenario + '.html' %}
-    
+
     </div>
   </main>
 {% endblock %}
