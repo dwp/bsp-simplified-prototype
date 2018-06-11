@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% set findActive = 'active' %}
+{% set validateActive = 'active' %}
 
 {% block page_title %}
   {% if search %}
@@ -41,10 +41,10 @@
                   Allowed claim
                 </a>
                 <span class="result-meta">
-                  {{d.claimant.fullName}}
+                  William Graves
                 </span>
                 <span class="result-meta">
-                  {{d.claimant.dateOfClaim}}
+                  30 April 2018
                 </span>
               </li>
             {% elif search === d.claimant.nino or search === '2'%}
@@ -53,10 +53,10 @@
                   Unfinished claim
                 </a>
                 <span class="result-meta">
-                  {{d.claimant.fullName}}
+                  Rebecca Walters
                 </span>
                 <span class="result-meta">
-                  {{d.claimant.dateOfClaim}}
+                  15 February 2018
                 </span>
               </li>
             {% elif search === d.claimant.nino or search === '3'%}
@@ -65,58 +65,10 @@
                   Unfinished claim
                 </a>
                 <span class="result-meta">
-                  {{d.claimant.fullName}}
+                  Timothy Bowman
                 </span>
                 <span class="result-meta">
-                  {{d.claimant.dateOfClaim}}
-                </span>
-              </li>
-            {% elif search === d.claimant.nino or search === '4' %}
-              <li class="result">
-                <a href="/{{feature}}/{{sprint}}/task-list/4" class="result-link">
-                  Unfinished claim
-                </a>
-                <span class="result-meta">
-                  {{d.claimant.fullName}}
-                </span>
-                <span class="result-meta">
-                  {{d.claimant.dateOfClaim}}
-                </span>
-              </li>
-            {% elif search === d.claimant.nino or search === '5' %}
-              <li class="result">
-                <a href="/{{feature}}/{{sprint}}/claim/5/disallowed" class="result-link">
-                  Disallowed claim
-                </a>
-                <span class="result-meta">
-                  {{d.claimant.fullName}}
-                </span>
-                <span class="result-meta">
-                  {{d.claimant.dateOfClaim}}
-                </span>
-              </li>
-            {% elif search === d.claimant.nino or search === '6'%}
-              <li class="result">
-                <a href="/{{feature}}/{{sprint}}/task-list/6" class="result-link">
-                  Unfinished claim
-                </a>
-                <span class="result-meta">
-                  {{d.claimant.fullName}}
-                </span>
-                <span class="result-meta">
-                  {{d.claimant.dateOfClaim}}
-                </span>
-              </li>
-            {% elif search === d.claimant.nino or search === '7'%}
-              <li class="result">
-                <a href="/{{feature}}/{{sprint}}/claim/7/disallowed" class="result-link">
-                  Disallowed claim
-                </a>
-                <span class="result-meta">
-                  {{d.claimant.fullName}}
-                </span>
-                <span class="result-meta">
-                  {{d.claimant.dateOfClaim}}
+                  15 February 2018
                 </span>
               </li>
             {% else %}

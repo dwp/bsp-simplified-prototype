@@ -16,33 +16,23 @@ router.use((req, res, next) => {
 })
 
 router.get('/', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/start-a-new-claim/1`)
+  res.redirect(`/${req.feature}/${req.sprint}/start-a-new-claim`)
 })
 
 // -----------------------------------------------------------------------------
 // Find a claim ----------------------------------------------------------------
 // -----------------------------------------------------------------------------
-router.get('/find-a-claim/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  const d = require(`./_dummy-data/${scenario}.json`)
+router.get('/find-a-claim/', (req, res) => {
   const nino = req.query.findNino
   const search = nino ? nino.toUpperCase() : ''
-  res.render(`${req.feature}/${req.sprint}/find-a-claim/find-a-claim`, {scenario, search, d})
+  res.render(`${req.feature}/${req.sprint}/find-a-claim/find-a-claim`, {search})
 })
 
 // -----------------------------------------------------------------------------
 // Start a new claim -----------------------------------------------------------
 // -----------------------------------------------------------------------------
-router.get('/start-a-new-claim/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  res.render(`${req.feature}/${req.sprint}/capture/claim-details`, {scenario, start: true})
-})
-router.post('/start-a-new-claim/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  if (scenario === '1' || scenario === '2') {
-    return res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
-  }
-  res.redirect(`/${req.feature}/${req.sprint}/cis/cis-warning/${scenario}`)    
+router.get('/start-a-new-claim/', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/capture/claim-details`, {start: true})
 })
 
 // -----------------------------------------------------------------------------
