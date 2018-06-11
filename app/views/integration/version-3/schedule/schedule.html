@@ -55,7 +55,42 @@
         </h2>
 
         <ul class="schedule">
-          <li class="payment">No payments issued.
+          {% if schedule.payments.backdated %}
+            <li class="payment">
+              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
+                {{schedule.payments.backdated}}
+              </time>
+              <strong class="amount">
+                £{{'350' if d.schedule.rate == 'Higher' else '100'}}
+              </strong>
+              <span class="type">
+                Backdated monthly payments
+                {% if data.payment['account-number'] %}
+                  <br />
+                  {{d.payment.accountNumber}}
+                </span>
+                {% endif %}
+            </li>
+          {% endif %}
+
+          {% if schedule.payments.initial %}
+            <li class="payment">
+              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE11">
+                {{schedule.payments.initial}}
+              </time>
+              <strong class="amount">
+                £{{'3,500' if d.schedule.rate == 'Higher' else '2,500'}}
+              </strong>
+              <span class="type">
+                Initial payment
+                {% if data.payment['account-number'] %}
+                  <br />
+                  {{d.payment.accountNumber}}
+                </span>
+                {% endif %}
+              </span>
+            </li>
+          {% endif %}
         </ul>
       </div>
 
@@ -70,34 +105,6 @@
         </h2>
 
         <ul class="schedule">
-          {% if schedule.payments.initial %}
-            <li class="payment">
-              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE11">
-                Due {{schedule.payments.initial}}
-              </time>
-              <strong class="amount">
-                £{{'3,500' if d.schedule.rate == 'Higher' else '2,500'}}
-              </strong>
-              <span class="type">
-                Initial payment
-              </span>
-            </li>
-          {% endif %}
-
-          {% if schedule.payments.backdated %}
-            <li class="payment">
-              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
-                Due {{schedule.payments.backdated}}
-              </time>
-              <strong class="amount">
-                £{{'350' if d.schedule.rate == 'Higher' else '100'}}
-              </strong>
-              <span class="type">
-                Backdated monthly payments
-              </span>
-            </li>
-          {% endif %}
-
           {% for payment in schedule.payments.monthly %}
             <li class="payment">
               <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
@@ -106,6 +113,13 @@
               <strong class="amount">
                 £{{'350' if d.schedule.rate == 'Higher' else '100'}}
               </strong>
+              {% if data.payment['account-number'] %}
+                <span class="type">
+                  <br />
+                  {{data.payment['account-number']}}
+                </span>
+              </span>
+              {% endif %}
             </li>
           {% endfor %}
         </ul>
