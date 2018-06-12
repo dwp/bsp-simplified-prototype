@@ -62,7 +62,7 @@ router.post('/confirm-details/:scenario', (req, res) => {
 // -----------------------------------------------------------------------------
 router.get('/claim/:scenario/:decision', (req, res) => {
   const decision = req.params.decision
-  const scenario = req.session.data.scenario || '1'
+  const scenario = req.params.scenario || '1'
   const d = require(`./_dummy-data/${scenario}.json`)
   res.render(`${req.feature}/${req.sprint}/completed-claim/${decision}`, {scenario, decision, d})
 })
