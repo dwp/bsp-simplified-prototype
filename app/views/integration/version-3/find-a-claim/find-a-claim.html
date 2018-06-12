@@ -35,7 +35,7 @@
         {% if search %}
           <h2 class="heading-medium">Results</h2>
           <ul class="search-results">
-            {% if search === d.claimant.nino or search === '1' %}
+            {% if search === 'ZQ123123X' or search === '1' %}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/claim/1/allowed" class="result-link">
                   Allowed claim
@@ -47,7 +47,7 @@
                   30 April 2018
                 </span>
               </li>
-            {% elif search === d.claimant.nino or search === '2'%}
+            {% elif search === 'AQ123123X' or search === '2'%}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/task-list/2" class="result-link">
                   Unfinished claim
@@ -59,10 +59,10 @@
                   15 February 2018
                 </span>
               </li>
-            {% elif search === d.claimant.nino or search === '3'%}
+            {% elif search === 'JQ123123X' or search === '3'%}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/task-list/3" class="result-link">
-                  Unfinished claim
+                  Finished claim
                 </a>
                 <span class="result-meta">
                   Timothy Bowman

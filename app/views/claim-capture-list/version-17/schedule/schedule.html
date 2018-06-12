@@ -9,15 +9,15 @@
   {% include '../custom-nav.html' %}
 {% endblock %}
 
-{% if scenario === '1' %}
-  {% set scheduleStatus = 'schedule-status-active' %}
-  {% set scheduleType = 'active' %}
-{% elif scenario === '2' %}
+{% if scenario === '2' %}
   {% set scheduleStatus = '' %}
   {% set scheduleType = 'finished' %}
-{% else %}
+{% elif scenario === '3' %}
   {% set scheduleStatus = 'schedule-status-stopped' %}
   {% set scheduleType = 'stopped' %}
+{% else %}
+  {% set scheduleStatus = 'schedule-status-active' %}
+  {% set scheduleType = 'active' %}
 {% endif %}
 
 {% block content %}
@@ -35,10 +35,14 @@
           {{scheduleType}}
         </span>
 
-        <div class="alert-default panel panel-border-narrow">
-          To see this claim, you'll need to look it up in the Document
-          Repository System (DRS).
-        </div>
+        {% if scenario === '1' or scenario === '2' or scenario === '3' %}
+          <div class="alert-default panel panel-border-narrow">
+            To see this claim, you'll need to look it up in the Document
+            Repository System (DRS).
+          </div>
+        {% else %}
+          {% include './_subnav-schedule.html' %}
+        {% endif %}
         
         {% if scenario === '3' %}
           <h2 class="heading-large">Log</h2>
