@@ -38,4 +38,25 @@ router.get('/schedule/:scenario', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {d, scenario})
 })
 
+// -----------------------------------------------------------------------------
+// Task list -------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.get('/task-list/:scenario', (req, res) => {
+  const scenario = req.params.scenario || '1'
+  const d = require(`./_dummy-data/${scenario}.json`)
+  const t = require(`./_dummy-data/_test.json`)
+  res.render(`${req.feature}/${req.sprint}/task-list/task-list`, {scenario, d, t})
+})
+
+// -----------------------------------------------------------------------------
+// Completed claims ------------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.get('/claim/:scenario/:decision', (req, res) => {
+  const decision = req.params.decision
+  const scenario = req.params.scenario
+  const d = require(`./_dummy-data/${scenario}.json`)
+  const t = require(`./_dummy-data/_test.json`)
+  res.render(`${req.feature}/${req.sprint}/completed-claim/${decision}`, {scenario, decision, d, t})
+})
+
 module.exports = router

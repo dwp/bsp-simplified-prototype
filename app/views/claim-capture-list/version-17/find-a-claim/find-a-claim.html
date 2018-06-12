@@ -35,31 +35,67 @@
         {% if search %}
           <h2 class="heading-medium">Results</h2>
           <ul class="search-results">
-            {% if search === "JQ123456Q" or search === '1' %}
+            {% if search === "EQ123456Q" or search === '1' %}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/schedule/1" class="result-link">
                   Active payment schedule
                 </a>
                 <span class="result-meta">
-                  Natasha Andrews
+                  Angela Meadows
                 </span>
               </li>
-            {% elif search === "MQ123456Q" or search === '2'%}
+            {% elif search === "TQ123123X" or search === '2'%}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/schedule/2" class="result-link">
                   Finished payment schedule
                 </a>
                 <span class="result-meta">
-                  Daniel James Owen
+                  Kenneth Brown
                 </span>
               </li>
-            {% elif search === d.claimant.nino or search === '3'%}
+            {% elif search === "GQ456321X" or search === '3'%}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/schedule/3" class="result-link">
                   Stopped payment schedule
                 </a>
                 <span class="result-meta">
-                  {{d.claimant.fullName}}
+                  Katherine Stapleton
+                </span>
+              </li>
+            {% elif search === "SQ123456X" or search === '4'%}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/4/allowed" class="result-link">
+                  Allowed claim
+                </a>
+                <span class="result-meta">
+                  Antonia Ward
+                </span>
+                <span class="result-meta">
+                  20 May 2018
+                </span>
+              </li>
+            {% elif search === "UQ654321X" or search === '5'%}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/claim/5/disallowed" class="result-link">
+                  Disallowed claim
+                </a>
+                <span class="result-meta">
+                  Ben Cavanagh
+                </span>
+                <span class="result-meta">
+                  6 February 2018
+                </span>
+              </li>
+            {% elif search === "HQ123123X" or search === '6'%}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/task-list/6" class="result-link">
+                  Unfinished claim
+                </a>
+                <span class="result-meta">
+                  Ben Cavanagh
+                </span>
+                <span class="result-meta">
+                  9 May 2018
                 </span>
               </li>
             {% else %}
