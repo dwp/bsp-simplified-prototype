@@ -8,7 +8,7 @@
       Dependent children
     </dt>
     <dd class="data-summary-value">
-      {{data.children['dependant-children'] or d.children['dependant-children']}}
+      {{d.children.dependant}}
       <span class="change-link">
         <a href="/{{feature}}/{{sprint}}/capture/children-details/{{scenario}}">
           Change <span class="visually-hidden"> dependent children details</span>
@@ -20,7 +20,7 @@
       Pregnant
     </dt>
     <dd class="data-summary-value">
-      {{data.children.pregnant or d.children.pregnant}}
+      {{d.children.pregnant}}
       <span class="change-link">
         <a href="/{{feature}}/{{sprint}}/capture/children-details/{{scenario}}">
           Change <span class="visually-hidden"> whether the claimant was pregnant</span>

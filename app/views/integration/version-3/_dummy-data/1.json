@@ -30,7 +30,8 @@
     "dateOfDeath": "15 February 2018"  
   },
   "children": {
-    "dependant": "No"
+    "dependant": "No",
+    "pregnant": "No"
   },
   "payment": {
     "nameOnAccount": "Mr W Graves",
