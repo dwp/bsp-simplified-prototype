@@ -46,7 +46,7 @@
             </dd>
           </dl>
           {% if data.chb.answer !== 'Yes' %}
-            <a class="change-link" href="/{{feature}}/{{sprint}}/capture/change-rate/{{scenario}}">
+            <a class="change-link" href="/{{feature}}/{{sprint}}/capture/change-rate/{{scenario}}?returnToSchedule=true">
               Change <span class="visually-hidden"> rate</span>
             </a>
           {% endif %}

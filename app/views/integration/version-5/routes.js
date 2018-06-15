@@ -59,11 +59,16 @@ router.get('/schedule/:scenario', (req, res) => {
 // -----------------------------------------------------------------------------
 router.get('/capture/change-rate/:scenario', (req, res) => {
   const scenario = req.params.scenario
-  res.render(`${req.feature}/${req.sprint}/capture/change-rate`, {scenario})
+  const returnToSchedule = req.query.returnToSchedule
+  res.render(`${req.feature}/${req.sprint}/capture/change-rate`, {scenario, returnToSchedule})
 })
 router.post('/capture/change-rate/:scenario', (req, res) => {
   const scenario = req.params.scenario
-  res.redirect(`/${req.feature}/${req.sprint}/schedule/${scenario}`)
+  const returnToSchedule = req.query.returnToSchedule
+  if (returnToSchedule) {
+    return res.redirect(`/${req.feature}/${req.sprint}/schedule/${scenario}`)
+  }
+  res.redirect(`/${req.feature}/${req.sprint}/claim/${scenario}/allowed`)
 })
 
 module.exports = router
