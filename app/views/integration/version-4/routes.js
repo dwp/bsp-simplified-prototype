@@ -92,6 +92,9 @@ router.post('/capture/:page/:scenario', (req, res) => {
   if (schedule) {
     return res.redirect(`/${req.feature}/${req.sprint}/schedule/${scenario}`)
   }
+  if (scenario === '2') {
+    return res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
+  }
   res.redirect(`/${req.feature}/${req.sprint}/claim/${scenario}/allowed`)
 })
 
