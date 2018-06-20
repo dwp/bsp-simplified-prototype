@@ -91,7 +91,9 @@
     </dd>
   </dl>
 
-  <a class="change-link" href="/{{feature}}/{{sprint}}/capture/change-rate/{{scenario}}">
-    Change <span class="visually-hidden"> evidence for Child Benefit</span>
-  </a>
+  {% if not data.stopReason %}
+    <a class="change-link" href="/{{feature}}/{{sprint}}/capture/change-rate/{{scenario}}">
+      Change <span class="visually-hidden"> evidence for Child Benefit</span>
+    </a>
+  {% endif %}
 </section>

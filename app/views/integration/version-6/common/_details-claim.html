@@ -1,15 +1,9 @@
 <section class="details-wrapper">
   <h2 class="heading-medium th">
     Claimant details
-    {% if scenario === '1' or scenario === '2' %}
-      <p class="verified-badge verified">
-        Verified
-      </p>
-    {% elif not decision %}
-      <p class="verified-badge">
-        Not verified
-      </p>
-    {% endif %}
+    <p class="verified-badge verified">
+      Verified
+    </p>
   </h2>
 
   <dl class="details-summary">
@@ -48,26 +42,14 @@
       {{d.claimant.sex}}
     </dd>
   </dl>
-
-  {% if scenario !== '1' and scenario !== '2' %}
-    <a class="change-link" href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
-      Change <span class="visually-hidden"> claimant details</span>
-    </a>
-  {% endif %}
 </section>
 
 <section class="details-wrapper">
   <h2 class="heading-medium th">
     Deceased details
-    {% if scenario === '1' or scenario === '2' %}
-      <p class="verified-badge verified">
-        Verified
-      </p>
-    {% elif not decision %}
-      <p class="verified-badge">
-        Not verified
-      </p>
-    {% endif %}
+    <p class="verified-badge verified">
+      Verified
+    </p>
   </h2>
 
   <dl class="details-summary">
@@ -100,7 +82,7 @@
     </dd>
   </dl>
 
-    {% if scenario !== '1' and scenario !== '2' %}
+    {% if not data.stopReason %}
       <a class="change-link" href="/{{feature}}/{{sprint}}/capture/claim-details/{{scenario}}">
         Change <span class="visually-hidden"> deceased details</span>
       </a>

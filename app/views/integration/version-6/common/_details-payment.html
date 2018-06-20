@@ -35,7 +35,9 @@
     {% endif %}
   </dl>
 
-  <a class="change-link" href="/{{feature}}/{{sprint}}/capture/payment-details/{{scenario}}{{'?schedule=true' if page === 'schedule'}}">
-    Change <span class="visually-hidden"> name on account</span>
-  </a>
+  {% if not data.stopReason %}
+    <a class="change-link" href="/{{feature}}/{{sprint}}/capture/payment-details/{{scenario}}{{'?schedule=true' if page === 'schedule'}}">
+      Change <span class="visually-hidden"> name on account</span>
+    </a>
+  {% endif %}
 </section>

@@ -55,20 +55,15 @@ router.get('/schedule/:scenario', (req, res) => {
 })
 
 // -----------------------------------------------------------------------------
-// Change rate -----------------------------------------------------------------
+// Prevent payments ------------------------------------------------------------
 // -----------------------------------------------------------------------------
-router.get('/capture/change-rate/:scenario', (req, res) => {
+router.get('/schedule/:scenario/prevent-payments', (req, res) => {
   const scenario = req.params.scenario
-  const returnToSchedule = req.query.returnToSchedule
-  res.render(`${req.feature}/${req.sprint}/capture/change-rate`, {scenario, returnToSchedule})
+  res.render(`${req.feature}/${req.sprint}/capture/prevent-payments`, {scenario})
 })
-router.post('/capture/change-rate/:scenario', (req, res) => {
+router.post('/schedule/:scenario/prevent-payments', (req, res) => {
   const scenario = req.params.scenario
-  const returnToSchedule = req.query.returnToSchedule
-  if (returnToSchedule) {
-    return res.redirect(`/${req.feature}/${req.sprint}/schedule/${scenario}`)
-  }
-  res.redirect(`/${req.feature}/${req.sprint}/claim/${scenario}/allowed`)
+  res.redirect(`/${req.feature}/${req.sprint}/schedule/${scenario}`)
 })
 
 module.exports = router

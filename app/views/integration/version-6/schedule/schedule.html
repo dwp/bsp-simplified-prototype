@@ -21,8 +21,8 @@
         </span>
           {{d.claimant.nino}}
         </h1>
-        <span class="schedule-status schedule-status-active">
-          Active
+        <span class="schedule-status schedule-status-{{'stopped' if data.stopReason else 'active'}}">
+          {{'Stopped' if data.stopReason else 'Active'}}
         </span>
         
 
@@ -45,7 +45,7 @@
             <dd class="details-summary-value">
             </dd>
           </dl>
-          {% if data.chb.answer !== 'Yes' %}
+          {% if data.chb.answer !== 'Yes' and not data.stopReason %}
             <a class="change-link" href="/{{feature}}/{{sprint}}/capture/change-rate/{{scenario}}?returnToSchedule=true">
               Change <span class="visually-hidden"> rate</span>
             </a>
@@ -101,7 +101,7 @@
             <h2 class="heading-small th">
               Planned payments
               <p class="payment-link">
-                <a href="#">
+                <a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}/prevent-payments">
                   Prevent payments
                 </a>
               </p>
