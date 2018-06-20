@@ -5,11 +5,11 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mrs",    
-    "fullName": "Angela Meadows",
-    "nino": "EQ123456Q",
+    "title": "MrS",    
+    "fullName": "Antonia Ward",
+    "nino": "SQ123456X",
     "dateOfClaim": "20 May 2018",
-    "dateOfBirth": "18 June 1971",
+    "dateOfBirth": "29 September 1974",
     "sex": "Female",    
     "currentAddress": {
       "number": "41",
@@ -22,9 +22,9 @@
   },
   "partner": {
     "title": "Mr",
-    "fullName": "David Meadows",
-    "nino": "RX123456X",
-    "dateOfDeath": "3 June 2018"  
+    "fullName": "Mark Ward",
+    "nino": "KQ654321X",
+    "dateOfDeath": "17 January 2018"  
   },
   "children": {
     "dependant-children": "No",
@@ -34,14 +34,14 @@
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs A Meadows",
+    "nameOnAccount": "Mrs A Ward",
     "sortCode": "123456",
-    "accountNumber": "12345678",
+    "accountNumber": "12341234",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "15 September 2000"
+    "dateOfMarriage": "13 December 2006"
   },
   "conts": {
     "year": "2015"
