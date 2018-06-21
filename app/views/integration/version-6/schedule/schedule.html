@@ -99,12 +99,16 @@
 
           <div class="column-one-half">
             <h2 class="heading-small th">
-              Planned payments
-              <p class="payment-link">
-                <a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}/prevent-payments">
-                  Prevent payments
-                </a>
-              </p>
+              {% if data.stopReason %}
+                Prevented Payments
+              {% else %}
+                Planned Payments
+                <p class="payment-link">
+                  <a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}/prevent-payments">
+                    Prevent payments
+                  </a>
+                </p>
+              {% endif %}
             </h2>
 
             <ul class="schedule">
