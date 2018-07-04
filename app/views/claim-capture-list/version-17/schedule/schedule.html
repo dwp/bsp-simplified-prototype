@@ -37,13 +37,12 @@
 
         {% if scenario === '1' or scenario === '2' or scenario === '3' %}
           <div class="alert-default panel panel-border-narrow">
-            To see this claim, you'll need to look it up in the Document
-            Repository System (DRS).
+            Payment schedule only. 
           </div>
         {% else %}
           {% include './_subnav-schedule.html' %}
         {% endif %}
-        
+
         {% if scenario === '3' %}
           <h2 class="heading-large">Log</h2>
           <h3 class="bold">Schedule stopped on 16 June 2018</h2>
