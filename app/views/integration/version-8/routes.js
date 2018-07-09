@@ -66,10 +66,12 @@ router.get('/claim/:scenario/:decision', (req, res) => {
 // Schedule --------------------------------------------------------------------
 // -----------------------------------------------------------------------------
 router.get('/schedule/:scenario', (req, res) => {
+  const uprated = req.query.uprated
+  console.log(uprated)
   const scenario = req.params.scenario
   const d = require(`./_dummy-data/${scenario}.json`)
   const schedule = require(`./_dummy-data/_schedule.json`)
-  res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {scenario, d, schedule})
+  res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {scenario, d, schedule, uprated})
 })
 
 // -----------------------------------------------------------------------------
@@ -99,7 +101,7 @@ router.get('/confirm-details/children-details/:scenario', (req, res) => {
 })
 router.post('/confirm-details/children-details/:scenario', (req, res) => {
   const scenario = req.params.scenario
-  res.redirect(`/${req.feature}/${req.sprint}/schedule/${scenario}`)
+  res.redirect(`/${req.feature}/${req.sprint}/schedule/${scenario}?uprated=true`)
 })
 
 // -----------------------------------------------------------------------------

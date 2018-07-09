@@ -1,5 +1,18 @@
 <h2 class="heading-medium">Claim history</h2>
 <ul class="log">
+  {% if data.uprated %}
+    <li>
+      <span class="line"></span>
+      <h3 class="bold">Rate changed</h3>
+      <span class="paused-until-date">10 July 2018</span>
+    </li>
+    <li>
+      <span class="line"></span>
+      <h3 class="bold">Child Benefit verified</h3>
+      <span class="paused-until-date">by John Doe</span><br />
+      <span class="paused-until-date">10 July 2018</span>
+    </li>
+  {% endif %}
   <li>
     <span class="line"></span>
     <h3 class="bold">Claim allowed</h3>

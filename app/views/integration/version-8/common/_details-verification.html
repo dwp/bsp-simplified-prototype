@@ -84,14 +84,15 @@
         Child Benefit number
       </dt>
       <dd class="details-summary-value">
-        {% if data.chb.answer === 'Yes' %}
-          {{data.chb.answer}}
+        {% if data.uprated %}
+          {{data.chb.number}}
         {% else %}
           Missing
         {% endif %}
       </dd>
     </dl>
-    <a class="change-link" href="/{{feature}}/{{sprint}}/change-rate/chb-number/{{scenario}}">
+
+    <a class="change-link" href="/{{feature}}/{{sprint}}/child-benefit/{{scenario}}">
       Change <span class="visually-hidden"> evidence for Child Benefit</span>
     </a>
   </section>

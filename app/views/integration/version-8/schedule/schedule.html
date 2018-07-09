@@ -14,6 +14,14 @@
     <div class="grid-row">
       <div class="column-two-thirds">
         
+        {% if uprated %}
+          <br />
+          <div class="alert-success panel panel-border-narrow">
+            <h2 class="heading-small">Rate changed</h2>
+            <p>Payment schedule will now be paid at the higher rate.</p> 
+          </div>
+        {% endif %}
+
         <h1 class="heading-xlarge schedule-heading">
         <span class="heading-secondary">
           {{d.claimant.fullName}}
@@ -34,10 +42,14 @@
 
         <dl class="data-summary">
           <dt class="data-summary-key">
-            {{d.schedule.rate}}
+            {% if data.uprated %}
+              Higher
+            {% else %}
+              Standard
+            {% endif %}
           </dt>
           <dd class="data-summary-value">
-            {% if d.schedule.rate === 'Standard' %}
+            {% if not data.uprated %}
               <span class="change-link">
                 <a href="/{{feature}}/{{sprint}}/change-rate/change-rate/{{scenario}}">
                   Change <span class="visually-hidden"> rate</span>
@@ -55,7 +67,66 @@
         </h2>
 
         <ul class="schedule">
-          <li class="payment">No payments issued.
+          <li class="payment">
+            <time>
+              4 July 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time>
+              4 June 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time>
+              4 May 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time>
+              4 April 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time>
+              4 March 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+          <li class="payment">
+            <time>
+              4 February 2018
+            </time>
+            <strong class="amount">
+              £100
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time>
+              4 January 2018
+            </time>
+            <strong class="amount">
+              £2,500
+            </strong>
+            <span class="type">
+              Initial payment
+            </span>
+          </li>
         </ul>
       </div>
 
@@ -70,44 +141,137 @@
         </h2>
 
         <ul class="schedule">
-          {% if schedule.payments.initial %}
+          {% if data.uprated %}
             <li class="payment">
-              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE11">
-                Due {{schedule.payments.initial}}
+              <time>
+                11 July 2018
               </time>
               <strong class="amount">
-                £{{'3,500' if d.schedule.rate == 'Higher' else '2,500'}}
+                £1,000
               </strong>
               <span class="type">
-                Initial payment
+                Backdated initial payment
               </span>
             </li>
-          {% endif %}
-
-          {% if schedule.payments.backdated %}
             <li class="payment">
-              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
-                Due {{schedule.payments.backdated}}
+              <time>
+                11 July 2018
               </time>
               <strong class="amount">
-                £{{'350' if d.schedule.rate == 'Higher' else '100'}}
+                £750
               </strong>
               <span class="type">
                 Backdated monthly payments
               </span>
             </li>
           {% endif %}
+          <li class="payment">
+            <time>
+              Due 4 August 2018
+            </time>
+            <strong class="amount">
+              £{{'350' if data.uprated else '100'}}
+            </strong>
+          </li>
 
-          {% for payment in schedule.payments.monthly %}
-            <li class="payment">
-              <time datetime="2017-12-03T00:00:00.000Z" data-date="DATE10">
-                Due {{payment}}
-              </time>
-              <strong class="amount">
-                £{{'350' if d.schedule.rate == 'Higher' else '100'}}
-              </strong>
-            </li>
-          {% endfor %}
+          <li class="payment">
+            <time>
+              Due 4 September 2018
+            </time>
+            <strong class="amount">
+              £{{'350' if data.uprated else '100'}}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time>
+              Due 4 October 2018
+            </time>
+            <strong class="amount">
+              £{{'350' if data.uprated else '100'}}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time>
+              Due 4 November 2018
+            </time>
+            <strong class="amount">
+              £{{'350' if data.uprated else '100'}}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time>
+              Due 4 December 2018
+            </time>
+            <strong class="amount">
+              £{{'350' if data.uprated else '100'}}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time>
+              Due 4 January 2019
+            </time>
+            <strong class="amount">
+              £{{'350' if data.uprated else '100'}}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time>
+              Due 4 February 2019
+            </time>
+            <strong class="amount">
+              £{{'350' if data.uprated else '100'}}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time>
+              Due 4 March 2019
+            </time>
+            <strong class="amount">
+              £{{'350' if data.uprated else '100'}}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time>
+              Due 4 April 2019
+            </time>
+            <strong class="amount">
+              £{{'350' if data.uprated else '100'}}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time>
+              Due 4 May 2019
+            </time>
+            <strong class="amount">
+              £{{'350' if data.uprated else '100'}}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time>
+              Due 4 June 2019
+            </time>
+            <strong class="amount">
+              £{{'350' if data.uprated else '100'}}
+            </strong>
+          </li>
+
+          <li class="payment">
+            <time>
+              Due 4 July 2019
+            </time>
+            <strong class="amount">
+              £{{'350' if data.uprated else '100'}}
+            </strong>
+          </li>
         </ul>
       </div>
     </div>

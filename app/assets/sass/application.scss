@@ -87,6 +87,11 @@ $pale-blue: #EDF4F7;
   border-color: $light-blue;
 }
 
+.alert-success {
+  background-color: mix(white, $turquoise, 90%);
+  border-color: $turquoise;
+}
+
 .reject {
   background: $error-colour;
 }
