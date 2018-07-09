@@ -2,7 +2,7 @@
 {% set showDetails = true %}
 
 {% block page_title %}
-  Allowed claim for {{d.claimant.fullName}}
+  View claim
 {% endblock %}
 
 {% block customNav %}
@@ -18,22 +18,23 @@
           <span class="heading-secondary">{{d.claimant.fullName}}</span>
           {{d.claimant.nino}}
         </h1>
-        <span class="claim-status claim-status-active">
-          Allowed
+        <span class="claim-status claim-status-rejected">
+          Disallowed
         </span>
-
-        <div class="subnav">
-          <ul>
-            <li class="active">Claim details</li>
-            <li><a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}">Payment schedule</a></li>
+        
+        <div class="panel panel-border-narrow">
+          <h2 class="heading-small">This claim was disallowed because:</h2>
+          <ul class="list list-bullet">
+            <li>
+              the claim was more than 21 months late
+            </li>
           </ul>
         </div>
 
         {% include '../common/_details-claim.html' %}
         {# {% include '../common/_details-contact.html' %} #}
-        {% include '../common/_details-children.html' %}
-        {% include '../common/_details-payment.html' %}
-        {% include '../common/_details-verification.html' %}
+        {# {% include '../common/_details-children.html' %} #}
+        {# {% include '../common/_details-payment.html' %} #}
       </div>
 
       <div class="column-one-third">

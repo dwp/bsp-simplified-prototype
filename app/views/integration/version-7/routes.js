@@ -40,63 +40,13 @@ router.get('/late-claim/:scenario', (req, res) => {
 })
 router.post('/late-claim/:scenario', (req, res) => {
   const scenario = req.params.scenario
-  res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
-})
-
-// -----------------------------------------------------------------------------
-// Task list -------------------------------------------------------------------
-// -----------------------------------------------------------------------------
-router.get('/task-list/:scenario', (req, res) => {
-  const scenario = req.params.scenario
-  const d = require(`./_dummy-data/${scenario}.json`)
-  res.render(`${req.feature}/${req.sprint}/task-list/task-list`, {scenario, d})
-})
-
-// -----------------------------------------------------------------------------
-// Capture ---------------------------------------------------------------------
-// -----------------------------------------------------------------------------
-router.get('/capture/:page/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  const page = req.params.page
-  res.render(`${req.feature}/${req.sprint}/capture/${page}`, {scenario})
-})
-router.post('/capture/:page/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  addToLog(req, 'capture')
-  res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
-})
-
-// -----------------------------------------------------------------------------
-// Verification ----------------------------------------------------------------
-// -----------------------------------------------------------------------------
-router.get('/verify/:page/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  const page = req.params.page
-  res.render(`${req.feature}/${req.sprint}/verify/${page}`, {scenario})
-})
-router.post('/verify/:page/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  addToLog(req, 'verify')
-  res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
-})
-
-// -----------------------------------------------------------------------------
-// Confirm details -------------------------------------------------------------
-// -----------------------------------------------------------------------------
-router.get('/confirm-details/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  const d = require(`./_dummy-data/${scenario}.json`)
-  res.render(`${req.feature}/${req.sprint}/confirm-details/confirm-details`, {scenario, d})
-})
-router.post('/confirm-details/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  res.redirect(`/${req.feature}/${req.sprint}/decisions/${scenario}/allowed`)
+  res.redirect(`/${req.feature}/${req.sprint}/decisions/disallowed/${scenario}`)
 })
 
 // -----------------------------------------------------------------------------
 // Decisions -------------------------------------------------------------------
 // -----------------------------------------------------------------------------
-router.get('/decisions/:scenario/:decision', (req, res) => {
+router.get('/decisions/:decision/:scenario', (req, res) => {
   const scenario = req.params.scenario
   const decision = req.params.decision
   res.render(`${req.feature}/${req.sprint}/decisions/${decision}`, {scenario})

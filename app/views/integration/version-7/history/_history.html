@@ -1,31 +1,13 @@
 <h2 class="heading-medium">Claim history</h2>
 <ul class="log">
-  {% for entry in data.log | reverse %}
-    <li>
-      <span class="line"></span>
-      <h3 class="bold">{{entry.title}}</h3>
-      {% if entry.caption %}<p>{{entry.caption|safe}}</p>{% endif %}
-      <span class="paused-until-date">by {{data.currentUser or 'John Doe'}}</span><br />
-      <span class="paused-until-date">{{todayDate}}</span>
-    </li>
-  {% endfor %}
   <li>
     <span class="line"></span>
-    <h3 class="bold">Death verified</h3>
-    <span class="paused-until-date">by CIS</span><br />
+    <h3 class="bold">Claim disallowed</h3>
+    <span class="paused-until-date">by John Doe</span><br />
     <span class="paused-until-date">12 June 2018</span>
-  </li>
-  <li>
-    <span class="line"></span>
-    <h3 class="bold">Deceased details verified</h3>
-    <span class="paused-until-date">by CIS</span><br />
-    <span class="paused-until-date">12 June 2018</span>
-  </li>
-  <li>
-    <span class="line"></span>
-    <h3 class="bold">Claimant details verified</h3>
-    <span class="paused-until-date">by CIS</span><br />
-    <span class="paused-until-date">12 June 2018</span>
+    <p>
+      Claim was more than 12 months late.
+    </p>
   </li>
   <li>
     <span class="line"></span>

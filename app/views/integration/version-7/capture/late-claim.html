@@ -14,23 +14,23 @@
       <div class="column-two-thirds">
         <a href="/{{feature}}/{{sprint}}/start-a-new-claim/{{scenario}}" class="link-back">Back</a>
 
+
         <h1 class="heading-large">
-          This is a late claim
+          You are about to disallow this claim
         </h1>
 
-        <p class="lede">
-          You entered the date of claim as <span class="bold">{{d.claimant.dateOfClaim}}</span>
-        </p>
-
-        <p class="text">
-          Payments will only be backdated for 3 months.
+        <p>
+          You're about to disallow this claim because more than 21 months late. 
+          You entered the date of claim as <span class="bold">{{d.claimant.dateOfClaim}}</span>. 
         </p>
 
         <form method="post">
           <div class="form-group">
-            <button class="button" type="submit">Continue</button>
+            <button class="button button-red">Disallow claim</button>
           </div>
         </form>
+        
+        <a href="/{{feature}}/{{sprint}}/start-a-new-claim/{{scenario}}">Cancel</a>
       </div>
     </div>
   </main>
