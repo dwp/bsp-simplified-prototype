@@ -58,18 +58,9 @@ router.get('/decisions/:decision/:scenario', (req, res) => {
 router.get('/claim/:scenario/:decision', (req, res) => {
   const decision = req.params.decision
   const scenario = req.session.data.scenario || '1'
+  const testDate = getTestDate()
   const d = require(`./_dummy-data/${scenario}.json`)
-  res.render(`${req.feature}/${req.sprint}/completed-claim/${decision}`, {scenario, decision, d})
-})
-
-// -----------------------------------------------------------------------------
-// Schedule --------------------------------------------------------------------
-// -----------------------------------------------------------------------------
-router.get('/schedule/:scenario', (req, res) => {
-  const scenario = req.params.scenario
-  const d = require(`./_dummy-data/${scenario}.json`)
-  const schedule = require(`./_dummy-data/_schedule.json`)
-  res.render(`${req.feature}/${req.sprint}/schedule/schedule`, {scenario, d, schedule})
+  res.render(`${req.feature}/${req.sprint}/completed-claim/${decision}`, {scenario, decision, d, testDate})
 })
 
 module.exports = router
