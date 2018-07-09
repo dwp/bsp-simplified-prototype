@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Late claim
+{% endblock %}
+
+{% block customNav %}
+  {% include '../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/start-a-new-claim/{{scenario}}" class="link-back">Back</a>
+
+        <h1 class="heading-large">
+          This is a late claim
+        </h1>
+
+        <p class="lede">
+          You entered the date of claim as <span class="bold">{{d.claimant.dateOfClaim}}</span>
+        </p>
+
+        <p class="text">
+          Payments will only be backdated for 3 months.
+        </p>
+
+        <form method="post">
+          <div class="form-group">
+            <button class="button" type="submit">Continue</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}
