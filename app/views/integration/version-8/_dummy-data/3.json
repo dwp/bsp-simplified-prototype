@@ -5,12 +5,12 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mrs",    
-    "fullName": "Katherine Stapleton",
-    "nino": "GQ456321X",
+    "title": "Mr",    
+    "fullName": "Andrew Parker",
+    "nino": "AA123456X",
     "dateOfClaim": "15 May 2018",
-    "dateOfBirth": "11 December 1982",
-    "sex": "Female",    
+    "dateOfBirth": "18 September 1976",
+    "sex": "Male",    
     "currentAddress": {
       "number": "17",
       "street": "Seaworth Grove",
@@ -21,27 +21,27 @@
     "contact": {}
   },
   "partner": {
-    "title": "Mr",
-    "fullName": "Andrew Stapleton",
-    "nino": "YQ123456X",
-    "dateOfDeath": "9 May 2018"  
+    "title": "Mrs",
+    "fullName": "Tanya Parker",
+    "nino": "BB123456X",
+    "dateOfDeath": "25 June 2018"  
   },
   "children": {
-    "dependant-children": "No",
+    "dependant-children": "Yes",
     "pregnant": "No"
   },
   "chb": {
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs K Stapleton",
-    "sortCode": "654321",
-    "accountNumber": "12341234",
+    "nameOnAccount": "Mr A Parker",
+    "sortCode": "097616",
+    "accountNumber": "56782049",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "6 December 2006"
+    "dateOfMarriage": "4 May 2009"
   },
   "conts": {
     "year": "1975"

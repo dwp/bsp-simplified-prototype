@@ -35,40 +35,40 @@
         {% if search %}
           <h2 class="heading-medium">Results</h2>
           <ul class="search-results">
-            {% if search === d.claimant.nino or search === '1' %}
+            {% if search === 'CC123456X' or search === '1' %}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/claim/1/allowed" class="result-link">
                   Allowed claim
                 </a>
                 <span class="result-meta">
-                  1
+                  Mrs Samantha Moore
                 </span>
                 <span class="result-meta">
-                  doc
+                  2 July 2018
                 </span>
               </li>
-            {% elif search === d.claimant.nino or search === '2'%}
+            {% elif search === 'CC123456Z' or search === '2'%}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/claim/2/allowed" class="result-link">
                   Allowed claim
                 </a>
                 <span class="result-meta">
-                  2
+                  Mrs Samantha Moore
                 </span>
                 <span class="result-meta">
-                  doc
+                  2 July 2018
                 </span>
               </li>
-            {% elif search === d.claimant.nino or search === '3'%}
+            {% elif search === 'AA123456X' or search === '3'%}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/claim/3/allowed" class="result-link">
                   Allowed claim
                 </a>
                 <span class="result-meta">
-                  3
+                  Mr Andrew Parker
                 </span>
                 <span class="result-meta">
-                  doc
+                  3 July 2018
                 </span>
               </li>
             {% else %}

@@ -6,10 +6,10 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Angela Meadows",
-    "nino": "EQ123456Q",
-    "dateOfClaim": "20 May 2018",
-    "dateOfBirth": "18 June 1971",
+    "fullName": "Sophie Carter",
+    "nino": "TZ123456X",
+    "dateOfClaim": "10 July 2018",
+    "dateOfBirth": "17 September 1975",
     "sex": "Female",    
     "currentAddress": {
       "number": "41",
@@ -22,9 +22,9 @@
   },
   "partner": {
     "title": "Mr",
-    "fullName": "David Meadows",
-    "nino": "RX123456X",
-    "dateOfDeath": "3 June 2018"  
+    "fullName": "David Carter",
+    "nino": "KZ123456X",
+    "dateOfDeath": "6 July 2016"  
   },
   "children": {
     "dependant-children": "No",

@@ -6,10 +6,10 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Angela Meadows",
-    "nino": "EQ123456Q",
-    "dateOfClaim": "20 May 2018",
-    "dateOfBirth": "18 June 1971",
+    "fullName": "Samantha Moore",
+    "nino": "CC123456X",
+    "dateOfClaim": "2 July 2018",
+    "dateOfBirth": "10 February 1982",
     "sex": "Female",    
     "currentAddress": {
       "number": "41",
@@ -22,9 +22,9 @@
   },
   "partner": {
     "title": "Mr",
-    "fullName": "David Meadows",
-    "nino": "RX123456X",
-    "dateOfDeath": "3 June 2018"  
+    "fullName": "Harry Moore",
+    "nino": "DD123456X",
+    "dateOfDeath": "15 June 2018"  
   },
   "children": {
     "dependant-children": "No",
@@ -34,14 +34,14 @@
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs A Meadows",
-    "sortCode": "123456",
-    "accountNumber": "12345678",
+    "nameOnAccount": "Mrs S Moore",
+    "sortCode": "549137",
+    "accountNumber": "63020279",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "15 September 2000"
+    "dateOfMarriage": "27 October 2012"
   },
   "conts": {
     "year": "2015"

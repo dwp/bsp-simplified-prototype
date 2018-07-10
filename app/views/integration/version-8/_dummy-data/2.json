@@ -1,32 +1,30 @@
 {
   "claim": {
     "status": "Paused",
-    "weeksSinceClaim": 5,
+    "weeksSinceClaim": 4,
     "class": ""
   },
   "claimant": {
-    "title": "Mr",    
-    "fullName": "Kenneth Brown",
-    "nino": "TQ123123X",
-    "dateOfClaim": "9 May 2018",
-    "dateOfBirth": "17 February 1965",
-    "sex": "Male",
+    "title": "Mrs",    
+    "fullName": "Samantha Moore",
+    "nino": "CC123456X",
+    "dateOfClaim": "2 July 2018",
+    "dateOfBirth": "10 February 1982",
+    "sex": "Female",    
     "currentAddress": {
-      "number": "12",
-      "street": "Roundpark Lane",
-      "town": "Manchester",
-      "county": "Greater Manchester",
-      "postcode": "M9 4QR"
+      "number": "41",
+      "street": "Blackberry Drive",
+      "town": "Doncaster",
+      "county": "Yorkshire",
+      "postcode": "DB3 4NT"
     },
-    "contact": {
-      "home": "04612934173"
-    }
+    "contact": {}
   },
   "partner": {
-    "title": "Mrs",
-    "fullName": "Jessica Brown",
-    "nino": "PX654321X",
-    "dateOfDeath": "9 May 2018"  
+    "title": "Mr",
+    "fullName": "Harry Moore",
+    "nino": "DD123456X",
+    "dateOfDeath": "15 June 2018"  
   },
   "children": {
     "dependant-children": "No",
@@ -36,14 +34,14 @@
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mr Kenneth Brown",
-    "sortCode": "456321",
-    "accountNumber": "87654321",
+    "nameOnAccount": "Mrs S Moore",
+    "sortCode": "549137",
+    "accountNumber": "63020279",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "5 March 2001"
+    "dateOfMarriage": "27 October 2012"
   },
   "conts": {
     "year": "2015"
@@ -53,4 +51,3 @@
     "number": 18
   }
 }
-
