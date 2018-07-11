@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% set showDetails = true %}
+{% set schedule = true %}
 
 {% block page_title %}
   Payment schedule
@@ -13,14 +14,6 @@
   <main id="content" role="main" class="group">
     <div class="grid-row">
       <div class="column-two-thirds">
-        
-        {% if uprated %}
-          <br />
-          <div class="alert-success panel panel-border-narrow">
-            <h2 class="heading-small">Rate changed</h2>
-            <p>Payment schedule will now be paid at the higher rate.</p> 
-          </div>
-        {% endif %}
 
         <h1 class="heading-xlarge schedule-heading">
         <span class="heading-secondary">
@@ -58,6 +51,9 @@
             {% endif %}
           </dd>
         </dl>
+      </div>
+      <div class="column-one-third">
+        {% include './../history/_history.html' %}
       </div>
     </div>
     <div class="grid-row">
