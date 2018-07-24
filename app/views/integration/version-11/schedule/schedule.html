@@ -21,10 +21,9 @@
         </span>
           {{d.claimant.nino}}
         </h1>
-        <span class="schedule-status schedule-status-{{'stopped' if data.stopReason else 'active'}}">
-          {{'Stopped' if data.stopReason else 'Active'}}
+        <span class="schedule-status schedule-status-{{'paused' if data.stopReason else 'active'}}">
+          {{'Paused' if data.stopReason else 'Active'}}
         </span>
-        
 
         {% include './_subnav-schedule.html' %}
 
@@ -63,7 +62,7 @@
         <div class="grid-row">
           <div class="column-one-half">
             <h2 class="heading-small th">
-              Payments
+              Payments issued
             </h2>
 
             <ul class="schedule">
@@ -100,9 +99,14 @@
           <div class="column-one-half">
             <h2 class="heading-small th">
               {% if data.stopReason %}
-                Prevented Payments
+                Paused payments
+                <p class="payment-link">
+                  <a href="#">
+                    Resume payments
+                  </a>
+                </p>
               {% else %}
-                Planned Payments
+                Planned payments
                 <p class="payment-link">
                   <a href="/{{feature}}/{{sprint}}/schedule/{{scenario}}/prevent-payments">
                     Prevent payments

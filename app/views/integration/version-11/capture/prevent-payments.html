@@ -1,5 +1,4 @@
 {% extends "layout.html" %}
-{% set startActive = 'active' %}
 
 {% block page_title %}
   Prevent payments
@@ -30,9 +29,37 @@
                   <label for="scenario-1">The claimant died</label>
                 </div>
 
-                <div class="multiple-choice">
+                <div class="multiple-choice" data-target="imprisoned-date">
                   <input id="scenario-2" type="radio" name="stopReason" value="2">
                   <label for="scenario-2">The claimant has been imprisoned</label>
+                </div>
+                <div class="panel panel-border-narrow js-hidden" id="imprisoned-date">
+                  <div class="form-group">
+                    <fieldset>
+                      <legend>
+                        <span class="form-label-bold">
+                          What date were they imprisoned?
+                        </span>
+                      </legend>
+                  
+                      <div class="form-date">
+                        <div class="form-group form-group-day">
+                          <label class="form-label" for="imprisoned-day">Day</label>
+                          <input class="form-control" id="imprisoned-day" name="imprisoned-day" type="number" pattern="[0-9]*" min="0" max="31" aria-describedby="dob-hint">
+                        </div>
+                  
+                        <div class="form-group form-group-month">
+                          <label class="form-label" for="imprisoned-month">Month</label>
+                          <input class="form-control" id="imprisoned-month" name="imprisoned-month" type="number" pattern="[0-9]*" min="0" max="12">
+                        </div>
+                        
+                        <div class="form-group form-group-year">
+                          <label class="form-label" for="imprisoned-year">Year</label>
+                          <input class="form-control" id="imprisoned-year" name="imprisoned-year" type="number" pattern="[0-9]*" min="0" max="2016">
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
                 </div>
 
                 <div class="multiple-choice">
@@ -48,6 +75,11 @@
                 <div class="multiple-choice">
                   <input id="scenario-5" type="radio" name="stopReason" value="5">
                   <label for="scenario-5">The claim needs to be paid manually</label>
+                </div>
+
+                <div class="multiple-choice">
+                  <input id="scenario-6" type="radio" name="stopReason" value="6">
+                  <label for="scenario-6">The payments are being rejected</label>
                 </div>
               </fieldset>
             </div>
