@@ -3,20 +3,14 @@
   {% if data.stopReason %}
     <li>
       <span class="line"></span>
-      <h3 class="bold">Payment schedule stopped</h3>
+      <h3 class="bold">Payment schedule paused</h3>
       <span class="paused-until-date">by John Doe</span><br />
       <span class="paused-until-date">26 June 2018</span>
       <p>
-        {% if data.stopReason === '1' %}
-          The claimant died.
-        {% elif data.stopReason === '2' %}
+        {% if data.stopReason === '2' %}
           The claimant has been imprisoned.
-        {% elif data.stopReason === '3' %}
-          The claim was set up in error.
-        {% elif data.stopReason === '4' %}
-          The claim is fraudulent.
         {% else %}
-          The claim needs to be paid manually.
+          The payments are being rejected.
         {% endif %}
 
       </p>
