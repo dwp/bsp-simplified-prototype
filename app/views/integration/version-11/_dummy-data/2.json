@@ -1,56 +1,56 @@
 {
   "claim": {
     "status": "Paused",
-    "weeksSinceClaim": 5,
+    "weeksSinceClaim": 3,
     "class": ""
   },
   "claimant": {
     "title": "Mr",    
-    "fullName": "Kenneth Brown",
-    "nino": "TQ123123X",
-    "dateOfClaim": "9 May 2018",
-    "dateOfBirth": "17 February 1965",
-    "sex": "Male",
+    "fullName": "Timothy Bowman",
+    "nino": "JQ123123X",
+    "dateOfClaim": "4 April 2018",
+    "dateOfBirth": "18 July 1972",
+    "sex": "Male",    
     "currentAddress": {
-      "number": "12",
-      "street": "Roundpark Lane",
-      "town": "Manchester",
-      "county": "Greater Manchester",
-      "postcode": "M9 4QR"
+      "number": "118",
+      "street": "Barber Close",
+      "town": "Eastwood",
+      "county": "Nottingham",
+      "postcode": "NT5 2RT"
     },
     "contact": {
-      "home": "04612934173"
+      "home": "0131481367"
     }
   },
   "partner": {
     "title": "Mrs",
-    "fullName": "Jessica Brown",
-    "nino": "PX654321X",
-    "dateOfDeath": "9 May 2018"  
+    "fullName": " Suzanne Bowman",
+    "nino": "YQ123456X",
+    "dateOfDeath": "9 March 2017"  
   },
   "children": {
     "dependant-children": "No",
     "pregnant": "No"
   },
   "chb": {
-    "answer": "No"
+    "answer": "Yes",
+    "number": "CHB123456AB"
   },
   "payment": {
-    "nameOnAccount": "Mr Kenneth Brown",
-    "sortCode": "456321",
-    "accountNumber": "87654321",
+    "nameOnAccount": "Mr T Bowman",
+    "sortCode": "665544",
+    "accountNumber": "11223344",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "5 March 2001"
+    "dateOfMarriage": "5 October 2009"
   },
   "conts": {
-    "year": "2015"
+    "year": "1975"
   },
   "schedule": {
-    "rate": "Standard",
+    "rate": "Higher",
     "number": 18
   }
 }
-

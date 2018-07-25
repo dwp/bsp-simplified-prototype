@@ -6,7 +6,7 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Angela Meadows",
+    "fullName": "Mercedes McKenna",
     "nino": "EQ123456Q",
     "dateOfClaim": "20 May 2018",
     "dateOfBirth": "18 June 1971",
@@ -22,7 +22,7 @@
   },
   "partner": {
     "title": "Mr",
-    "fullName": "David Meadows",
+    "fullName": "David McKenna",
     "nino": "RX123456X",
     "dateOfDeath": "3 June 2018"  
   },
@@ -34,7 +34,7 @@
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs A Meadows",
+    "nameOnAccount": "Mrs M McKenna",
     "sortCode": "123456",
     "accountNumber": "12345678",
     "country": "United Kingdom"
