@@ -67,3 +67,13 @@
 
   </main>
 {% endblock %}
+
+{% block page_scripts %}
+  <script>
+    $(document).ready(function () {
+      var $log = $('.log')
+      var a = $log.find('li').slice(0, 4)
+      $log.html(a)
+    })
+  </script>
+{% endblock %}

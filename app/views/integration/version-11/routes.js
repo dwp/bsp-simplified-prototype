@@ -57,11 +57,12 @@ router.get('/schedule/:scenario', (req, res) => {
 // -----------------------------------------------------------------------------
 // Resume payments -------------------------------------------------------------
 // -----------------------------------------------------------------------------
-router.get('/schedule/:scenario/resume-payments', (req, res) => {
+router.get('/schedule/:scenario/:page', (req, res) => {
   const scenario = req.params.scenario
-  res.render(`${req.feature}/${req.sprint}/capture/resume-payments`, {scenario})
+  const page = req.params.page
+  res.render(`${req.feature}/${req.sprint}/capture/${page}`, {scenario})
 })
-router.post('/schedule/:scenario/resume-payments', (req, res) => {
+router.post('/schedule/:scenario/:page', (req, res) => {
   const scenario = req.params.scenario
   res.redirect(`/${req.feature}/${req.sprint}/capture/${scenario}/confirm-details`)
 })
@@ -74,6 +75,27 @@ router.get('/capture/:scenario/confirm-details', (req, res) => {
   res.render(`${req.feature}/${req.sprint}/capture/confirm-details`, {scenario})
 })
 router.post('/capture/:scenario/confirm-details', (req, res) => {
+  const scenario = req.params.scenario
+  res.redirect(`/${req.feature}/${req.sprint}/schedule/${scenario}`)
+})
+
+// -----------------------------------------------------------------------------
+// Change payment details ------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.get('/capture/payment-details/:scenario', (req, res) => {
+  const scenario = req.params.scenario
+  res.render(`${req.feature}/${req.sprint}/capture/payment-details`, {scenario})
+})
+router.post('/capture/payment-details/:scenario', (req, res) => {
+  const scenario = req.params.scenario
+  res.redirect(`/${req.feature}/${req.sprint}/capture/confirm-payment-details/${scenario}`)
+})
+
+router.get('/capture/confirm-payment-details/:scenario', (req, res) => {
+  const scenario = req.params.scenario
+  res.render(`${req.feature}/${req.sprint}/capture/confirm-payment-details`, {scenario})
+})
+router.post('/capture/confirm-payment-details/:scenario', (req, res) => {
   const scenario = req.params.scenario
   res.redirect(`/${req.feature}/${req.sprint}/schedule/${scenario}`)
 })
