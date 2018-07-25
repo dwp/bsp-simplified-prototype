@@ -7,8 +7,8 @@
       <span class="paused-until-date">by John Doe</span><br />
       <span class="paused-until-date">26 June 2018</span>
       <p>
-        {% if data.stopReason === '2' %}
-          The claimant has been imprisoned.
+        {% if data.stopReason and scenario === '2' %}
+          The claimant was imprisoned on<br />1 August 2017.
         {% else %}
           The payments are being rejected.
         {% endif %}
