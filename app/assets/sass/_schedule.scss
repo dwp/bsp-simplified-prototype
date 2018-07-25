@@ -63,6 +63,13 @@
   position: relative;
 }
 
+.payment-suspended {
+  background-color: $grey-4;
+  border-left: 5px solid $border-colour;
+  color: $secondary-text-colour;
+  padding-left: 10px;
+}
+
 .amount {
   display: block;
   font-weight: 700;

@@ -55,13 +55,25 @@ router.get('/schedule/:scenario', (req, res) => {
 })
 
 // -----------------------------------------------------------------------------
-// Prevent payments ------------------------------------------------------------
+// Resume payments -------------------------------------------------------------
 // -----------------------------------------------------------------------------
-router.get('/schedule/:scenario/prevent-payments', (req, res) => {
+router.get('/schedule/:scenario/resume-payments', (req, res) => {
   const scenario = req.params.scenario
-  res.render(`${req.feature}/${req.sprint}/capture/prevent-payments`, {scenario})
+  res.render(`${req.feature}/${req.sprint}/capture/resume-payments`, {scenario})
 })
-router.post('/schedule/:scenario/prevent-payments', (req, res) => {
+router.post('/schedule/:scenario/resume-payments', (req, res) => {
+  const scenario = req.params.scenario
+  res.redirect(`/${req.feature}/${req.sprint}/capture/${scenario}/confirm-details`)
+})
+
+// -----------------------------------------------------------------------------
+// Confirm details -------------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.get('/capture/:scenario/confirm-details', (req, res) => {
+  const scenario = req.params.scenario
+  res.render(`${req.feature}/${req.sprint}/capture/confirm-details`, {scenario})
+})
+router.post('/capture/:scenario/confirm-details', (req, res) => {
   const scenario = req.params.scenario
   res.redirect(`/${req.feature}/${req.sprint}/schedule/${scenario}`)
 })
