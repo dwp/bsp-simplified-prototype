@@ -16,16 +16,21 @@
 
 
         <h1 class="heading-large">
-          You can't process this claim right now
+          You cannot process this claim right now
         </h1>
       
         <p class="text">
-          Somebody has already made a claim for Bereavement Support Payment using 
-          the deceased persons National Insurance number:<br />
+          Someone has already made a claim for Bereavement Support Payment using 
+          this deceased person’s National Insurance number.
+        </p>
+        <p>
+          <span class="bold">Deceased person’s National Insurance number</span><br />
           <span class="bold">{{d.partner.nino}}</span>.
         </p>
         
-        <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/allowed">View the other claim using this National Insurance number</a>
+        <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/allowed">
+          View the other claim that uses this National Insurance number
+        </a>
       </div>
     </div>
   </main>
