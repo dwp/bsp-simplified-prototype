@@ -24,7 +24,7 @@
     "title": "Mr",
     "fullName": "David Carter",
     "nino": "KZ123456X",
-    "dateOfDeath": "6 July 2016"  
+    "dateOfDeath": "6 July 2018"  
   },
   "children": {
     "dependant-children": "No",
@@ -34,7 +34,7 @@
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs A Meadows",
+    "nameOnAccount": "Mrs S Carter",
     "sortCode": "123456",
     "accountNumber": "12345678",
     "country": "United Kingdom"
