@@ -5,53 +5,55 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mr",
-    "fullName": "David Jones",
-    "nino": "AA123456X",
-    "dateOfClaim": "30 April 2018",
-    "dateOfBirth": "19 August 1968",
-    "sex": "Male",    
+    "title": "Mrs",
+    "fullName": "Monica Witten",
+    "nino": "MQ123456X",
+    "dateOfClaim": "10 August 2018",
+    "dateOfBirth": "14 May 1970",
+    "sex": "Female",    
     "currentAddress": {
-      "number": "34",
-      "street": "Farm View",
-      "town": "Shipley",
-      "county": "Leeds",
-      "postcode": "LS2 7QB"
+      "number": "12",
+      "street": "Heaton Way",
+      "town": "Liverpool",
+      "county": "",
+      "postcode": "L1 1JD"
     },
-    "contact": {
-      "mobile": "07123477777",
-      "email": "djones@sky.com"
-    }
+    "contact": {}
   },
   "partner": {
-    "title": "Mrs",
-    "fullName": "Claire Jones",
-    "nino": "AB123456X",
-    "dateOfDeath": "29 April 2018"  
+    "title": "Mr",
+    "fullName": "Andrew Witten",
+    "nino": "RB665544X",
+    "dateOfDeath": "2 August 2018"  
   },
   "children": {
-    "dependant": "No"
+    "dependant": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "Yes",
+    "number": "12345678AB"
   },
   "payment": {
-    "nameOnAccount": "Mr David Jones",
+    "nameOnAccount": "Mr M Witton",
     "sortCode": "112233",
     "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Marriage certificate",
-    "dateOfMarriage": "4 July 1995"
+    "dateOfMarriage": "19 March 1999"
   },
   "conts": {
     "year": "2015"
   },
   "schedule": {
-    "rate": "Standard",   
+    "rate": "Higher",   
     "payments": {
       "number": 18,
-      "initial": "6 February 2018",
-      "backdated": "6 February 2018",
-      "firstMonthly": "29 February 2018"
+      "initial": "21 August 2018",
+      "backdated": "21 August 2018",
+      "firstMonthly": "2 September 2018"
     }
   }
 }

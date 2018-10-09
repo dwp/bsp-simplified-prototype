@@ -5,6 +5,8 @@
     </a>
     {% if data.dependents.form === 'Yes' or bf %}
       <strong class="task-completed" >Completed</strong>
+    {% elif data.dependents.form === 'No' or bf %}
+      <strong class="task-incomplete" >Not complete</strong>
     {% endif %}
   </li>
 {% endif %}

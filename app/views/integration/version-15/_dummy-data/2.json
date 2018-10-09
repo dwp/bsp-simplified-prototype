@@ -1,0 +1,53 @@
+{
+  "claim": {
+    "status": "Disallowed",
+    "weeksSinceClaim": 3,
+    "class": ""
+  },
+  "claimant": {
+    "title": "Mrs",    
+    "fullName": "Monica Witten",
+    "nino": "MQ123456X",
+    "dateOfClaim": "10 August 2018",
+    "dateOfBirth": "14 May 1970",
+    "sex": "Female",
+    "currentAddress": {
+      "number": "27",
+      "street": "Eden View",
+      "town": "Peterborough",
+      "county": "",
+      "postcode": "PE7 1BA"
+    },
+    "contact": {}
+  },
+  "partner": {
+    "title": "Mr",
+    "fullName": "Andrew Witten",
+    "nino": "KB665544X",
+    "dateOfDeath": "2 August 2018"  
+  },
+  "children": {
+    "dependant-children": "Yes",
+    "pregnant": "No"
+  },
+  "chb": {
+    "answer": "No"
+  },
+  "payment": {
+    "nameOnAccount": "Mrs M Witton",
+    "sortCode": "112233",
+    "accountNumber": "12341234",
+    "country": "United Kingdom"
+  },
+  "marriage": {
+    "where": "Certificate",
+    "dateOfMarriage": "19 March 1999"
+  },
+  "conts": {
+    "year": "2015"
+  },
+  "schedule": {
+    "rate": "Higher",
+    "number": 18
+  }
+}
