@@ -18,10 +18,10 @@
         <h1 class="heading-large">
           You're about to disallow this claim
         </h1>
-      
+
         <p class="text">
-          You entered the date of death as <span class="bold">{{d.partner.dateOfDeath}}</span>. 
-          This means the claim is more than 21 months late.
+          You entered the date of death as <span class="bold">{{d.partner.dateOfDeath}}</span>.
+          This means the claim is too late - it has been made more than 21 months after the date of death.
         </p>
 
         <form method="post">
@@ -29,7 +29,7 @@
             <button class="button button-red">Disallow claim</button>
           </div>
         </form>
-        
+
         <a href="/{{feature}}/{{sprint}}/start-a-new-claim/{{scenario}}">Cancel</a>
       </div>
     </div>
