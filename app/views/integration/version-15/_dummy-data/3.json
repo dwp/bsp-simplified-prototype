@@ -6,28 +6,28 @@
   },
   "claimant": {
     "title": "Mrs",    
-    "fullName": "Cassandra Billingham",
-    "nino": "TX123456X",
-    "dateOfClaim": "12 August 2018",
-    "dateOfBirth": "19 October 1971",
+    "fullName": "Atquia Patel",
+    "nino": "KT123456X",
+    "dateOfClaim": "8 October 2018",
+    "dateOfBirth": "14 June 1985",
     "sex": "Female",    
     "currentAddress": {
-      "number": "115",
-      "street": "Rue Laurant",
-      "town": "Marnee Vallee",
-      "county": "France",
-      "postcode": "75116"
+      "number": "882",
+      "street": "Allemand",
+      "town": "",
+      "county": "Germany",
+      "postcode": ""
     },
     "contact": {}
   },
   "partner": {
     "title": "Mr",
-    "fullName": " Ian Billingham",
-    "nino": "SQ123456X",
-    "dateOfDeath": "2 August 2018"  
+    "fullName": " Kiran Patel",
+    "nino": "TC123456X",
+    "dateOfDeath": "2 October 2018"  
   },
   "children": {
-    "dependant-children": "Yes",
+    "dependant-children": "No",
     "pregnant": "No"
   },
   "chb": {
@@ -41,7 +41,7 @@
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "12 April 2000"
+    "dateOfMarriage": "15 September 2016"
   },
   "conts": {
     "year": "1975"

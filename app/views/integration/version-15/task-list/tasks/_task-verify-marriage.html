@@ -4,7 +4,7 @@
   </a>
   {% if data.marriage.verified === 'Yes' %}
     <strong class="task-completed">Completed</strong>
-  {% elif data.marriage.verified === 'No' or bf %}
+  {% elif data.marriage.verified === 'No' or (data.wait and data.wait !== 'disallow') %}
     <strong class="task-incomplete">Not complete</strong>
   {% endif %}
 </li>

@@ -17,7 +17,6 @@
     <div class="column-two-thirds">
       <a href="/{{feature}}/{{sprint}}/task-list/{{scenario}}" class="link-back">Back</a>
 
-
       <form method="post" autocomplete="off">
         <div class="form-group" id="can-you-verify-marriage">
           <div class="form-group">
@@ -119,6 +118,18 @@
                   />
                   <label for="enirs">
                     In the National Insurance Recording System (eNIRS)
+                  </label>
+                </div>
+
+                <div class="multiple-choice">
+                  <input
+                    id="rvu"
+                    name="marriage[what-evidence][]"
+                    type="checkbox"
+                    value="RVU"
+                  />
+                  <label for="rvu">
+                    From the Relationship Verification Unit (RVU)
                   </label>
                 </div>
               </fieldset>

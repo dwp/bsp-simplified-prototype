@@ -129,12 +129,12 @@
   </h2>
 
   <dl class="data-summary">
-    {% if data.conts.enough or data.conts.enoughForeign %}
+    {% if data.conts.enoughUK or data.conts.enoughForeign %}
       <dt class="data-summary-key">
-        Country
+        Year
       </dt>
       <dd class="data-summary-value">
-        {{data.conts.year or data.conts.country or '2015'}}
+        2015
         <span class="change-link">
           <a href="/{{feature}}/{{sprint}}/verify/contributions/{{scenario}}">
             Change <span class="visually-hidden"> year used for National Insurance contributions</span>

@@ -27,6 +27,56 @@ router.get('/settings', (req, res) => {
 })
 router.post('/settings', (req, res) => {
   const scenario = req.body.scenario || '1'
+  if (scenario === '2' || scenario === '3') {
+    req.session.data = {
+      "children": {
+        "dependant-children": "No",
+        "pregnant": "No"
+      },
+      "log": [
+        {
+          "title": "Children details entered",
+          "caption": ""
+        },
+        {
+          "title": "Payment details entered"
+        },
+        {
+          "title": "Relationship checked",
+          "caption": "Evidence of marriage or civil partnership needed.<br />"
+        },
+        {
+          "title": "Referred to RVU",
+          "caption": ""
+        }
+      ],
+      "payment-details-provided": "Yes",
+      "bank-type": "bank",
+      "payment": {
+        "name-on-account": "",
+        "sort-code": "",
+        "account-number": "",
+        "roll-number": ""
+      },
+      "death": {
+        "form": "Yes"
+      },
+      "marriage": {
+        "form": "Yes",
+        "verified": "No",
+        "dateOfMarriage": {
+          "day": "",
+          "month": "",
+          "year": ""
+        }
+      },
+      "wait": "rvu",
+      "conts": {
+        "enoughUK": "Yes",
+        "country": ""
+      }
+    }
+  }
   res.redirect(`/${req.feature}/${req.sprint}/start-a-new-claim/${scenario}`)
 })
 
@@ -89,18 +139,13 @@ router.post('/capture/:page/:scenario', (req, res) => {
 // -----------------------------------------------------------------------------
 // Verification ----------------------------------------------------------------
 // -----------------------------------------------------------------------------
-router.get('/verify/contributions/:scenario', (req, res) => {
-  const scenario = req.params.scenario || '1'
-  const claimType = req.session.data.claimType || 'uk'
-  res.render(`${req.feature}/${req.sprint}/verify/contributions-overseas`, {scenario})
-})
-router.post('/verify/contributions/:scenario', (req, res) => {
+router.post('/verify/relationship/:scenario', (req, res) => {
   const scenario = req.params.scenario
-  if (scenario === '2') {
-    return res.redirect(`/${req.feature}/${req.sprint}/decisions/are-you-sure/${scenario}`)
+  if (req.body.marriage.verified === 'Yes') {
+    addToLog(req, 'marriage')
+    return res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
   }
-  addToLog(req, 'verify')
-  res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
+  res.redirect(`/${req.feature}/${req.sprint}/evidence-needed/${scenario}`)
 })
 router.get('/verify/:page/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
@@ -113,13 +158,16 @@ router.post('/verify/:page/:scenario', (req, res) => {
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
 
-router.get('/will-be-standard/:scenario', (req, res) => {
+router.get('/evidence-needed/:scenario', (req, res) => {
   const scenario = req.params.scenario
-  res.render(`${req.feature}/${req.sprint}/will-be-standard`, {scenario})
+  res.render(`${req.feature}/${req.sprint}/capture/evidence-needed`, {scenario})
 })
-router.post('/will-be-standard/:scenario', (req, res) => {
+router.post('/evidence-needed/:scenario', (req, res) => {
   const scenario = req.params.scenario
-  addToLog(req, 'willBeStandard')
+  if (req.body.wait === 'disallow' || scenario === '2') {
+    return res.redirect(`/${req.feature}/${req.sprint}/decisions/are-you-sure/${scenario}`)
+  }
+  addToLog(req, 'evidence')
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
 
@@ -141,7 +189,8 @@ router.post('/confirm-details/:scenario', (req, res) => {
 // -----------------------------------------------------------------------------
 router.get('/decisions/are-you-sure/:scenario', (req, res) => {
   const scenario = req.params.scenario
-  res.render(`${req.feature}/${req.sprint}/decisions/are-you-sure`, {scenario})
+  const d = require(`./_dummy-data/${scenario}.json`)
+  res.render(`${req.feature}/${req.sprint}/decisions/are-you-sure`, {scenario, d})
 })
 router.post('/decisions/are-you-sure/:scenario', (req, res) => {
   const scenario = req.params.scenario

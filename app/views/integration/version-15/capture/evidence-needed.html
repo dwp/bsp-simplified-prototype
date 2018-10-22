@@ -11,48 +11,60 @@
 
 {% block content %}
   <main id="content" role="main" class="group">
-    {% if scenario !== '1' and scenario !== '2' %}
-      {% include '../common/_notification-banner.html' %}
-    {% endif %}
-    
     <div class="grid-row">
       <div class="column-two-thirds">
+        <a href="/{{feature}}/{{sprint}}/verify/relationship/1" class="link-back">Back</a>
+
         <h1 class="heading-large">
           Evidence needed
         </h1>
 
         <p class="text">
-          You can't process this claim until the Industrial Injury Disablement 
-          Benefit (IIDB) team have seen evidence.
+          You cannot process this claim until you have seen evidence of their 
+          marriage or civil partnership.
         </p>
         
         <form method="post" autocomplete="off">
           <div class="form-group">
             <fieldset>
               <legend class="heading-small">
-                Do you want to allow more time?
+                How do you want to collect this evidence?
               </legend>
               <div class="multiple-choice">
                 <input
-                  id="wait-yes"
+                  id="wait-claimant"
                   type="radio"
                   name="wait"
-                  value="Yes"
+                  value="claimant"
                 />
-                <label for="wait-yes">
-                  Yes, wait a bit longer
+                <label for="wait-claimant">
+                  Wait for the claimant to send it in
                 </label>
               </div>
 
               <div class="multiple-choice">
                 <input
-                  id="wait-no"
+                  id="wait-rvu"
                   type="radio"
                   name="wait"
-                  value="No"
+                  value="rvu"
                 />
-                <label for="wait-no">
-                  No, disallow the claim
+                <label for="wait-rvu">
+                  Contact the Relationship Verification Unit (RVU)
+                </label>
+              </div>
+
+              <p class="form-block">or</p>
+              
+              <div class="multiple-choice">
+                <input
+                  id="wait-disallow"
+                  type="radio"
+                  name="wait"
+                  value="disallow"
+                />
+                <label for="wait-disallow">
+                  No evidence has been found – disallow this claim
                 </label>
               </div>
             </fieldset>

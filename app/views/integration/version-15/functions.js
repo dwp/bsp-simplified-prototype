@@ -3,12 +3,18 @@ const format = require('date-fns/format')
 function addToLog (req, type) {
   const log = req.session.data.log || []
   const page = req.params.page || 'contributions'
-  if (type === 'willBeStandard') {
-    const entry = {
-      title: 'Dependent children checked',
-      caption: 'Not enough evidence for higher rate.'
-    }
+  if (type === 'marriage') {
+    const entry = {title: 'Relationship verified', caption: ''}
     log.push(entry)
+  }
+  if (type === 'evidence') {
+    const entry = {title: 'Relationship checked', caption: ''}
+    entry.caption += 'Evidence of marriage or civil partnership needed.<br />'
+    log.push(entry)
+    if (req.body.wait === 'rvu') {
+      const entry = {title: 'Referred to RVU', caption: ''}
+      log.push(entry)
+    }
   }
   if (type === 'capture') {
     const details = page.split('-')

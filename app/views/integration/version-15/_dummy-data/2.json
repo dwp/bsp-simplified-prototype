@@ -5,43 +5,43 @@
     "class": ""
   },
   "claimant": {
-    "title": "Mrs",    
-    "fullName": "Monica Witten",
-    "nino": "MQ123456X",
-    "dateOfClaim": "10 August 2018",
-    "dateOfBirth": "14 May 1970",
-    "sex": "Female",
+    "title": "Mr",    
+    "fullName": "Ricci Prakesh",
+    "nino": "WA123456X",
+    "dateOfClaim": "10 November 2018",
+    "dateOfBirth": "13 June 1974",
+    "sex": "Male",
     "currentAddress": {
-      "number": "27",
-      "street": "Eden View",
-      "town": "Peterborough",
-      "county": "",
-      "postcode": "PE7 1BA"
+      "number": "6",
+      "street": "Banos Pequeno",
+      "town": "",
+      "county": "Spain",
+      "postcode": ""
     },
     "contact": {}
   },
   "partner": {
-    "title": "Mr",
-    "fullName": "Andrew Witten",
-    "nino": "KB665544X",
-    "dateOfDeath": "2 August 2018"  
+    "title": "Mrs",
+    "fullName": "Priya Prakesh",
+    "nino": "BN123456A",
+    "dateOfDeath": "2 October 2018"  
   },
   "children": {
-    "dependant-children": "Yes",
+    "dependant-children": "No",
     "pregnant": "No"
   },
   "chb": {
     "answer": "No"
   },
   "payment": {
-    "nameOnAccount": "Mrs M Witton",
+    "nameOnAccount": "Mr R Prakesh",
     "sortCode": "112233",
     "accountNumber": "12341234",
     "country": "United Kingdom"
   },
   "marriage": {
     "where": "Certificate",
-    "dateOfMarriage": "19 March 1999"
+    "dateOfMarriage": "9 August 2010"
   },
   "conts": {
     "year": "2015"
