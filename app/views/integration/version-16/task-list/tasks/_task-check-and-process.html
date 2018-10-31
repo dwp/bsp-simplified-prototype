@@ -2,7 +2,7 @@
 {% if 
   data.children
   and (data.conts.enoughUK === 'Yes' or data.conts.verified === 'Yes' or data.conts.enoughForeign === 'Yes') 
-  and data.marriage.verified === 'Yes' 
+  and (data.marriage.verified === 'Yes' or data.rvu.response === 'Yes')
   and data['payment-details-provided'] === 'Yes'
 %}
   <li>

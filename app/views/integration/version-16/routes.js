@@ -151,7 +151,7 @@ router.post('/verify/rvu/:scenario', (req, res) => {
 router.get('/verify/relationship/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
   const referred = req.session.data.referred
-  if (referred) {
+  if (referred || scenario === '2' || scenario === '3') {
     return res.redirect(`/${req.feature}/${req.sprint}/verify/rvu/${scenario}`)
   }
   res.render(`${req.feature}/${req.sprint}/verify/relationship`, {scenario})
