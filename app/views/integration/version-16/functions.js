@@ -45,8 +45,7 @@ function addToLog (req, type) {
       const details = page.split('-')
       if (page === 'child-benefit') {
         const entry = {
-          title: 'Dependent children verified',
-          caption: req.session.data.dependents['what-evidence']
+          title: 'Dependent children verified'
         }
         log.push(entry)
       } else {

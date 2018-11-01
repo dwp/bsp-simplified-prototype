@@ -191,18 +191,7 @@
     </h2>
 
     <dl class="data-summary">
-      <dt class="data-summary-key">
-        Evidence
-      </dt>
-      <dd class="data-summary-value">
-        {{data.dependents['what-evidence'] or 'Evidence of dependent children needed'}}
-        <span class="change-link">
-          <a href="/{{feature}}/{{sprint}}/verify/child-benefit/{{scenario}}">
-            Change <span class="visually-hidden"> Dependent children verification</span>
-          </a>
-        </span>
-      </dd>
-      {% if data.chb.number %}
+      {% if data.chb %}
         <dt class="data-summary-key">
           Child Benefit number
         </dt>
@@ -211,6 +200,29 @@
           <span class="change-link">
             <a href="/{{feature}}/{{sprint}}/verify/child-benefit/{{scenario}}">
               Change <span class="visually-hidden"> Child Benefit number</span>
+            </a>
+          </span>
+        </dd>
+        <dt class="data-summary-key">
+          Child Benefit start date
+        </dt>
+        <dd class="data-summary-value">
+          1 August 2018
+          <span class="change-link">
+            <a href="/{{feature}}/{{sprint}}/verify/child-benefit/{{scenario}}">
+              Change <span class="visually-hidden"> Child Benefit effective date</span>
+            </a>
+          </span>
+        </dd>
+      {% else %}
+        <dt class="data-summary-key">
+          Evidence
+        </dt>
+        <dd class="data-summary-value">
+          Evidence of dependent children needed
+          <span class="change-link">
+            <a href="/{{feature}}/{{sprint}}/verify/child-benefit/{{scenario}}">
+              Change <span class="visually-hidden"> Dependent children verification</span>
             </a>
           </span>
         </dd>
