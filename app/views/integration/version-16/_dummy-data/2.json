@@ -8,7 +8,7 @@
     "title": "Mr",    
     "fullName": "Ricci Prakesh",
     "nino": "WA123456X",
-    "dateOfClaim": "10 November 2018",
+    "dateOfClaim": "21 October 2018",
     "dateOfBirth": "13 June 1974",
     "sex": "Male",
     "currentAddress": {
@@ -40,11 +40,11 @@
     "country": "United Kingdom"
   },
   "marriage": {
-    "where": "Certificate",
+    "where": "RVU",
     "dateOfMarriage": "9 August 2010"
   },
   "conts": {
-    "year": "2015"
+    "year": "2013"
   },
   "schedule": {
     "rate": "Higher",
