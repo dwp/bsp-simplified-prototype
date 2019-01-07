@@ -36,11 +36,14 @@ $pale-blue: #EDF4F7;
 @import 'details-section';
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-
 .column-full-width {
   box-sizing: border-box;
   padding: 0 15px;
   width: 100%;
+}
+
+.text-align-right {
+  text-align: right;
 }
 
 .data-summary {
