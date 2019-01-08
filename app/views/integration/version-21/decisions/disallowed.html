@@ -20,9 +20,16 @@
         <h2 class="heading-medium">
           Reason
         </h2>
-        <p>
-          The claimant and the deceased were not married or in a civil partnership at the time of death.
-        </p>
+        
+        {% if scenario === '3' %}
+          <p>
+            The RVU found that the marriage or civil partnership was not valid.
+          </p>
+        {% else %}
+          <p>
+            There was no proof the claimant was married to the deceased at the time of death.
+          </p>
+        {% endif %}
         
         <a href="/{{feature}}/{{sprint}}/claim/{{scenario}}/disallowed">View claim</a>
       </div>

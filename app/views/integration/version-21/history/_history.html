@@ -9,12 +9,21 @@
     </li>
   {% endif %}
   {% if decision === 'disallowed' %}
-    <li>
-      <span class="line"></span>
-      <h3 class="bold">Claim disallowed</h3>
-      <span class="paused-until-date">{{todayDate}}</span>
-      <p>Not married or in a civil partnership.</p>
-    </li>
+    {% if scenario === '3' %}
+      <li>
+        <span class="line"></span>
+        <h3 class="bold">Claim disallowed</h3>
+        <span class="paused-until-date">{{todayDate}}</span>
+        <p>Marriage or civil partnership not valid.</p>
+      </li>
+    {% else %}
+      <li>
+        <span class="line"></span>
+        <h3 class="bold">Claim disallowed</h3>
+        <span class="paused-until-date">{{todayDate}}</span>
+        <p>No proof of marriage or civil partnership.</p>
+      </li>
+    {% endif %}
   {% endif %}
   {% if decision === 'allowed' or decision === 'disallowed' %}
     <li>
@@ -34,30 +43,26 @@
     </li>
   {% endfor %}
 
-  {% if scenario === '1' %}
-    <li>
-      <span class="line"></span>
-      <h3 class="bold">Death verified</h3>
-      <span class="paused-until-date">by CIS</span><br />
-      <span class="paused-until-date">{{todayDate}}</span>
-    </li>
-  {% endif %}
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Death verified</h3>
+    <span class="paused-until-date">by CIS</span><br />
+    <span class="paused-until-date">{{todayDate}}</span>
+  </li>
 
-  {% if scenario === '1' or scenario === '2' %}
-    <li>
-      <span class="line"></span>
-      <h3 class="bold">Deceased details verified</h3>
-      <span class="paused-until-date">by CIS</span><br />
-      <span class="paused-until-date">{{todayDate}}</span>
-    </li>
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Deceased details verified</h3>
+    <span class="paused-until-date">by CIS</span><br />
+    <span class="paused-until-date">{{todayDate}}</span>
+  </li>
 
-    <li>
-      <span class="line"></span>
-      <h3 class="bold">Claimant details verified</h3>
-      <span class="paused-until-date">by CIS</span><br />
-      <span class="paused-until-date">{{todayDate}}</span>
-    </li>
-  {% endif%}
+  <li>
+    <span class="line"></span>
+    <h3 class="bold">Claimant details verified</h3>
+    <span class="paused-until-date">by CIS</span><br />
+    <span class="paused-until-date">{{todayDate}}</span>
+  </li>
   
   <li>
     <span class="line"></span>

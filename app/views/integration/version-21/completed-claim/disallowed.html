@@ -25,13 +25,14 @@
         <div class="panel panel-border-narrow">
           <h2 class="heading-small">This claim was disallowed because:</h2>
           <ul class="list list-bullet">
-            <li>
-              There was no proof the claimant was married to the deceased at the 
-              time of death.
-            </li>
-            {% if data.wait === 'No' %}
+            {% if scenario === '3' %}
               <li>
-                no is no evidence of industrial injury or illness
+                the RVU found that the marriage or civil partnership was not valid.
+              </li>
+            {% else %}
+              <li>
+                there was no proof the claimant was married to the deceased at the 
+                time of death.
               </li>
             {% endif %}
           </ul>

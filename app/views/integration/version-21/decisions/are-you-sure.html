@@ -17,11 +17,17 @@
         <h1 class="heading-large">
           You are about to disallow this claim
         </h1>
-
-        <p>
-          You're about to disallow this claim because the claimant and the deceased 
-          were not married or in a civil partnership at the time of death.
-        </p>
+        
+        {% if scenario === '3' %}
+          <p>
+            The RVU found that the marriage or civil partnership was not valid.
+          </p>
+        {% else %}
+          <p>
+            You're about to disallow this claim because there is no proof the 
+            claimant was married to the deceased at the time of death.
+          </p>
+        {% endif %}
         
         <form method="post">
           <div class="form-group">

@@ -40,14 +40,6 @@ router.post('/settings', (req, res) => {
         },
         {
           "title": "Payment details entered"
-        },
-        {
-          "title": "Relationship checked",
-          "caption": "Evidence of marriage or civil partnership needed.<br />"
-        },
-        {
-          "title": "Referred to RVU",
-          "caption": ""
         }
       ],
       "payment-details-provided": "Yes",
@@ -76,6 +68,22 @@ router.post('/settings', (req, res) => {
         "country": ""
       }
     }
+  }
+  if (scenario === '3') {
+    req.session.data.log.push(
+      {
+        "title": "Reffered to RVU",
+        "caption": ""
+      }
+    )
+  }
+  if (scenario === '4') {
+    req.session.data.log.push(
+      {
+        "title": "Relationship checked",
+        "caption": "Certificate and 194 / 195 form requested."
+      }
+    )
   }
   res.redirect(`/${req.feature}/${req.sprint}/start-a-new-claim/${scenario}`)
 })
