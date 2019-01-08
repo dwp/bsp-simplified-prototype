@@ -35,7 +35,7 @@
         {% if search %}
           <h2 class="heading-medium">Results</h2>
           <ul class="search-results">
-            {% if search === 'LM123456X' or search === '1' %}
+            {% if search === 'QX548346' or search === '1' %}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/task-list/1" class="result-link">
                   Unfinished claim
@@ -47,7 +47,7 @@
                   {{d.claimant.dateOfClaim}}
                 </span>
               </li>
-            {% elif search === 'WA123456X' or search === '2'%}
+            {% elif search === 'BX158226X' or search === '2'%}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/task-list/2" class="result-link">
                   Unfinished claim
@@ -59,9 +59,21 @@
                   {{d.claimant.dateOfClaim}}
                 </span>
               </li>
-            {% elif search === 'KT123456X' or search === '3'%}
+            {% elif search === 'MX644391X' or search === '3'%}
               <li class="result">
                 <a href="/{{feature}}/{{sprint}}/task-list/3" class="result-link">
+                  Unfinished claim
+                </a>
+                <span class="result-meta">
+                  {{d.claimant.fullName}}
+                </span>
+                <span class="result-meta">
+                  {{d.claimant.dateOfClaim}}
+                </span>
+              </li>
+            {% elif search === 'KJ123456X' or search === '3'%}
+              <li class="result">
+                <a href="/{{feature}}/{{sprint}}/task-list/4" class="result-link">
                   Unfinished claim
                 </a>
                 <span class="result-meta">

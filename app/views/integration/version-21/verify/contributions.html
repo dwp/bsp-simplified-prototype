@@ -24,7 +24,7 @@
                 </h1>
               </legend>
 
-              <div class="multiple-choice">
+              <div class="multiple-choice" data-target="year-hidden">
                 <input id="enough-conts-yes" type="radio" name="conts[enoughUK]" id="enough-conts-yes" value="Yes" {{'checked' if data.eligibility['enoughConts'] === 'Yes'}}>
                 <label for="enough-conts-yes">Yes</label>
               </div>
@@ -34,6 +34,11 @@
                 <label for="enough-conts-no">No</label>
               </div>
             </fieldset>
+          </div>
+
+          <div class="panel panel-border-narrow js-hidden" id="year-hidden">
+            <label class="form-label" for="conts-year">Which year did you use as verification?</label>
+            <input class="form-control" id="conts-year" name="conts[year]" type="number" value="{{data.eligibility.contsYear}}">
           </div>
 
           <div class="panel panel-border-narrow js-hidden" id="foreign-insurance">
@@ -62,6 +67,7 @@
               <input class="form-control" type="text" name="conts[country]" id="country">
             </div>
           </div>
+
   
           <button class="button" type="submit">Continue</button>
         </form>
