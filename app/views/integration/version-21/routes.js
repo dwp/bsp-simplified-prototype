@@ -16,7 +16,68 @@ router.use((req, res, next) => {
 })
 
 router.get('/', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/start-a-new-claim/1`)
+  res.redirect(`/${req.feature}/${req.sprint}/settings`)
+})
+
+// -----------------------------------------------------------------------------
+// Settings --------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.get('/settings', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/settings`)
+})
+router.post('/settings', (req, res) => {
+  const scenario = req.body.scenario || '1'
+  if (scenario === '3' || scenario === '4') {
+    req.session.data = {
+      "children": {
+        "dependant-children": "No",
+        "pregnant": "No"
+      },
+      "log": [
+        {
+          "title": "Children details entered",
+          "caption": ""
+        },
+        {
+          "title": "Payment details entered"
+        },
+        {
+          "title": "Relationship checked",
+          "caption": "Evidence of marriage or civil partnership needed.<br />"
+        },
+        {
+          "title": "Referred to RVU",
+          "caption": ""
+        }
+      ],
+      "payment-details-provided": "Yes",
+      "bank-type": "bank",
+      "payment": {
+        "name-on-account": "",
+        "sort-code": "",
+        "account-number": "",
+        "roll-number": ""
+      },
+      "death": {
+        "form": "Yes"
+      },
+      "marriage": {
+        "form": "Yes",
+        "verified": "No",
+        "dateOfMarriage": {
+          "day": "",
+          "month": "",
+          "year": ""
+        }
+      },
+      "wait": "rvu",
+      "conts": {
+        "enoughUK": "Yes",
+        "country": ""
+      }
+    }
+  }
+  res.redirect(`/${req.feature}/${req.sprint}/start-a-new-claim/${scenario}`)
 })
 
 // -----------------------------------------------------------------------------
