@@ -72,7 +72,11 @@ router.post('/settings', (req, res) => {
   if (scenario === '3') {
     req.session.data.log.push(
       {
-        "title": "Reffered to RVU",
+        "title": "Relationship checked",
+        "caption": "Certificate and 194 / 195 form requested."
+      },
+      {
+        "title": "Referred to RVU",
         "caption": ""
       }
     )
