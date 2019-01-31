@@ -7,6 +7,11 @@
           <li><a href="/{{feature}}/{{sprint}}/report/dec">View monthly report</a></li>
         </ul>
       {% endif %}
+      {% if includeMILink2 === 'true' %}
+        <ul id="proposition-links" class="proposition-links-right">
+          <li><a href="/{{feature}}/{{sprint}}/report">View report</a></li>
+        </ul>
+      {% endif %}
     </nav>
   </div>
 </div>
