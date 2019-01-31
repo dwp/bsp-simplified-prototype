@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Report
+{% endblock %}
+
+{% block customNav %}
+  {% include './../custom-nav.html' %}
+{% endblock %}
+
+{% block content %}
+  <main id="content" role="main" class="group">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">17 January 2018</h1>
+      
+      <div class="column-one-third">
+        <div class="data">
+          <span class="data-item bold-xsmall">Claims received</span>
+          <span class="data-item bold-xlarge">2,721</span>
+        </div>
+      </div>
+
+      <div class="column-one-third">
+        <div class="data">
+          <span class="data-item bold-xsmall">Claims outstanding</span>
+          <span class="data-item bold-xlarge">431</span>
+        </div>
+      </div>
+
+      <div class="column-one-third">
+        <div class="data">
+          <span class="data-item bold-xsmall">Claims outstanding</span>
+          <span class="data-item bold-xlarge">431</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="column-one-third">
+      <h2 class="heading-medium">Date range</h2>
+      <div class="form-group">
+        <fieldset aria-label="Claimant date of birth">
+          <legend class="heading-small">From</legend>
+
+          <div class="form-date">
+            <div class="form-group form-group-day">
+              <label class="form-label" for="claimant-dateOfBirth-day">
+                Day
+              </label>
+              <input class="form-control" id="claimant-dateOfBirth-day" type="number"  min="0" name="claimant[dateOfBirth][day]" value="{{data.claimant.dateOfBirth.day}}"/>
+            </div>
+
+            <div class="form-group form-group-month">
+              <label class="form-label" for="claimant-dateOfBirth-month">
+                Month
+              </label>
+              <input class="form-control" id="claimant-dateOfBirth-month" type="number"  min="0" name="claimant[dateOfBirth][month]" value="{{data.claimant.dateOfBirth.month}}"/>
+            </div>
+
+            <div class="form-group form-group-year">
+              <label class="form-label" for="claimant-dateOfBirth-year">
+                Year
+              </label>
+              <input class="form-control" type="number" id="claimant-dateOfBirth-year" min="0" name="claimant[dateOfBirth][year]" value="{{data.claimant.dateOfBirth.year}}"/>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <fieldset aria-label="Claimant date of birth">
+          <legend class="heading-small">To</legend>
+
+          <div class="form-date">
+            <div class="form-group form-group-day">
+              <label class="form-label" for="claimant-dateOfBirth-day">
+                Day
+              </label>
+              <input class="form-control" id="claimant-dateOfBirth-day" type="number"  min="0" name="claimant[dateOfBirth][day]" value="{{data.claimant.dateOfBirth.day}}"/>
+            </div>
+
+            <div class="form-group form-group-month">
+              <label class="form-label" for="claimant-dateOfBirth-month">
+                Month
+              </label>
+              <input class="form-control" id="claimant-dateOfBirth-month" type="number"  min="0" name="claimant[dateOfBirth][month]" value="{{data.claimant.dateOfBirth.month}}"/>
+            </div>
+
+            <div class="form-group form-group-year">
+              <label class="form-label" for="claimant-dateOfBirth-year">
+                Year
+              </label>
+              <input class="form-control" type="number" id="claimant-dateOfBirth-year" min="0" name="claimant[dateOfBirth][year]" value="{{data.claimant.dateOfBirth.year}}"/>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <button class="button">Update</button>
+      </div>
+    </div>
+  </main>
+{% endblock %}
