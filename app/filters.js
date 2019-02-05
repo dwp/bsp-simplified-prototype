@@ -30,5 +30,23 @@ module.exports = function (env) {
     return data
   }
 
+  filters.formatMonth = (month) => {
+    const array = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ]
+    return array[month -1]
+  }
+
   return filters
 }

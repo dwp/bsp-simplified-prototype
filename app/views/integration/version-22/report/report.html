@@ -10,93 +10,141 @@
 
 {% block content %}
   <main id="content" role="main" class="group">
-    <div class="column-two-thirds">
-      <h1 class="heading-xlarge">17 January 2018</h1>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        {% if report | length === 0 %}
+          <h1 class="heading-xlarge">8 February 2019</h1>
+        {% elif scenario === '1' %}
+          <h1 class="heading-xlarge">3 February 2019</h1>
+        {% elif scenario === '2' %}
+          <h1 class="heading-large">
+            <span class="heading-secondary">From</span>
+            <span>3 February 2019 (2)</span>
+            <span class="heading-secondary">To</span>
+            <span>3 February 2019 (2)</span>
+          </h1>
+          <br/>
+        {% elif scenario === '3' %}
+          <h1 class="heading-large">
+            <span class="heading-secondary">From</span>
+            <span>3 February 2019 (3)</span>
+            <span class="heading-secondary">To</span>
+            <span>3 February 2019 (3)</span>
+          </h1>
+          <br/>
+        {% endif %}
+
+        <div class="grid-row">
+          <div class="column-one-half">
+            <div class="data">
+              <span class="data-item bold-xsmall">Claims received</span>
+              <span class="data-item bold-xlarge">
+                {% if report | length === 0 %}
+                  2,721
+                {% elif scenario === '1' %}
+                  2,721
+                {% elif scenario === '2' %}
+                  2,721
+                {% elif scenario === '3' %}
+                  2,721
+                {% endif %}
+              </span>
+            </div>
+          </div>
+
+          <div class="column-one-half">
+            <div class="data">
+              <span class="data-item bold-xsmall">Claims cleared</span>
+              <span class="data-item bold-xlarge">
+                {% if report | length === 0 %}
+                  2,721
+                {% elif scenario === '1' %}
+                  2,721
+                {% elif scenario === '2' %}
+                  2,721
+                {% elif scenario === '3' %}
+                  2,721
+                {% endif %}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
       
-      <div class="column-one-third">
-        <div class="data">
-          <span class="data-item bold-xsmall">Claims received</span>
-          <span class="data-item bold-xlarge">2,721</span>
-        </div>
-      </div>
+      <form>
+        <div class="column-one-third">
+          <h2 class="heading-medium">Date range</h2>
+          <div class="form-group">
+            <fieldset aria-label="Report from date">
+              <legend class="heading-small">From</legend>
 
-      <div class="column-one-third">
-        <div class="data">
-          <span class="data-item bold-xsmall">Claims outstanding</span>
-          <span class="data-item bold-xlarge">431</span>
-        </div>
-      </div>
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="report-from-day">
+                    Day
+                  </label>
+                  <input class="form-control" id="report-from-day" type="number"  min="0" name="report[from][day]" />
+                </div>
 
-      <div class="column-one-third">
-        <div class="data">
-          <span class="data-item bold-xsmall">Claims outstanding</span>
-          <span class="data-item bold-xlarge">431</span>
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="report-from-month">
+                    Month
+                  </label>
+                  <input class="form-control" id="report-from-month" type="number"  min="0" name="report[from][month]" />
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="report-from-year">
+                    Year
+                  </label>
+                  <input class="form-control" type="number" id="report-from-year" min="0" name="report[from][year]"/>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group">
+            <fieldset aria-label="Report to date">
+              <legend class="heading-small">To</legend>
+
+              <div class="form-date">
+                <div class="form-group form-group-day">
+                  <label class="form-label" for="from-to-day">
+                    Day
+                  </label>
+                  <input class="form-control" id="from-to-day" type="number"  min="0" name="report[to][day]"/>
+                </div>
+
+                <div class="form-group form-group-month">
+                  <label class="form-label" for="from-to-month">
+                    Month
+                  </label>
+                  <input class="form-control" id="from-to-month" type="number"  min="0" name="report[to][month]" />
+                </div>
+
+                <div class="form-group form-group-year">
+                  <label class="form-label" for="from-to-year">
+                    Year
+                  </label>
+                  <input class="form-control" type="number" id="from-to-year" min="0" name="report[to][year]" />
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="form-group">
+            <button class="button">Update</button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
 
-    <div class="column-one-third">
-      <h2 class="heading-medium">Date range</h2>
-      <div class="form-group">
-        <fieldset aria-label="Claimant date of birth">
-          <legend class="heading-small">From</legend>
-
-          <div class="form-date">
-            <div class="form-group form-group-day">
-              <label class="form-label" for="claimant-dateOfBirth-day">
-                Day
-              </label>
-              <input class="form-control" id="claimant-dateOfBirth-day" type="number"  min="0" name="claimant[dateOfBirth][day]" value="{{data.claimant.dateOfBirth.day}}"/>
-            </div>
-
-            <div class="form-group form-group-month">
-              <label class="form-label" for="claimant-dateOfBirth-month">
-                Month
-              </label>
-              <input class="form-control" id="claimant-dateOfBirth-month" type="number"  min="0" name="claimant[dateOfBirth][month]" value="{{data.claimant.dateOfBirth.month}}"/>
-            </div>
-
-            <div class="form-group form-group-year">
-              <label class="form-label" for="claimant-dateOfBirth-year">
-                Year
-              </label>
-              <input class="form-control" type="number" id="claimant-dateOfBirth-year" min="0" name="claimant[dateOfBirth][year]" value="{{data.claimant.dateOfBirth.year}}"/>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
-      <div class="form-group">
-        <fieldset aria-label="Claimant date of birth">
-          <legend class="heading-small">To</legend>
-
-          <div class="form-date">
-            <div class="form-group form-group-day">
-              <label class="form-label" for="claimant-dateOfBirth-day">
-                Day
-              </label>
-              <input class="form-control" id="claimant-dateOfBirth-day" type="number"  min="0" name="claimant[dateOfBirth][day]" value="{{data.claimant.dateOfBirth.day}}"/>
-            </div>
-
-            <div class="form-group form-group-month">
-              <label class="form-label" for="claimant-dateOfBirth-month">
-                Month
-              </label>
-              <input class="form-control" id="claimant-dateOfBirth-month" type="number"  min="0" name="claimant[dateOfBirth][month]" value="{{data.claimant.dateOfBirth.month}}"/>
-            </div>
-
-            <div class="form-group form-group-year">
-              <label class="form-label" for="claimant-dateOfBirth-year">
-                Year
-              </label>
-              <input class="form-control" type="number" id="claimant-dateOfBirth-year" min="0" name="claimant[dateOfBirth][year]" value="{{data.claimant.dateOfBirth.year}}"/>
-            </div>
-          </div>
-        </fieldset>
-      </div>
-
-      <div class="form-group">
-        <button class="button">Update</button>
+    <div class="grid-row">
+      <hr />
+      <div class="column-two-thirds">
+        <h2 class="heading-large">Current outstanding claims</h2>
+        <span class="data-item bold-xlarge">
+          280
+        </span>
       </div>
     </div>
   </main>

@@ -17,14 +17,26 @@ router.use((req, res, next) => {
 })
 
 router.get('/', (req, res) => {
-  res.redirect(`/${req.feature}/${req.sprint}/start-a-new-claim/1`)
+  res.redirect(`/${req.feature}/${req.sprint}/settings`)
+})
+
+// -----------------------------------------------------------------------------
+// Settings --------------------------------------------------------------------
+// -----------------------------------------------------------------------------
+router.get('/settings', (req, res) => {
+  res.render(`${req.feature}/${req.sprint}/settings`)
+})
+router.post('/settings', (req, res) => {
+  const scenario = req.body.scenario || '1'
+  res.redirect(`/${req.feature}/${req.sprint}/start-a-new-claim/${scenario}`)
 })
 
 // -----------------------------------------------------------------------------
 // Report ----------------------------------------------------------------------
 // -----------------------------------------------------------------------------
-router.get('/report', (req, res) => {
-  res.render(`${req.feature}/${req.sprint}/report/report`)
+router.get('/report/:scenario', (req, res) => {
+  const scenario = req.params.scenario || 1
+  res.render(`${req.feature}/${req.sprint}/report/report`, {report: req.query, scenario})
 })
 
 // -----------------------------------------------------------------------------
