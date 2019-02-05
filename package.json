@@ -42,6 +42,7 @@
     "marked": "^0.3.6",
     "minimist": "1.2.0",
     "moment": "^2.18.1",
+    "natives": "^1.1.6",
     "node-sass": "^4.9.4",
     "notifications-node-client": "^3.0.0",
     "nunjucks": "^2.5.2",
