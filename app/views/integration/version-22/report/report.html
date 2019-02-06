@@ -12,26 +12,30 @@
   <main id="content" role="main" class="group">
     <div class="grid-row">
       <div class="column-two-thirds">
+        <div class="panel panel-border-narrow notification-banner">
+          This page only shows claim manager data.
+        </div>
+
         {% if report | length === 0 %}
-          <h1 class="heading-xlarge">8 February 2019</h1>
+          <h1 class="heading-xlarge">{{yesterday}}</h1>
         {% elif scenario === '1' %}
-          <h1 class="heading-xlarge">3 February 2019</h1>
+          <h1 class="heading-xlarge">4 February 2019</h1>
         {% elif scenario === '2' %}
           <h1 class="heading-large">
             <span class="heading-secondary">From</span>
-            <span>3 February 2019 (2)</span>
+            <span>{{dates.fromDate}}</span>
             <span class="heading-secondary">To</span>
-            <span>3 February 2019 (2)</span>
+            <span>{{dates.toDate}}</span>
           </h1>
-          <br/>
+          <br />
         {% elif scenario === '3' %}
           <h1 class="heading-large">
             <span class="heading-secondary">From</span>
-            <span>3 February 2019 (3)</span>
+            <span>{{dates.fromDate}}</span>
             <span class="heading-secondary">To</span>
-            <span>3 February 2019 (3)</span>
+            <span>{{dates.toDate}}</span>
           </h1>
-          <br/>
+          <br />
         {% endif %}
 
         <div class="grid-row">
@@ -40,13 +44,13 @@
               <span class="data-item bold-xsmall">Claims received</span>
               <span class="data-item bold-xlarge">
                 {% if report | length === 0 %}
-                  2,721
+                  57
                 {% elif scenario === '1' %}
-                  2,721
+                  68
                 {% elif scenario === '2' %}
-                  2,721
+                  217
                 {% elif scenario === '3' %}
-                  2,721
+                  3,387
                 {% endif %}
               </span>
             </div>
@@ -57,23 +61,23 @@
               <span class="data-item bold-xsmall">Claims cleared</span>
               <span class="data-item bold-xlarge">
                 {% if report | length === 0 %}
-                  2,721
+                  48
                 {% elif scenario === '1' %}
-                  2,721
+                  45
                 {% elif scenario === '2' %}
-                  2,721
+                  813
                 {% elif scenario === '3' %}
-                  2,721
+                  3,414
                 {% endif %}
               </span>
             </div>
           </div>
         </div>
       </div>
-      
+
       <form>
         <div class="column-one-third">
-          <h2 class="heading-medium">Date range</h2>
+          <h2 class="heading-medium">Search</h2>
           <div class="form-group">
             <fieldset aria-label="Report from date">
               <legend class="heading-small">From</legend>
@@ -141,7 +145,7 @@
     <div class="grid-row">
       <hr />
       <div class="column-two-thirds">
-        <h2 class="heading-large">Current outstanding claims</h2>
+        <h2 class="heading-medium">Current outstanding claims</h2>
         <span class="data-item bold-xlarge">
           280
         </span>

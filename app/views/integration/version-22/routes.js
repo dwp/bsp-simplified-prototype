@@ -3,6 +3,7 @@ const path = require('path')
 const router = new express.Router()
 const {logOnPost} = require('../../../../lib/utils')
 const {addToLog, getTestDate} = require('./functions')
+const {format, subDays} = require('date-fns')
 
 // Log session to console on POST requests
 router.use(logOnPost)
@@ -36,7 +37,14 @@ router.post('/settings', (req, res) => {
 // -----------------------------------------------------------------------------
 router.get('/report/:scenario', (req, res) => {
   const scenario = req.params.scenario || 1
-  res.render(`${req.feature}/${req.sprint}/report/report`, {report: req.query, scenario})
+  const yesterday = format(subDays(new Date(), 1), 'D MMMM YYYY')
+  const dates = {}
+  if (req.query.report) {
+    const report = req.query.report
+    dates.fromDate = format(new Date(report.from.year, report.from.month -1 , report.from.day), 'D MMMM YYYY')
+    dates.toDate = format(new Date(report.to.year, report.to.month - 1, report.to.day), 'D MMMM YYYY')
+  }
+  res.render(`${req.feature}/${req.sprint}/report/report`, {report: req.query, scenario, yesterday, dates})
 })
 
 // -----------------------------------------------------------------------------
