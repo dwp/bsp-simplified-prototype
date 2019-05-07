@@ -50,6 +50,9 @@ router.get('/start-a-new-claim/:scenario', (req, res) => {
 })
 router.post('/start-a-new-claim/:scenario', (req, res) => {
   const scenario = req.params.scenario || '1'
+  if (scenario === '4') {
+    return res.redirect(`/${req.feature}/${req.sprint}/cis/cis-warning/${scenario}`)
+  }
   res.redirect(`/${req.feature}/${req.sprint}/task-list/${scenario}`)
 })
 
