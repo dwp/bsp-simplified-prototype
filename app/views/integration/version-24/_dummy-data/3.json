@@ -1,56 +1,59 @@
 {
   "claim": {
-    "status": "Disallowed",
-    "weeksSinceClaim": 3,
+    "status": "Allowed",
+    "weeksSinceClaim": 1,
     "class": ""
   },
   "claimant": {
-    "title": "Mrs",    
-    "fullName": "Veronica Hastings",
-    "nino": "QB123456Q",
-    "dateOfClaim": "20 March 2019",
-    "dateOfBirth": "1 February 1987",
-    "sex": "Female",
+    "title": "Mrs",
+    "fullName": "Monica Witten",
+    "nino": "MQ123456X",
+    "dateOfClaim": "10 August 2018",
+    "dateOfBirth": "14 May 1970",
+    "sex": "Female",    
     "currentAddress": {
-      "number": "74",
-      "street": "Bay Grove",
-      "town": "Worthing",
-      "county": "West Sussex",
-      "postcode": "WH9 2PR"
+      "number": "12",
+      "street": "Heaton Way",
+      "town": "Liverpool",
+      "county": "",
+      "postcode": "L1 1JD"
     },
-    "contact": {
-      "home": "09217233126"
-    }
+    "contact": {}
   },
   "partner": {
     "title": "Mr",
-    "fullName": "Mark Hastings",
-    "nino": "KQ123456Q",
-    "dateOfDeath": "1 March 2019"  
+    "fullName": "Andrew Witten",
+    "nino": "RB665544X",
+    "dateOfDeath": "2 August 2018"  
   },
   "children": {
-    "dependant-children": "Yes",
+    "dependant": "Yes",
     "pregnant": "No"
   },
   "chb": {
     "answer": "Yes",
-    "chb-number": ""
+    "number": "12345678AB"
   },
   "payment": {
-    "nameOnAccount": "Mrs V Hastings",
+    "nameOnAccount": "Mr M Witton",
     "sortCode": "112233",
-    "accountNumber": "12341234",
+    "accountNumber": "12345678",
     "country": "United Kingdom"
   },
   "marriage": {
-    "where": "Certificate",
-    "dateOfMarriage": "14 August 2014"
+    "where": "Marriage certificate",
+    "dateOfMarriage": "19 March 1999"
   },
   "conts": {
     "year": "2015"
   },
   "schedule": {
-    "rate": "Higher",
-    "number": 18
+    "rate": "Higher",   
+    "payments": {
+      "number": 18,
+      "initial": "21 August 2018",
+      "backdated": "21 August 2018",
+      "firstMonthly": "2 September 2018"
+    }
   }
 }
