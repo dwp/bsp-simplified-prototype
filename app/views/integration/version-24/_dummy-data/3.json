@@ -7,16 +7,16 @@
   "claimant": {
     "title": "Mrs",
     "fullName": "Monica Witten",
-    "nino": "MQ123456X",
-    "dateOfClaim": "10 August 2018",
-    "dateOfBirth": "14 May 1970",
+    "nino": "TQ123456Q",
+    "dateOfClaim": "25 April 2019",
+    "dateOfBirth": "11 December 1973",
     "sex": "Female",    
     "currentAddress": {
-      "number": "12",
-      "street": "Heaton Way",
-      "town": "Liverpool",
+      "number": "17",
+      "street": "Grey Park",
+      "town": "Newcastle",
       "county": "",
-      "postcode": "L1 1JD"
+      "postcode": "NE2 4PY"
     },
     "contact": {}
   },
@@ -24,7 +24,7 @@
     "title": "Mr",
     "fullName": "Andrew Witten",
     "nino": "RB665544X",
-    "dateOfDeath": "2 August 2018"  
+    "dateOfDeath": "20 April 2019"  
   },
   "children": {
     "dependant": "Yes",
