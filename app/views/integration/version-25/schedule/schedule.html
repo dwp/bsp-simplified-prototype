@@ -26,7 +26,11 @@
         
         <div class="panel panel-indent notification-banner">
           <h2 class="heading-small">Fewer payments than usual</h2>
-          {% if scenario === '3' %}
+          {% if scenario === '2' %}
+            <p>
+              The claim was late
+            </p>
+          {% elif scenario === '3' %}
             <p>
               The claimant was close to State Pension age.<br />
               The claim was late
