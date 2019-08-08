@@ -24,3 +24,15 @@
     }
   }
 }
+
+.warning-banner--grey {
+  background-color: $panel-colour;
+  background-image: url(/public/images/icon-important.png);
+  background-position: 20px center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  font-weight: bold;
+  padding-bottom: 5px;
+  padding-left: 80px;
+  padding-top: 5px;
+}

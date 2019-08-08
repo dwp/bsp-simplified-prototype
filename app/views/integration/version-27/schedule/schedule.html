@@ -23,24 +23,6 @@
         <span class="schedule-status schedule-status-active">
           Active
         </span>
-        
-        <div class="panel panel-indent notification-banner">
-          <h2 class="heading-small">Fewer payments than usual</h2>
-          {% if scenario === '2' %}
-            <p>
-              The claim was late
-            </p>
-          {% elif scenario === '3' %}
-            <p>
-              The claimant reaches State Pension Age in November 2019.<br />
-              The claim was late.
-            </p>
-          {% else %}
-            <p>
-              The claimant reaches State Pension Age in September 2020.
-            </p>
-          {% endif %}
-        </div>
 
         {% include './_subnav-schedule.html' %}
 
@@ -66,7 +48,15 @@
         </dl>
       </div>
     </div>
-    
+  
+    {% if scenario === '2' %}
+      {% include './_warning-banner-2.html' %}
+    {% elif scenario === '3' %}
+      {% include './_warning-banner-3.html' %}
+    {% else %}
+      {% include './_warning-banner-1.html' %}
+    {% endif %}
+
     <div class="grid-row">
       <div class="column-one-half">
         <h2 class="heading-small th">
@@ -74,13 +64,7 @@
         </h2>
 
         <ul class="schedule">
-          {% if scenario === '2' %}
-            {% include './_payments-made-2.html' %}
-          {% elif scenario === '3' %}
-            {% include './_payments-made-3.html' %}
-          {% else %}
-            <li class="payment">No payments issued.</li>
-          {% endif %}
+          <li class="payment">No payments issued.</li>
         </ul>
       </div>
 
