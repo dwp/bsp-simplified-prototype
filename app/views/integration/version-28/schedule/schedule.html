@@ -28,26 +28,10 @@
 
         {% include '../common/_details-payment.html' %}
 
-        <h2 class="heading-small th">
-          Rate
-        </h2>
-
-        <dl class="data-summary">
-          <dt class="data-summary-key">
-            {{d.schedule.rate}}
-          </dt>
-          <dd class="data-summary-value">
-            {% if d.schedule.rate === 'Standard' %}
-              <span class="change-link">
-                <a href="#">
-                  Change <span class="visually-hidden"> rate</span>
-                </a>
-              </span>
-            {% endif %}
-          </dd>
-        </dl>
       </div>
     </div>
+
+    {% include "./_payment-summary-" + scenario + ".html" %}
   
     {% if scenario === '2' %}
       {% include './_warning-banner-2.html' %}
@@ -56,6 +40,14 @@
     {% else %}
       {% include './_warning-banner-1.html' %}
     {% endif %}
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <h2 class="heading-medium" style="margin-bottom: 0;">
+          Payment schedule
+        </h2>
+      </div>
+    </div>
 
     <div class="grid-row">
       <div class="column-one-half">
@@ -73,7 +65,7 @@
           Planned payments
           <p class="payment-link">
             <a href="#">
-              Prevent payments
+              Stop payments
             </a>
           </p>
         </h2>
