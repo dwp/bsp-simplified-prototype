@@ -53,7 +53,7 @@
     "run-sequence": "^1.2.2",
     "serve-favicon": "2.4.2",
     "standard": "^10.0.2",
-    "supertest": "^3.0.0",
+    "supertest": "^7.0.0",
     "sync-request": "^4.0.3"
   },
   "greenkeeper": {
