@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "basic-auth": "^1.0.3",
-    "basic-auth-connect": "^1.0.0",
+    "basic-auth-connect": "^1.1.0",
     "body-parser": "^1.17.2",
     "browser-sync": "^2.18.12",
     "cross-spawn": "^5.0.0",
